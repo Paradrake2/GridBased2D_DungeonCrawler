@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671b4d7d5ef341e4cb091346d30a1aae, type: 3}
+  m_Name: TestEquipment
+  m_EditorClassIdentifier: 
+  equipmentName: test
+  equipmentIcon: {fileID: 0}
+  equipmentSlot: {fileID: 11400000, guid: 7e08dd9b04d1f64429917ac6fd0c4ebd, type: 2}
+  stats:
+    stats:
+    - statType: {fileID: 11400000, guid: 6df30064bf8c29047b90fb2339a0689e, type: 2}
+      value: 10
+    - statType: {fileID: 11400000, guid: ca8f03f191c077a4d8502b6086cee81b, type: 2}
+      value: 10
+  id: 
+  persistent: 0
+  alreadyCounted: 0
