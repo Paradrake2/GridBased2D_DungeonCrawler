@@ -36,6 +36,22 @@ public class EnemyStats : MonoBehaviour
         }
         return 0f;
     }
+    public void ModifyDefenseMultiplier(float multiplier)
+    {
+        defense *= multiplier;
+    }
+    public void ModifiyDefenseValue(float value)
+    {
+        defense += value;
+    }
+    public void ModifyDamageMultiplier(float multiplier)
+    {
+        damage *= multiplier;
+    }
+    public void ModifiyDamageValue(float value)
+    {
+        damage += value;
+    }
     public void Initialize()
     {
         maxHealth = stats.GetStat(StatDatabase.Instance.GetStat("Health"));

@@ -23,8 +23,6 @@ MonoBehaviour:
       value: 10
     - statType: {fileID: 11400000, guid: 6aa2f91485e2676408f0af3103959404, type: 2}
       value: 10
-    - statType: {fileID: 11400000, guid: 4090b8317db3bb74187cb28f24e54983, type: 2}
-      value: 10
   debuffInflictors: []
   debuffResistances: []
   id: 

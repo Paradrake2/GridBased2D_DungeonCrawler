@@ -9,16 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb6725a7d63b53243bbd1b48055bf8b2, type: 3}
-  m_Name: Poison
+  m_Script: {fileID: 11500000, guid: 7e88ddd3826d13f43805fbb7a3a74a50, type: 3}
+  m_Name: DefenseDown
   m_EditorClassIdentifier: 
-  debuffName: 
-  associatedStat: {fileID: 0}
-  duration: -1
-  tickInterval: 10
-  timeSinceLastTick: 0
-  canStack: 0
-  maxStacks: 1
-  currentStacks: 1
-  alreadyApplied: 0
-  target: {fileID: 0}
+  immunityName: DefenseDown

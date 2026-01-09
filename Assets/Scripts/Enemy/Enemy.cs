@@ -13,11 +13,12 @@ public class Enemy : MonoBehaviour
 {
     public bool isActive = true; // set to false when player in combat with different enemy
     public LootTable dropTable;
-    EnemyStats stats;
+    public EnemyStats stats;
     public List<EnemyResistance> resistances = new List<EnemyResistance>();
     public List<Immunity> immunities = new List<Immunity>();
     private Vector2 positionBeforeCombat;
     public Player player;
+    [SerializeField] private int dropItemNum = 1;
     public void TakeDamage(float damage, List<PlayerAttackAttributes> attackAttributes)
     {
         stats.currentHealth -= Mathf.Max(1, CalculateDamageTaken(damage, attackAttributes));
@@ -30,10 +31,13 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log(gameObject.name + " has died.");
         EnemyManager.instance.RemoveEnemy(this);
-        Item dropItem = dropTable.GetDroppedItem();
-        if (dropItem != null)
+        for (int i = 0; i < dropItemNum; i++)
         {
-            Instantiate(dropItem.itemPrefab, transform.position, Quaternion.identity);
+            Item dropItem = dropTable.GetDroppedItem();
+            if (dropItem != null)
+            {
+                Instantiate(dropItem.itemPrefab, transform.position, Quaternion.identity); // might be replaced with just directly adding to player inventory later
+            }
         }
         Destroy(gameObject);
     }

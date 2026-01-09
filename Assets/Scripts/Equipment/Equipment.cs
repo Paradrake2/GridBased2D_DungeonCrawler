@@ -21,4 +21,12 @@ public class Equipment : ScriptableObject
     {
         return stats;
     }
+    public List<PlayerDebuffInflictorHolder> GetDebuffInflictors()
+    {
+        return debuffInflictors;
+    }
+    public List<PlayerDebuffResistanceHolder> GetDebuffResistances()
+    {
+        return debuffResistances;
+    }
 }
