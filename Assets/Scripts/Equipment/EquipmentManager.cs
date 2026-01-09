@@ -9,14 +9,23 @@ public class EquipmentManager : MonoBehaviour
         StatCollection totalStats = new StatCollection();
         foreach (Equipment eq in equipment)
         {
+            if (eq.alreadyCounted) continue;
             StatCollection eqStats = eq.GetStats();
             foreach (var stat in eqStats.Stats)
             {
                 float currentValue = totalStats.GetStat(stat.GetStatID());
                 totalStats.SetStat(StatDatabase.Instance.GetStat(stat.GetStatID()), currentValue + stat.Value);
             }
+            eq.alreadyCounted = true;
         }
         return totalStats;
+    }
+    public void SetAllEquipmentCountedFalse()
+    {
+        foreach (Equipment eq in equipment)
+        {
+            eq.alreadyCounted = false;
+        }
     }
     void Start()
     {

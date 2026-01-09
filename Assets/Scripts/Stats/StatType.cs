@@ -23,7 +23,6 @@ public class StatType : ScriptableObject
     public string suffix = "";
     public int decimalPlaces = 0;
     public Color displayColor = Color.white;
-    
 
     public string StatID => name;
 
@@ -49,6 +48,7 @@ public enum StatCategory
     DefenseModifier,
     Debuff,
     Buff,
-    Utility
+    Utility,
+    Attribute
 }
 

@@ -4,6 +4,7 @@ public class Manager : MonoBehaviour
 {
     public static Manager instance;
     public bool playerMoving = false;
+    public bool playerCanMove = true;
     void Awake()
     {
         if (instance == null)

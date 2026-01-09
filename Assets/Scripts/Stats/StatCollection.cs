@@ -10,7 +10,6 @@ using UnityEngine;
 public class StatCollection
 {
     [SerializeField] private List<StatValue> stats = new List<StatValue>();
-    
     public IReadOnlyList<StatValue> Stats => stats;
     
     /// <summary>

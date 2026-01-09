@@ -5,6 +5,7 @@ using UnityEngine;
 public class MaterialStats
 {
     public StatCollection stats = new StatCollection();
+    public DebuffCollection debuffCollection = new DebuffCollection();
     public float goldValue;
 }
 
@@ -16,6 +17,8 @@ public class Item : ScriptableObject
     public Sprite itemIcon;
     public GameObject itemPrefab;
     public MaterialStats stats;
+    public List<PlayerDebuffInflictorHolder> debuffInflictors = new List<PlayerDebuffInflictorHolder>();
+    public List<PlayerDebuffResistanceHolder> debuffResistances = new List<PlayerDebuffResistanceHolder>();
     public List<CraftingSlot> craftingSlots;
     public string id;
     public bool persistent = false;

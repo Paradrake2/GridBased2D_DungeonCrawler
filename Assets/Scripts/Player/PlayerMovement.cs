@@ -9,6 +9,11 @@ public class PlayerMovement : MonoBehaviour
     private bool isMoving = false;
     [SerializeField] private float moveDuration = 0.05f;
 
+    [Header("Movement Tracking")]
+    private Vector2 currentDirection = Vector2.zero;
+    private float distanceTraveled = 0f;
+    private Vector2 lastPosition;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -39,6 +44,11 @@ public class PlayerMovement : MonoBehaviour
             }
             if (direction != Vector2.zero)
             {
+                if (currentDirection != direction)
+                {
+                    currentDirection = direction;
+                    distanceTraveled = 0f;
+                }
                 StartCoroutine(Move(direction));
             }
         }
@@ -46,8 +56,11 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator Move(Vector2 direction)
     {
+        if (Manager.instance.playerCanMove == false)
+        {
+            yield break;
+        }
         isMoving = true;
-        Manager.instance.playerMoving = true;
         Vector2 startPosition = transform.position;
         Vector2 targetPosition = startPosition + direction * cellSize;
 
@@ -61,7 +74,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
         transform.position = targetPosition;
-        Manager.instance.playerMoving = false;
+
+        distanceTraveled += cellSize;
+        lastPosition = transform.position;
+
         isMoving = false;
+    }
+    public float GetDistanceTraveled()
+    {
+        return distanceTraveled;
     }
 }

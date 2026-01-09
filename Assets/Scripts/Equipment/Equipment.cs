@@ -8,6 +8,8 @@ public class Equipment : ScriptableObject
     public Sprite equipmentIcon;
     public EquipmentSlot equipmentSlot;
     public StatCollection stats = new StatCollection();
+    public List<PlayerDebuffInflictorHolder> debuffInflictors = new List<PlayerDebuffInflictorHolder>();
+    public List<PlayerDebuffResistanceHolder> debuffResistances = new List<PlayerDebuffResistanceHolder>();
     public string id;
     public bool persistent = false;
     public bool alreadyCounted = false; // prevent equipment from being counted multiple times in stats calculations
