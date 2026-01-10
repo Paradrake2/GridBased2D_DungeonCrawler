@@ -27,6 +27,14 @@ public class Enemy : MonoBehaviour
             Die();
         }
     }
+    public void TakeTrueDamage(float damage)
+    {
+        stats.currentHealth -= damage;
+        if (stats.currentHealth <= 0)
+        {
+            Die();
+        }
+    }
     public void Die()
     {
         Debug.Log(gameObject.name + " has died.");
@@ -40,6 +48,7 @@ public class Enemy : MonoBehaviour
             }
         }
         Destroy(gameObject);
+        player.combat.EndCombat();
     }
     float CalculateDamageTaken(float damage, List<PlayerAttackAttributes> attackAttributes)
     {

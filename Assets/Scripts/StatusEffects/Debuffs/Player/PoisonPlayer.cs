@@ -42,10 +42,10 @@ public class PoisonPlayer : Debuff
                 duration -= tickInterval;
             }
             timeSinceLastTick += tickInterval;
-            if (timeSinceLastTick >= tickInterval)
+            if (timeSinceLastTick >= tickInterval && target != null)
             {
                 // Apply poison damage
-                target.GetComponent<Enemy>().TakeDamage(poisonDamage, null);
+                target.GetComponent<Enemy>().TakeTrueDamage(poisonDamage);
                 Debug.Log(target.name + " takes " + poisonDamage + " poison damage.");
                 timeSinceLastTick = 0f;
             }

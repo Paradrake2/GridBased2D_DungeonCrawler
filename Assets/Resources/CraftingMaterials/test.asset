@@ -12,14 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd005c64b912d3545a9bd24032fbb12c, type: 3}
   m_Name: test
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: test
   itemIcon: {fileID: 0}
+  itemPrefab: {fileID: 123532318512218960, guid: 78f1c705b2820964191e4fd0f33b7d92, type: 3}
   stats:
     stats:
       stats:
-      - statType: {fileID: 0}
-        value: 0
+      - statType: {fileID: 11400000, guid: 3deb6a3649d4b5d4e95c23ecadd98cd7, type: 2}
+        value: 1
+    debuffCollection:
+      debuffs: []
     goldValue: 0
+  debuffInflictors: []
+  debuffResistances: []
   craftingSlots: []
   id: 
   persistent: 0

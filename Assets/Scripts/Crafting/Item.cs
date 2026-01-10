@@ -20,7 +20,6 @@ public class Item : ScriptableObject
     public MaterialStats stats;
     public List<PlayerDebuffInflictorHolder> debuffInflictors = new List<PlayerDebuffInflictorHolder>();
     public List<PlayerDebuffResistanceHolder> debuffResistances = new List<PlayerDebuffResistanceHolder>();
-    public List<CraftingSlot> craftingSlots;
     public string id;
     public bool persistent = false;
     public void UpdatePersistance(bool value)
@@ -34,9 +33,5 @@ public class Item : ScriptableObject
     public float GetStatValue(string statName)
     {
         return stats.stats.GetStat(statName);
-    }
-    public List<CraftingSlot> GetCraftingSlots()
-    {
-        return craftingSlots;
     }
 }

@@ -53,7 +53,11 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-
+    public void ForceStopMovement()
+    {
+        StopCoroutine(Move(currentDirection));
+        isMoving = false;
+    }
     private IEnumerator Move(Vector2 direction)
     {
         if (Manager.instance.playerCanMove == false)
@@ -67,6 +71,11 @@ public class PlayerMovement : MonoBehaviour
         float elapsedTime = 0f;
         while (elapsedTime < moveDuration)
         {
+            if (Manager.instance.playerCanMove == false)
+            {
+                isMoving = false;
+                yield break;
+            }
             elapsedTime += Time.deltaTime;
             float percent = elapsedTime / moveDuration;
             transform.position = Vector2.Lerp(startPosition, targetPosition, percent);
