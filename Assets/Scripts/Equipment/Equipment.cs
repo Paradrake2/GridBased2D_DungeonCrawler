@@ -29,4 +29,12 @@ public class Equipment : ScriptableObject
     {
         return debuffResistances;
     }
+    public void AddDebuffInflictor(PlayerDebuffInflictorHolder inflictor)
+    {
+        debuffInflictors.Add(inflictor);
+    }
+    public void AddDebuffResistance(PlayerDebuffResistanceHolder resistance)
+    {
+        debuffResistances.Add(resistance);
+    }
 }

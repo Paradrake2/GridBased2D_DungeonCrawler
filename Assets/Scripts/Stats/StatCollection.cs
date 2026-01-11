@@ -50,7 +50,22 @@ public class StatCollection
     {
         return stats.Any(s => s.StatType == statType);
     }
-    
+    public void AddStat(StatValue statValue)
+    {
+        var existingStat = stats.FirstOrDefault(s => s.StatType == statValue.StatType);
+        if (existingStat != null)
+        {
+            existingStat.SetValue(statValue.Value);
+        }
+        else
+        {
+            stats.Add(statValue);
+        }
+    }
+    public void AddStat(StatType statType, float value)
+    {
+        AddStat(new StatValue(statType, value));
+    }
     /// <summary>
     /// Remove a stat from the collection
     /// </summary>
