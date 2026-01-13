@@ -1,6 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EquipmentSlot
+{
+    Helmet,
+    Chest,
+    Legs,
+    Boots,
+    Gauntlets,
+    Weapon,
+    Shield,
+    Accessory
+}
+
+
 [CreateAssetMenu(fileName = "Equipment", menuName = "Scriptable Objects/Equipment")]
 public class Equipment : ScriptableObject
 {

@@ -8,7 +8,7 @@ public class DebugManager : MonoBehaviour
     {
         Equipment testingEquipment;
         testingEquipment = Instantiate(testEquipment);
-        player.equipmentManager.equipment.Add(testingEquipment);
+        player.equipmentManager.EquipItem(testingEquipment);
         player.UpdateFromEquipment();
         Debug.Log("Added test equipment: " + testingEquipment.name);
     }

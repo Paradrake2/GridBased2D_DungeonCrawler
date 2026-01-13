@@ -21,7 +21,7 @@ public class Item : ScriptableObject
     public List<PlayerDebuffInflictorHolder> debuffInflictors = new List<PlayerDebuffInflictorHolder>();
     public List<PlayerDebuffResistanceHolder> debuffResistances = new List<PlayerDebuffResistanceHolder>();
     public string id;
-    public bool persistent = false;
+    public bool persistent = false; // does this item disappear after run is over
     public void UpdatePersistance(bool value)
     {
         persistent = value;
@@ -33,5 +33,9 @@ public class Item : ScriptableObject
     public float GetStatValue(string statName)
     {
         return stats.stats.GetStat(statName);
+    }
+    public Sprite GetIcon()
+    {
+        return itemIcon;
     }
 }

@@ -9,7 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ed356c1c8717804ea15b9d47270458a, type: 3}
-  m_Name: Helmet
+  m_Script: {fileID: 11500000, guid: 2cec7dd7f51e6f8488f2f64c1e90de32, type: 3}
+  m_Name: Template1
   m_EditorClassIdentifier: 
-  slotName: Helmet
+  templateName: 
+  baseEquipment: {fileID: 0}
+  stats: []
+  potentialDebuffs: []
+  minDebuffs: 0
+  maxDebuffs: 1
+  potentialBuffs: []
+  minBuffs: 0
+  maxBuffs: 1

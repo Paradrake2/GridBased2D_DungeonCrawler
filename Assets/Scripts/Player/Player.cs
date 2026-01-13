@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
     {
         stats = FindFirstObjectByType<PlayerStats>();
         combat = GetComponent<PlayerCombat>();
-        equipmentManager = GetComponent<EquipmentManager>();
+        equipmentManager = FindAnyObjectByType<EquipmentManager>();
         playerMovement = GetComponent<PlayerMovement>();
         debuffManager = GetComponent<PlayerDebuffManager>();
 

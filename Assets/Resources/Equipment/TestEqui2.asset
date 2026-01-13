@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: TestEqui2
   m_EditorClassIdentifier: 
   equipmentName: test2
-  equipmentIcon: {fileID: 0}
-  equipmentSlot: {fileID: 0}
+  equipmentIcon: {fileID: -4669979549892145489, guid: e6f8b0b929f00b140949f88af241f330, type: 3}
+  equipmentSlot: 5
   stats:
     stats:
     - statType: {fileID: 11400000, guid: 6aa2f91485e2676408f0af3103959404, type: 2}
@@ -23,6 +23,8 @@ MonoBehaviour:
       value: 10
     - statType: {fileID: 11400000, guid: 02c2940f5ee912044af76cfc517ef418, type: 2}
       value: 10
+  debuffInflictors: []
+  debuffResistances: []
   id: 
   persistent: 0
   alreadyCounted: 0
