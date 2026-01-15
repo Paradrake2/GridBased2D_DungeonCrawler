@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class InventoryItemSlotUI : MonoBehaviour
 {
     public Image itemIcon;
-    public Text quantityText;
+    public TextMeshProUGUI quantityText;
     public Button button;
+    private Item containedItem;
     public void SetItemIcon(Sprite icon)
     {
         itemIcon.sprite = icon;
@@ -13,6 +14,10 @@ public class InventoryItemSlotUI : MonoBehaviour
     public void SetQuantityText(int quantity)
     {
         quantityText.text = quantity.ToString();
+    }
+    public void SetItem(Item item)
+    {
+        containedItem = item;
     }
     public void OnClick()
     {

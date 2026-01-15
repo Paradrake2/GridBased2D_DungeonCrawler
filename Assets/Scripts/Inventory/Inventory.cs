@@ -73,6 +73,18 @@ public class Inventory : MonoBehaviour
             Debug.LogWarning("Attempted to remove item not in inventory: " + itemToRemove.name);
         }
     }
+    public void RemoveEquipment(Equipment equipmentToRemove)
+    {
+        if (storedEquipment.Contains(equipmentToRemove))
+        {
+            storedEquipment.Remove(equipmentToRemove);
+        }
+        else
+        {
+            // Equipment not found in inventory
+            Debug.LogWarning("Attempted to remove equipment not in inventory: " + equipmentToRemove.equipmentName);
+        }
+    }
     void Start()
     {
         

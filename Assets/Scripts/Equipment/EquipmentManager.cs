@@ -11,6 +11,8 @@ public class EquipmentManager : MonoBehaviour
 {
     public static EquipmentManager Instance;
     public EquipmentUIManager equipmentUIManager;
+    public Inventory inventory;
+    public Player player;
     public List<EquipmentSlotInfo> equipment = new List<EquipmentSlotInfo>();
     public StatCollection GetEquipmentStats()
     {
@@ -79,7 +81,7 @@ public class EquipmentManager : MonoBehaviour
     public void EquipItem(Equipment newEquipment)
     {
         if (newEquipment == null) return;
-
+        inventory.RemoveEquipment(newEquipment);
         if (newEquipment.equipmentSlot == EquipmentSlot.Accessory)
         {
             // 1) First empty accessory slot
@@ -90,7 +92,8 @@ public class EquipmentManager : MonoBehaviour
                 if (equipment[i].equippedItem == null)
                 {
                     equipment[i].equippedItem = newEquipment;
-                    equipmentUIManager.UpdateEquipmentUISlot(newEquipment);
+                    equipmentUIManager.UpdateEquipmentUISlot(newEquipment, false);
+                    player.RecalculateAllValues();
                     return;
                 }
             }
@@ -102,7 +105,9 @@ public class EquipmentManager : MonoBehaviour
                 if (equipment[i].slot != EquipmentSlot.Accessory) continue;
 
                 equipment[i].equippedItem = newEquipment;
-                equipmentUIManager.UpdateEquipmentUISlot(newEquipment);
+                equipmentUIManager.UpdateEquipmentUISlot(newEquipment, false);
+                player.RecalculateAllValues();
+
                 return;
             }
 
@@ -113,8 +118,31 @@ public class EquipmentManager : MonoBehaviour
             if (slotInfo.slot == newEquipment.equipmentSlot)
             {
                 slotInfo.equippedItem = newEquipment;
-                equipmentUIManager.UpdateEquipmentUISlot(newEquipment);
+                equipmentUIManager.UpdateEquipmentUISlot(newEquipment, false);
+                player.RecalculateAllValues();
 
+                break;
+            }
+        }
+    }
+    public void Unequip(EquipmentSlot slot, Equipment equipmentToUnequip)
+    {
+        if (slot == EquipmentSlot.Accessory)
+        {
+            UnequipAccessory(equipmentToUnequip);
+            return;
+        }
+        foreach (EquipmentSlotInfo slotInfo in equipment)
+        {
+            if (slotInfo.slot == slot)
+            {
+                if (slotInfo.equippedItem != null)
+                {
+                    inventory.AddEquipment(slotInfo.equippedItem);
+                    slotInfo.equippedItem = null;
+                    equipmentUIManager.UpdateEquipmentUISlot(null, true);
+                    player.RecalculateAllValues();
+                }
                 break;
             }
         }
@@ -131,6 +159,9 @@ public class EquipmentManager : MonoBehaviour
             {
                 Equipment removed = equipment[i].equippedItem;
                 equipment[i].equippedItem = null;
+                inventory.AddEquipment(removed);
+                equipmentUIManager.UpdateEquipmentUISlot(null, true);
+                player.RecalculateAllValues();
                 return removed;
             }
 
@@ -141,7 +172,7 @@ public class EquipmentManager : MonoBehaviour
     public bool UnequipAccessory(Equipment accessory)
     {
         if (accessory == null) return false;
-
+        inventory.AddEquipment(accessory);
         for (int i = 0; i < equipment.Count; i++)
         {
             if (equipment[i].slot != EquipmentSlot.Accessory) continue;
@@ -149,6 +180,8 @@ public class EquipmentManager : MonoBehaviour
             if (equipment[i].equippedItem == accessory)
             {
                 equipment[i].equippedItem = null;
+                equipmentUIManager.UpdateEquipmentUISlot(null, true);
+                player.RecalculateAllValues();
                 return true;
             }
         }
@@ -183,7 +216,8 @@ public class EquipmentManager : MonoBehaviour
     }
     void Start()
     {
-        
+        inventory = GetComponent<Inventory>();
+        player = FindAnyObjectByType<Player>();
     }
 
     // Update is called once per frame

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TestEquipment
   m_EditorClassIdentifier: 
   equipmentName: test
-  equipmentIcon: {fileID: 0}
+  equipmentIcon: {fileID: 5219218301574765190, guid: dec9a4b9a0d1a03479348320af2eee2b, type: 3}
   equipmentSlot: 0
   stats:
     stats:
@@ -27,4 +27,4 @@ MonoBehaviour:
   debuffResistances: []
   id: 
   persistent: 0
-  alreadyCounted: 0
+  alreadyCounted: 1
