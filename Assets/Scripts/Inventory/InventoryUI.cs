@@ -9,16 +9,29 @@ public class InventoryUI : MonoBehaviour
     public GameObject itemSlotPrefab;
     public GameObject equipmentSlotPrefab;
 
-    public void PopulateItemInventory()
+    public void PopulateItemInventory() // crafting potions
     {
         ClearChildren(inventoryParent);
         foreach (InventoryItemSlot slot in inventory.items)
         {
             GameObject newSlot = Instantiate(itemSlotPrefab, inventoryParent);
             InventoryItemSlotUI slotUI = newSlot.GetComponent<InventoryItemSlotUI>();
-            slotUI.SetItemIcon(slot.item.itemIcon);
+            slotUI.SetItemIcon(slot.item.GetIcon());
             slotUI.SetQuantityText(slot.quantity);
             slotUI.SetItem(slot.item);
+        }
+    }
+    public void PopulateEquipmentCraftingItemInventory() // augmenting equipment
+    {
+        ClearChildren(inventoryParent);
+        foreach (InventoryItemSlot slot in inventory.items)
+        {
+            GameObject newSlot = Instantiate(itemSlotPrefab, inventoryParent);
+            InventoryItemSlotUI slotUI = newSlot.GetComponent<InventoryItemSlotUI>();
+            slotUI.SetItemIcon(slot.item.GetIcon());
+            slotUI.SetQuantityText(slot.quantity);
+            slotUI.SetItem(slot.item);
+            slotUI.SetEquipmentCraftingMode(true);
         }
     }
 
@@ -32,8 +45,23 @@ public class InventoryUI : MonoBehaviour
             slotUI.Initialize(this);
             slotUI.icon.sprite = equipment.equipmentIcon;
             slotUI.SetEquipment(equipment);
+            slotUI.SetCraftingMode(false);
         }
     }
+    public void PopulateCraftingEquipmentInventory()
+    {
+        ClearChildren(inventoryParent);
+        foreach (Equipment equipment in inventory.storedEquipment)
+        {
+            GameObject newSlot = Instantiate(equipmentSlotPrefab, inventoryParent);
+            InventoryEquipmentSlotUI slotUI = newSlot.GetComponent<InventoryEquipmentSlotUI>();
+            slotUI.Initialize(this);
+            slotUI.icon.sprite = equipment.equipmentIcon;
+            slotUI.SetEquipment(equipment);
+            slotUI.SetCraftingMode(true);
+        }
+    }
+
     private void ClearChildren(Transform parent)
     {
         foreach (Transform child in parent)

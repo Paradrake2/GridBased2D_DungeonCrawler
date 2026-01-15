@@ -11,20 +11,33 @@ public class MaterialStats
 }
 
 
-[CreateAssetMenu(fileName = "Item", menuName = "Scriptable Objects/Item")]
+[CreateAssetMenu(fileName = "Item", menuName = "Item/Item")]
 public class Item : ScriptableObject
 {
     public string itemName;
-    public Sprite itemIcon;
+    [SerializeField] private Sprite itemIcon;
     public GameObject itemPrefab;
-    public MaterialStats stats;
+    [SerializeField] private MaterialStats stats;
     public List<PlayerDebuffInflictorHolder> debuffInflictors = new List<PlayerDebuffInflictorHolder>();
     public List<PlayerDebuffResistanceHolder> debuffResistances = new List<PlayerDebuffResistanceHolder>();
-    public string id;
-    public bool persistent = false; // does this item disappear after run is over
-    public void UpdatePersistance(bool value)
+    [SerializeField] private Color color = Color.white;
+    [SerializeField] private string id;
+    [SerializeField] private bool persistent = false; // does this item disappear after run is over
+    public void UpdatePersistence(bool value)
     {
         persistent = value;
+    }
+    public bool IsPersistent()
+    {
+        return persistent;
+    }
+    public string GetID()
+    {
+        return id;
+    }
+    public void SetID(string newID)
+    {
+        id = newID;
     }
     public float GetGoldValue()
     {
@@ -37,5 +50,21 @@ public class Item : ScriptableObject
     public Sprite GetIcon()
     {
         return itemIcon;
+    }
+    public Color GetColor()
+    {
+        return color;
+    }
+    public void SetName(string newName)
+    {
+        itemName = newName;
+    }
+    public string GetName()
+    {
+        return itemName;
+    }
+    public StatCollection GetStats()
+    {
+        return stats.stats;
     }
 }

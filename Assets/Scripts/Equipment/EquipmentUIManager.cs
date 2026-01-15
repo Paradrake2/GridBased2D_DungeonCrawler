@@ -21,10 +21,7 @@ public class EquipmentUIManager : MonoBehaviour
     [SerializeField] private GameObject accessorySlot3;
     [SerializeField] private GameObject buttonUnequipMode;
     public Transform statsParent;
-    [Header("Skill Tree")]
-    public Transform skillTreeParent;
-    [Header("Crafting")]
-    public Transform craftingParent;
+
     [SerializeField] private bool isUnequipping = false;
     private GameObject GetCorrectSlot(EquipmentSlot slot)
     {
@@ -109,16 +106,6 @@ public class EquipmentUIManager : MonoBehaviour
         return isUnequipping;
     }
     public void PopulateEquipmentUI()
-    {
-        
-    }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
     {
         
     }

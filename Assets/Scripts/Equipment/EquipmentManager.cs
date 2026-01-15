@@ -78,6 +78,17 @@ public class EquipmentManager : MonoBehaviour
             }
         }
     }
+    public bool IsSlotEquipped(EquipmentSlot slot)
+    {
+        foreach (EquipmentSlotInfo slotInfo in equipment)
+        {
+            if (slotInfo.slot == slot)
+            {
+                return slotInfo.equippedItem != null;
+            }
+        }
+        return false; // default to false if slot not found
+    }
     public void EquipItem(Equipment newEquipment)
     {
         if (newEquipment == null) return;
@@ -88,7 +99,7 @@ public class EquipmentManager : MonoBehaviour
             for (int i = 0; i < equipment.Count; i++)
             {
                 if (equipment[i].slot != EquipmentSlot.Accessory) continue;
-
+                Debug.Log("1");
                 if (equipment[i].equippedItem == null)
                 {
                     equipment[i].equippedItem = newEquipment;
@@ -103,7 +114,7 @@ public class EquipmentManager : MonoBehaviour
             for (int i = 0; i < equipment.Count; i++)
             {
                 if (equipment[i].slot != EquipmentSlot.Accessory) continue;
-
+                Debug.Log("2");
                 equipment[i].equippedItem = newEquipment;
                 equipmentUIManager.UpdateEquipmentUISlot(newEquipment, false);
                 player.RecalculateAllValues();
@@ -115,8 +126,9 @@ public class EquipmentManager : MonoBehaviour
         }
         foreach (EquipmentSlotInfo slotInfo in equipment)
         {
-            if (slotInfo.slot == newEquipment.equipmentSlot)
+            if (slotInfo.slot == newEquipment.equipmentSlot && slotInfo.equippedItem == null)
             {
+                Debug.Log("3");
                 slotInfo.equippedItem = newEquipment;
                 equipmentUIManager.UpdateEquipmentUISlot(newEquipment, false);
                 player.RecalculateAllValues();

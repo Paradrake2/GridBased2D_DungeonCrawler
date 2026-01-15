@@ -26,6 +26,21 @@ public class Equipment : ScriptableObject
     public string id;
     public bool persistent = false;
     public bool alreadyCounted = false; // prevent equipment from being counted multiple times in stats calculations
+    [SerializeField] private int ingredientCapacity = 2; // number of ingredients that can be added to this equipment
+    [SerializeField] private int remainingIngredientSlots = 2; // number of ingredient slots left
+    [SerializeField] private List<Item> ingredients = new List<Item>();
+    public List<Item> GetIngredients()
+    {
+        return ingredients;
+    }
+    public void AddIngredient(Item newIngredient)
+    {
+        ingredients.Add(newIngredient);
+    }
+    public void RemoveIngredient(Item ingredientToRemove) // this is only for debug purposes, in game once an ingredient is added it cannot be removed
+    {
+        ingredients.Remove(ingredientToRemove);
+    }
     public void UpdatePersistance(bool value)
     {
         persistent = value;
@@ -50,4 +65,21 @@ public class Equipment : ScriptableObject
     {
         debuffResistances.Add(resistance);
     }
+    public int GetIngredientCapacity()
+    {
+        return ingredientCapacity;
+    }
+    public void SetIngredientCapacity(int newCapacity)
+    {
+        ingredientCapacity = newCapacity;
+    }
+    public int GetRemainingIngredientSlots()
+    {
+        return remainingIngredientSlots;
+    }
+    public void SetRemainingIngredientSlots(int newRemainingSlots)
+    {
+        remainingIngredientSlots = newRemainingSlots;
+    }
+
 }
