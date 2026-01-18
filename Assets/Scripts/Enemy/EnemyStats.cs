@@ -13,17 +13,13 @@ public class EnemyAttributes
 
 public class EnemyStats : MonoBehaviour
 {
-    public StatCollection stats = new StatCollection();
-    public List<EnemyAttributes> enemyAttributesList = new List<EnemyAttributes>();
-    public float maxHealth;
+    
+    public EnemyStatsHolder esh;
     public float currentHealth;
-    public float defense;
-    public float damage;
-    public float goldDropped;
-    public float experienceDropped;
+
     public float GetAttributeValue(StatType attribute)
     {
-        foreach (var attr in enemyAttributesList)
+        foreach (var attr in esh.enemyAttributesList)
         {
             if (attr.attackAttribute == attribute)
             {
@@ -38,35 +34,30 @@ public class EnemyStats : MonoBehaviour
     }
     public void ModifyDefenseMultiplier(float multiplier)
     {
-        defense *= multiplier;
+        esh.defense *= multiplier;
     }
-    public void ModifiyDefenseValue(float value)
+    public void ModifyDefenseValue(float value)
     {
-        defense += value;
+        esh.defense += value;
     }
     public void ModifyDamageMultiplier(float multiplier)
     {
-        damage *= multiplier;
+        esh.damage *= multiplier;
     }
-    public void ModifiyDamageValue(float value)
+    public void ModifyDamageValue(float value)
     {
-        damage += value;
+        esh.damage += value;
     }
     public void Initialize()
     {
-        maxHealth = stats.GetStat(StatDatabase.Instance.GetStat("Health"));
-        currentHealth = maxHealth;
-        defense = stats.GetStat(StatDatabase.Instance.GetStat("Defense"));
-        damage = stats.GetStat(StatDatabase.Instance.GetStat("Damage"));
+        esh = Instantiate(esh);
+        esh.maxHealth = esh.stats.GetStat(StatDatabase.Instance.GetStat("Health"));
+        currentHealth = esh.maxHealth;
+        esh.defense = esh.stats.GetStat(StatDatabase.Instance.GetStat("Defense"));
+        esh.damage = esh.stats.GetStat(StatDatabase.Instance.GetStat("Damage"));
     }
     void Start()
     {
         Initialize();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

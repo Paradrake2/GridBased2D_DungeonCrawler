@@ -1,0 +1,717 @@
+fileFormatVersion: 2
+guid: 21f108194e1e0664296a8349087e984e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2159428250638772142
+    second: Spider_Water_Attack_0
+  - first:
+      213: -7172808794237956725
+    second: Spider_Water_Attack_1
+  - first:
+      213: -8476288215185617767
+    second: Spider_Water_Attack_2
+  - first:
+      213: 7591934907817744781
+    second: Spider_Water_Attack_3
+  - first:
+      213: -6859648906706326908
+    second: Spider_Water_Attack_4
+  - first:
+      213: 291117609733722031
+    second: Spider_Water_Attack_5
+  - first:
+      213: -8321540062728081130
+    second: Spider_Water_Attack_6
+  - first:
+      213: -2074012108173508207
+    second: Spider_Water_Attack_7
+  - first:
+      213: 4697542410457078615
+    second: Spider_Water_Attack_8
+  - first:
+      213: -2896941857857539619
+    second: Spider_Water_Attack_9
+  - first:
+      213: 7870358661885753473
+    second: Spider_Water_Attack_10
+  - first:
+      213: -5854827811314032369
+    second: Spider_Water_Attack_11
+  - first:
+      213: -2763239940246583270
+    second: Spider_Water_Attack_12
+  - first:
+      213: -9025272041323582775
+    second: Spider_Water_Attack_13
+  - first:
+      213: -5276047301456185337
+    second: Spider_Water_Attack_14
+  - first:
+      213: -2138836527175053032
+    second: Spider_Water_Attack_15
+  - first:
+      213: -3256977899548305807
+    second: Spider_Water_Attack_16
+  - first:
+      213: 8343672041097568656
+    second: Spider_Water_Attack_17
+  - first:
+      213: 8379312649388932553
+    second: Spider_Water_Attack_18
+  - first:
+      213: -6502144159320923259
+    second: Spider_Water_Attack_19
+  - first:
+      213: -4458188400060809880
+    second: Spider_Water_Attack_20
+  - first:
+      213: 481920946984590119
+    second: Spider_Water_Attack_21
+  - first:
+      213: 3837832570936277937
+    second: Spider_Water_Attack_22
+  - first:
+      213: -7837346214250216504
+    second: Spider_Water_Attack_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Spider_Water_Attack_0
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1729
+        width: 114
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea764458d84d7fd10800000000000000
+      internalID: 2159428250638772142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_Water_Attack_1
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 1729
+        width: 115
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8d06a1a760157c90800000000000000
+      internalID: -7172808794237956725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_Water_Attack_2
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 1729
+        width: 114
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99c080017cc2e5a80800000000000000
+      internalID: -8476288215185617767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_Water_Attack_3
+      rect:
+        serializedVersion: 2
+        x: 1741
+        y: 1721
+        width: 114
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d895d5a2398fb5960800000000000000
+      internalID: 7591934907817744781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_Water_Attack_4
+      rect:
+        serializedVersion: 2
+        x: 2254
+        y: 1725
+        width: 115
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48a6fdfc9a1adc0a0800000000000000
+      internalID: -6859648906706326908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_Water_Attack_5
+      rect:
+        serializedVersion: 2
+        x: 2768
+        y: 1729
+        width: 114
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faf0a047ce14a0400800000000000000
+      internalID: 291117609733722031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_Water_Attack_6
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 1219
+        width: 126
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61139e00763f38c80800000000000000
+      internalID: -8321540062728081130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_Water_Attack_7
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 1219
+        width: 127
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1918578e9f0a733e0800000000000000
+      internalID: -2074012108173508207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_Water_Attack_8
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 1219
+        width: 118
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75b50a40fe5013140800000000000000
+      internalID: 4697542410457078615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_Water_Attack_9
+      rect:
+        serializedVersion: 2
+        x: 1717
+        y: 1219
+        width: 146
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd1f07b9abefbc7d0800000000000000
+      internalID: -2896941857857539619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_Water_Attack_10
+      rect:
+        serializedVersion: 2
+        x: 2238
+        y: 1219
+        width: 139
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1887e980181293d60800000000000000
+      internalID: 7870358661885753473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_Water_Attack_11
+      rect:
+        serializedVersion: 2
+        x: 2756
+        y: 1219
+        width: 134
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f01ac8530297fbea0800000000000000
+      internalID: -5854827811314032369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_Water_Attack_12
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 705
+        width: 126
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a184e642aeff6a9d0800000000000000
+      internalID: -2763239940246583270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_Water_Attack_13
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 705
+        width: 127
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9caa4a775eacfb280800000000000000
+      internalID: -9025272041323582775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_Water_Attack_14
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 705
+        width: 118
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 708bb8adee6b7c6b0800000000000000
+      internalID: -5276047301456185337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_Water_Attack_15
+      rect:
+        serializedVersion: 2
+        x: 1733
+        y: 705
+        width: 146
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 811d915b2835152e0800000000000000
+      internalID: -2138836527175053032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_Water_Attack_16
+      rect:
+        serializedVersion: 2
+        x: 2246
+        y: 705
+        width: 139
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17610284bd3ecc2d0800000000000000
+      internalID: -3256977899548305807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_Water_Attack_17
+      rect:
+        serializedVersion: 2
+        x: 2760
+        y: 705
+        width: 134
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 091aaf3c38daac370800000000000000
+      internalID: 8343672041097568656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_Water_Attack_18
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 188
+        width: 114
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cdb3c8857c494470800000000000000
+      internalID: 8379312649388932553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_Water_Attack_19
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 188
+        width: 115
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 583ab41465eb3c5a0800000000000000
+      internalID: -6502144159320923259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_Water_Attack_20
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 188
+        width: 114
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86dbb9845455122c0800000000000000
+      internalID: -4458188400060809880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_Water_Attack_21
+      rect:
+        serializedVersion: 2
+        x: 1741
+        y: 188
+        width: 114
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72b16d64c8020b600800000000000000
+      internalID: 481920946984590119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_Water_Attack_22
+      rect:
+        serializedVersion: 2
+        x: 2254
+        y: 188
+        width: 115
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bbb41ab368b24530800000000000000
+      internalID: 3837832570936277937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_Water_Attack_23
+      rect:
+        serializedVersion: 2
+        x: 2768
+        y: 188
+        width: 114
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c30dd564272c3390800000000000000
+      internalID: -7837346214250216504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

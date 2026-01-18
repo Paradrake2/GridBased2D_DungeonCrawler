@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
     }
     float CalculateDamageTaken(float damage, List<PlayerAttackAttributes> attackAttributes)
     {
-        float totalDamage = Mathf.Max(1, damage - stats.defense);
+        float totalDamage = Mathf.Max(1, damage - stats.esh.defense);
         Debug.Log("Base Damage: " + totalDamage);
         if (attackAttributes == null) return totalDamage;
         foreach (var attr in attackAttributes)

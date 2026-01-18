@@ -28,3 +28,6 @@ MonoBehaviour:
   id: 
   persistent: 0
   alreadyCounted: 1
+  ingredientCapacity: 4
+  remainingIngredientSlots: 2
+  ingredients: []
