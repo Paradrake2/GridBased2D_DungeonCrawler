@@ -23,8 +23,15 @@ MonoBehaviour:
       value: 10
     - statType: {fileID: 11400000, guid: 02c2940f5ee912044af76cfc517ef418, type: 2}
       value: 10
-  debuffInflictors: []
+    - statType: {fileID: 11400000, guid: ca8f03f191c077a4d8502b6086cee81b, type: 2}
+      value: 10
+  debuffInflictors:
+  - debuff: {fileID: 11400000, guid: 323e9bd2e563a104da3872ebd52c0bd0, type: 2}
+    value: 10
   debuffResistances: []
   id: 
   persistent: 0
   alreadyCounted: 0
+  ingredientCapacity: 2
+  remainingIngredientSlots: 2
+  ingredients: []

@@ -8,7 +8,8 @@ public class PoisonPlayer : Debuff
     public override void ApplyDebuff(GameObject target, GameObject inflictor, float value = 0)
     {
         Debug.Log(target.name + " is being poisoned.");
-        poisonDamage = Mathf.Max(1, inflictor.GetComponent<Player>().stats.GetStatValue("Poison")); // minimum of 1 damage
+        poisonDamage = Mathf.Max(1, inflictor.GetComponent<Player>().statCol.GetStat("Poison")); // minimum of 1 damage
+        Debug.Log(inflictor.GetComponent<Player>().statCol.GetStat("Poison"));
         this.target = target.gameObject;
         timeSinceLastTick = 0f;
         Enemy enemyComponent = target.GetComponent<Enemy>();

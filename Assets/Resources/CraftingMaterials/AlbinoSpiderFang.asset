@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd005c64b912d3545a9bd24032fbb12c, type: 3}
+  m_Name: AlbinoSpiderFang
+  m_EditorClassIdentifier: 
+  itemName: Albino Spider Fang
+  itemIcon: {fileID: 0}
+  itemPrefab: {fileID: 0}
+  stats:
+    stats:
+      stats:
+      - statType: {fileID: 11400000, guid: 3deb6a3649d4b5d4e95c23ecadd98cd7, type: 2}
+        value: 2
+      - statType: {fileID: 11400000, guid: ca8f03f191c077a4d8502b6086cee81b, type: 2}
+        value: 1
+    debuffCollection:
+      debuffs:
+      - {fileID: 11400000, guid: 323e9bd2e563a104da3872ebd52c0bd0, type: 2}
+    goldValue: 3
+  debuffInflictors:
+  - debuff: {fileID: 11400000, guid: 323e9bd2e563a104da3872ebd52c0bd0, type: 2}
+    value: 1
+  debuffResistances: []
+  color: {r: 1, g: 1, b: 1, a: 1}
+  id: 
+  persistent: 0

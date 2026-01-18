@@ -33,6 +33,20 @@ public class EquipmentManager : MonoBehaviour
         }
         return totalStats;
     }
+    public List<PlayerDebuffInflictorHolder> GetEquipmentDebuffInflictors()
+    {
+        List<PlayerDebuffInflictorHolder> totalInflictors = new List<PlayerDebuffInflictorHolder>();
+        foreach (EquipmentSlotInfo slotInfo in equipment)
+        {
+            Equipment eq = slotInfo.equippedItem;
+            {
+                if (eq == null) continue;
+                List<PlayerDebuffInflictorHolder> eqInflictors = eq.GetDebuffInflictors();
+                totalInflictors.AddRange(eqInflictors);
+            }
+        }
+        return totalInflictors;
+    }
     public StatCollection GetSpecificEquipmentStats(EquipmentSlotInfo slot)
     {
         StatCollection totalStats = new StatCollection();

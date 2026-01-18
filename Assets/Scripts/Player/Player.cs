@@ -108,6 +108,21 @@ public class Player : MonoBehaviour
         }
         UpdateBasicStatValues();
     }
+    public void UpdateDebuffInflictors()
+    {
+        debuffInflictors.Clear();
+        debuffInflictors = equipmentManager.GetEquipmentDebuffInflictors();
+        // get potion debuff inflictors
+        foreach (var slotInfo in equipmentManager.equipment)
+        {
+            Equipment eq = slotInfo.equippedItem;
+            {
+                if (eq == null) continue;
+                List<PlayerDebuffResistanceHolder> eqResistances = eq.GetDebuffResistances();
+                debuffResistances.AddRange(eqResistances);
+            }
+        }
+    }
     void SetUpAttributeValues() // Sets up the players attribute values from PlayerStats
     {
         attributeSet = stats.GetPlayerAttributeSet();
@@ -153,6 +168,7 @@ public class Player : MonoBehaviour
         SetUpAttributeValues();
         equipmentManager.SetAllEquipmentCountedFalse();
         UpdateFromEquipment();
+        UpdateDebuffInflictors();
     }
     public float GetAttributeValue(StatType attribute)
     {
