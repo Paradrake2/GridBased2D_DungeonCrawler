@@ -21,7 +21,7 @@ MonoBehaviour:
     - statType: {fileID: 11400000, guid: 690c87441abb0704e948241ef5a367bf, type: 2}
       value: 0
     - statType: {fileID: 11400000, guid: 6df30064bf8c29047b90fb2339a0689e, type: 2}
-      value: 12
+      value: 100000
   enemyAttributesList: []
   dropTable: {fileID: 0}
   maxHealth: 0

@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     public EquipmentManager equipmentManager;
     public PlayerMovement playerMovement;
     public PlayerDebuffManager debuffManager;
+    public Inventory inventory;
     public int level = 1;
     public float health;
     public float damage;
@@ -56,7 +57,7 @@ public class Player : MonoBehaviour
         equipmentManager = FindAnyObjectByType<EquipmentManager>();
         playerMovement = GetComponent<PlayerMovement>();
         debuffManager = GetComponent<PlayerDebuffManager>();
-
+        inventory = FindAnyObjectByType<Inventory>();
         health = stats.baseHealth;
         damage = stats.baseDamage;
         defense = stats.baseDefense;
@@ -83,6 +84,10 @@ public class Player : MonoBehaviour
         float previousValue = statCol.GetStat(statType);
         statCol.SetStat(statType, previousValue + value);
         UpdateBasicStatValues();
+    }
+    public void AddItemToInventory(Item item)
+    {
+        inventory.AddItem(item, 1);
     }
     void UpdateBasicStatValues()
     {
@@ -200,7 +205,10 @@ public class Player : MonoBehaviour
     {
         // Handle player death (e.g., respawn, game over)
     }
-
+    public float GetDropChance()
+    {
+        return statCol.GetStat("DropChance");
+    }
 
     void Awake()
     {

@@ -78,8 +78,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1781594889
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -4778439682298741377, guid: 8032c5df3f8ad61449988f4172880223, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -123,21 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa7faaa768b1d3428fbbdb6571e5460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats:
-    stats:
-    - statType: {fileID: 11400000, guid: 6df30064bf8c29047b90fb2339a0689e, type: 2}
-      value: 20
-    - statType: {fileID: 11400000, guid: 690c87441abb0704e948241ef5a367bf, type: 2}
-      value: 1
-    - statType: {fileID: 11400000, guid: 3deb6a3649d4b5d4e95c23ecadd98cd7, type: 2}
-      value: 5
-  enemyAttributesList: []
-  maxHealth: 0
+  esh: {fileID: 11400000, guid: a33ac2add33502541acaf46dfc25ee9f, type: 2}
   currentHealth: 0
-  defense: 0
-  damage: 0
-  goldDropped: 0
-  experienceDropped: 0
 --- !u!61 &3882853287106935863
 BoxCollider2D:
   m_ObjectHideFlags: 0

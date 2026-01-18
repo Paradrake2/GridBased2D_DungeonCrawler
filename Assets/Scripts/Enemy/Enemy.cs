@@ -39,12 +39,18 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log(gameObject.name + " has died.");
         EnemyManager.instance.RemoveEnemy(this);
-        for (int i = 0; i < dropItemNum; i++)
+        float dropChance = player.GetDropChance();
+        if (Random.value*100 < dropChance)
         {
-            Item dropItem = dropTable.GetDroppedItem();
-            if (dropItem != null)
+            for (int i = 0; i < dropItemNum; i++)
             {
-                Instantiate(dropItem.itemPrefab, transform.position, Quaternion.identity); // might be replaced with just directly adding to player inventory later
+                Item dropItem = dropTable.GetDroppedItem();
+                if (dropItem != null)
+                {
+                    player.AddItemToInventory(dropItem);
+                    // UI notification can be added here
+                    //Instantiate(dropItem.itemPrefab, transform.position, Quaternion.identity); // might be replaced with just directly adding to player inventory later
+                }
             }
         }
         Destroy(gameObject);

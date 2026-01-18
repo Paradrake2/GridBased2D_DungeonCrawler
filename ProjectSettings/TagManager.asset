@@ -48,6 +48,9 @@ TagManager:
   - name: EnvironmentalResource
     uniqueID: 2822073185
     locked: 0
+  - name: Enemy
+    uniqueID: 2513372407
+    locked: 0
   - name: Player
     uniqueID: 3153231239
     locked: 0
