@@ -1,0 +1,1391 @@
+fileFormatVersion: 2
+guid: ec13d592be721844594561ede03ea7f8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4374296951111212495
+    second: Craft_materials1_0
+  - first:
+      213: 8490690676393229183
+    second: Craft_materials1_1
+  - first:
+      213: -1491685455077943687
+    second: Craft_materials1_2
+  - first:
+      213: 8061372331727162895
+    second: Craft_materials1_3
+  - first:
+      213: 7376270710396143962
+    second: Craft_materials1_4
+  - first:
+      213: 2987193920867828018
+    second: Craft_materials1_5
+  - first:
+      213: 2024225599027838941
+    second: Craft_materials1_6
+  - first:
+      213: -6886664212512638291
+    second: Craft_materials1_7
+  - first:
+      213: 810437570781046203
+    second: Craft_materials1_8
+  - first:
+      213: 767305818359978325
+    second: Craft_materials1_9
+  - first:
+      213: 6275926053598336967
+    second: Craft_materials1_10
+  - first:
+      213: -6229375044980234957
+    second: Craft_materials1_11
+  - first:
+      213: 1822725726193871714
+    second: Craft_materials1_12
+  - first:
+      213: 7787603245534051969
+    second: Craft_materials1_13
+  - first:
+      213: 3246878476241054893
+    second: Craft_materials1_14
+  - first:
+      213: -2895524844921437966
+    second: Craft_materials1_15
+  - first:
+      213: 4622204737786125197
+    second: Craft_materials1_16
+  - first:
+      213: -5993108530458652013
+    second: Craft_materials1_17
+  - first:
+      213: -4424384773810635838
+    second: Craft_materials1_18
+  - first:
+      213: -3694608012912641602
+    second: Craft_materials1_19
+  - first:
+      213: 7450606913667672164
+    second: Craft_materials1_20
+  - first:
+      213: 573460811597905585
+    second: Craft_materials1_21
+  - first:
+      213: 6647267169173558979
+    second: Craft_materials1_22
+  - first:
+      213: 3615701212605189147
+    second: Craft_materials1_23
+  - first:
+      213: -6525736439192168946
+    second: Craft_materials1_24
+  - first:
+      213: -646778087155569694
+    second: Craft_materials1_25
+  - first:
+      213: 5105850110167878178
+    second: Craft_materials1_26
+  - first:
+      213: -1997379986382142691
+    second: Craft_materials1_27
+  - first:
+      213: 6066323248140943089
+    second: Craft_materials1_28
+  - first:
+      213: -2848128551569383106
+    second: Craft_materials1_29
+  - first:
+      213: 7935981345888674734
+    second: Craft_materials1_30
+  - first:
+      213: -1564463336497279040
+    second: Craft_materials1_31
+  - first:
+      213: 8661125004482867798
+    second: Craft_materials1_32
+  - first:
+      213: -5518380216082258539
+    second: Craft_materials1_33
+  - first:
+      213: 8607439138396065903
+    second: Craft_materials1_34
+  - first:
+      213: -4086247906224247799
+    second: Craft_materials1_35
+  - first:
+      213: 6544858090912665728
+    second: Craft_materials1_36
+  - first:
+      213: -2622825749715523100
+    second: Craft_materials1_37
+  - first:
+      213: -7369798435716582694
+    second: Craft_materials1_38
+  - first:
+      213: -604666500735879783
+    second: Craft_materials1_39
+  - first:
+      213: 5022510309265754445
+    second: Craft_materials1_40
+  - first:
+      213: -1032207997592281163
+    second: Craft_materials1_41
+  - first:
+      213: 2534568593716002943
+    second: Craft_materials1_42
+  - first:
+      213: -3513605749203735349
+    second: Craft_materials1_43
+  - first:
+      213: -8167587595010250696
+    second: Craft_materials1_44
+  - first:
+      213: -5284093071973439251
+    second: Craft_materials1_45
+  - first:
+      213: -1084007991094044510
+    second: Craft_materials1_46
+  - first:
+      213: 936206588384894660
+    second: Craft_materials1_47
+  - first:
+      213: -3519262199935372672
+    second: Craft_materials1_48
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Craft_materials1_0
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 581
+        width: 86
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13221f659106b43c0800000000000000
+      internalID: -4374296951111212495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_1
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 572
+        width: 71
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7bb3204f2ef4d570800000000000000
+      internalID: 8490690676393229183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_2
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 590
+        width: 86
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 976567d5bf77c4be0800000000000000
+      internalID: -1491685455077943687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_3
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 587
+        width: 83
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0e82cabc6fbfdf60800000000000000
+      internalID: 8061372331727162895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_4
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 569
+        width: 65
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a59c7444127cd5660800000000000000
+      internalID: 7376270710396143962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_5
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 572
+        width: 53
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23188805b05a47920800000000000000
+      internalID: 2987193920867828018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_6
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 578
+        width: 86
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddf7e4f157e771c10800000000000000
+      internalID: 2024225599027838941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_7
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 584
+        width: 86
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daaf9c5c267ad60a0800000000000000
+      internalID: -6886664212512638291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_8
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 476
+        width: 83
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb5e80f3da04f3b00800000000000000
+      internalID: 810437570781046203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_9
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 464
+        width: 59
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 559df61939406aa00800000000000000
+      internalID: 767305818359978325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_10
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 473
+        width: 80
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c719559e71981750800000000000000
+      internalID: 6275926053598336967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_11
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 464
+        width: 80
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3352547b660dc89a0800000000000000
+      internalID: -6229375044980234957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_12
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 467
+        width: 83
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26b60c8046f9b4910800000000000000
+      internalID: 1822725726193871714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_13
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 467
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18e7cbd24ef131c60800000000000000
+      internalID: 7787603245534051969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_14
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 467
+        width: 74
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daca53d75ca3f0d20800000000000000
+      internalID: 3246878476241054893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_15
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 467
+        width: 74
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f0c324ae7701d7d0800000000000000
+      internalID: -2895524844921437966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_16
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 359
+        width: 56
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8b9ed238be552040800000000000000
+      internalID: 4622204737786125197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_17
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 359
+        width: 35
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39216ad5b8334dca0800000000000000
+      internalID: -5993108530458652013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_18
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 368
+        width: 83
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cbbe575d7d6992c0800000000000000
+      internalID: -4424384773810635838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_19
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 371
+        width: 89
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb9b70e469d1abcc0800000000000000
+      internalID: -3694608012912641602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_20
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 374
+        width: 83
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4682b32538fd56760800000000000000
+      internalID: 7450606913667672164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_21
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 368
+        width: 83
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1be76efd19755f700800000000000000
+      internalID: 573460811597905585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_22
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 362
+        width: 80
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c6d4b98546df3c50800000000000000
+      internalID: 6647267169173558979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_23
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 368
+        width: 77
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1c0847981d8d2230800000000000000
+      internalID: 3615701212605189147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_24
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 356
+        width: 41
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e06d02c884def65a0800000000000000
+      internalID: -6525736439192168946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_25
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 254
+        width: 80
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ebe59aa1ce2607f0800000000000000
+      internalID: -646778087155569694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_26
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 266
+        width: 83
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22a02fc8f9f9bd640800000000000000
+      internalID: 5105850110167878178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_27
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 248
+        width: 74
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d13c7362c71e744e0800000000000000
+      internalID: -1997379986382142691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_28
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 251
+        width: 80
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fe722a7ad8ef2450800000000000000
+      internalID: 6066323248140943089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_29
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 251
+        width: 74
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e312f012c2a6978d0800000000000000
+      internalID: -2848128551569383106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_30
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 254
+        width: 74
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea322d9ccf4422e60800000000000000
+      internalID: 7935981345888674734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_31
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 257
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cf05f362e8e94ae0800000000000000
+      internalID: -1564463336497279040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_32
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 260
+        width: 83
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 652747f8d4f723870800000000000000
+      internalID: 8661125004482867798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_33
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 161
+        width: 83
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 595afdc5e66ca63b0800000000000000
+      internalID: -5518380216082258539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_34
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 155
+        width: 89
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6054edca44c37770800000000000000
+      internalID: 8607439138396065903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_35
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 140
+        width: 71
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90ce15ddd2bba47c0800000000000000
+      internalID: -4086247906224247799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_36
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 140
+        width: 80
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 080d03ee1c104da50800000000000000
+      internalID: 6544858090912665728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_37
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 143
+        width: 80
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e9657080e9d99bd0800000000000000
+      internalID: -2622825749715523100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_38
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 140
+        width: 77
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad232ec9e5739b990800000000000000
+      internalID: -7369798435716582694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_39
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 143
+        width: 80
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9953f00750bcb97f0800000000000000
+      internalID: -604666500735879783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_40
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 158
+        width: 80
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d49c580148a83b540800000000000000
+      internalID: 5022510309265754445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_41
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 35
+        width: 77
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bfd1398b4cdca1f0800000000000000
+      internalID: -1032207997592281163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_42
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 35
+        width: 74
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f70cd4f05b89c2320800000000000000
+      internalID: 2534568593716002943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_43
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 35
+        width: 80
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcce0fddf2a2d3fc0800000000000000
+      internalID: -3513605749203735349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_44
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 32
+        width: 83
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 838e6872b56e6ae80800000000000000
+      internalID: -8167587595010250696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_45
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 35
+        width: 68
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de8abece8512ba6b0800000000000000
+      internalID: -5284093071973439251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_46
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 44
+        width: 86
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a89725b974d4f0f0800000000000000
+      internalID: -1084007991094044510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_47
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 44
+        width: 83
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cedf019ee21efc00800000000000000
+      internalID: 936206588384894660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_materials1_48
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 35
+        width: 80
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 082746dcca1192fc0800000000000000
+      internalID: -3519262199935372672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Craft_materials1_0: -4374296951111212495
+      Craft_materials1_1: 8490690676393229183
+      Craft_materials1_10: 6275926053598336967
+      Craft_materials1_11: -6229375044980234957
+      Craft_materials1_12: 1822725726193871714
+      Craft_materials1_13: 7787603245534051969
+      Craft_materials1_14: 3246878476241054893
+      Craft_materials1_15: -2895524844921437966
+      Craft_materials1_16: 4622204737786125197
+      Craft_materials1_17: -5993108530458652013
+      Craft_materials1_18: -4424384773810635838
+      Craft_materials1_19: -3694608012912641602
+      Craft_materials1_2: -1491685455077943687
+      Craft_materials1_20: 7450606913667672164
+      Craft_materials1_21: 573460811597905585
+      Craft_materials1_22: 6647267169173558979
+      Craft_materials1_23: 3615701212605189147
+      Craft_materials1_24: -6525736439192168946
+      Craft_materials1_25: -646778087155569694
+      Craft_materials1_26: 5105850110167878178
+      Craft_materials1_27: -1997379986382142691
+      Craft_materials1_28: 6066323248140943089
+      Craft_materials1_29: -2848128551569383106
+      Craft_materials1_3: 8061372331727162895
+      Craft_materials1_30: 7935981345888674734
+      Craft_materials1_31: -1564463336497279040
+      Craft_materials1_32: 8661125004482867798
+      Craft_materials1_33: -5518380216082258539
+      Craft_materials1_34: 8607439138396065903
+      Craft_materials1_35: -4086247906224247799
+      Craft_materials1_36: 6544858090912665728
+      Craft_materials1_37: -2622825749715523100
+      Craft_materials1_38: -7369798435716582694
+      Craft_materials1_39: -604666500735879783
+      Craft_materials1_4: 7376270710396143962
+      Craft_materials1_40: 5022510309265754445
+      Craft_materials1_41: -1032207997592281163
+      Craft_materials1_42: 2534568593716002943
+      Craft_materials1_43: -3513605749203735349
+      Craft_materials1_44: -8167587595010250696
+      Craft_materials1_45: -5284093071973439251
+      Craft_materials1_46: -1084007991094044510
+      Craft_materials1_47: 936206588384894660
+      Craft_materials1_48: -3519262199935372672
+      Craft_materials1_5: 2987193920867828018
+      Craft_materials1_6: 2024225599027838941
+      Craft_materials1_7: -6886664212512638291
+      Craft_materials1_8: 810437570781046203
+      Craft_materials1_9: 767305818359978325
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

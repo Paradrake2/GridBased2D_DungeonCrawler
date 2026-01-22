@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AlbinoSpiderController
+  m_Controller: {fileID: 9100000, guid: c8b59074b21d886448debcd679d1a89d, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 6bc2e580b41f81a49aedddd7ed9a78ca, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 21a49988e732ba14b876df50e609cc2c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 790d65d042deffb43a35469a791754e7, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 71d2199fc90cbd145b107845e24137ff, type: 2}

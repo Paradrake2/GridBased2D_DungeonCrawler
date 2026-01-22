@@ -1,0 +1,2717 @@
+fileFormatVersion: 2
+guid: 8f26a2a86da7f314ea2362090f697445
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 878084383702692161
+    second: Trinkets_0
+  - first:
+      213: 2604252337134538275
+    second: Trinkets_1
+  - first:
+      213: 518667478427786609
+    second: Trinkets_2
+  - first:
+      213: 429495294299263183
+    second: Trinkets_3
+  - first:
+      213: 4713457236529774729
+    second: Trinkets_4
+  - first:
+      213: 5031838575884547295
+    second: Trinkets_5
+  - first:
+      213: -6860786435488275616
+    second: Trinkets_6
+  - first:
+      213: 6876723695859407673
+    second: Trinkets_7
+  - first:
+      213: 8368430383773564675
+    second: Trinkets_8
+  - first:
+      213: -2066891137451389727
+    second: Trinkets_9
+  - first:
+      213: 8098868420279644064
+    second: Trinkets_10
+  - first:
+      213: -5831006229036654364
+    second: Trinkets_11
+  - first:
+      213: 8410852926306098245
+    second: Trinkets_12
+  - first:
+      213: 3023427385440484963
+    second: Trinkets_13
+  - first:
+      213: 5960415138647766849
+    second: Trinkets_14
+  - first:
+      213: -3888259335016932868
+    second: Trinkets_15
+  - first:
+      213: -4073804930366174698
+    second: Trinkets_16
+  - first:
+      213: 6106600725869352768
+    second: Trinkets_17
+  - first:
+      213: -168995274745371095
+    second: Trinkets_18
+  - first:
+      213: -2975126983053694068
+    second: Trinkets_19
+  - first:
+      213: 7210064526982920325
+    second: Trinkets_20
+  - first:
+      213: 4994002003807097251
+    second: Trinkets_21
+  - first:
+      213: -5797490611522625574
+    second: Trinkets_22
+  - first:
+      213: 6397588026057287839
+    second: Trinkets_23
+  - first:
+      213: 2186320202106327660
+    second: Trinkets_24
+  - first:
+      213: 956464533196460015
+    second: Trinkets_25
+  - first:
+      213: -5624181190393862773
+    second: Trinkets_26
+  - first:
+      213: -7690536550420817005
+    second: Trinkets_27
+  - first:
+      213: -6959336275868601941
+    second: Trinkets_28
+  - first:
+      213: 4558165270426890057
+    second: Trinkets_29
+  - first:
+      213: -3477876419534012996
+    second: Trinkets_30
+  - first:
+      213: 3162731315465891746
+    second: Trinkets_31
+  - first:
+      213: -3865493640899272311
+    second: Trinkets_32
+  - first:
+      213: 8559080551047868950
+    second: Trinkets_33
+  - first:
+      213: -8344256913447687929
+    second: Trinkets_34
+  - first:
+      213: 3781275136820139585
+    second: Trinkets_35
+  - first:
+      213: 2478705654898205772
+    second: Trinkets_36
+  - first:
+      213: -4909204807524884853
+    second: Trinkets_37
+  - first:
+      213: 4649550559819496049
+    second: Trinkets_38
+  - first:
+      213: 2829695895926878291
+    second: Trinkets_39
+  - first:
+      213: 7480136057827168532
+    second: Trinkets_40
+  - first:
+      213: -4712689950267478338
+    second: Trinkets_41
+  - first:
+      213: 6686306421101344755
+    second: Trinkets_42
+  - first:
+      213: 4321274697131659237
+    second: Trinkets_43
+  - first:
+      213: 4693229355318657725
+    second: Trinkets_44
+  - first:
+      213: 1166184942745467964
+    second: Trinkets_45
+  - first:
+      213: -6565299170049654224
+    second: Trinkets_46
+  - first:
+      213: -3377914125973041755
+    second: Trinkets_47
+  - first:
+      213: -7984954138122102329
+    second: Trinkets_48
+  - first:
+      213: 6393195101426062256
+    second: Trinkets_49
+  - first:
+      213: -5495506379166089391
+    second: Trinkets_50
+  - first:
+      213: 2907323233944376256
+    second: Trinkets_51
+  - first:
+      213: -21159775817882930
+    second: Trinkets_52
+  - first:
+      213: 4119023090057643043
+    second: Trinkets_53
+  - first:
+      213: -7498876429510118678
+    second: Trinkets_54
+  - first:
+      213: 8604209576825892004
+    second: Trinkets_55
+  - first:
+      213: 6630901963528392140
+    second: Trinkets_56
+  - first:
+      213: 79087358228946296
+    second: Trinkets_57
+  - first:
+      213: -1488253037694789183
+    second: Trinkets_58
+  - first:
+      213: -8305139001201588357
+    second: Trinkets_59
+  - first:
+      213: 1742529169824516896
+    second: Trinkets_60
+  - first:
+      213: -6611026436631726069
+    second: Trinkets_61
+  - first:
+      213: -7702946325953283716
+    second: Trinkets_62
+  - first:
+      213: 2197281469782570966
+    second: Trinkets_63
+  - first:
+      213: 102567237605958489
+    second: Trinkets_64
+  - first:
+      213: -6269672491815497612
+    second: Trinkets_65
+  - first:
+      213: 7109403986643943828
+    second: Trinkets_66
+  - first:
+      213: 5597893062573862006
+    second: Trinkets_67
+  - first:
+      213: -8615902900029801217
+    second: Trinkets_68
+  - first:
+      213: 6702574522246220270
+    second: Trinkets_69
+  - first:
+      213: 6604773535686036629
+    second: Trinkets_70
+  - first:
+      213: 5046703592913256104
+    second: Trinkets_71
+  - first:
+      213: -6001629505446936866
+    second: Trinkets_72
+  - first:
+      213: -5115131605026084441
+    second: Trinkets_73
+  - first:
+      213: 3744450951664942296
+    second: Trinkets_74
+  - first:
+      213: 5164303392481305870
+    second: Trinkets_75
+  - first:
+      213: 3943920496615360935
+    second: Trinkets_76
+  - first:
+      213: 3819729474332106531
+    second: Trinkets_77
+  - first:
+      213: 6044872786293553783
+    second: Trinkets_78
+  - first:
+      213: 1933342917004339566
+    second: Trinkets_79
+  - first:
+      213: 9199283566896819487
+    second: Trinkets_80
+  - first:
+      213: 5077817777738805413
+    second: Trinkets_81
+  - first:
+      213: -4131186784652737348
+    second: Trinkets_82
+  - first:
+      213: -1155038909281210547
+    second: Trinkets_83
+  - first:
+      213: 7212128102543130344
+    second: Trinkets_84
+  - first:
+      213: 4487079370300477855
+    second: Trinkets_85
+  - first:
+      213: -2411966766319208973
+    second: Trinkets_86
+  - first:
+      213: -6840034863784195853
+    second: Trinkets_87
+  - first:
+      213: 1190969288578064682
+    second: Trinkets_88
+  - first:
+      213: 5814886973983872827
+    second: Trinkets_89
+  - first:
+      213: -5225199198434946293
+    second: Trinkets_90
+  - first:
+      213: -4340438841281244717
+    second: Trinkets_91
+  - first:
+      213: -1317020523181935371
+    second: Trinkets_92
+  - first:
+      213: -8049829245614077773
+    second: Trinkets_93
+  - first:
+      213: 4983884334971599056
+    second: Trinkets_94
+  - first:
+      213: 1713648343269021472
+    second: Trinkets_95
+  - first:
+      213: -4484838087382461742
+    second: Trinkets_96
+  - first:
+      213: -1219531526722178794
+    second: Trinkets_97
+  - first:
+      213: -6686582404734799923
+    second: Trinkets_98
+  - first:
+      213: 510928000856469787
+    second: Trinkets_99
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Trinkets_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 869
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 141ba6d38159f2c00800000000000000
+      internalID: 878084383702692161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_1
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 872
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32e8264e3b9242420800000000000000
+      internalID: 2604252337134538275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 872
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17d5c38d25da23700800000000000000
+      internalID: 518667478427786609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_3
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 866
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc0d861d1bfd5f500800000000000000
+      internalID: 429495294299263183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_4
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 872
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9800a573260996140800000000000000
+      internalID: 4713457236529774729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_5
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 869
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd4b4b2668ea4d540800000000000000
+      internalID: 5031838575884547295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_6
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 866
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06327e0461799c0a0800000000000000
+      internalID: -6860786435488275616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_7
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 869
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93b163654c70f6f50800000000000000
+      internalID: 6876723695859407673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_8
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 872
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30fb860a813a22470800000000000000
+      internalID: 8368430383773564675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_9
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 866
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ec8eca167de053e0800000000000000
+      internalID: -2066891137451389727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_10
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 776
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0afa5692be5f46070800000000000000
+      internalID: 8098868420279644064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_11
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 776
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e02e2b8aba141fa0800000000000000
+      internalID: -5831006229036654364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_12
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 776
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54c97828c2a59b470800000000000000
+      internalID: 8410852926306098245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_13
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 776
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36e3e51303f55f920800000000000000
+      internalID: 3023427385440484963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_14
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 773
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 147f5fc2df5a7b250800000000000000
+      internalID: 5960415138647766849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_15
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 773
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf918b55cb02a0ac0800000000000000
+      internalID: -3888259335016932868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_16
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 773
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61a0a41ffffe677c0800000000000000
+      internalID: -4073804930366174698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_17
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 776
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 047d59a81010fb450800000000000000
+      internalID: 6106600725869352768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_18
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 776
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 926251861bb97adf0800000000000000
+      internalID: -168995274745371095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_19
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 770
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8ba76595c936b6d0800000000000000
+      internalID: -2975126983053694068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_20
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 677
+        width: 83
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 588367a9c7b4f0460800000000000000
+      internalID: 7210064526982920325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_21
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 674
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a1d284fc524e4540800000000000000
+      internalID: 4994002003807097251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_22
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 680
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adf1887510d2b8fa0800000000000000
+      internalID: -5797490611522625574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_23
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 674
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f98ef60f96cc8c850800000000000000
+      internalID: 6397588026057287839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_24
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 677
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c62dec3e3ae575e10800000000000000
+      internalID: 2186320202106327660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_25
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 677
+        width: 83
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fef4f65ec6b064d00800000000000000
+      internalID: 956464533196460015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_26
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 680
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b85e32a6105e2f1b0800000000000000
+      internalID: -5624181190393862773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_27
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 677
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39b520ce0c9b54590800000000000000
+      internalID: -7690536550420817005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_28
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 680
+        width: 86
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba1bc5c77887b6f90800000000000000
+      internalID: -6959336275868601941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_29
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 677
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94f215bc92bd14f30800000000000000
+      internalID: 4558165270426890057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_30
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 584
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbdb7f0b2d91cbfc0800000000000000
+      internalID: -3477876419534012996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_31
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 581
+        width: 83
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2af2952ef5744eb20800000000000000
+      internalID: 3162731315465891746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_32
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 581
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 981eaac83020b5ac0800000000000000
+      internalID: -3865493640899272311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_33
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 584
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 612b929c966f7c670800000000000000
+      internalID: 8559080551047868950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_34
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 584
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7096a570c8e333c80800000000000000
+      internalID: -8344256913447687929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_35
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 584
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1465e20f3b9c97430800000000000000
+      internalID: 3781275136820139585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_36
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 584
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c44a5fe09a1266220800000000000000
+      internalID: 2478705654898205772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_37
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 581
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8ed6d5dc300fdbb0800000000000000
+      internalID: -4909204807524884853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_38
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 584
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17a724b8995868040800000000000000
+      internalID: 4649550559819496049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_39
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 578
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3503a1bcc69154720800000000000000
+      internalID: 2829695895926878291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_40
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 485
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4111166fc18cec760800000000000000
+      internalID: 7480136057827168532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_41
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 485
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebee0c98579299eb0800000000000000
+      internalID: -4712689950267478338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_42
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 485
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f7b821b3488acc50800000000000000
+      internalID: 6686306421101344755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_43
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 482
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ef8a63217048fb30800000000000000
+      internalID: 4321274697131659237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_44
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 485
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db2443d9b33b12140800000000000000
+      internalID: 4693229355318657725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_45
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 482
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3cb0c6d60f1f2010800000000000000
+      internalID: 1166184942745467964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_46
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 482
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0320605703f53e4a0800000000000000
+      internalID: -6565299170049654224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_47
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 482
+        width: 89
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ad4a97dffc3f11d0800000000000000
+      internalID: -3377914125973041755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_48
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 482
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c95279748ebf2190800000000000000
+      internalID: -7984954138122102329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_49
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 482
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b39448721139b850800000000000000
+      internalID: 6393195101426062256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_50
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 386
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15f79e8801a0cb3b0800000000000000
+      internalID: -5495506379166089391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_51
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 386
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c39e7ed313e85820800000000000000
+      internalID: 2907323233944376256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_52
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 386
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec229d6cb43d4bff0800000000000000
+      internalID: -21159775817882930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_53
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 386
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32484884da5b92930800000000000000
+      internalID: 4119023090057643043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_54
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 386
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae2ff7c3e93aee790800000000000000
+      internalID: -7498876429510118678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_55
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 386
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aca8b7e50b486770800000000000000
+      internalID: 8604209576825892004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_56
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 386
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccdcc8c2432b50c50800000000000000
+      internalID: 6630901963528392140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_57
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 386
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87dd5758889f81100800000000000000
+      internalID: 79087358228946296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_58
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 386
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c95e405fb9a85be0800000000000000
+      internalID: -1488253037694789183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_59
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 386
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b770327b4183ebc80800000000000000
+      internalID: -8305139001201588357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_60
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 290
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02b85223c05be2810800000000000000
+      internalID: 1742529169824516896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_61
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 290
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0879db8b7ae044a0800000000000000
+      internalID: -6611026436631726069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_62
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 290
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7977a5e023a91590800000000000000
+      internalID: -7702946325953283716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_63
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 290
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d730f5eadf4e7e10800000000000000
+      internalID: 2197281469782570966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_64
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 290
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 953a813fb546c6100800000000000000
+      internalID: 102567237605958489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_65
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 290
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4709c4b3616adf8a0800000000000000
+      internalID: -6269672491815497612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_66
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 293
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49188a4324da9a260800000000000000
+      internalID: 7109403986643943828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_67
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 290
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67ca65dd416bfad40800000000000000
+      internalID: 5597893062573862006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_68
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 290
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffc377026f92e6880800000000000000
+      internalID: -8615902900029801217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_69
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 290
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee9c1172404540d50800000000000000
+      internalID: 6702574522246220270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_70
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 194
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59c8770898ed8ab50800000000000000
+      internalID: 6604773535686036629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_71
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 194
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ae384edd2e790640800000000000000
+      internalID: 5046703592913256104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_72
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 194
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edef45643cde5bca0800000000000000
+      internalID: -6001629505446936866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_73
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 194
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a9eb0708e66309b0800000000000000
+      internalID: -5115131605026084441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_74
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 194
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dcbcd43d46f6f330800000000000000
+      internalID: 3744450951664942296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_75
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 194
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e056135e29a4ba740800000000000000
+      internalID: 5164303392481305870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_76
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 194
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a9042fbbce9bb630800000000000000
+      internalID: 3943920496615360935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_77
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 194
+        width: 86
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32f97a718b7620530800000000000000
+      internalID: 3819729474332106531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_78
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 194
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77af373a5c3b3e350800000000000000
+      internalID: 6044872786293553783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_79
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 194
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e69af05c32d94da10800000000000000
+      internalID: 1933342917004339566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_80
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 101
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1d29f80aab6aaf70800000000000000
+      internalID: 9199283566896819487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_81
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 101
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a0f84c8d58087640800000000000000
+      internalID: 5077817777738805413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_82
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 98
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb44cffd1831ba6c0800000000000000
+      internalID: -4131186784652737348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_83
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 101
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4fe98e4b3a78ffe0800000000000000
+      internalID: -1155038909281210547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_84
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 98
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eef1ba3c40a61460800000000000000
+      internalID: 7212128102543130344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_85
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 98
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f915eb9e9ee454e30800000000000000
+      internalID: 4487079370300477855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_86
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 98
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f5fe735109f68ed0800000000000000
+      internalID: -2411966766319208973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_87
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 98
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f80bdc08805311a0800000000000000
+      internalID: -6840034863784195853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_88
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 104
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a216818024c278010800000000000000
+      internalID: 1190969288578064682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_89
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 98
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b37da5de4e0a2b050800000000000000
+      internalID: 5814886973983872827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_90
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 83
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0311a8630d5c77b0800000000000000
+      internalID: -5225199198434946293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_91
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 2
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d19f18ded9a3c3c0800000000000000
+      internalID: -4340438841281244717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_92
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 5
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f477d1efc009bde0800000000000000
+      internalID: -1317020523181935371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_93
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 5
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b84f9073f2494090800000000000000
+      internalID: -8049829245614077773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_94
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 2
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d8bd9b95605a2540800000000000000
+      internalID: 4983884334971599056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_95
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 2
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0279c72c61a18c710800000000000000
+      internalID: 1713648343269021472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_96
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 5
+        width: 86
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d21d6e6587a2c1c0800000000000000
+      internalID: -4484838087382461742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_97
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 2
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 611b55da98a531fe0800000000000000
+      internalID: -1219531526722178794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_98
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 5
+        width: 83
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcfa76cdabc7433a0800000000000000
+      internalID: -6686582404734799923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trinkets_99
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 2
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b11b9dc4f4e271700800000000000000
+      internalID: 510928000856469787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Trinkets_0: 878084383702692161
+      Trinkets_1: 2604252337134538275
+      Trinkets_10: 8098868420279644064
+      Trinkets_11: -5831006229036654364
+      Trinkets_12: 8410852926306098245
+      Trinkets_13: 3023427385440484963
+      Trinkets_14: 5960415138647766849
+      Trinkets_15: -3888259335016932868
+      Trinkets_16: -4073804930366174698
+      Trinkets_17: 6106600725869352768
+      Trinkets_18: -168995274745371095
+      Trinkets_19: -2975126983053694068
+      Trinkets_2: 518667478427786609
+      Trinkets_20: 7210064526982920325
+      Trinkets_21: 4994002003807097251
+      Trinkets_22: -5797490611522625574
+      Trinkets_23: 6397588026057287839
+      Trinkets_24: 2186320202106327660
+      Trinkets_25: 956464533196460015
+      Trinkets_26: -5624181190393862773
+      Trinkets_27: -7690536550420817005
+      Trinkets_28: -6959336275868601941
+      Trinkets_29: 4558165270426890057
+      Trinkets_3: 429495294299263183
+      Trinkets_30: -3477876419534012996
+      Trinkets_31: 3162731315465891746
+      Trinkets_32: -3865493640899272311
+      Trinkets_33: 8559080551047868950
+      Trinkets_34: -8344256913447687929
+      Trinkets_35: 3781275136820139585
+      Trinkets_36: 2478705654898205772
+      Trinkets_37: -4909204807524884853
+      Trinkets_38: 4649550559819496049
+      Trinkets_39: 2829695895926878291
+      Trinkets_4: 4713457236529774729
+      Trinkets_40: 7480136057827168532
+      Trinkets_41: -4712689950267478338
+      Trinkets_42: 6686306421101344755
+      Trinkets_43: 4321274697131659237
+      Trinkets_44: 4693229355318657725
+      Trinkets_45: 1166184942745467964
+      Trinkets_46: -6565299170049654224
+      Trinkets_47: -3377914125973041755
+      Trinkets_48: -7984954138122102329
+      Trinkets_49: 6393195101426062256
+      Trinkets_5: 5031838575884547295
+      Trinkets_50: -5495506379166089391
+      Trinkets_51: 2907323233944376256
+      Trinkets_52: -21159775817882930
+      Trinkets_53: 4119023090057643043
+      Trinkets_54: -7498876429510118678
+      Trinkets_55: 8604209576825892004
+      Trinkets_56: 6630901963528392140
+      Trinkets_57: 79087358228946296
+      Trinkets_58: -1488253037694789183
+      Trinkets_59: -8305139001201588357
+      Trinkets_6: -6860786435488275616
+      Trinkets_60: 1742529169824516896
+      Trinkets_61: -6611026436631726069
+      Trinkets_62: -7702946325953283716
+      Trinkets_63: 2197281469782570966
+      Trinkets_64: 102567237605958489
+      Trinkets_65: -6269672491815497612
+      Trinkets_66: 7109403986643943828
+      Trinkets_67: 5597893062573862006
+      Trinkets_68: -8615902900029801217
+      Trinkets_69: 6702574522246220270
+      Trinkets_7: 6876723695859407673
+      Trinkets_70: 6604773535686036629
+      Trinkets_71: 5046703592913256104
+      Trinkets_72: -6001629505446936866
+      Trinkets_73: -5115131605026084441
+      Trinkets_74: 3744450951664942296
+      Trinkets_75: 5164303392481305870
+      Trinkets_76: 3943920496615360935
+      Trinkets_77: 3819729474332106531
+      Trinkets_78: 6044872786293553783
+      Trinkets_79: 1933342917004339566
+      Trinkets_8: 8368430383773564675
+      Trinkets_80: 9199283566896819487
+      Trinkets_81: 5077817777738805413
+      Trinkets_82: -4131186784652737348
+      Trinkets_83: -1155038909281210547
+      Trinkets_84: 7212128102543130344
+      Trinkets_85: 4487079370300477855
+      Trinkets_86: -2411966766319208973
+      Trinkets_87: -6840034863784195853
+      Trinkets_88: 1190969288578064682
+      Trinkets_89: 5814886973983872827
+      Trinkets_9: -2066891137451389727
+      Trinkets_90: -5225199198434946293
+      Trinkets_91: -4340438841281244717
+      Trinkets_92: -1317020523181935371
+      Trinkets_93: -8049829245614077773
+      Trinkets_94: 4983884334971599056
+      Trinkets_95: 1713648343269021472
+      Trinkets_96: -4484838087382461742
+      Trinkets_97: -1219531526722178794
+      Trinkets_98: -6686582404734799923
+      Trinkets_99: 510928000856469787
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

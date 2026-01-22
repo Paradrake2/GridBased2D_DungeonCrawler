@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd005c64b912d3545a9bd24032fbb12c, type: 3}
+  m_Name: test2
+  m_EditorClassIdentifier: 
+  itemName: test2
+  itemIcon: {fileID: 5477200406350886162, guid: e6f8b0b929f00b140949f88af241f330, type: 3}
+  itemPrefab: {fileID: 0}
+  stats:
+    stats:
+      stats: []
+    debuffCollection:
+      debuffs: []
+    goldValue: 0
+  debuffInflictors: []
+  debuffResistances: []
+  id: 
+  persistent: 0

@@ -1,0 +1,2743 @@
+fileFormatVersion: 2
+guid: a6186861c85bffe498ccf8464f3444ce
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3763498135504731476
+    second: Accessory_0
+  - first:
+      213: 6043705890530614222
+    second: Accessory_1
+  - first:
+      213: 2813325583637706474
+    second: Accessory_2
+  - first:
+      213: -5070833230495588708
+    second: Accessory_3
+  - first:
+      213: 3993841190122540709
+    second: Accessory_4
+  - first:
+      213: 6871445312827180239
+    second: Accessory_5
+  - first:
+      213: -4746467510985194320
+    second: Accessory_6
+  - first:
+      213: -7379009517446481564
+    second: Accessory_7
+  - first:
+      213: 3689304888912946293
+    second: Accessory_8
+  - first:
+      213: -386410920607205596
+    second: Accessory_9
+  - first:
+      213: -1789722371865258589
+    second: Accessory_10
+  - first:
+      213: 4696436333421354813
+    second: Accessory_11
+  - first:
+      213: -8411155773499088802
+    second: Accessory_12
+  - first:
+      213: 3486653495829358351
+    second: Accessory_13
+  - first:
+      213: -5289584698410199959
+    second: Accessory_14
+  - first:
+      213: -864964098556945820
+    second: Accessory_15
+  - first:
+      213: -5181041919718996728
+    second: Accessory_16
+  - first:
+      213: 7838896564759980554
+    second: Accessory_17
+  - first:
+      213: -8193836452910149103
+    second: Accessory_18
+  - first:
+      213: 6434091696362123499
+    second: Accessory_19
+  - first:
+      213: -2630145072276279300
+    second: Accessory_20
+  - first:
+      213: 4127344708653400877
+    second: Accessory_21
+  - first:
+      213: 115288561665511968
+    second: Accessory_22
+  - first:
+      213: -6400363336708440805
+    second: Accessory_23
+  - first:
+      213: 4192726300463334413
+    second: Accessory_24
+  - first:
+      213: 8415458428853951539
+    second: Accessory_25
+  - first:
+      213: 4191083941241792688
+    second: Accessory_26
+  - first:
+      213: 8426570777285096003
+    second: Accessory_27
+  - first:
+      213: 4525033550691682831
+    second: Accessory_28
+  - first:
+      213: 6813461031352664718
+    second: Accessory_29
+  - first:
+      213: 2063342267299601665
+    second: Accessory_30
+  - first:
+      213: -1222585704451199152
+    second: Accessory_31
+  - first:
+      213: 100020623896343279
+    second: Accessory_32
+  - first:
+      213: 2215363907268591148
+    second: Accessory_33
+  - first:
+      213: -285445455356443199
+    second: Accessory_34
+  - first:
+      213: -5046099039849646334
+    second: Accessory_35
+  - first:
+      213: -974970238955544672
+    second: Accessory_36
+  - first:
+      213: -5229763432358549146
+    second: Accessory_37
+  - first:
+      213: -6873939393565709710
+    second: Accessory_38
+  - first:
+      213: -6761871348591243007
+    second: Accessory_39
+  - first:
+      213: 7262266681788172930
+    second: Accessory_40
+  - first:
+      213: 632312998984169707
+    second: Accessory_41
+  - first:
+      213: 5178534931927557261
+    second: Accessory_42
+  - first:
+      213: 6359324415483144910
+    second: Accessory_43
+  - first:
+      213: -8647854007464860258
+    second: Accessory_44
+  - first:
+      213: 4076372949291323962
+    second: Accessory_45
+  - first:
+      213: 263094381959160452
+    second: Accessory_46
+  - first:
+      213: -4348058902401028867
+    second: Accessory_47
+  - first:
+      213: 476574605578613827
+    second: Accessory_48
+  - first:
+      213: -150538305236769989
+    second: Accessory_49
+  - first:
+      213: -8149520746969782044
+    second: Accessory_50
+  - first:
+      213: -4031035964487687901
+    second: Accessory_51
+  - first:
+      213: 5890016655413894491
+    second: Accessory_52
+  - first:
+      213: 7637580895480632951
+    second: Accessory_53
+  - first:
+      213: -9012621315730572569
+    second: Accessory_54
+  - first:
+      213: -8680800772005725953
+    second: Accessory_55
+  - first:
+      213: -598094853023112400
+    second: Accessory_56
+  - first:
+      213: -2711800189207593855
+    second: Accessory_57
+  - first:
+      213: 7509233880290558175
+    second: Accessory_58
+  - first:
+      213: 5471979765014695540
+    second: Accessory_59
+  - first:
+      213: 5811593250134607727
+    second: Accessory_60
+  - first:
+      213: -242129391623008982
+    second: Accessory_61
+  - first:
+      213: -3379793153356494134
+    second: Accessory_62
+  - first:
+      213: 7214977158957492028
+    second: Accessory_63
+  - first:
+      213: 3576039231013681234
+    second: Accessory_64
+  - first:
+      213: 8124538141003649662
+    second: Accessory_65
+  - first:
+      213: 6831938612946425582
+    second: Accessory_66
+  - first:
+      213: 1011400742749518046
+    second: Accessory_67
+  - first:
+      213: 1551025463376496300
+    second: Accessory_68
+  - first:
+      213: -1043858228412050037
+    second: Accessory_69
+  - first:
+      213: 1742482587191720484
+    second: Accessory_70
+  - first:
+      213: 307287052459815681
+    second: Accessory_71
+  - first:
+      213: 3386176925751450015
+    second: Accessory_72
+  - first:
+      213: 3351031649106517111
+    second: Accessory_73
+  - first:
+      213: 3740139955355374979
+    second: Accessory_74
+  - first:
+      213: 3247447579028009566
+    second: Accessory_75
+  - first:
+      213: -4922636596270832901
+    second: Accessory_76
+  - first:
+      213: -4617801222762950380
+    second: Accessory_77
+  - first:
+      213: 4696273063607310943
+    second: Accessory_78
+  - first:
+      213: -5364881116471036529
+    second: Accessory_79
+  - first:
+      213: -2191484902119335013
+    second: Accessory_80
+  - first:
+      213: -2890499204513233688
+    second: Accessory_81
+  - first:
+      213: -6187461983464789878
+    second: Accessory_82
+  - first:
+      213: -8892957048236339440
+    second: Accessory_83
+  - first:
+      213: 1213403497822124657
+    second: Accessory_84
+  - first:
+      213: -8066161033980438842
+    second: Accessory_85
+  - first:
+      213: -7324083735210004991
+    second: Accessory_86
+  - first:
+      213: 763804962770835708
+    second: Accessory_87
+  - first:
+      213: 8408252962215498618
+    second: Accessory_88
+  - first:
+      213: -2208016169021513139
+    second: Accessory_89
+  - first:
+      213: -5402528830336601788
+    second: Accessory_90
+  - first:
+      213: 8572778200021621043
+    second: Accessory_91
+  - first:
+      213: -4493423413175328868
+    second: Accessory_92
+  - first:
+      213: -9153154410405043485
+    second: Accessory_93
+  - first:
+      213: -5243221257015655364
+    second: Accessory_94
+  - first:
+      213: -8694703993910210447
+    second: Accessory_95
+  - first:
+      213: -6303833553763171618
+    second: Accessory_96
+  - first:
+      213: 4749284542690488843
+    second: Accessory_97
+  - first:
+      213: -7956654024258561442
+    second: Accessory_98
+  - first:
+      213: -766810282036481613
+    second: Accessory_99
+  - first:
+      213: 8094143898154581997
+    second: Accessory_100
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Accessory_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 814
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45dba974d91aa3430800000000000000
+      internalID: 3763498135504731476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_1
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 814
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecb530c8c7e8fd350800000000000000
+      internalID: 6043705890530614222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_2
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 814
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae67e3276b0fa0720800000000000000
+      internalID: 2813325583637706474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_3
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 814
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9e50151b08c0a9b0800000000000000
+      internalID: -5070833230495588708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_4
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 814
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aec392f669fc6730800000000000000
+      internalID: 3993841190122540709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_5
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 814
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc446940b174c5f50800000000000000
+      internalID: 6871445312827180239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_6
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 814
+        width: 77
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b48bc552f8212eb0800000000000000
+      internalID: -4746467510985194320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_7
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 814
+        width: 67
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 469306680fd789990800000000000000
+      internalID: -7379009517446481564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_8
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 814
+        width: 67
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 574a4cbef3b033330800000000000000
+      internalID: 3689304888912946293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_9
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 814
+        width: 72
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42730e3a05133aaf0800000000000000
+      internalID: -386410920607205596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_10
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 734
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a5d6623cf0a927e0800000000000000
+      internalID: -1789722371865258589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_11
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 729
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3f51d366f71d2140800000000000000
+      internalID: 4696436333421354813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_12
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 724
+        width: 82
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e506c126362954b80800000000000000
+      internalID: -8411155773499088802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_13
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 724
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0768c1a1e4136030800000000000000
+      internalID: 3486653495829358351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_14
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 724
+        width: 72
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9641be10ebe9796b0800000000000000
+      internalID: -5289584698410199959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_15
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 729
+        width: 67
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46a1c023cb70ff3f0800000000000000
+      internalID: -864964098556945820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_16
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 729
+        width: 67
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 805cdb803dd3918b0800000000000000
+      internalID: -5181041919718996728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_17
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 729
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0a6c85b4ea59cc60800000000000000
+      internalID: 7838896564759980554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_18
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 729
+        width: 67
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 112d4aca825a94e80800000000000000
+      internalID: -8193836452910149103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_19
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 729
+        width: 67
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be074fdfe4c7a4950800000000000000
+      internalID: 6434091696362123499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_20
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 634
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cff6a3bedf8df7bd0800000000000000
+      internalID: -2630145072276279300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_21
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 639
+        width: 72
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d23cfd81526474930800000000000000
+      internalID: 4127344708653400877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_22
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 639
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0221db40656999100800000000000000
+      internalID: 115288561665511968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_23
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 639
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1d3f02b4775d27a0800000000000000
+      internalID: -6400363336708440805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_24
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 639
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d040e833b5e8f2a30800000000000000
+      internalID: 4192726300463334413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_25
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 639
+        width: 77
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33c18e1aad6b9c470800000000000000
+      internalID: 8415458428853951539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_26
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 639
+        width: 67
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b8af85a3a8b92a30800000000000000
+      internalID: 4191083941241792688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_27
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 639
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 342f3ced97131f470800000000000000
+      internalID: 8426570777285096003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_28
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 639
+        width: 77
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0ac3b92a062cce30800000000000000
+      internalID: 4525033550691682831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_29
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 634
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e820eb075b64e8e50800000000000000
+      internalID: 6813461031352664718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_30
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 544
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10d117c2cd672ac10800000000000000
+      internalID: 2063342267299601665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_31
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 544
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05f27b287c0880fe0800000000000000
+      internalID: -1222585704451199152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_32
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 544
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe2fd8d3a38536100800000000000000
+      internalID: 100020623896343279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_33
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 544
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2e37f47cbd8ebe10800000000000000
+      internalID: 2215363907268591148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_34
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 544
+        width: 77
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c5cab6eed4e90cf0800000000000000
+      internalID: -285445455356443199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_35
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 544
+        width: 77
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 207725c98a7a8f9b0800000000000000
+      internalID: -5046099039849646334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_36
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 544
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0af1a78bbb53872f0800000000000000
+      internalID: -974970238955544672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_37
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 544
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 669e0f2edd52c67b0800000000000000
+      internalID: -5229763432358549146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_38
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 544
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27aa3fe8a8cda90a0800000000000000
+      internalID: -6873939393565709710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_39
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 544
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 101d35a95d10922a0800000000000000
+      internalID: -6761871348591243007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_40
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 454
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28a8328e111c8c460800000000000000
+      internalID: 7262266681788172930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_41
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 454
+        width: 72
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be8305b825d66c800800000000000000
+      internalID: 632312998984169707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_42
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 454
+        width: 67
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d846e72651addd740800000000000000
+      internalID: 5178534931927557261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_43
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 454
+        width: 77
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eca675cdcdbd04850800000000000000
+      internalID: 6359324415483144910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_44
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 454
+        width: 72
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e956e973996acf780800000000000000
+      internalID: -8647854007464860258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_45
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 454
+        width: 62
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a32558e899f229830800000000000000
+      internalID: 4076372949291323962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_46
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 459
+        width: 67
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 482a31b42f2b6a300800000000000000
+      internalID: 263094381959160452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_47
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 454
+        width: 57
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfc69eb177798a3c0800000000000000
+      internalID: -4348058902401028867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_48
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 454
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3443c7a24122d9600800000000000000
+      internalID: 476574605578613827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_49
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 454
+        width: 62
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b33e54f753e29edf0800000000000000
+      internalID: -150538305236769989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_50
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 364
+        width: 82
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e8a0330f0617ee80800000000000000
+      internalID: -8149520746969782044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_51
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 364
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32123ebc522ee08c0800000000000000
+      internalID: -4031035964487687901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_52
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 364
+        width: 67
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5d541301fa8db150800000000000000
+      internalID: 5890016655413894491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_53
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 364
+        width: 72
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 776de6adb532ef960800000000000000
+      internalID: 7637580895480632951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_54
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 364
+        width: 67
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7eaf3cc0aacbce280800000000000000
+      internalID: -9012621315730572569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_55
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 364
+        width: 67
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff879a2d0b9978780800000000000000
+      internalID: -8680800772005725953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_56
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 364
+        width: 77
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 033619766e323b7f0800000000000000
+      internalID: -598094853023112400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_57
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 364
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18cb17c7810cd5ad0800000000000000
+      internalID: -2711800189207593855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_58
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 364
+        width: 82
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd00c02bd68263860800000000000000
+      internalID: 7509233880290558175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_59
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 364
+        width: 62
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47e83dfba9060fb40800000000000000
+      internalID: 5471979765014695540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_60
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 284
+        width: 72
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f67c455154de6a050800000000000000
+      internalID: 5811593250134607727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_61
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 284
+        width: 72
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2d01a6e998c3acf0800000000000000
+      internalID: -242129391623008982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_62
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 284
+        width: 67
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aca83efa8009811d0800000000000000
+      internalID: -3379793153356494134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_63
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 284
+        width: 67
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c37e73edf7fb02460800000000000000
+      internalID: 7214977158957492028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_64
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 284
+        width: 67
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2587e63ebb4a0a130800000000000000
+      internalID: 3576039231013681234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_65
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 284
+        width: 67
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7292a2c46820c070800000000000000
+      internalID: 8124538141003649662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_66
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 284
+        width: 67
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee652f7a8fbefce50800000000000000
+      internalID: 6831938612946425582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_67
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 284
+        width: 67
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed8b62ded97390e00800000000000000
+      internalID: 1011400742749518046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_68
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 279
+        width: 72
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca64426f079568510800000000000000
+      internalID: 1551025463376496300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_69
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 274
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8591abc8787381f0800000000000000
+      internalID: -1043858228412050037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_70
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 184
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42abdd45eaa8e2810800000000000000
+      internalID: 1742482587191720484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_71
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 184
+        width: 72
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 103b1f532f3b34400800000000000000
+      internalID: 307287052459815681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_72
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 184
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f991a0629fd1efe20800000000000000
+      internalID: 3386176925751450015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_73
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 184
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77cd514c781418e20800000000000000
+      internalID: 3351031649106517111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_74
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 184
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 385d3392975a7e330800000000000000
+      internalID: 3740139955355374979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_75
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 189
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e52baae0e50411d20800000000000000
+      internalID: 3247447579028009566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_76
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 184
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf260f0d8184fabb0800000000000000
+      internalID: -4922636596270832901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_77
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 184
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41199d901464aefb0800000000000000
+      internalID: -4617801222762950380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_78
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 184
+        width: 82
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5a9c8c28738c2140800000000000000
+      internalID: 4696273063607310943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_79
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 184
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f85fa868c0d1c85b0800000000000000
+      internalID: -5364881116471036529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_80
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 94
+        width: 77
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9b9b8ea7184691e0800000000000000
+      internalID: -2191484902119335013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_81
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 94
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e4807bb942e2e7d0800000000000000
+      internalID: -2890499204513233688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_82
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 94
+        width: 67
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a88e85ecb18b12aa0800000000000000
+      internalID: -6187461983464789878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_83
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 94
+        width: 62
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01f01197eaed59480800000000000000
+      internalID: -8892957048236339440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_84
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 94
+        width: 72
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17a77e86d00e6d010800000000000000
+      internalID: 1213403497822124657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_85
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 94
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c69f74a64d3f0090800000000000000
+      internalID: -8066161033980438842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_86
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 94
+        width: 72
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10e6791c5a0ab5a90800000000000000
+      internalID: -7324083735210004991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_87
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 94
+        width: 72
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf8d2ab1194999a00800000000000000
+      internalID: 763804962770835708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_88
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 94
+        width: 62
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a731b72358d10b470800000000000000
+      internalID: 8408252962215498618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_89
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 99
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d42672b2efc8b51e0800000000000000
+      internalID: -2208016169021513139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_90
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 94
+        width: 67
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 441faf217ac5605b0800000000000000
+      internalID: -5402528830336601788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_91
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 4
+        width: 82
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33950863a50a8f670800000000000000
+      internalID: 8572778200021621043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_92
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 4
+        width: 77
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9fd240863724a1c0800000000000000
+      internalID: -4493423413175328868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_93
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 4
+        width: 72
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e2e1892f8679f080800000000000000
+      internalID: -9153154410405043485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_94
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 4
+        width: 82
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c340ec8eb065c37b0800000000000000
+      internalID: -5243221257015655364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_95
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 4
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 170dfc7b8c4365780800000000000000
+      internalID: -8694703993910210447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_96
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 4
+        width: 72
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed202c038c84488a0800000000000000
+      internalID: -6303833553763171618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_97
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 4
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b02f158f029d8e140800000000000000
+      internalID: 4749284542690488843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_98
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 4
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5ad2633259449190800000000000000
+      internalID: -7956654024258561442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_99
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 9
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b139197c1ebb55f0800000000000000
+      internalID: -766810282036481613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessory_100
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 4
+        width: 67
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: def3662adfc245070800000000000000
+      internalID: 8094143898154581997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Accessory_0: 3763498135504731476
+      Accessory_1: 6043705890530614222
+      Accessory_10: -1789722371865258589
+      Accessory_100: 8094143898154581997
+      Accessory_11: 4696436333421354813
+      Accessory_12: -8411155773499088802
+      Accessory_13: 3486653495829358351
+      Accessory_14: -5289584698410199959
+      Accessory_15: -864964098556945820
+      Accessory_16: -5181041919718996728
+      Accessory_17: 7838896564759980554
+      Accessory_18: -8193836452910149103
+      Accessory_19: 6434091696362123499
+      Accessory_2: 2813325583637706474
+      Accessory_20: -2630145072276279300
+      Accessory_21: 4127344708653400877
+      Accessory_22: 115288561665511968
+      Accessory_23: -6400363336708440805
+      Accessory_24: 4192726300463334413
+      Accessory_25: 8415458428853951539
+      Accessory_26: 4191083941241792688
+      Accessory_27: 8426570777285096003
+      Accessory_28: 4525033550691682831
+      Accessory_29: 6813461031352664718
+      Accessory_3: -5070833230495588708
+      Accessory_30: 2063342267299601665
+      Accessory_31: -1222585704451199152
+      Accessory_32: 100020623896343279
+      Accessory_33: 2215363907268591148
+      Accessory_34: -285445455356443199
+      Accessory_35: -5046099039849646334
+      Accessory_36: -974970238955544672
+      Accessory_37: -5229763432358549146
+      Accessory_38: -6873939393565709710
+      Accessory_39: -6761871348591243007
+      Accessory_4: 3993841190122540709
+      Accessory_40: 7262266681788172930
+      Accessory_41: 632312998984169707
+      Accessory_42: 5178534931927557261
+      Accessory_43: 6359324415483144910
+      Accessory_44: -8647854007464860258
+      Accessory_45: 4076372949291323962
+      Accessory_46: 263094381959160452
+      Accessory_47: -4348058902401028867
+      Accessory_48: 476574605578613827
+      Accessory_49: -150538305236769989
+      Accessory_5: 6871445312827180239
+      Accessory_50: -8149520746969782044
+      Accessory_51: -4031035964487687901
+      Accessory_52: 5890016655413894491
+      Accessory_53: 7637580895480632951
+      Accessory_54: -9012621315730572569
+      Accessory_55: -8680800772005725953
+      Accessory_56: -598094853023112400
+      Accessory_57: -2711800189207593855
+      Accessory_58: 7509233880290558175
+      Accessory_59: 5471979765014695540
+      Accessory_6: -4746467510985194320
+      Accessory_60: 5811593250134607727
+      Accessory_61: -242129391623008982
+      Accessory_62: -3379793153356494134
+      Accessory_63: 7214977158957492028
+      Accessory_64: 3576039231013681234
+      Accessory_65: 8124538141003649662
+      Accessory_66: 6831938612946425582
+      Accessory_67: 1011400742749518046
+      Accessory_68: 1551025463376496300
+      Accessory_69: -1043858228412050037
+      Accessory_7: -7379009517446481564
+      Accessory_70: 1742482587191720484
+      Accessory_71: 307287052459815681
+      Accessory_72: 3386176925751450015
+      Accessory_73: 3351031649106517111
+      Accessory_74: 3740139955355374979
+      Accessory_75: 3247447579028009566
+      Accessory_76: -4922636596270832901
+      Accessory_77: -4617801222762950380
+      Accessory_78: 4696273063607310943
+      Accessory_79: -5364881116471036529
+      Accessory_8: 3689304888912946293
+      Accessory_80: -2191484902119335013
+      Accessory_81: -2890499204513233688
+      Accessory_82: -6187461983464789878
+      Accessory_83: -8892957048236339440
+      Accessory_84: 1213403497822124657
+      Accessory_85: -8066161033980438842
+      Accessory_86: -7324083735210004991
+      Accessory_87: 763804962770835708
+      Accessory_88: 8408252962215498618
+      Accessory_89: -2208016169021513139
+      Accessory_9: -386410920607205596
+      Accessory_90: -5402528830336601788
+      Accessory_91: 8572778200021621043
+      Accessory_92: -4493423413175328868
+      Accessory_93: -9153154410405043485
+      Accessory_94: -5243221257015655364
+      Accessory_95: -8694703993910210447
+      Accessory_96: -6303833553763171618
+      Accessory_97: 4749284542690488843
+      Accessory_98: -7956654024258561442
+      Accessory_99: -766810282036481613
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

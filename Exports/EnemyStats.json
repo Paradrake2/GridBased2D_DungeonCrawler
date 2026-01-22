@@ -1,0 +1,90 @@
+{
+    "exportedAt": "1/22/2026 1:01:38 PM",
+    "enemyStats": [
+        {
+            "name": "AlbinoSpider",
+            "assetPath": "Assets/Resources/EnemyStatsHolder/AlbinoSpider.asset",
+            "resourcesPath": "Assets/Resources/EnemyStatsHolder/AlbinoSpider.asset",
+            "stats": [
+                {
+                    "statId": "AttackSpeed",
+                    "displayName": "Attack Speed",
+                    "category": 0,
+                    "value": 1.0
+                },
+                {
+                    "statId": "Damage",
+                    "displayName": "Damage",
+                    "category": 0,
+                    "value": 4.0
+                },
+                {
+                    "statId": "Defense",
+                    "displayName": "Defense",
+                    "category": 0,
+                    "value": 0.0
+                },
+                {
+                    "statId": "Health",
+                    "displayName": "Health",
+                    "category": 0,
+                    "value": 100000.0
+                }
+            ],
+            "enemyAttributesList": [],
+            "dropTable": {
+                "instanceID": 0
+            },
+            "goldDropped": 2.0,
+            "experienceDropped": 5.0
+        },
+        {
+            "name": "GreenGoblin",
+            "assetPath": "Assets/Resources/EnemyStatsHolder/GreenGoblin.asset",
+            "resourcesPath": "Assets/Resources/EnemyStatsHolder/GreenGoblin.asset",
+            "stats": [
+                {
+                    "statId": "Damage",
+                    "displayName": "Damage",
+                    "category": 0,
+                    "value": 3.0
+                },
+                {
+                    "statId": "Health",
+                    "displayName": "Health",
+                    "category": 0,
+                    "value": 15.0
+                },
+                {
+                    "statId": "Defense",
+                    "displayName": "Defense",
+                    "category": 0,
+                    "value": 1.0
+                },
+                {
+                    "statId": "AttackSpeed",
+                    "displayName": "Attack Speed",
+                    "category": 0,
+                    "value": 1.0
+                }
+            ],
+            "enemyAttributesList": [
+                {
+                    "attackAttribute": {
+                        "instanceID": 52904
+                    },
+                    "attackAttributeValue": 2.0,
+                    "defenseAttribute": {
+                        "instanceID": 52890
+                    },
+                    "defenseAttributeValue": 1.0
+                }
+            ],
+            "dropTable": {
+                "instanceID": 0
+            },
+            "goldDropped": 2.0,
+            "experienceDropped": 6.0
+        }
+    ]
+}

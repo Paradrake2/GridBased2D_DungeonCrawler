@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a94483286463a44aaddd8d888e200fc, type: 3}
+  m_Name: AlbinoSpider
+  m_EditorClassIdentifier: 
+  stats:
+    stats:
+    - statType: {fileID: 11400000, guid: 4090b8317db3bb74187cb28f24e54983, type: 2}
+      value: 1
+    - statType: {fileID: 11400000, guid: 3deb6a3649d4b5d4e95c23ecadd98cd7, type: 2}
+      value: 4
+    - statType: {fileID: 11400000, guid: 690c87441abb0704e948241ef5a367bf, type: 2}
+      value: 0
+    - statType: {fileID: 11400000, guid: 6df30064bf8c29047b90fb2339a0689e, type: 2}
+      value: 100000
+  enemyAttributesList: []
+  dropTable: {fileID: 0}
+  maxHealth: 0
+  defense: 0
+  damage: 0
+  goldDropped: 2
+  experienceDropped: 5

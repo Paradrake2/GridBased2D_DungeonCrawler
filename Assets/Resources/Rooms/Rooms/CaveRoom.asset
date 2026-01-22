@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8409f8241dd8f144abc14cd81cfb398f, type: 3}
+  m_Name: CaveRoom
+  m_EditorClassIdentifier: 
+  roomName: Cave
+  ID: Cave
+  tier: 0
+  isBossRoom: 0
+  roomContents:
+    potentialObstacles: []
+    potentialTraps: []
+    potentialEnemies: {fileID: 0}
+    potentialResources: []
+  roomEnv: {fileID: 11400000, guid: 2cd52354f6a193a4096059c7d48716f3, type: 2}
+  generationAlgorithm: {fileID: 11400000, guid: 207d583bcdc22d744bcc96b155a45625, type: 2}
+  tileContentWeights:
+  - tileContentType: 0
+    weight: 10
+  enemyRarityWeights: []
+  useRuleTile: 1
+  minRooms: 1
+  maxRooms: 3
+  walkLength: 100
+  iterations: 15
+  startRandomlyEachIteration: 1

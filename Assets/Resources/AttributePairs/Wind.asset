@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53497be22589a20488334db0821e8c4f, type: 3}
+  m_Name: Wind
+  m_EditorClassIdentifier: 
+  pairName: Wind
+  attackAttribute: {fileID: 11400000, guid: 5b2e70569a027eb498686706ecdf457f, type: 2}
+  defenseAttribute: {fileID: 11400000, guid: 6aa2f91485e2676408f0af3103959404, type: 2}
