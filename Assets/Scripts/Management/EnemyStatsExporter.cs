@@ -21,11 +21,12 @@ public static class EnemyStatsExporter
     [Serializable]
     private class ExportedStat
     {
-        public string statId;        // StatType.name (your StatID)
-        public string displayName;   // StatType.displayName
+        public string statId;
+        public string displayName;
         public StatCategory category;
         public float value;
     }
+
     [Serializable]
     private class ExportedAttribute
     {
@@ -41,10 +42,7 @@ public static class EnemyStatsExporter
         public string name;
         public string assetPath;
         public string resourcesPath;
-
-        // Replace StatCollection with an export-friendly list
         public List<ExportedStat> stats = new List<ExportedStat>();
-
         public List<ExportedAttribute> enemyAttributesList = new List<ExportedAttribute>();
         public LootTable dropTable;
         public float goldDropped;
@@ -76,7 +74,6 @@ public static class EnemyStatsExporter
                 experienceDropped = enemyStatsHolder.experienceDropped
             };
 
-            // Flatten StatType reference -> strings
             if (enemyStatsHolder.stats != null)
             {
                 foreach (var statValue in enemyStatsHolder.stats.Stats)
@@ -93,17 +90,19 @@ public static class EnemyStatsExporter
                         value = statValue.Value
                     });
                 }
-                // Enemy Attributes
+            }
+
+            if (enemyStatsHolder.enemyAttributesList != null)
+            {
                 foreach (var attribute in enemyStatsHolder.enemyAttributesList)
                 {
-                    var exportedAttribute = new ExportedAttribute
+                    entry.enemyAttributesList.Add(new ExportedAttribute
                     {
                         damageAttributeName = attribute.attackAttribute != null ? attribute.attackAttribute.name : "Unknown Attribute",
                         damageAttributeValue = attribute.attackAttributeValue,
                         defenseAttributeName = attribute.defenseAttribute != null ? attribute.defenseAttribute.name : "Unknown Attribute",
                         defenseAttributeValue = attribute.defenseAttributeValue
-                    };
-                    entry.enemyAttributesList.Add(exportedAttribute);
+                    });
                 }
             }
 
