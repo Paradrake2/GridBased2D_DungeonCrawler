@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AlbinoSpiderFang
   m_EditorClassIdentifier: 
   itemName: Albino Spider Fang
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 5683848459607025334, guid: 87a4e131a53fde6478c2489b893607fb, type: 3}
   itemPrefab: {fileID: 0}
   stats:
     stats:
@@ -31,5 +31,5 @@ MonoBehaviour:
     value: 1
   debuffResistances: []
   color: {r: 1, g: 1, b: 1, a: 1}
-  id: 
+  id: albinoSpiderFang
   persistent: 0

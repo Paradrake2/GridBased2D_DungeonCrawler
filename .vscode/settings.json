@@ -66,5 +66,5 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj"
     },
-    "dotnet.defaultSolution": "GridBased2D_DungeonCrawler-main.sln"
+    "dotnet.defaultSolution": "2D Dungeon crawler.sln"
 }

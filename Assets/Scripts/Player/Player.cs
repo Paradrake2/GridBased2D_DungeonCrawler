@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     public PlayerMovement playerMovement;
     public PlayerDebuffManager debuffManager;
     public Inventory inventory;
+    public PotionManager potionManager;
     public int level = 1;
     public float health;
     public float damage;
@@ -58,6 +59,7 @@ public class Player : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         debuffManager = GetComponent<PlayerDebuffManager>();
         inventory = FindAnyObjectByType<Inventory>();
+        potionManager = FindAnyObjectByType<PotionManager>();
         health = stats.baseHealth;
         damage = stats.baseDamage;
         defense = stats.baseDefense;

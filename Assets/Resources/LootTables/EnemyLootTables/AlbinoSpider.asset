@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed18c7f3eabebee47a153c2684f7e303, type: 3}
   m_Name: AlbinoSpider
   m_EditorClassIdentifier: 
-  dropItems: []
-  minItemsToDrop: 0
-  maxItemsToDrop: 0
+  dropItems:
+  - item: {fileID: 11400000, guid: 95f837acd0c01d94a9b023719119257c, type: 2}
+    dropChance: 1
+  minItemsToDrop: 1
+  maxItemsToDrop: 1

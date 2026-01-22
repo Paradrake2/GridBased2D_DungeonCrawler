@@ -33,7 +33,11 @@ public class StatCollection
         var stat = stats.FirstOrDefault(s => s.StatType == statType);
         return stat?.Value ?? (statType?.defaultValue ?? 0f);
     }
-    
+    public float GetStat(StatValue statValue)
+    {
+        var stat = stats.FirstOrDefault(s => s.StatType == statValue.StatType);
+        return stat?.Value ?? (statValue.StatType?.defaultValue ?? 0f);
+    }
     /// <summary>
     /// Get stat by ID string
     /// </summary>

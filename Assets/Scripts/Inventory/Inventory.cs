@@ -23,6 +23,7 @@ public class Inventory : MonoBehaviour
     public EquipmentManager equipmentManager;
     public List<InventoryItemSlot> items = new List<InventoryItemSlot>();
     public List<Equipment> storedEquipment = new List<Equipment>();
+    public List<Potion> storedPotions = new List<Potion>();
 
     void Awake()
     {
@@ -55,6 +56,22 @@ public class Inventory : MonoBehaviour
     public void AddEquipment(Equipment newEquipment)
     {
         storedEquipment.Add(newEquipment);
+    }
+    public void AddPotion(Potion newPotion)
+    {
+        storedPotions.Add(newPotion);
+    }
+    public void RemovePotion(Potion potionToRemove)
+    {
+        if (storedPotions.Contains(potionToRemove))
+        {
+            storedPotions.Remove(potionToRemove);
+        }
+        else
+        {
+            // Potion not found in inventory
+            Debug.LogWarning("Attempted to remove potion not in inventory: " + potionToRemove.potionName);
+        }
     }
     public void RemoveItem(Item itemToRemove, int quantity)
     {

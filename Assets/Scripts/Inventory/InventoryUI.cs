@@ -8,7 +8,7 @@ public class InventoryUI : MonoBehaviour
     public Transform inventoryParent;
     public GameObject itemSlotPrefab;
     public GameObject equipmentSlotPrefab;
-
+    public GameObject potionSlotPrefab;
     public void PopulateItemInventory() // crafting potions
     {
         ClearChildren(inventoryParent);
