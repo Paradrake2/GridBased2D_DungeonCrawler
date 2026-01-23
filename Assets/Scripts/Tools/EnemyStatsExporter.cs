@@ -79,7 +79,6 @@ public static class EnemyStatsExporter
                 foreach (var statValue in enemyStatsHolder.stats.Stats)
                 {
                     var statType = statValue.StatType;
-
                     entry.stats.Add(new ExportedStat
                     {
                         statId = statType != null ? statType.StatID : "",
@@ -96,12 +95,23 @@ public static class EnemyStatsExporter
             {
                 foreach (var attribute in enemyStatsHolder.enemyAttributesList)
                 {
-                    entry.enemyAttributesList.Add(new ExportedAttribute
+                    entry.stats.Add(new ExportedStat
                     {
-                        damageAttributeName = attribute.attackAttribute != null ? attribute.attackAttribute.name : "Unknown Attribute",
-                        damageAttributeValue = attribute.attackAttributeValue,
-                        defenseAttributeName = attribute.defenseAttribute != null ? attribute.defenseAttribute.name : "Unknown Attribute",
-                        defenseAttributeValue = attribute.defenseAttributeValue
+                        statId = attribute.attackAttribute != null ? attribute.attackAttribute.StatID : "",
+                        displayName = attribute.attackAttribute != null && !string.IsNullOrWhiteSpace(attribute.attackAttribute.displayName)
+                            ? attribute.attackAttribute.displayName
+                            : (attribute.attackAttribute != null ? attribute.attackAttribute.name : "Unknown Stat"),
+                        category = attribute.attackAttribute != null ? attribute.attackAttribute.category : default,
+                        value = attribute.attackAttributeValue
+                    });
+                    entry.stats.Add(new ExportedStat
+                    {
+                        statId = attribute.defenseAttribute != null ? attribute.defenseAttribute.StatID : "",
+                        displayName = attribute.defenseAttribute != null && !string.IsNullOrWhiteSpace(attribute.defenseAttribute.displayName)
+                            ? attribute.defenseAttribute.displayName
+                            : (attribute.defenseAttribute != null ? attribute.defenseAttribute.name : "Unknown Stat"),
+                        category = attribute.defenseAttribute != null ? attribute.defenseAttribute.category : default,
+                        value = attribute.defenseAttributeValue
                     });
                 }
             }
