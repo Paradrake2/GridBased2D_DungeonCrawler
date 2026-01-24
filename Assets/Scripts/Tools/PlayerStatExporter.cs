@@ -10,7 +10,6 @@ public static class PlayerStatExporter
     {
         public string exportedAt = DateTime.Now.ToString();
         public List<ExportedStat> playerStats = new List<ExportedStat>();
-        public List<ExportedAttribute> playerAttributes = new List<ExportedAttribute>();
     }
     [Serializable]
     private class ExportedStat
@@ -19,12 +18,6 @@ public static class PlayerStatExporter
         public string displayName;
         public StatCategory category;
         public float value;
-    }
-    [Serializable]
-    private class ExportedAttribute
-    {
-        public string attributeName;
-        public float attributeValue;
     }
     [MenuItem("Tools/Export Player Stats to JSON")]
     public static void ExportPlayerStatsToJson()
@@ -54,21 +47,25 @@ public static class PlayerStatExporter
         PlayerAttributeSet attributeSet = player.GetAttributeSet();
         foreach (var attribute in attributeSet.GetAttackAttributes())
         {
-            var exportedAttribute = new ExportedAttribute
+            var exportedAttribute = new ExportedStat
             {
-                attributeName = attribute.attackAttribute.displayName,
-                attributeValue = attribute.attackAttributeValue
+                statId = attribute.attackAttribute.StatID,
+                displayName = attribute.attackAttribute.displayName,
+                category = attribute.attackAttribute.category,
+                value = attribute.attackAttributeValue
             };
-            export.playerAttributes.Add(exportedAttribute);
+            export.playerStats.Add(exportedAttribute);
         }
         foreach (var attribute in attributeSet.GetDefenseAttributes())
         {
-            var exportedAttribute = new ExportedAttribute
+            var exportedAttribute = new ExportedStat
             {
-                attributeName = attribute.defenseAttribute.displayName,
-                attributeValue = attribute.defenseAttributeValue
+                statId = attribute.defenseAttribute.StatID,
+                displayName = attribute.defenseAttribute.displayName,
+                category = attribute.defenseAttribute.category,
+                value = attribute.defenseAttributeValue
             };
-            export.playerAttributes.Add(exportedAttribute);
+            export.playerStats.Add(exportedAttribute);
         }
         string json = JsonUtility.ToJson(export, true);
         System.IO.File.WriteAllText("PlayerStatsExport.json", json);
