@@ -1,5 +1,5 @@
 {
-    "exportedAt": "1/24/2026 1:12:05 PM",
+    "exportedAt": "1/24/2026 1:30:20 PM",
     "playerStats": [
         {
             "statId": "Health",
@@ -30,20 +30,24 @@
             "displayName": "Poison",
             "category": 2,
             "value": 20.0
-        }
-    ],
-    "playerAttributes": [
-        {
-            "attributeName": "Wind Damage",
-            "attributeValue": 10.0
         },
         {
-            "attributeName": "Wind Defense",
-            "attributeValue": 20.0
+            "statId": "WindDamage",
+            "displayName": "Wind Damage",
+            "category": 5,
+            "value": 10.0
         },
         {
-            "attributeName": "Light Defense",
-            "attributeValue": 2.0
+            "statId": "WindDefense",
+            "displayName": "Wind Defense",
+            "category": 5,
+            "value": 20.0
+        },
+        {
+            "statId": "LightDefense",
+            "displayName": "Light Defense",
+            "category": 5,
+            "value": 2.0
         }
     ]
 }

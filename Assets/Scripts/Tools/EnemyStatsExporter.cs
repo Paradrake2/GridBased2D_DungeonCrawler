@@ -44,6 +44,7 @@ public static class EnemyStatsExporter
         public string resourcesPath;
         public List<ExportedStat> stats = new List<ExportedStat>();
         public List<ExportedAttribute> enemyAttributesList = new List<ExportedAttribute>();
+        public ExportedStat weakness;
         public LootTable dropTable;
         public float goldDropped;
         public float experienceDropped;
@@ -115,11 +116,23 @@ public static class EnemyStatsExporter
                     });
                 }
             }
+            if (enemyStatsHolder.weakness != null)
+            {
+                entry.weakness = new ExportedStat
+                {
+                    statId = enemyStatsHolder.weakness.StatID,
+                    displayName = !string.IsNullOrWhiteSpace(enemyStatsHolder.weakness.displayName)
+                        ? enemyStatsHolder.weakness.displayName
+                        : enemyStatsHolder.weakness.name,
+                    category = enemyStatsHolder.weakness.category,
+                    value = enemyStatsHolder.weaknessMultiplier
+                };
+            }
 
             export.enemyStats.Add(entry);
         }
 
-        string defaultName = $"EnemyStatsExport_{DateTime.Now:yyyyMMdd_HHmmss}.json";
+        string defaultName = $"EnemyStats.json";
         string exportDir = Path.GetFullPath(Path.Combine(Application.dataPath, "..", "Exports"));
         Directory.CreateDirectory(exportDir);
 

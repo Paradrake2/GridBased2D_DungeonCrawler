@@ -14,15 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     stats:
-    - statType: {fileID: 11400000, guid: 4090b8317db3bb74187cb28f24e54983, type: 2}
-      value: 1
-    - statType: {fileID: 11400000, guid: 3deb6a3649d4b5d4e95c23ecadd98cd7, type: 2}
+    - statType: {fileID: 11400000, guid: 6df30064bf8c29047b90fb2339a0689e, type: 2}
       value: 4
+    - statType: {fileID: 11400000, guid: 3deb6a3649d4b5d4e95c23ecadd98cd7, type: 2}
+      value: 6
     - statType: {fileID: 11400000, guid: 690c87441abb0704e948241ef5a367bf, type: 2}
       value: 0
-    - statType: {fileID: 11400000, guid: 6df30064bf8c29047b90fb2339a0689e, type: 2}
-      value: 100000
+    - statType: {fileID: 11400000, guid: 4090b8317db3bb74187cb28f24e54983, type: 2}
+      value: 1
   enemyAttributesList: []
+  weakness: {fileID: 11400000, guid: 9e8b3d9ad2b47da4b84d7bdab851a78f, type: 2}
+  weaknessMultiplier: 1.5
   dropTable: {fileID: 0}
   maxHealth: 0
   defense: 0

@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a94483286463a44aaddd8d888e200fc, type: 3}
-  m_Name: GreenGoblin
+  m_Name: MushroomMonsterOne
   m_EditorClassIdentifier: 
   stats:
     stats:
     - statType: {fileID: 11400000, guid: 6df30064bf8c29047b90fb2339a0689e, type: 2}
-      value: 22
+      value: 20
     - statType: {fileID: 11400000, guid: 3deb6a3649d4b5d4e95c23ecadd98cd7, type: 2}
-      value: 5
+      value: 8
     - statType: {fileID: 11400000, guid: 690c87441abb0704e948241ef5a367bf, type: 2}
-      value: 2
+      value: 3
     - statType: {fileID: 11400000, guid: 4090b8317db3bb74187cb28f24e54983, type: 2}
-      value: 1
+      value: 0.8
   enemyAttributesList:
   - attackAttribute: {fileID: 11400000, guid: acedd47433b85d740916eb5af8dcea2a, type: 2}
-    attackAttributeValue: 2
+    attackAttributeValue: 6
     defenseAttribute: {fileID: 11400000, guid: ca63b98f8bdafee4db47ed81b5d5106a, type: 2}
-    defenseAttributeValue: 2
-  weakness: {fileID: 11400000, guid: 9e8b3d9ad2b47da4b84d7bdab851a78f, type: 2}
+    defenseAttributeValue: 5
+  weakness: {fileID: 0}
   weaknessMultiplier: 1.5
   dropTable: {fileID: 0}
-  maxHealth: 15
-  defense: 1
-  damage: 3
-  goldDropped: 2
-  experienceDropped: 6
+  maxHealth: 0
+  defense: 0
+  damage: 0
+  goldDropped: 0
+  experienceDropped: 0
