@@ -258,6 +258,14 @@ public class Player : MonoBehaviour
     {
         gold += amount;
     }
+    public StatCollection GetStats()
+    {
+        return statCol;
+    }
+    public PlayerAttributeSet GetAttributeSet()
+    {
+        return attributeSet;
+    }
     void Start()
     {
         Initialize();
