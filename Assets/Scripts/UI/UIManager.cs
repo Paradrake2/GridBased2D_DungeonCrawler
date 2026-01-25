@@ -40,14 +40,14 @@ public class UIManager : MonoBehaviour
         inventoryUI.PopulateCraftingEquipmentInventory();
         potionCraftingTransform.gameObject.SetActive(false);
         equipmentCraftingTransform.gameObject.SetActive(true);
-        toggleButton.SetActive(true);
+        //toggleButton.SetActive(true);
     }
     public void ItemInvOpen() // used in crafting for potions
     {
         inventoryUI.PopulateItemInventory();
         equipmentCraftingTransform.gameObject.SetActive(false);
         potionCraftingTransform.gameObject.SetActive(true);
-        toggleButton.SetActive(false);
+        //toggleButton.SetActive(false);
     }
     public void ToggleInventoryType()
     {

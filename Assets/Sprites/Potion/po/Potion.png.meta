@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 843dd06425d17bb4b8f960e6be7d519a
+guid: 390883ee204e0034db3403fd7f38530b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2212607577121802233
-    second: horn_0
+      213: -2880734798192188640
+    second: Potion_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: horn_0
+      name: Potion_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 39
-        width: 302
-        height: 262
+        x: 219
+        y: 29
+        width: 352
+        height: 712
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 708315aa12d3b41e0800000000000000
-      internalID: -2212607577121802233
+      spriteID: 023e5adb6f29508d0800000000000000
+      internalID: -2880734798192188640
       vertices: []
       indices: 
       edges: []

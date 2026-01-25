@@ -41,7 +41,7 @@ public class EquipmentTemplate : ScriptableObject
         Equipment newEquipment = Instantiate(baseEquipment);
         foreach (var stat in stats)
         {
-            float value = Random.Range(stat.minValue, stat.maxValue);
+            int value = (int)Random.Range(stat.minValue, stat.maxValue);
             newEquipment.stats.AddStat(stat.stat, value);
         }
         int debuffCount = GetRandomInt(minDebuffs, maxDebuffs);

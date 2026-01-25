@@ -30,20 +30,16 @@ public class InventoryItemSlotUI : MonoBehaviour
         } else
         {
             // potion craft behaviour
+            CraftPotion craftPotion = FindAnyObjectByType<CraftPotion>();
+            craftPotion.AddItem(containedItem);
+            Inventory inventory = FindAnyObjectByType<Inventory>();
+            inventory.RemoveItem(containedItem, 1);
+            InventoryUI inventoryUI = FindAnyObjectByType<InventoryUI>();
+            inventoryUI.PopulateItemInventory();
         }
     }
     public void SetEquipmentCraftingMode(bool mode)
     {
         equipmentCrafting = mode;
-    }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

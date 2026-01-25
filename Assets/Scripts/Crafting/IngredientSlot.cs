@@ -6,6 +6,8 @@ public class IngredientSlot : MonoBehaviour
     public Item storedIngredient;
     public Image icon;
     [SerializeField] private Sprite baseIcon;
+    [SerializeField] private bool isSlotA;
+    [SerializeField] private bool isSlotB;
     public void SetIngredient(Item ingredient)
     {
         storedIngredient = ingredient;
@@ -21,6 +23,25 @@ public class IngredientSlot : MonoBehaviour
     public void OnClick()
     {
         Debug.Log("Ingredient slot clicked: " + icon.sprite.name);
+        if (storedIngredient != null)
+        {
+            // remove ingredient from slot and add back to inventory
+            Inventory inventory = FindAnyObjectByType<Inventory>();
+            inventory.AddItem(storedIngredient, 1);
+            SetIngredient(null);
+            InventoryUI inventoryUI = FindAnyObjectByType<InventoryUI>();
+            inventoryUI.PopulateItemInventory();
+            if (isSlotA)
+            {
+                CraftPotion craftPotion = FindAnyObjectByType<CraftPotion>();
+                craftPotion.itemA = null;
+            }
+            else if (isSlotB)
+            {
+                CraftPotion craftPotion = FindAnyObjectByType<CraftPotion>();
+                craftPotion.itemB = null;
+            }
+        }
     }
     public void Instantiate()
     {

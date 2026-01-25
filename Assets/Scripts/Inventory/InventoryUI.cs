@@ -61,6 +61,16 @@ public class InventoryUI : MonoBehaviour
             slotUI.SetCraftingMode(true);
         }
     }
+    public void PopulatePotionInventory()
+    {
+        ClearChildren(inventoryParent);
+        foreach (Potion potion in inventory.storedPotions)
+        {
+            GameObject newSlot = Instantiate(potionSlotPrefab, inventoryParent);
+            InventoryPotionSlotUI slotUI = newSlot.GetComponent<InventoryPotionSlotUI>();
+            slotUI.Initialize(potion);
+        }
+    }
 
     private void ClearChildren(Transform parent)
     {

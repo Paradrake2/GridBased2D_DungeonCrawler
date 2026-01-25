@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: GreenGoblinLootTable
   m_EditorClassIdentifier: 
   dropItems:
-  - item: {fileID: 11400000, guid: b5ce224c1ec011c4682a12fc9108be6c, type: 2}
+  - item: {fileID: 11400000, guid: 3ad94c0121075c6449916d4e0d0f814e, type: 2}
+    dropChance: 1
+  - item: {fileID: 11400000, guid: 5fa011f43a2ed4c4bbcc1823e7808124, type: 2}
     dropChance: 1
   minItemsToDrop: 1
   maxItemsToDrop: 1

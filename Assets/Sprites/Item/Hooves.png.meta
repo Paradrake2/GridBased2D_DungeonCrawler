@@ -3,11 +3,11 @@ guid: b233caf514d10b74fa652cee8ab8098a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2952482376178455717
-    second: Icon45_0
+      213: 56785177997433564
+    second: hooves_0
   - first:
-      213: -5843444945757434052
-    second: Icon45_1
+      213: -421083813079613835
+    second: hooves_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Icon45_0
+      name: hooves_0
       rect:
         serializedVersion: 2
         x: 9
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5a4d7b5041359f820800000000000000
-      internalID: 2952482376178455717
+      spriteID: cda5b0b81ddb9c000800000000000000
+      internalID: 56785177997433564
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Icon45_1
+      name: hooves_1
       rect:
         serializedVersion: 2
         x: 169
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c3f839f18c9e7eea0800000000000000
-      internalID: -5843444945757434052
+      spriteID: 57ef8b4c082082af0800000000000000
+      internalID: -421083813079613835
       vertices: []
       indices: 
       edges: []
@@ -159,9 +159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Icon45_0: 2952482376178455717
-      Icon45_1: -5843444945757434052
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
