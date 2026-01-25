@@ -25,10 +25,11 @@ public class Player : MonoBehaviour
     public Inventory inventory;
     public PotionManager potionManager;
     public int level = 1;
-    public float health;
-    public float damage;
-    public float defense;
-    public float attackSpeed;
+    [SerializeField] private float health;
+    [SerializeField] private float damage;
+    [SerializeField] private float defense;
+    [SerializeField] private float attackSpeed;
+    [SerializeField] private float craftingEfficiency;
     public float experience;
     public float experienceToNextLevel = 100f;
     public int gold; // amount of gold gained this run
@@ -60,22 +61,25 @@ public class Player : MonoBehaviour
         debuffManager = GetComponent<PlayerDebuffManager>();
         inventory = FindAnyObjectByType<Inventory>();
         potionManager = FindAnyObjectByType<PotionManager>();
-        health = stats.baseHealth;
-        damage = stats.baseDamage;
-        defense = stats.baseDefense;
-        attackSpeed = stats.baseAttackSpeed;
+        health = stats.GetBaseHealth();
+        damage = stats.GetBaseDamage();
+        defense = stats.GetBaseDefense();
+        attackSpeed = stats.GetBaseAttackSpeed();
+        craftingEfficiency = stats.GetBaseCraftingEfficiency();
         
         StatDatabase db = StatDatabase.Instance;
         StatType Health = db.GetStat("Health");
         StatType Damage = db.GetStat("Damage");
         StatType Defense = db.GetStat("Defense");
         StatType AttackSpeed = db.GetStat("AttackSpeed");
+        StatType CraftingEfficiency = db.GetStat("CraftingEfficiency");
 
         gold = 0;
-        statCol.SetStat(Health, stats.baseHealth);
-        statCol.SetStat(Damage, stats.baseDamage);
-        statCol.SetStat(Defense, stats.baseDefense);
-        statCol.SetStat(AttackSpeed, stats.baseAttackSpeed);
+        statCol.SetStat(Health, stats.GetBaseHealth());
+        statCol.SetStat(Damage, stats.GetBaseDamage());
+        statCol.SetStat(Defense, stats.GetBaseDefense());
+        statCol.SetStat(AttackSpeed, stats.GetBaseAttackSpeed());
+        statCol.SetStat(CraftingEfficiency, stats.GetBaseCraftingEfficiency());
         SetUpAttributeValues();
         UpdateFromEquipment();
     }
@@ -97,6 +101,7 @@ public class Player : MonoBehaviour
         damage = statCol.GetStat("Damage");
         defense = statCol.GetStat("Defense");
         attackSpeed = statCol.GetStat("AttackSpeed");
+        craftingEfficiency = statCol.GetStat("CraftingEfficiency");
     }
     public void UpdateFromEquipment()
     {
@@ -155,22 +160,24 @@ public class Player : MonoBehaviour
     }
     public void RecalculateAllValues()
     {
-        health = stats.baseHealth;
-        damage = stats.baseDamage;
-        defense = stats.baseDefense;
-        attackSpeed = stats.baseAttackSpeed;
+        health = stats.GetBaseHealth();
+        damage = stats.GetBaseDamage();
+        defense = stats.GetBaseDefense();
+        attackSpeed = stats.GetBaseAttackSpeed();
         
         StatDatabase db = StatDatabase.Instance;
         StatType Health = db.GetStat("Health");
         StatType Damage = db.GetStat("Damage");
         StatType Defense = db.GetStat("Defense");
         StatType AttackSpeed = db.GetStat("AttackSpeed");
+        StatType CraftingEfficiency = db.GetStat("CraftingEfficiency");
 
         gold = 0;
-        statCol.SetStat(Health, stats.baseHealth);
-        statCol.SetStat(Damage, stats.baseDamage);
-        statCol.SetStat(Defense, stats.baseDefense);
-        statCol.SetStat(AttackSpeed, stats.baseAttackSpeed);
+        statCol.SetStat(Health, stats.GetBaseHealth());
+        statCol.SetStat(Damage, stats.GetBaseDamage());
+        statCol.SetStat(Defense, stats.GetBaseDefense());
+        statCol.SetStat(AttackSpeed, stats.GetBaseAttackSpeed());
+        statCol.SetStat(CraftingEfficiency, stats.GetBaseCraftingEfficiency());
         ClearAllAttributes();
         SetUpAttributeValues();
         equipmentManager.SetAllEquipmentCountedFalse();
@@ -210,6 +217,10 @@ public class Player : MonoBehaviour
     public float GetDropChance()
     {
         return statCol.GetStat("DropChance");
+    }
+    public float GetDamage()
+    {
+        return damage;
     }
 
     void Awake()

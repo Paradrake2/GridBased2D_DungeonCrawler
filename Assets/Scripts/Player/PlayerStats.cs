@@ -62,10 +62,11 @@ public class PlayerStats : MonoBehaviour
     [Header("Player Stats")]
     public StatCollection stats = new StatCollection();
     public PlayerAttributeSet attributeSet = new PlayerAttributeSet();
-    public float baseHealth = 100f;
-    public float baseDamage = 2f;
-    public float baseDefense = 0f;
-    public float baseAttackSpeed = 1f;
+    [SerializeField] private float baseHealth = 100f;
+    [SerializeField] private float baseDamage = 2f;
+    [SerializeField] private float baseDefense = 0f;
+    [SerializeField] private float baseAttackSpeed = 1f;
+    [SerializeField] private float baseCraftingEfficiency = 1f;
     public int goldAmount = 0;
     public static PlayerStats instance;
 
@@ -149,6 +150,30 @@ public class PlayerStats : MonoBehaviour
         }
         
         return copy;
+    }
+    public void AddStat(StatType statType, float value)
+    {
+        stats.AddStat(statType, value);
+    }
+    public float GetBaseCraftingEfficiency()
+    {
+        return baseCraftingEfficiency;
+    }
+    public float GetBaseAttackSpeed()
+    {
+        return baseAttackSpeed;
+    }
+    public float GetBaseHealth()
+    {
+        return baseHealth;
+    }
+    public float GetBaseDamage()
+    {
+        return baseDamage;
+    }
+    public float GetBaseDefense()
+    {
+        return baseDefense;
     }
     void Start()
     {

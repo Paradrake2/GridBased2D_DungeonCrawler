@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b537843afdacb4e8c1198ed5793a60, type: 3}
+  m_Name: table1
+  m_EditorClassIdentifier: 
+  potentialEquipmentDrops:
+  - equipmentDrop: {fileID: 11400000, guid: 47d3050833169d04e85739ff927a5c9d, type: 2}
+    weight: 1

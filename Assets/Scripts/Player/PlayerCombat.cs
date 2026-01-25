@@ -27,7 +27,7 @@ public class PlayerCombat : MonoBehaviour
             StartCoroutine(inflictor.debuff.TickEffect());
             Debug.Log("Applied " + inflictor.debuff.debuffName + " to " + target.name + " from player.");
         }
-        target.GetComponent<Enemy>().TakeDamage(player.damage * damageMult, attackAttributes); // initial attack with damage multiplier
+        target.GetComponent<Enemy>().TakeDamage(player.GetDamage() * damageMult, attackAttributes); // initial attack with damage multiplier
         StartCoroutine(ConmbatRoutine(attackSpeed, target, attackAttributes));
     }
 
@@ -39,7 +39,7 @@ public class PlayerCombat : MonoBehaviour
         {
             //if (target.GetComponent<Enemy>() == null) break; // break when enemy is dead
             Debug.LogWarning("Player attacks " + target.name);
-            target.GetComponent<Enemy>().TakeDamage(player.damage, attackAttributes);
+            target.GetComponent<Enemy>().TakeDamage(player.GetDamage(), attackAttributes);
             yield return new WaitForSeconds(attackInterval);
         }
         Manager.instance.playerCanMove = true;
