@@ -18,7 +18,7 @@ public class Chest : MonoBehaviour
             OpenChest();
         }
     }
-    private void OpenChest()
+    public void OpenChest()
     {
         isOpened = true;
         GetComponent<SpriteRenderer>().sprite = openedIcon;
