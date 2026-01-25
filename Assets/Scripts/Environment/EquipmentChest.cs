@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class EquipmentChest : Chest
 {
-    [SerializeField] private EquipmentDropTable equipmentDropTable;
-
     public override void AcquireLoot()
     {
-        Equipment loot = equipmentDropTable.GetEquipment();
+        Manager m = Manager.instance;
+        LootManager lm = LootManager.Instance;
+        Equipment loot = lm.GetEquipmentDropTableForFloor(Manager.instance.currentFloor).GetEquipment();
         Inventory inventory = FindFirstObjectByType<Inventory>();
         if (inventory != null && loot != null)
         {

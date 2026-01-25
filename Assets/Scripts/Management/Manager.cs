@@ -5,6 +5,7 @@ public class Manager : MonoBehaviour
     public static Manager instance;
     public bool playerMoving = false;
     public bool playerCanMove = true;
+    public int currentFloor = 1;
     void Awake()
     {
         if (instance == null)
@@ -16,6 +17,14 @@ public class Manager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    public void IncreaseFloor()
+    {
+        currentFloor++;
+    }
+    public void ResetFloor()
+    {
+        currentFloor = 1;
     }
     void Start()
     {
