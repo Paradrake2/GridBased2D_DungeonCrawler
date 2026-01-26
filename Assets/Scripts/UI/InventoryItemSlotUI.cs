@@ -27,6 +27,10 @@ public class InventoryItemSlotUI : MonoBehaviour
         {
             // get list of available ingredient slots
             // find first empty ingredient slot and add the item there
+            EquipmentCrafting equipmentCrafting = FindAnyObjectByType<EquipmentCrafting>();
+            equipmentCrafting.AddIngredient(containedItem);
+            EquipmentCraftingUI equipmentCraftingUI = FindAnyObjectByType<EquipmentCraftingUI>();
+            equipmentCraftingUI.UpdateIngredientSlots(equipmentCrafting.GetIngredients());
         } else
         {
             // potion craft behaviour
@@ -34,8 +38,7 @@ public class InventoryItemSlotUI : MonoBehaviour
             craftPotion.AddItem(containedItem);
             Inventory inventory = FindAnyObjectByType<Inventory>();
             inventory.RemoveItem(containedItem, 1);
-            InventoryUI inventoryUI = FindAnyObjectByType<InventoryUI>();
-            inventoryUI.PopulateItemInventory();
+            
         }
     }
     public void SetEquipmentCraftingMode(bool mode)

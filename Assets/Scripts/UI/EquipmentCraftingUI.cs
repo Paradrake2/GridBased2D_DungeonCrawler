@@ -31,6 +31,23 @@ public class EquipmentCraftingUI : MonoBehaviour
         {
             GameObject slot =  Instantiate(equipmentIngredientPrefab, transformIngredientsParent);
             ingredientSlots.Add(slot);
+            slot.GetComponent<IngredientSlot>().Instantiate();
+            slot.GetComponent<IngredientSlot>().SetEquipmentCraftingMode(true);
+        }
+    }
+    public void UpdateIngredientSlots(List<Item> ingredients)
+    {
+        for (int i = 0; i < ingredientSlots.Count; i++)
+        {
+            IngredientSlot slotComponent = ingredientSlots[i].GetComponent<IngredientSlot>();
+            if (i < ingredients.Count)
+            {
+                slotComponent.SetIngredient(ingredients[i]);
+            }
+            else
+            {
+                slotComponent.SetIngredient(null);
+            }
         }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created

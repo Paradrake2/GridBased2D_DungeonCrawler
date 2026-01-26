@@ -81,5 +81,12 @@ public class Equipment : ScriptableObject
     {
         remainingIngredientSlots = newRemainingSlots;
     }
-
+    public string GetID()
+    {
+        return id;
+    }
+    public void SetID()
+    {
+        id = System.Guid.NewGuid().ToString();
+    }
 }

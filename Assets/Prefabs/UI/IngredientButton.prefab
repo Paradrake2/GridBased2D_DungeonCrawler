@@ -61,15 +61,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 6463653806700602330, guid: 7c0d7287744390947bbe71768b7a506d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -148,7 +148,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storedIngredient: {fileID: 0}
   icon: {fileID: 6866396110338097955}
-  baseIcon: {fileID: -1015913854813779228, guid: e6f8b0b929f00b140949f88af241f330, type: 3}
+  baseIcon: {fileID: 6463653806700602330, guid: 7c0d7287744390947bbe71768b7a506d, type: 3}
+  isSlotA: 0
+  isSlotB: 0
+  equipmentCrafting: 0
 --- !u!1 &3010141751275249594
 GameObject:
   m_ObjectHideFlags: 0

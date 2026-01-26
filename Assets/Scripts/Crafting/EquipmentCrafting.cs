@@ -35,14 +35,16 @@ public class EquipmentCrafting : MonoBehaviour
         equipmentSlotPrefab.GetComponent<EquipmentCraftingSlot>().RemoveEquipment();
         // clear ingredients
         ClearIngredients();
-        inventoryUI.PopulateCraftingEquipmentInventory();
+        inventoryUI.PopulateEquipmentCraftingItemInventory();
         equipmentCraftingUI.GenerateIngredientsUI(null);
     }
+    // used when cancelling crafting or removing equipment
     public void ClearIngredients()
     {
-        foreach (Item ingredient in addedIngredients)
+        for (int i = addedIngredients.Count - 1; i >= 0; i--)
         {
-            RemoveIngredient(ingredient);
+            Item ingredient = addedIngredients[i];
+            inventory.AddItem(ingredient, 1);
         }
         addedIngredients.Clear(); // just in case
         inventoryUI.PopulateEquipmentCraftingItemInventory();
@@ -53,6 +55,7 @@ public class EquipmentCrafting : MonoBehaviour
         addedIngredients.Add(ingredient);
         inventory.RemoveItem(ingredient, 1);
         inventoryUI.PopulateEquipmentCraftingItemInventory();
+        storedEquipment.AddIngredient(ingredient);
     }
 
     public void RemoveIngredient(Item ingredient)
@@ -60,16 +63,21 @@ public class EquipmentCrafting : MonoBehaviour
         addedIngredients.Remove(ingredient);
         inventory.AddItem(ingredient, 1);
         inventoryUI.PopulateEquipmentCraftingItemInventory();
+        storedEquipment.RemoveIngredient(ingredient);
     }
     public void Craft()
     {
         if (storedEquipment != null && addedIngredients.Count > 0)
         {
             Equipment newEquipment = GetEquipmentToBeCrafted();
+            newEquipment.SetID();
             inventory.AddEquipment(newEquipment);
-            inventory.RemoveEquipment(storedEquipment);
+            inventory.RemoveEquipmentByID(storedEquipment.GetID());
             // After crafting, clear ingredients
-            ClearIngredients();
+            addedIngredients.Clear();
+            storedEquipment = null;
+            equipmentSlotPrefab.GetComponent<EquipmentCraftingSlot>().RemoveEquipment();
+            equipmentCraftingUI.GenerateIngredientsUI(null);
         }
         else
         {
@@ -79,15 +87,15 @@ public class EquipmentCrafting : MonoBehaviour
     public Equipment GetEquipmentToBeCrafted() // for preview/crafting purposes
     {
         Equipment equipment = Instantiate(storedEquipment);
-            // Crafting logic here
-            foreach (Item ingredient in addedIngredients)
+        // Crafting logic here
+        foreach (Item ingredient in addedIngredients)
+        {
+            foreach (var stat in ingredient.GetStats().Stats)
             {
-                foreach (var stat in ingredient.GetStats().Stats)
-                {
-                    float currentValue = equipment.GetStats().GetStat(stat.GetStatID());
-                    equipment.GetStats().SetStat(StatDatabase.Instance.GetStat(stat.GetStatID()), currentValue + stat.Value);
-                }
+                float currentValue = equipment.GetStats().GetStat(stat.GetStatID());
+                equipment.GetStats().SetStat(StatDatabase.Instance.GetStat(stat.GetStatID()), currentValue + stat.Value);
             }
+        }
         return equipment;
     }
     public List<Item> GetIngredients()

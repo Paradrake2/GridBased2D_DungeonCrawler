@@ -102,9 +102,28 @@ public class Inventory : MonoBehaviour
             Debug.LogWarning("Attempted to remove equipment not in inventory: " + equipmentToRemove.equipmentName);
         }
     }
+    public void RemoveEquipmentByID(string equipmentID)
+    {
+        Equipment equipmentToRemove = storedEquipment.Find(equip => equip.GetID() == equipmentID);
+        if (equipmentToRemove != null)
+        {
+            storedEquipment.Remove(equipmentToRemove);
+        }
+        else
+        {
+            // Equipment not found in inventory
+            Debug.LogWarning("Attempted to remove equipment not in inventory with ID: " + equipmentID);
+        }
+    }
     void Start()
     {
-        
+        foreach (Equipment equipment in storedEquipment)
+        {
+            if (equipment.GetID() == null || equipment.GetID() == "")
+            {
+                equipment.SetID();
+            }
+        }
     }
 
     // Update is called once per frame

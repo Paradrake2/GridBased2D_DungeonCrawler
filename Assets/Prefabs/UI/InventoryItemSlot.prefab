@@ -206,7 +206,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -285,3 +285,4 @@ MonoBehaviour:
   itemIcon: {fileID: 5253161297784586126}
   quantityText: {fileID: 1309967334641078238}
   button: {fileID: 905038461672350062}
+  equipmentCrafting: 0

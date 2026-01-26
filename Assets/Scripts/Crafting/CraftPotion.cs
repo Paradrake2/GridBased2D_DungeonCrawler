@@ -26,6 +26,8 @@ public class CraftPotion : MonoBehaviour
         {
             Debug.Log("Both item slots are already filled.");
         }
+        InventoryUI inventoryUI = FindAnyObjectByType<InventoryUI>();
+        inventoryUI.PopulateItemInventory();
     }
     public void Craft()
     {
