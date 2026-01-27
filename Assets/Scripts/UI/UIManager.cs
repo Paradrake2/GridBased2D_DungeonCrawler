@@ -1,5 +1,13 @@
 using UnityEngine;
 
+public enum InventoryScreen
+{
+    EquipmentStats,
+    SkillTree,
+    Crafting
+}
+
+
 public class UIManager : MonoBehaviour
 {
     public Transform UITransform;
@@ -13,13 +21,33 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Transform potionCraftingTransform;
     [SerializeField] private Transform equipmentCraftingTransform;
     [SerializeField] private GameObject toggleButton;
+    public bool isDirty = false; // set when inventory changes
     private bool invType = true; // false = item, true = equipment
+    [SerializeField] private InventoryScreen currentScreen = InventoryScreen.EquipmentStats;
     public void ToggleUI()
     {
         isUIOpen = !isUIOpen;
+        PlayerMovement playerMovement = FindAnyObjectByType<PlayerMovement>();
+        playerMovement.SetCanMove(!isUIOpen);
         UITransform.gameObject.SetActive(isUIOpen);
         PlayerStatsShower statsShower = FindAnyObjectByType<PlayerStatsShower>();
         statsShower.UpdateStats();
+        if (isDirty)
+        {
+            switch (currentScreen)
+            {
+                case InventoryScreen.EquipmentStats:
+                    OpenEquipmentStats();
+                    break;
+                case InventoryScreen.SkillTree:
+                    OpenSkillTree();
+                    break;
+                case InventoryScreen.Crafting:
+                    OpenCrafting();
+                    break;
+            }
+            isDirty = false;
+        }
     }
     public void OpenSkillTree()
     {
@@ -27,6 +55,7 @@ public class UIManager : MonoBehaviour
         CraftingTransform.gameObject.SetActive(false);
         EquipmentStatsTransform.gameObject.SetActive(false);
         InventoryTransform.gameObject.SetActive(false);
+        currentScreen = InventoryScreen.SkillTree;
     }
     public void OpenCrafting()
     {
@@ -35,6 +64,7 @@ public class UIManager : MonoBehaviour
         EquipmentStatsTransform.gameObject.SetActive(false);
         InventoryTransform.gameObject.SetActive(true);
         inventoryUI.PopulateItemInventory();
+        currentScreen = InventoryScreen.Crafting;
         ItemInvOpen();
     }
     public void EquipmentInvOpen() // used in crafting to select equipment
@@ -72,6 +102,7 @@ public class UIManager : MonoBehaviour
         inventoryUI.PopulateEquipmentInventory();
         PlayerStatsShower statsShower = FindAnyObjectByType<PlayerStatsShower>();
         statsShower.UpdateStats();
+        currentScreen = InventoryScreen.EquipmentStats;
     }
     void Start()
     {

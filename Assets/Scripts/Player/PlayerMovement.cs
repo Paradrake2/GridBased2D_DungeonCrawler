@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Collider2D playerCollider;
     private float collisionInset = 0.05f; // Small inset to avoid edge collisions
-
+    [SerializeField] private bool canMove = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
             transform.position = SnapToGrid(transform.position);
 
         UpdateLastPressedDirection();
-        if (!isMoving)
+        if (!isMoving && canMove)
         {
             if (diagonalMovementAllowed)
             {
@@ -218,5 +218,13 @@ public class PlayerMovement : MonoBehaviour
     public float GetDistanceTraveled()
     {
         return distanceTraveled;
+    }
+    public bool GetCanMove()
+    {
+        return canMove;
+    }
+    public void SetCanMove(bool value)
+    {
+        canMove = value;
     }
 }

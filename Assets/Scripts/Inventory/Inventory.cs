@@ -21,6 +21,7 @@ public class Inventory : MonoBehaviour
 {
     public static Inventory Instance;
     public EquipmentManager equipmentManager;
+    public UIManager uIManager;
     public List<InventoryItemSlot> items = new List<InventoryItemSlot>();
     public List<Equipment> storedEquipment = new List<Equipment>();
     public List<Potion> storedPotions = new List<Potion>();
@@ -35,6 +36,7 @@ public class Inventory : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
         equipmentManager = GetComponent<EquipmentManager>();
+        uIManager = FindAnyObjectByType<UIManager>();
     }
     public void AddItem(Item newItem, int quantity)
     {
@@ -42,6 +44,7 @@ public class Inventory : MonoBehaviour
         if (existingSlot != null)
         {
             existingSlot.quantity += quantity;
+            uIManager.isDirty = true;
         }
         else
         {
@@ -51,21 +54,25 @@ public class Inventory : MonoBehaviour
                 quantity = quantity
             };
             items.Add(newSlot);
+            uIManager.isDirty = true;
         }
     }
     public void AddEquipment(Equipment newEquipment)
     {
         storedEquipment.Add(newEquipment);
+        uIManager.isDirty = true;
     }
     public void AddPotion(Potion newPotion)
     {
         storedPotions.Add(newPotion);
+        uIManager.isDirty = true;
     }
     public void RemovePotion(Potion potionToRemove)
     {
         if (storedPotions.Contains(potionToRemove))
         {
             storedPotions.Remove(potionToRemove);
+            uIManager.isDirty = true;
         }
         else
         {
@@ -82,6 +89,7 @@ public class Inventory : MonoBehaviour
             if (existingSlot.quantity <= 0)
             {
                 items.Remove(existingSlot);
+                uIManager.isDirty = true;
             }
         }
         else
@@ -95,6 +103,7 @@ public class Inventory : MonoBehaviour
         if (storedEquipment.Contains(equipmentToRemove))
         {
             storedEquipment.Remove(equipmentToRemove);
+            uIManager.isDirty = true;
         }
         else
         {
@@ -108,6 +117,7 @@ public class Inventory : MonoBehaviour
         if (equipmentToRemove != null)
         {
             storedEquipment.Remove(equipmentToRemove);
+            uIManager.isDirty = true;
         }
         else
         {

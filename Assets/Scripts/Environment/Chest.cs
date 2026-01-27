@@ -3,7 +3,7 @@ using UnityEngine;
 public class Chest : MonoBehaviour
 {
     [SerializeField] private string chestID;
-    [SerializeField] private bool isOpened = false;
+    [SerializeField] protected bool isOpened = false;
     [SerializeField] private Sprite closedIcon;
     [SerializeField] private Sprite openedIcon;
     [SerializeField] private Collider2D chestCollider;
@@ -20,9 +20,9 @@ public class Chest : MonoBehaviour
     }
     public void OpenChest()
     {
-        isOpened = true;
         GetComponent<SpriteRenderer>().sprite = openedIcon;
         AcquireLoot();
+        isOpened = true;
     }
     void Start()
     {

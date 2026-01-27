@@ -8,7 +8,7 @@ public class EquipmentChest : Chest
         LootManager lm = LootManager.Instance;
         Equipment loot = lm.GetEquipmentDropTableForFloor(Manager.instance.currentFloor).GetEquipment();
         Inventory inventory = FindFirstObjectByType<Inventory>();
-        if (inventory != null && loot != null)
+        if (inventory != null && loot != null &&!isOpened)
         {
             inventory.AddEquipment(loot);
         }
