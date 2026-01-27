@@ -67,8 +67,13 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private float baseDefense = 0f;
     [SerializeField] private float baseAttackSpeed = 1f;
     [SerializeField] private float baseCraftingEfficiency = 1f;
-    public int goldAmount = 0;
+    [SerializeField] private int goldAmount = 0; // not a StatType
+    [SerializeField] private float xp = 0; // total xp
+    [SerializeField] private float experienceToNextLevel = 100f;
+    [SerializeField] private float currentXP = 0f;
+    [SerializeField] private int playerLevel = 1;
     public static PlayerStats instance;
+    
 
     void Awake()
     {
@@ -90,12 +95,13 @@ public class PlayerStats : MonoBehaviour
         StatType Damage = db.GetStat("Damage");
         StatType Defense = db.GetStat("Defense");
         StatType AttackSpeed = db.GetStat("AttackSpeed");
-
+        StatType CraftingEfficiency = db.GetStat("CraftingEfficiency");
         goldAmount = 0;
         stats.SetStat(Health, baseHealth);
         stats.SetStat(Damage, baseDamage);
         stats.SetStat(Defense, baseDefense);
         stats.SetStat(AttackSpeed, baseAttackSpeed);
+        stats.SetStat(CraftingEfficiency, baseCraftingEfficiency);
     }
     public float GetStatValue(string statID)
     {
@@ -151,6 +157,12 @@ public class PlayerStats : MonoBehaviour
         
         return copy;
     }
+    public void LevelUp()
+    {
+        playerLevel++;
+        experienceToNextLevel *= 1.2f;
+
+    }
     public void AddStat(StatType statType, float value)
     {
         stats.AddStat(statType, value);
@@ -175,14 +187,40 @@ public class PlayerStats : MonoBehaviour
     {
         return baseDefense;
     }
-    void Start()
+    public int GetGoldAmount()
     {
-        
+        return goldAmount;
     }
-
-    // Update is called once per frame
-    void Update()
+    public void SetGoldAmount(int newAmount)
     {
-        
+        goldAmount = newAmount;
+    }
+    public void AddGold(int amount)
+    {
+        goldAmount += amount;
+    }
+    public float GetExperience()
+    {
+        return xp;
+    }
+    public float GetCurrentExperience()
+    {
+        return currentXP;
+    }
+    public float GetExperienceToNextLevel()
+    {
+        return experienceToNextLevel;
+    }
+    public void SetExperience(float newXP)
+    {
+        xp = newXP;
+    }
+    public void AddExperience(float amount)
+    {
+        xp += amount;
+    }
+    public int GetPlayerLevel()
+    {
+        return playerLevel;
     }
 }

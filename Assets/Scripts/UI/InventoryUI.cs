@@ -47,6 +47,7 @@ public class InventoryUI : MonoBehaviour
             slotUI.SetEquipment(equipment);
             slotUI.SetCraftingMode(false);
         }
+        
     }
     public void PopulateCraftingEquipmentInventory()
     {

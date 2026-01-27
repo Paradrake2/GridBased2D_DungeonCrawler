@@ -18,6 +18,8 @@ public class UIManager : MonoBehaviour
     {
         isUIOpen = !isUIOpen;
         UITransform.gameObject.SetActive(isUIOpen);
+        PlayerStatsShower statsShower = FindAnyObjectByType<PlayerStatsShower>();
+        statsShower.UpdateStats();
     }
     public void OpenSkillTree()
     {
@@ -59,6 +61,7 @@ public class UIManager : MonoBehaviour
         {
             inventoryUI.PopulateItemInventory();
         }
+        
     }
     public void OpenEquipmentStats()
     {
@@ -67,6 +70,8 @@ public class UIManager : MonoBehaviour
         CraftingTransform.gameObject.SetActive(false);
         InventoryTransform.gameObject.SetActive(true);
         inventoryUI.PopulateEquipmentInventory();
+        PlayerStatsShower statsShower = FindAnyObjectByType<PlayerStatsShower>();
+        statsShower.UpdateStats();
     }
     void Start()
     {
@@ -76,5 +81,6 @@ public class UIManager : MonoBehaviour
         CraftingTransform.gameObject.SetActive(false);
         inventoryUI = FindAnyObjectByType<InventoryUI>();
         inventoryUI.InitializeInventory();
+        OpenEquipmentStats();
     }
 }

@@ -25,14 +25,12 @@ public class Player : MonoBehaviour
     public Inventory inventory;
     public PotionManager potionManager;
     public int level = 1;
-    [SerializeField] private float health;
+    [SerializeField] private float maxHealth;
     [SerializeField] private float damage;
     [SerializeField] private float defense;
     [SerializeField] private float attackSpeed;
     [SerializeField] private float craftingEfficiency;
-    public float experience;
-    public float experienceToNextLevel = 100f;
-    public int gold; // amount of gold gained this run
+    [SerializeField] private float currentHealth;
     public Rigidbody2D rb;
     public Collider2D coll;
     public StatCollection statCol = new StatCollection();
@@ -40,18 +38,6 @@ public class Player : MonoBehaviour
     public List<PlayerDebuffInflictorHolder> debuffInflictors = new List<PlayerDebuffInflictorHolder>();
     public List<PlayerDebuffResistanceHolder> debuffResistances = new List<PlayerDebuffResistanceHolder>();
 
-    [SerializeField] private float healthOnLevelUp = 10f;
-    [SerializeField] private float damageOnLevelUp = 1f;
-    [SerializeField] private float defenseOnLevelUp = 0.5f;
-    public void Levelup()
-    {
-        level++;
-        health += healthOnLevelUp;
-        damage += damageOnLevelUp;
-        defense += defenseOnLevelUp;
-        experience -= experienceToNextLevel;
-        experienceToNextLevel *= 1.2f;
-    }
     void Initialize()
     {
         stats = FindFirstObjectByType<PlayerStats>();
@@ -61,7 +47,8 @@ public class Player : MonoBehaviour
         debuffManager = GetComponent<PlayerDebuffManager>();
         inventory = FindAnyObjectByType<Inventory>();
         potionManager = FindAnyObjectByType<PotionManager>();
-        health = stats.GetBaseHealth();
+        maxHealth = stats.GetBaseHealth();
+        currentHealth = maxHealth;
         damage = stats.GetBaseDamage();
         defense = stats.GetBaseDefense();
         attackSpeed = stats.GetBaseAttackSpeed();
@@ -74,7 +61,6 @@ public class Player : MonoBehaviour
         StatType AttackSpeed = db.GetStat("AttackSpeed");
         StatType CraftingEfficiency = db.GetStat("CraftingEfficiency");
 
-        gold = 0;
         statCol.SetStat(Health, stats.GetBaseHealth());
         statCol.SetStat(Damage, stats.GetBaseDamage());
         statCol.SetStat(Defense, stats.GetBaseDefense());
@@ -97,7 +83,7 @@ public class Player : MonoBehaviour
     }
     void UpdateBasicStatValues()
     {
-        health = statCol.GetStat("Health");
+        maxHealth = statCol.GetStat("Health");
         damage = statCol.GetStat("Damage");
         defense = statCol.GetStat("Defense");
         attackSpeed = statCol.GetStat("AttackSpeed");
@@ -160,7 +146,7 @@ public class Player : MonoBehaviour
     }
     public void RecalculateAllValues()
     {
-        health = stats.GetBaseHealth();
+        maxHealth = stats.GetBaseHealth();
         damage = stats.GetBaseDamage();
         defense = stats.GetBaseDefense();
         attackSpeed = stats.GetBaseAttackSpeed();
@@ -172,7 +158,6 @@ public class Player : MonoBehaviour
         StatType AttackSpeed = db.GetStat("AttackSpeed");
         StatType CraftingEfficiency = db.GetStat("CraftingEfficiency");
 
-        gold = 0;
         statCol.SetStat(Health, stats.GetBaseHealth());
         statCol.SetStat(Damage, stats.GetBaseDamage());
         statCol.SetStat(Defense, stats.GetBaseDefense());
@@ -183,6 +168,8 @@ public class Player : MonoBehaviour
         equipmentManager.SetAllEquipmentCountedFalse();
         UpdateFromEquipment();
         UpdateDebuffInflictors();
+        PlayerStatsShower statsShower = FindAnyObjectByType<PlayerStatsShower>();
+        statsShower.UpdateStats();
     }
     public float GetAttributeValue(StatType attribute)
     {
@@ -204,8 +191,8 @@ public class Player : MonoBehaviour
     }
     public void TakeDamage(float amount)
     {
-        health -= Mathf.Max(0, amount - defense);
-        if (health <= 0)
+        currentHealth -= Mathf.Max(0, amount - defense);
+        if (currentHealth <= 0)
         {
             Die();
         }
@@ -218,10 +205,7 @@ public class Player : MonoBehaviour
     {
         return statCol.GetStat("DropChance");
     }
-    public float GetDamage()
-    {
-        return damage;
-    }
+    
 
     void Awake()
     {
@@ -257,18 +241,7 @@ public class Player : MonoBehaviour
         }
         attributeSet = stats.attributeSet;
     }
-    public void AddXP(float amount)
-    {
-        experience += amount;
-        if (experience >= experienceToNextLevel)
-        {
-            Levelup();
-        }
-    }
-    public void AddGold(int amount)
-    {
-        gold += amount;
-    }
+
     public StatCollection GetStats()
     {
         return statCol;
@@ -286,5 +259,29 @@ public class Player : MonoBehaviour
     void Update()
     {
         
+    }
+    public float GetHealth()
+    {
+        return currentHealth;
+    }
+    public float GetMaxHealth()
+    {
+        return maxHealth;
+    }
+    public float GetDefense()
+    {
+        return defense;
+    }
+    public float GetAttackSpeed()
+    {
+        return attackSpeed;
+    }
+    public float GetCraftingEfficiency()
+    {
+        return craftingEfficiency;
+    }
+    public float GetDamage()
+    {
+        return damage;
     }
 }
