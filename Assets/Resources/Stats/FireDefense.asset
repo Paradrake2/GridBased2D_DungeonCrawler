@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71f7d06c894e884c9da01bb33bd9039, type: 3}
   m_Name: FireDefense
   m_EditorClassIdentifier: 
-  displayName: 
+  displayName: Fire Defense
   description: 
   icon: {fileID: 0}
   category: 0

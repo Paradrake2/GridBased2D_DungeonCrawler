@@ -67,6 +67,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private float baseDefense = 0f;
     [SerializeField] private float baseAttackSpeed = 1f;
     [SerializeField] private float baseCraftingEfficiency = 1f;
+    [SerializeField] private float baseDropChance = 0.05f;
     [SerializeField] private int goldAmount = 0; // not a StatType
     [SerializeField] private float xp = 0; // total xp
     [SerializeField] private float experienceToNextLevel = 100f;
@@ -186,6 +187,14 @@ public class PlayerStats : MonoBehaviour
     public float GetBaseDefense()
     {
         return baseDefense;
+    }
+    public float GetBaseDropChance()
+    {
+        return baseDropChance;
+    }
+    public void SetBaseDropChance(float newChance)
+    {
+        baseDropChance = newChance;
     }
     public int GetGoldAmount()
     {
