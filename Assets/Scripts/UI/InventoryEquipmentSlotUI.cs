@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class InventoryEquipmentSlotUI : MonoBehaviour
+public class InventoryEquipmentSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public Image icon;
     public Button button;
@@ -10,6 +11,8 @@ public class InventoryEquipmentSlotUI : MonoBehaviour
     [SerializeField] EquipmentUIManager equipmentUIManager;
     [SerializeField] InventoryUI inventoryUI;
     [SerializeField] EquipmentCrafting equipmentCrafting;
+    [SerializeField] EquipmentStatsShower equipmentStatsShower;
+    [SerializeField] PlayerStatsShower playerStatsShower;
     public bool craftingMode = false;
     public void OnClick()
     {
@@ -20,6 +23,14 @@ public class InventoryEquipmentSlotUI : MonoBehaviour
         {
             CraftMode();
         }
+    }
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        equipmentStatsShower.ShowEquipmentStats(containedEquipment);
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        playerStatsShower.UpdateStats();
     }
     void EquipMode()
     {
@@ -54,6 +65,8 @@ public class InventoryEquipmentSlotUI : MonoBehaviour
     void Start()
     {
         equipmentCrafting = FindAnyObjectByType<EquipmentCrafting>();
+        equipmentStatsShower = FindAnyObjectByType<EquipmentStatsShower>();
+        playerStatsShower = FindAnyObjectByType<PlayerStatsShower>();
     }
 
     // Update is called once per frame

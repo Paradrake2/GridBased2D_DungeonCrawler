@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float attackSpeed;
     [SerializeField] private float craftingEfficiency;
     [SerializeField] private float currentHealth;
+    [SerializeField] private int magic;
     public Rigidbody2D rb;
     public Collider2D coll;
     public StatCollection statCol = new StatCollection();
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour
         defense = stats.GetBaseDefense();
         attackSpeed = stats.GetBaseAttackSpeed();
         craftingEfficiency = stats.GetBaseCraftingEfficiency();
+        magic = stats.GetMagic();
         
         StatDatabase db = StatDatabase.Instance;
         StatType Health = db.GetStat("Health");
@@ -60,12 +62,14 @@ public class Player : MonoBehaviour
         StatType Defense = db.GetStat("Defense");
         StatType AttackSpeed = db.GetStat("AttackSpeed");
         StatType CraftingEfficiency = db.GetStat("CraftingEfficiency");
+        StatType Magic = db.GetStat("Magic");
 
         statCol.SetStat(Health, stats.GetBaseHealth());
         statCol.SetStat(Damage, stats.GetBaseDamage());
         statCol.SetStat(Defense, stats.GetBaseDefense());
         statCol.SetStat(AttackSpeed, stats.GetBaseAttackSpeed());
         statCol.SetStat(CraftingEfficiency, stats.GetBaseCraftingEfficiency());
+        statCol.SetStat(Magic, stats.GetMagic());
         SetUpAttributeValues();
         UpdateFromEquipment();
     }
@@ -88,6 +92,7 @@ public class Player : MonoBehaviour
         defense = statCol.GetStat("Defense");
         attackSpeed = statCol.GetStat("AttackSpeed");
         craftingEfficiency = statCol.GetStat("CraftingEfficiency");
+        magic = (int)statCol.GetStat("Magic");
     }
     public void UpdateFromEquipment()
     {
@@ -283,5 +288,9 @@ public class Player : MonoBehaviour
     public float GetDamage()
     {
         return damage;
+    }
+    public int GetMagic()
+    {
+        return magic;
     }
 }

@@ -73,6 +73,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private float experienceToNextLevel = 100f;
     [SerializeField] private float currentXP = 0f;
     [SerializeField] private int playerLevel = 1;
+    [SerializeField] private int magic = 0;
     public static PlayerStats instance;
     
 
@@ -231,5 +232,13 @@ public class PlayerStats : MonoBehaviour
     public int GetPlayerLevel()
     {
         return playerLevel;
+    }
+    public int GetMagic()
+    {
+        return magic;
+    }
+    public void SetMagic(int newMagic)
+    {
+        magic = newMagic;
     }
 }

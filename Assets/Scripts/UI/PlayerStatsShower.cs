@@ -8,9 +8,9 @@ public class PlayerStatsShower : MonoBehaviour
     [SerializeField] private GameObject manaPrefab;
     [SerializeField] private GameObject damagePrefab;
     [SerializeField] private GameObject defensePrefab;
+    [SerializeField] private GameObject magicPrefab;
     [SerializeField] private GameObject attackSpeedPrefab;
     [SerializeField] private GameObject experiencePrefab;
-    [SerializeField] private GameObject goldPrefab;
     [Header("Defense Attribute Fields")]
     [SerializeField] private GameObject waterDefensePrefab;
     [SerializeField] private GameObject fireDefensePrefab;
@@ -27,6 +27,8 @@ public class PlayerStatsShower : MonoBehaviour
     [SerializeField] private GameObject darkDamagePrefab;
     [Header("Miscellaneous Fields")]
     [SerializeField] private GameObject craftingEfficiencyPrefab;
+    [SerializeField] private GameObject goldPrefab;
+
 
     [SerializeField] private Player player;
     [SerializeField] private PlayerStats playerStats;
@@ -58,6 +60,7 @@ public class PlayerStatsShower : MonoBehaviour
         defensePrefab.GetComponent<StatsShower>().Initialize(StatDatabase.Instance.GetStat("Defense"), player.GetDefense().ToString());
         attackSpeedPrefab.GetComponent<StatsShower>().Initialize(StatDatabase.Instance.GetStat("AttackSpeed"), player.GetAttackSpeed().ToString());
         experiencePrefab.GetComponent<StatsShower>().SetCustomText($"XP: {playerStats.GetCurrentExperience()}/{playerStats.GetExperienceToNextLevel()}", Color.yellow);
+        magicPrefab.GetComponent<StatsShower>().Initialize(StatDatabase.Instance.GetStat("Magic"), player.GetMagic().ToString());
         goldPrefab.GetComponent<StatsShower>().SetCustomText($"Gold: {playerStats.GetGoldAmount()}", Color.yellow);
     }
     void UpdateDefenseAttributeStats()
