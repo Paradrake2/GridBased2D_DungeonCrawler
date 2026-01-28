@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Light Damage
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: -2257577265324492059, guid: a5e4fd1df0569434aa69c0b338877290, type: 3}
   category: 5
   isPercentage: 0
   capped: 0
@@ -24,4 +24,4 @@ MonoBehaviour:
   value: 0
   suffix: 
   decimalPlaces: 0
-  displayColor: {r: 1, g: 1, b: 1, a: 1}
+  displayColor: {r: 0.5849056, g: 0.5796822, b: 0, a: 1}

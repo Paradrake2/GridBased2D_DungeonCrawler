@@ -24,4 +24,4 @@ MonoBehaviour:
   value: 0
   suffix: 
   decimalPlaces: 0
-  displayColor: {r: 1, g: 1, b: 1, a: 1}
+  displayColor: {r: 0.6981132, g: 0.3280298, b: 0.2206301, a: 1}

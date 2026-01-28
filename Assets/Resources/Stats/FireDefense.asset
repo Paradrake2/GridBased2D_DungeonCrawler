@@ -15,7 +15,7 @@ MonoBehaviour:
   displayName: Fire Defense
   description: 
   icon: {fileID: 0}
-  category: 0
+  category: 5
   isPercentage: 0
   capped: 0
   minValue: 0
@@ -24,4 +24,4 @@ MonoBehaviour:
   value: 0
   suffix: 
   decimalPlaces: 0
-  displayColor: {r: 1, g: 1, b: 1, a: 1}
+  displayColor: {r: 0.6901961, g: 0.24206756, b: 0.011764695, a: 1}

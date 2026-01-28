@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Fire Damage
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 1060540430942017655, guid: 1cd1116f11be3424580db6bb5ea78dd4, type: 3}
   category: 5
   isPercentage: 0
   capped: 0
@@ -24,4 +24,4 @@ MonoBehaviour:
   value: 0
   suffix: 
   decimalPlaces: 0
-  displayColor: {r: 1, g: 1, b: 1, a: 1}
+  displayColor: {r: 0.6886792, g: 0.24313726, b: 0.011764706, a: 1}

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c71f7d06c894e884c9da01bb33bd9039, type: 3}
-  m_Name: WindDefense
+  m_Name: Magic
   m_EditorClassIdentifier: 
-  displayName: Wind Defense
+  displayName: Magic
   description: 
   icon: {fileID: 0}
-  category: 5
+  category: 0
   isPercentage: 0
   capped: 0
   minValue: 0
@@ -24,4 +24,4 @@ MonoBehaviour:
   value: 0
   suffix: 
   decimalPlaces: 0
-  displayColor: {r: 0.047058824, g: 0.4745098, b: 0, a: 1}
+  displayColor: {r: 0.4427097, g: 0.3537736, b: 1, a: 1}

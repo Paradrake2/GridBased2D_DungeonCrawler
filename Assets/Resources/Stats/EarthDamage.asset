@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Earth Damage
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 7013621946125229813, guid: d730c9f476395cc41babcf6ae4280bf4, type: 3}
   category: 5
   isPercentage: 0
   capped: 0
@@ -24,4 +24,4 @@ MonoBehaviour:
   value: 0
   suffix: 
   decimalPlaces: 0
-  displayColor: {r: 1, g: 1, b: 1, a: 1}
+  displayColor: {r: 0.4056604, g: 0.15120094, b: 0, a: 1}
