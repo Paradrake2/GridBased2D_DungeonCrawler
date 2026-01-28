@@ -58,6 +58,9 @@ public class PlayerCombat : MonoBehaviour
         Debug.Log("Combat ended, returning to position " + startPos);
         Manager.instance.playerCanMove = true;
         GetComponent<BoxCollider2D>().enabled = true; // re-enable detection hitbox
+        movement.anim.ResetTrigger("Attacking");
+        movement.anim.SetTrigger("Idle");
+        movement.anim.ResetTrigger("Idle");
     }
 
 

@@ -469,6 +469,14 @@ PrefabInstance:
       propertyPath: m_text
       value: AttackSpeed
       objectReference: {fileID: 0}
+    - target: {fileID: 5096935458776281018, guid: 70fcf3276e7c6034f8acc977030a9e75, type: 3}
+      propertyPath: m_fontSize
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096935458776281018, guid: 70fcf3276e7c6034f8acc977030a9e75, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 22
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8643,6 +8651,7 @@ MonoBehaviour:
   experienceToNextLevel: 100
   currentXP: 0
   playerLevel: 1
+  magic: 0
 --- !u!4 &1268379073
 Transform:
   m_ObjectHideFlags: 0
@@ -9879,7 +9888,7 @@ SpriteRenderer:
   m_SortingLayerID: -1141736057
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -6655551415579542067, guid: eee68229f55ddec4fbf3503960517b1c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9943,7 +9952,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.7692308, y: 1.1153846}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -10026,7 +10035,7 @@ Animator:
   m_GameObject: {fileID: 1510375728}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4ad6846244dea014ba5fe5756724b294, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -10091,7 +10100,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.7692308, y: 1.1153846}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -13578,6 +13587,14 @@ PrefabInstance:
     - target: {fileID: 5096935458776281018, guid: 70fcf3276e7c6034f8acc977030a9e75, type: 3}
       propertyPath: m_text
       value: Health
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096935458776281018, guid: 70fcf3276e7c6034f8acc977030a9e75, type: 3}
+      propertyPath: m_fontSize
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096935458776281018, guid: 70fcf3276e7c6034f8acc977030a9e75, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
