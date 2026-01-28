@@ -12,6 +12,7 @@ public class EquipmentDropChance
 public class EquipmentDropTable : ScriptableObject
 {
     public List<EquipmentDropChance> potentialEquipmentDrops;
+    public EquipmentRarity rarity; 
     public EquipmentTemplate GetEquipmentTemplate()
     {
         int totalWeight = 0;

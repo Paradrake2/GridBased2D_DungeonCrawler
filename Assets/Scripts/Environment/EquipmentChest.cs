@@ -3,6 +3,7 @@ using UnityEngine;
 public class EquipmentChest : Chest
 {
     public EquipmentDropTable overrideDropTable;
+    public EquipmentRarity lootRarity;
     public override void AcquireLoot()
     {
         Manager m = Manager.instance;
@@ -15,7 +16,7 @@ public class EquipmentChest : Chest
         }
         else
         {
-            loot = lm.GetEquipmentDropTableForFloor(Manager.instance.currentFloor).GetEquipment();
+            loot = lm.GetEquipmentDropTableForFloor(Manager.instance.currentFloor, lootRarity).GetEquipment();
             Debug.Log("Acquired equipment from floor drop table.");
         }
         Inventory inventory = FindFirstObjectByType<Inventory>();

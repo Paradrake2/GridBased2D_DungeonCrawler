@@ -9843,6 +9843,7 @@ MonoBehaviour:
     m_Bits: 256
   moveDuration: 0.15
   diagonalMovementAllowed: 0
+  anim: {fileID: 0}
   canMove: 1
 --- !u!212 &1510375730
 SpriteRenderer:
@@ -9952,7 +9953,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.7692308, y: 1.1153846}
+    oldSize: {x: 0.84615386, y: 1.1153846}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -10100,7 +10101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.7692308, y: 1.1153846}
+    oldSize: {x: 0.84615386, y: 1.1153846}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -13621,7 +13622,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4078466730406475793, guid: 88102d08bfba65d43b6552f7b65ad947, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.5
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 4078466730406475793, guid: 88102d08bfba65d43b6552f7b65ad947, type: 3}
       propertyPath: m_LocalPosition.y

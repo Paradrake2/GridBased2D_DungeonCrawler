@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [System.Serializable]
 public class EquipmentLootManagerData
 {
     public List<EquipmentDropTable> equipmentDropTables;
+    public EquipmentRarity rarity;
     public int minFloor;
     public int maxFloor;
 }
@@ -22,9 +24,9 @@ public class LootManager : MonoBehaviour
     public List<ItemLootManagerData> itemLootManagerData;
     public static LootManager Instance;
 
-    public EquipmentDropTable GetEquipmentDropTableForFloor(int floor)
+    public EquipmentDropTable GetEquipmentDropTableForFloor(int floor, EquipmentRarity? rarity = null)
     {
-        EquipmentLootManagerData data = equipmentLootManagerData.Find(d => d.minFloor <= floor && d.maxFloor >= floor);
+        EquipmentLootManagerData data = equipmentLootManagerData.Find(d => d.minFloor <= floor && d.maxFloor >= floor && d.rarity == rarity);
         if (data != null && data.equipmentDropTables.Count > 0)
         {
             int randomIndex = Random.Range(0, data.equipmentDropTables.Count);
