@@ -14,4 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   potentialEquipmentDrops:
   - equipmentDrop: {fileID: 11400000, guid: 47d3050833169d04e85739ff927a5c9d, type: 2}
+    weight: 2
+  - equipmentDrop: {fileID: 11400000, guid: 9687bc9f86428aa4bb195e88304d8554, type: 2}
+    weight: 2
+  - equipmentDrop: {fileID: 11400000, guid: 1b55e9f9d846b5d4ca5d48f2006b97ad, type: 2}
+    weight: 2
+  - equipmentDrop: {fileID: 11400000, guid: 210d25d4d587767489f6b75688c53a2d, type: 2}
     weight: 1
+  - equipmentDrop: {fileID: 11400000, guid: 4df76426be7633c4185f4358aa679cb2, type: 2}
+    weight: 2
