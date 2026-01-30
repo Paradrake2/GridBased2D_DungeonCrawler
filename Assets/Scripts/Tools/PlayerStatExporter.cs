@@ -28,13 +28,42 @@ public static class PlayerStatExporter
             Debug.LogError("No Player object found in the scene.");
             return;
         }
+
         var export = new PlayerStatsExportFile
         {
             exportedAt = DateTime.Now.ToString()
         };
+
         StatCollection playerStats = player.GetStats();
+        if (playerStats == null)
+        {
+            Debug.LogError("player.GetStats() returned null (stats not initialized yet in play mode?).");
+            return;
+        }
+
+        if (playerStats.Stats == null)
+        {
+            Debug.LogError("playerStats.Stats is null (stats list not initialized).");
+            return;
+        }
+
+        int i = 0;
         foreach (var statEntry in playerStats.Stats)
         {
+            if (statEntry == null)
+            {
+                Debug.LogError($"playerStats.Stats contains a null entry at index {i}.");
+                i++;
+                continue;
+            }
+
+            if (statEntry.StatType == null)
+            {
+                Debug.LogError($"Stat entry at index {i} has null StatType.");
+                i++;
+                continue;
+            }
+
             var exportedStat = new ExportedStat
             {
                 statId = statEntry.StatType.StatID,
@@ -42,8 +71,11 @@ public static class PlayerStatExporter
                 category = statEntry.StatType.category,
                 value = statEntry.Value
             };
+
             export.playerStats.Add(exportedStat);
+            i++;
         }
+
         PlayerAttributeSet attributeSet = player.GetAttributeSet();
         foreach (var attribute in attributeSet.GetAttackAttributes())
         {

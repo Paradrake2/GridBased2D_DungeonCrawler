@@ -3845,6 +3845,7 @@ MonoBehaviour:
   openedIcon: {fileID: 5236488456088351095, guid: e07473e7feb565548bcd02eaaa917008, type: 3}
   chestCollider: {fileID: 384765400}
   overrideDropTable: {fileID: 11400000, guid: 20c63a27b32586145b8ad7e0bf090c86, type: 2}
+  lootRarity: 0
 --- !u!212 &384765402
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8613,6 +8614,8 @@ MonoBehaviour:
       value: 0
     - statType: {fileID: 11400000, guid: 5624f87b31fc7bf4e82bfe1a668cd48b, type: 2}
       value: 1
+    - statType: {fileID: 11400000, guid: 623b000dca0d2574da2c5df29ba146af, type: 2}
+      value: 1
   attributeSet:
     attackAttributes:
     - attackAttribute: {fileID: 11400000, guid: 5b2e70569a027eb498686706ecdf457f, type: 2}
@@ -9078,6 +9081,7 @@ MonoBehaviour:
   equipmentLootManagerData:
   - equipmentDropTables:
     - {fileID: 11400000, guid: c78919b20486ec246a7936e71fdbeb11, type: 2}
+    rarity: 0
     minFloor: 1
     maxFloor: 3
   itemLootManagerData:
