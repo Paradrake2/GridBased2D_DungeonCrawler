@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a615d6371460f641b703cecd86c6fdb, type: 3}
+  m_Name: BasicHeal
+  m_EditorClassIdentifier: 
+  templateName: BasicHeal
+  icon: {fileID: -6281398930580965288, guid: e6f8b0b929f00b140949f88af241f330, type: 3}
+  spellRequirements:
+    components: []
+    requirements:
+    - requiredType: 1
+      minimumCount: 1
+    - requiredType: 2
+      minimumCount: 1
+    - requiredType: 6
+      minimumCount: 1
+  gridSizeX: 7
+  gridSizeY: 7

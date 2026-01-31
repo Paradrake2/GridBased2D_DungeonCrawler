@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9763c0502ea21429864048e789e7be, type: 3}
+  m_Name: SpellTemplateDatabase
+  m_EditorClassIdentifier: 
+  allSpellTemplates:
+  - {fileID: 11400000, guid: 40bee4c8f63ed0843ac15286e865f31b, type: 2}
+  - {fileID: 11400000, guid: 7fd992134a0274a4db414616614eb07d, type: 2}
+  unlockedSpellTemplates:
+  - {fileID: 11400000, guid: 40bee4c8f63ed0843ac15286e865f31b, type: 2}
+  - {fileID: 11400000, guid: 7fd992134a0274a4db414616614eb07d, type: 2}

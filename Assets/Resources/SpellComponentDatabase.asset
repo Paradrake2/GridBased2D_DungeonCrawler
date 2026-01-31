@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7152c41b0c820418183ef7ae1c23bf, type: 3}
+  m_Name: SpellComponentDatabase
+  m_EditorClassIdentifier: 
+  allSpellComponents:
+  - {fileID: 11400000, guid: 033fb18adce24dd41bb46377adb3ab4d, type: 2}
+  - {fileID: 11400000, guid: c22949f1d5fee93459d55a3919869725, type: 2}
+  - {fileID: 11400000, guid: ec366849e20d3124bbcfbb1af0243fbf, type: 2}
+  unlockedSpellComponents:
+  - {fileID: 11400000, guid: 033fb18adce24dd41bb46377adb3ab4d, type: 2}
+  - {fileID: 11400000, guid: ec366849e20d3124bbcfbb1af0243fbf, type: 2}
+  - {fileID: 11400000, guid: c22949f1d5fee93459d55a3919869725, type: 2}

@@ -4,7 +4,8 @@ public enum InventoryScreen
 {
     EquipmentStats,
     SkillTree,
-    Crafting
+    Crafting,
+    SpellCrafting
 }
 
 
@@ -15,6 +16,7 @@ public class UIManager : MonoBehaviour
     public Transform InventoryTransform;
     public Transform SkillTreeTransform;
     public Transform CraftingTransform;
+    public Transform SpellCraftingTransform;
     public bool isUIOpen = false;
     public InventoryUI inventoryUI;
     [Header("Crafting")]
@@ -55,6 +57,7 @@ public class UIManager : MonoBehaviour
         CraftingTransform.gameObject.SetActive(false);
         EquipmentStatsTransform.gameObject.SetActive(false);
         InventoryTransform.gameObject.SetActive(false);
+        SpellCraftingTransform.gameObject.SetActive(false);
         currentScreen = InventoryScreen.SkillTree;
     }
     public void OpenCrafting()
@@ -63,6 +66,7 @@ public class UIManager : MonoBehaviour
         SkillTreeTransform.gameObject.SetActive(false);
         EquipmentStatsTransform.gameObject.SetActive(false);
         InventoryTransform.gameObject.SetActive(true);
+        SpellCraftingTransform.gameObject.SetActive(false);
         inventoryUI.PopulateItemInventory();
         currentScreen = InventoryScreen.Crafting;
         ItemInvOpen();
@@ -98,11 +102,21 @@ public class UIManager : MonoBehaviour
         EquipmentStatsTransform.gameObject.SetActive(true);
         SkillTreeTransform.gameObject.SetActive(false);
         CraftingTransform.gameObject.SetActive(false);
+        SpellCraftingTransform.gameObject.SetActive(false);
         InventoryTransform.gameObject.SetActive(true);
         inventoryUI.PopulateEquipmentInventory();
         PlayerStatsShower statsShower = FindAnyObjectByType<PlayerStatsShower>();
         statsShower.UpdateStats();
         currentScreen = InventoryScreen.EquipmentStats;
+    }
+    public void OpenSpellCrafting()
+    {
+        SpellCraftingTransform.gameObject.SetActive(true);
+        EquipmentStatsTransform.gameObject.SetActive(false);
+        SkillTreeTransform.gameObject.SetActive(false);
+        CraftingTransform.gameObject.SetActive(false);
+        InventoryTransform.gameObject.SetActive(false);
+        currentScreen = InventoryScreen.SpellCrafting;
     }
     void Start()
     {
@@ -110,6 +124,7 @@ public class UIManager : MonoBehaviour
         EquipmentStatsTransform.gameObject.SetActive(false);
         SkillTreeTransform.gameObject.SetActive(false);
         CraftingTransform.gameObject.SetActive(false);
+        SpellCraftingTransform.gameObject.SetActive(false);
         inventoryUI = FindAnyObjectByType<InventoryUI>();
         inventoryUI.InitializeInventory();
         OpenEquipmentStats();
