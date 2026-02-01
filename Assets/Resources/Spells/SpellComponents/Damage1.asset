@@ -14,10 +14,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   componentName: Damage1
   icon: {fileID: 6271073163738325058, guid: 9a2874a84db9c174f8282df8a350c513, type: 3}
+  tier: 1
   componentType: 0
   value: 2
+  cost: 10
   neighboringComponents: []
-  compatibleWith: 06000000
+  compatibleWith: 06000000020000000300000005000000
   directions:
-    inputDirections: []
-    outputDirections: []
+    inputDirections:
+    - direction: {x: 0, y: 1}
+      directions: 0
+      isActive: 1
+    - direction: {x: 0, y: -1}
+      directions: 1
+      isActive: 1
+    - direction: {x: 1, y: 0}
+      directions: 3
+      isActive: 1
+    - direction: {x: -1, y: 0}
+      directions: 2
+      isActive: 1
+    outputDirections:
+    - direction: {x: 0, y: 1}
+      directions: 0
+      isActive: 1
+    - direction: {x: 0, y: -1}
+      directions: 1
+      isActive: 1
+    - direction: {x: 1, y: 0}
+      directions: 3
+      isActive: 1
+    - direction: {x: -1, y: 0}
+      directions: 2
+      isActive: 1
+  costs:
+  - item: {fileID: 11400000, guid: 07ad35e457c796a45bfc5fcfe0176fce, type: 2}
+    amount: 1
+  stats: []
+  spellAttributes: 0

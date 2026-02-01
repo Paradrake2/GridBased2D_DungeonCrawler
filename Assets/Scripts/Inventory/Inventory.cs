@@ -57,6 +57,15 @@ public class Inventory : MonoBehaviour
             uIManager.isDirty = true;
         }
     }
+    public bool HasItem(Item itemToCheck, int quantity)
+    {
+        InventoryItemSlot existingSlot = items.Find(slot => slot.item == itemToCheck);
+        if (existingSlot != null && existingSlot.quantity >= quantity)
+        {
+            return true;
+        }
+        return false;
+    }
     public void AddEquipment(Equipment newEquipment)
     {
         storedEquipment.Add(newEquipment);

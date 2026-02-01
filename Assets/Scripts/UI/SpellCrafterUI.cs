@@ -22,7 +22,7 @@ public class SpellCrafterUI : MonoBehaviour
     [Header("Spell Composition Data")]
     public SpellComposition spellComposition;
     [SerializeField] private SpellCrafter spellCrafter;
-
+    [SerializeField] private SpellDescriptionManager spellDescriptionManager;
     public void ClearSpellComposition()
     {
         spellComposition = null;
@@ -81,6 +81,22 @@ public class SpellCrafterUI : MonoBehaviour
             GameObject buttonGO = Instantiate(componentButtonPrefab, componentListPanel);
             SpellComponentListObject listObject = buttonGO.GetComponent<SpellComponentListObject>();
             listObject.Initialize(component, this);
+        }
+    }
+    public void RefreshOutline()
+    {
+        Debug.Log("Called refresh outline");
+        foreach (var cellGO in gridCells)
+        {
+            SpellGridCell cell = cellGO.GetComponent<SpellGridCell>();
+            if (cell != null)
+            {
+                if (cell == selectedGridCell)
+                    cell.ShowOutline(true);
+                else
+                    cell.ShowOutline(false);
+                    cell.UnselectCell();
+            }
         }
     }
     private void ClearGridPanelChildren()
@@ -170,11 +186,23 @@ public class SpellCrafterUI : MonoBehaviour
     public void SetSelectedCellComponent(SpellComponent spellComponent)
     {
         if (selectedGridCell == null) return;
+        // check if compatible with adjacent components before setting
+        List<SpellGridCell> adjacentCells = GetAdjacentCells(selectedGridCell.x, selectedGridCell.y);
+        foreach (var adjacentCell in adjacentCells)
+        {
+            if (adjacentCell.hasComponent)
+            {
+                if (!spellComponent.IsCompatibleWith(adjacentCell.placedComponent)) return; // not compatible
+            }
+        }
+        // if compatible, set component
         selectedGridCell.placedComponent = spellComponent;
         // update visual representation
         selectedGridCell.GetComponent<Image>().sprite = spellComponent.Icon ?? null;
         // update tracker for spell composition
         spellComposition.AddComponent(spellComponent);
+        spellDescriptionManager.SetSpellDescription(false, spellComposition);
+
         // check to see if spell composition meets requirements, if so get stats of spell and display them
         if (spellComposition.MeetsRequirements())
         {
@@ -215,7 +243,7 @@ public class SpellCrafterUI : MonoBehaviour
 
         // Populate spell composition requirements
         spellComposition.requirements = template.SpellRequirements.requirements;
-
+        spellDescriptionManager.SetSpellDescription(false, spellComposition);
         Debug.Log($"Selected Spell Template: {template.TemplateName}");
     }
     void Start()

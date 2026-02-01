@@ -14,12 +14,13 @@ public class SpellComponentListObject : MonoBehaviour
         spellComponent = component;
         spellCrafterUI = ui;
         icon.sprite = component.Icon;
-        componentText.text = component.ComponentName;
+        componentText.text = $"{component.ComponentName} - Type: {component.ComponentType}";
     }
     public void OnClick()
     {
         Debug.Log("Clicked on component: " + spellComponent.ComponentName);
+        // add neccessary ingredients to storage
         spellCrafterUI.SetSelectedCellComponent(spellComponent);
-        // Here you can add logic to handle what happens when the component is clicked
+        
     }
 }

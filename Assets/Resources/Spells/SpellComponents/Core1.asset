@@ -13,11 +13,30 @@ MonoBehaviour:
   m_Name: Core1
   m_EditorClassIdentifier: 
   componentName: Core1
-  icon: {fileID: 9163179789190762368, guid: 382e5ccf14e553242a97f77014e9cbc6, type: 3}
+  icon: {fileID: 1614350428786921931, guid: cf321601d781bd44b83b694b20fd163f, type: 3}
+  tier: 1
   componentType: 6
   value: 0
+  cost: 0
   neighboringComponents: []
-  compatibleWith: 
+  compatibleWith: 0000000001000000020000000300000005000000
   directions:
-    inputDirections: []
+    inputDirections:
+    - direction: {x: 0, y: 1}
+      directions: 0
+      isActive: 1
+    - direction: {x: -1, y: 0}
+      directions: 2
+      isActive: 1
+    - direction: {x: 1, y: 0}
+      directions: 3
+      isActive: 1
+    - direction: {x: 0, y: -1}
+      directions: 1
+      isActive: 1
     outputDirections: []
+  costs:
+  - item: {fileID: 11400000, guid: 07ad35e457c796a45bfc5fcfe0176fce, type: 2}
+    amount: 2
+  stats: []
+  spellAttributes: 0
