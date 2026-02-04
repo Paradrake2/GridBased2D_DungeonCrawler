@@ -16,10 +16,10 @@ MonoBehaviour:
   icon: {fileID: 7084139092434876548, guid: 0731f167681898f498667d05fc3ee8aa, type: 3}
   tier: 1
   componentType: 2
-  value: 1.5
-  cost: 0
+  value: 0.8
+  cost: 5
   neighboringComponents: []
-  compatibleWith: 06000000
+  compatibleWith: 0600000007000000
   directions:
     inputDirections: []
     outputDirections:

@@ -91,9 +91,11 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     {
         isSelectedGridCell = false;
     }
-    private void ClearAndUnselect()
+    private void ClearAndUnselect() // this is called on right-click
     {
         // Clear placed component + visuals
+        spellCrafterUI.ClearAdjacentCellsOfComponent(x,y, placedComponent);
+        spellCrafterUI.spellComposition.RemoveComponent(placedComponent);
         placedComponent = null;
 
         var img = GetComponent<Image>();
@@ -109,7 +111,7 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
         if (spellCrafterUI != null && spellCrafterUI.selectedGridCell == this)
             spellCrafterUI.selectedGridCell = null;
             spellCrafterUI.RefreshOutline();
-
+        spellCrafterUI.UpdateSpellDescription();
         Debug.Log($"Cleared & Unselected Grid Cell at ({x}, {y})");
     }
 
@@ -158,17 +160,14 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
             inputDirectionIndicators.Add(dirIndicator);
         else
             outputDirectionIndicators.Add(dirIndicator);
-        // Ensure it renders above other grid cells:
-        // 1) last sibling
+        // Setup indicator
         dirIndicator.transform.SetAsLastSibling();
 
-        // 2) nested canvas with high sorting order
         var canvas = dirIndicator.GetComponent<Canvas>();
         if (canvas == null) canvas = dirIndicator.AddComponent<Canvas>();
         canvas.overrideSorting = true;
         canvas.sortingOrder = directionSortingOrder;
 
-        // Use UI-friendly positioning
         Vector2 dir = GetDirectionVector(dirPart);
         dir = dir.sqrMagnitude > 0f ? dir.normalized : Vector2.up;
 
@@ -177,7 +176,6 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
         {
             rt.anchoredPosition = dir * directionOffset;
 
-            // If your arrow sprite points UP by default:
             float angle = GetAngle(dir, isInput);
             rt.localRotation = Quaternion.Euler(0f, 0f, angle);
         }

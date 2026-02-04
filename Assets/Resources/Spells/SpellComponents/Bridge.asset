@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd2446c14a827f45b6ec72bcaed218d, type: 3}
+  m_Name: Bridge
+  m_EditorClassIdentifier: 
+  componentName: Bridge
+  icon: {fileID: -7969604912666603509, guid: 409cd24506a14ae489dc708f2e00952a, type: 3}
+  tier: 0
+  componentType: 7
+  value: 0
+  cost: 3
+  neighboringComponents: []
+  compatibleWith: 0000000001000000020000000300000004000000050000000600000007000000
+  directions:
+    inputDirections: []
+    outputDirections: []
+  costs: []
+  stats: []
+  spellAttributes: 0

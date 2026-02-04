@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 public class SpellDescriptionManager : MonoBehaviour
 {
+    public SpellCrafterUI spellCrafterUI;
     public TextMeshProUGUI spellDescriptionText;
     public void SetSpellDescription(bool meetsRequirements, SpellComposition composition)
     {
@@ -18,6 +19,26 @@ public class SpellDescriptionManager : MonoBehaviour
                 int count = composition.components.FindAll(c => c.ComponentType == req.requiredType).Count;
                 spellDescriptionText.text += $"{req.requiredType}: {count}/{req.minimumCount}\n";
             }
+            return;
+        }
+        if (composition.numOfCoresValid == false)
+        {
+            spellDescriptionText.text = "Invalid number of Core components. Exactly one Core is required.\n";
+            return;
+        }
+        if (composition.numOfCostComponentsValid == false)
+        {
+            spellDescriptionText.text = "Too many Cost components for the selected Core.\n";
+            return;
+        }
+        if (composition != null && meetsRequirements)
+        {
+            spellDescriptionText.text = "Spell is valid and ready to generate!";
+            Spell spellPreview = spellCrafterUI.GetSpellCrafter().CreateSpell(composition);
+            spellDescriptionText.text += $"\nDamage Multiplier: {spellPreview.spellEffect.GetDamageMult()}\n";
+            spellDescriptionText.text += $"Heal Amount: {spellPreview.spellEffect.GetHealAmount()}\n";
+            spellDescriptionText.text += $"Duration: {spellPreview.spellEffect.GetDuration()} seconds\n";
+            spellDescriptionText.text += $"Cost Amount: {spellPreview.spellEffect.GetCostAmount()}\n";
             return;
         }
     }

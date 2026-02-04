@@ -7,6 +7,7 @@ public class SpellTemplate : ScriptableObject
     public string templateName;
     public Sprite icon;
     [SerializeField] SpellComposition spellRequirements;
+
     public int gridSizeX;
     public int gridSizeY;
     public string TemplateName => templateName;

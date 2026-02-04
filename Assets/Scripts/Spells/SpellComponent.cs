@@ -9,7 +9,8 @@ public enum SpellComponentType
     Strength, // how strong the spell is
     Duration, // how long the spell lasts (typically measured in seconds)
     Attribute, // elemental or special attributes of the spell
-    Core // core of spell
+    Core, // core of spell, can only be one per spell
+    Bridge // connects other components
 }
 public enum SpellAttribute
 {
@@ -91,5 +92,13 @@ public class SpellComponent : ScriptableObject
     public bool IsCompatibleWith(SpellComponent other)
     {
         return compatibleWith.Contains(other.ComponentType);
+    }
+    public void AddAdjacentComponent(SpellComponent component)
+    {
+        neighboringComponents.Add(component);
+    }
+    public void RemoveAdjacentComponent(SpellComponent component)
+    {
+        neighboringComponents.Remove(component);
     }
 }

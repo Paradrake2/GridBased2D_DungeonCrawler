@@ -186,27 +186,58 @@ public class SpellCrafterUI : MonoBehaviour
     public void SetSelectedCellComponent(SpellComponent spellComponent)
     {
         if (selectedGridCell == null) return;
+        SpellComponent newComponent = Instantiate(spellComponent);
         // check if compatible with adjacent components before setting
         List<SpellGridCell> adjacentCells = GetAdjacentCells(selectedGridCell.x, selectedGridCell.y);
         foreach (var adjacentCell in adjacentCells)
         {
             if (adjacentCell.hasComponent)
             {
-                if (!spellComponent.IsCompatibleWith(adjacentCell.placedComponent)) return; // not compatible
+                if (!newComponent.IsCompatibleWith(adjacentCell.placedComponent)) return; // not compatible
             }
         }
-        // if compatible, set component
-        selectedGridCell.placedComponent = spellComponent;
+        selectedGridCell.placedComponent = newComponent;
+        ClearAdjacentCellsOfComponent(selectedGridCell.x, selectedGridCell.y, newComponent);
+        foreach (var adjacentCell in adjacentCells)
+            newComponent.AddAdjacentComponent(adjacentCell.placedComponent);
         // update visual representation
-        selectedGridCell.GetComponent<Image>().sprite = spellComponent.Icon ?? null;
+        selectedGridCell.GetComponent<Image>().sprite = newComponent.Icon ?? null; // this will be updated later to have the bridge component display differently
+        // if compatible, set component
         // update tracker for spell composition
-        spellComposition.AddComponent(spellComponent);
-        spellDescriptionManager.SetSpellDescription(false, spellComposition);
+        spellComposition.AddComponent(newComponent);
 
+        // refresh all adjancent components' adjacent lists
+        foreach (var adjacentCell in adjacentCells)
+        {
+            if (adjacentCell.hasComponent)
+            {
+                adjacentCell.placedComponent.AddAdjacentComponent(newComponent);
+            }
+        }
+
+        UpdateSpellDescription();
+    }
+    public void ClearAdjacentCellsOfComponent(int x, int y, SpellComponent component)
+    {
+        List<SpellGridCell> adjacentCells = GetAdjacentCells(x, y);
+        foreach (var adjacentCell in adjacentCells)
+        {
+            if (adjacentCell.hasComponent)
+            {
+                adjacentCell.placedComponent.RemoveAdjacentComponent(component);
+            }
+        }
+    }
+    public void UpdateSpellDescription()
+    {
         // check to see if spell composition meets requirements, if so get stats of spell and display them
         if (spellComposition.MeetsRequirements())
         {
+            spellDescriptionManager.SetSpellDescription(true, spellComposition);
             // Display spell stats or update UI accordingly
+        } else
+        {
+            spellDescriptionManager.SetSpellDescription(false, spellComposition);
         }
     }
     private void TryAddAdjacent(int x, int y, List<SpellGridCell> results)
@@ -219,7 +250,7 @@ public class SpellCrafterUI : MonoBehaviour
         if (spellComposition.MeetsRequirements())
         {
             Debug.Log("Spell composition meets requirements! Generating spell...");
-            spellCrafter.CreateSpell(spellComposition);
+            spellCrafter.AddSpellToInventory(spellComposition);
         }
         else
         {
@@ -245,6 +276,10 @@ public class SpellCrafterUI : MonoBehaviour
         spellComposition.requirements = template.SpellRequirements.requirements;
         spellDescriptionManager.SetSpellDescription(false, spellComposition);
         Debug.Log($"Selected Spell Template: {template.TemplateName}");
+    }
+    public SpellCrafter GetSpellCrafter()
+    {
+        return spellCrafter;
     }
     void Start()
     {
