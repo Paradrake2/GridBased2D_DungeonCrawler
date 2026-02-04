@@ -22,7 +22,11 @@ MonoBehaviour:
       value: 0
     - statType: {fileID: 11400000, guid: 4090b8317db3bb74187cb28f24e54983, type: 2}
       value: 1
-  enemyAttributesList: []
+  enemyAttributesList:
+  - attackAttribute: {fileID: 11400000, guid: 657b0041d5900a64589cc69c078cdf9e, type: 2}
+    attackAttributeValue: 1
+    defenseAttribute: {fileID: 11400000, guid: 81cb18d9b9fed0c46b267ce36befd46f, type: 2}
+    defenseAttributeValue: 1
   weakness: {fileID: 11400000, guid: 9e8b3d9ad2b47da4b84d7bdab851a78f, type: 2}
   weaknessMultiplier: 1.5
   dropTable: {fileID: 0}

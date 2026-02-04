@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a94483286463a44aaddd8d888e200fc, type: 3}
-  m_Name: MushroomMonsterOne
+  m_Name: DarkImp
   m_EditorClassIdentifier: 
   stats:
     stats:
     - statType: {fileID: 11400000, guid: 6df30064bf8c29047b90fb2339a0689e, type: 2}
-      value: 20
-    - statType: {fileID: 11400000, guid: 3deb6a3649d4b5d4e95c23ecadd98cd7, type: 2}
-      value: 8
+      value: 30
     - statType: {fileID: 11400000, guid: 690c87441abb0704e948241ef5a367bf, type: 2}
-      value: 3
+      value: 2
+    - statType: {fileID: 11400000, guid: 3deb6a3649d4b5d4e95c23ecadd98cd7, type: 2}
+      value: 6
     - statType: {fileID: 11400000, guid: 4090b8317db3bb74187cb28f24e54983, type: 2}
-      value: 0.8
+      value: 1.2
   enemyAttributesList:
-  - attackAttribute: {fileID: 11400000, guid: acedd47433b85d740916eb5af8dcea2a, type: 2}
-    attackAttributeValue: 6
-    defenseAttribute: {fileID: 11400000, guid: ca63b98f8bdafee4db47ed81b5d5106a, type: 2}
-    defenseAttributeValue: 5
-  weakness: {fileID: 0}
+  - attackAttribute: {fileID: 11400000, guid: 657b0041d5900a64589cc69c078cdf9e, type: 2}
+    attackAttributeValue: 16
+    defenseAttribute: {fileID: 11400000, guid: 81cb18d9b9fed0c46b267ce36befd46f, type: 2}
+    defenseAttributeValue: 20
+  weakness: {fileID: 11400000, guid: 7b5994b24789fe4428994443fe4969e0, type: 2}
   weaknessMultiplier: 1.5
   dropTable: {fileID: 0}
   maxHealth: 0
   defense: 0
   damage: 0
-  goldDropped: 8
-  experienceDropped: 25
+  goldDropped: 6
+  experienceDropped: 30
