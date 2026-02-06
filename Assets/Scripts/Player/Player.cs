@@ -195,13 +195,31 @@ public class Player : MonoBehaviour
         }
         return 0f;
     }
-    public void TakeDamage(float amount)
+    public void TakeDamage(float amount, List<EnemyAttributes> attributeDamages)
     {
-        currentHealth -= Mathf.Max(0, amount - defense);
+        List<StatValue> attributeValues = new List<StatValue>();
+        foreach (var attr in attributeDamages)
+        {
+            attributeValues.Add(new StatValue(attr.attackAttribute, attr.attackAttributeValue));
+        }
+        currentHealth -= Mathf.Max(0, CalculateDamageTaken(amount, attributeDamages));
         if (currentHealth <= 0)
         {
             Die();
         }
+    }
+    public float CalculateDamageTaken(float damage, List<EnemyAttributes> attributeDamages)
+    {
+        float totalDamage = Mathf.Max(1, damage - defense);
+        if (attributeDamages == null) return totalDamage;
+        foreach (var attr in attributeDamages)
+        {
+            StatType playerDefenseAttr = AttributeManager.instance.GetCorrespondingDefenseAttribute(attr.attackAttribute);
+            float playerDefenseValue = GetAttributeValue(playerDefenseAttr);
+            float potentialDamage = Mathf.Max(0, attr.attackAttributeValue - playerDefenseValue);
+            totalDamage += potentialDamage;
+        }
+        return totalDamage;
     }
     void Die()
     {

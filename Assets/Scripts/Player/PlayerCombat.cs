@@ -56,7 +56,7 @@ public class PlayerCombat : MonoBehaviour
         Vector2 targetPos = target.transform.position;
         player.isInCombat = true;
         transform.position = new Vector2(targetPos.x - 0.5f, targetPos.y); // position player to the left of the enemy
-        target.transform.position = new Vector2(targetPos.x + 0.5f, targetPos.y); // position enemy to the right of the player
+        target.GetComponent<Enemy>().PositionForCombat();
     }
     public void EndCombat()
     {

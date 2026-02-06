@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +20,7 @@ public class Enemy : MonoBehaviour
     private Vector2 positionBeforeCombat;
     public Player player;
     [SerializeField] private int dropItemNum = 1;
+    [SerializeField] private Animator anim;
     public void TakeDamage(float damage, List<PlayerAttackAttributes> attackAttributes)
     {
         stats.currentHealth -= Mathf.Max(1, CalculateDamageTaken(damage, attackAttributes));
@@ -27,6 +29,15 @@ public class Enemy : MonoBehaviour
             Die();
         }
     }
+    public void PositionForCombat()
+    {
+        //positionBeforeCombat = new Vector2(transform.position.x, transform.position.y);
+        transform.position = new Vector2(transform.position.x + 0.5f, transform.position.y); // position enemy to the right of the player
+    }
+    public void BeginCombat(Player player)
+    {
+        StartCoroutine(CombatRoutine(player));
+    }
     public void TakeTrueDamage(float damage)
     {
         stats.currentHealth -= damage;
@@ -34,6 +45,21 @@ public class Enemy : MonoBehaviour
         {
             Die();
         }
+    }
+    private IEnumerator CombatRoutine(Player player)
+    {
+        float attackSpeed = stats.esh.stats.GetStat(StatDatabase.Instance.GetStat("AttackSpeed"));
+        float attackInterval = 1f / attackSpeed;
+        while (stats.currentHealth > 0 && player.GetHealth() > 0)
+        {
+            anim.SetTrigger("Attacking");
+            yield return new WaitForSeconds(attackInterval*0.4f); // wait for attack animation to reach hit frame
+            Debug.LogWarning(gameObject.name + " attacks Player");
+            player.TakeDamage(stats.esh.damage, stats.esh.enemyAttributesList);
+            anim.SetTrigger("Idle");
+            yield return new WaitForSeconds(attackInterval*0.6f);
+        }
+        yield return null;
     }
     public void Die()
     {
@@ -59,14 +85,14 @@ public class Enemy : MonoBehaviour
     float CalculateDamageTaken(float damage, List<PlayerAttackAttributes> attackAttributes)
     {
         float totalDamage = Mathf.Max(1, damage - stats.esh.defense);
-        Debug.Log("Base Damage: " + totalDamage);
+        // Debug.Log("Base Damage: " + totalDamage);
         if (attackAttributes == null) return totalDamage;
         foreach (var attr in attackAttributes)
         {
             StatType defenseAttr = AttributeManager.instance.GetCorrespondingDefenseAttribute(attr.attackAttribute);
-            Debug.Log("Against " + defenseAttr.displayName);
+            // Debug.Log("Against " + defenseAttr.displayName);
             float enemyDefenseValue = stats.GetAttributeValue(defenseAttr);
-            Debug.Log("Enemy " + defenseAttr.displayName + ": " + enemyDefenseValue);
+            // Debug.Log("Enemy " + defenseAttr.displayName + ": " + enemyDefenseValue);
             float potentialDamage = Mathf.Max(0, attr.attackAttributeValue - enemyDefenseValue);
             
             if (stats.esh.weakness != null)
@@ -74,14 +100,14 @@ public class Enemy : MonoBehaviour
                 if (attr.attackAttribute == stats.esh.weakness && attr.attackAttributeValue > 0)
                 {
                     potentialDamage *= stats.esh.weaknessMultiplier;
-                    Debug.Log("Weakness applied! New Damage: " + potentialDamage);
+                    // Debug.Log("Weakness applied! New Damage: " + potentialDamage);
                     break;
                 }
             }
             totalDamage += potentialDamage;
-            Debug.Log("After " + attr.attackAttribute + ": " + totalDamage);
+            // Debug.Log("After " + attr.attackAttribute + ": " + totalDamage);
         }
-        Debug.Log(totalDamage);
+        // Debug.Log(totalDamage);
         return totalDamage;
     }
     public bool HasResistance(string resistanceName)
@@ -118,7 +144,6 @@ public class Enemy : MonoBehaviour
         positionBeforeCombat = transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
