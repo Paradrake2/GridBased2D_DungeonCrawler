@@ -25,7 +25,7 @@ MonoBehaviour:
   enemyAttributesList: []
   weakness: {fileID: 11400000, guid: 9e8b3d9ad2b47da4b84d7bdab851a78f, type: 2}
   weaknessMultiplier: 1.5
-  dropTable: {fileID: 0}
+  dropTable: {fileID: 11400000, guid: 3c5a5b2c0beed94468d22cca7a9fbb6f, type: 2}
   maxHealth: 0
   defense: 0
   damage: 0

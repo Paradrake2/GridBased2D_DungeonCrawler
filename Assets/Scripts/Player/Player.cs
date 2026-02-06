@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
     public PlayerAttributeSet attributeSet = new PlayerAttributeSet();
     public List<PlayerDebuffInflictorHolder> debuffInflictors = new List<PlayerDebuffInflictorHolder>();
     public List<PlayerDebuffResistanceHolder> debuffResistances = new List<PlayerDebuffResistanceHolder>();
+    public bool isInCombat = false;
 
     void Initialize()
     {
@@ -219,16 +220,31 @@ public class Player : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        Debug.Log("Player collided with " + other.gameObject.name);
+        if (other.gameObject.layer == LayerMask.NameToLayer("EnemyHitbox") && !isInCombat)
         {
-            Enemy enemy = other.GetComponent<Enemy>();
+            Enemy enemy = other.GetComponentInParent<Enemy>();
             float damageMult = Mathf.Min(3f, playerMovement.GetDistanceTraveled()); // damage multiplier based on distance traveled, capped at 3x
             if (enemy != null)
             {
-                combat.StartCombat(other.gameObject, attackSpeed, GetAttackAttributes(), damageMult, debuffInflictors);
+                isInCombat = true;
+                combat.StartCombat(enemy.gameObject, attackSpeed, GetAttackAttributes(), damageMult, debuffInflictors);
                 EnemyManager.instance.InCombatWith(enemy);
             }
         }
+        /**
+        if (other.CompareTag("EnemyHitbox") && !isInCombat)
+        {
+            Enemy enemy = other.GetComponentInParent<Enemy>();
+            float damageMult = Mathf.Min(3f, playerMovement.GetDistanceTraveled()); // damage multiplier based on distance traveled, capped at 3x
+            if (enemy != null)
+            {
+                combat.StartCombat(enemy.gameObject, attackSpeed, GetAttackAttributes(), damageMult, debuffInflictors);
+                EnemyManager.instance.InCombatWith(enemy);
+                isInCombat = true;
+            }
+        }
+        **/
     }
     public List<PlayerAttackAttributes> GetAttackAttributes()
     {

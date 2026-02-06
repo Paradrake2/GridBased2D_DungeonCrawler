@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 lastPosition;
     public bool diagonalMovementAllowed = false;
     private Vector2 lastPressedDirection = Vector2.zero;
-    [SerializeField] public Animator anim;
+   // [SerializeField] public Animator anim;
     private Collider2D playerCollider;
     private float collisionInset = 0.05f;
     [SerializeField] private bool canMove = true;
@@ -33,11 +33,13 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 lastAnimDirection = Vector2.down;
     private bool wasAnimatingWalk = false;
     private bool idleTriggered = false;
-
+    [SerializeField] private PlayerAnimator anim;
+    [SerializeField] private Player player;
     void Start()
     {
         playerCollider = GetComponent<Collider2D>();
-        anim = GetComponent<Animator>();
+        player = GetComponent<Player>();
+        //anim = GetComponent<Animator>();
         transform.position = SnapToGrid(transform.position);
 
         TriggerIdleFromFacing();
@@ -46,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (!isMoving && snapWhenIdle)
+        if (!isMoving && snapWhenIdle && !player.isInCombat)
             transform.position = SnapToGrid(transform.position);
 
         UpdateLastPressedDirection();
@@ -133,7 +135,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void PlayWalkIfChanged(Vector2 direction)
     {
-        // Only fire a walking trigger when we actually changed direction
+        // Only fire a walking trigger when player actually changed direction
         if (wasAnimatingWalk && lastAnimDirection == direction) return;
 
         ResetIdleTriggers();
@@ -156,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) lastPressedDirection = Vector2.right;
     }
 
-    // IMPORTANT: IsHeld should NOT set triggers (it caused your conflicts).
+    // IMPORTANT: IsHeld should NOT set triggers.
     private bool IsHeld(Vector2 dir)
     {
         if (dir == Vector2.up) return Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);

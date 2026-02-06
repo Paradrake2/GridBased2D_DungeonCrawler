@@ -69,20 +69,17 @@ public class Enemy : MonoBehaviour
             Debug.Log("Enemy " + defenseAttr.displayName + ": " + enemyDefenseValue);
             float potentialDamage = Mathf.Max(0, attr.attackAttributeValue - enemyDefenseValue);
             
-            totalDamage += potentialDamage;
-            Debug.Log("After " + attr.attackAttribute + ": " + totalDamage);
-        }
-        if (stats.esh.weakness != null)
-        {
-            foreach (var attr in attackAttributes)
+            if (stats.esh.weakness != null)
             {
-                if (attr.attackAttribute == stats.esh.weakness)
+                if (attr.attackAttribute == stats.esh.weakness && attr.attackAttributeValue > 0)
                 {
-                    totalDamage *= stats.esh.weaknessMultiplier;
-                    Debug.Log("Weakness applied! New Damage: " + totalDamage);
+                    potentialDamage *= stats.esh.weaknessMultiplier;
+                    Debug.Log("Weakness applied! New Damage: " + potentialDamage);
                     break;
                 }
             }
+            totalDamage += potentialDamage;
+            Debug.Log("After " + attr.attackAttribute + ": " + totalDamage);
         }
         Debug.Log(totalDamage);
         return totalDamage;
