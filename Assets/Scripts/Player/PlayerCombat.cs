@@ -30,6 +30,7 @@ public class PlayerCombat : MonoBehaviour
             Debug.Log("Applied " + inflictor.debuff.debuffName + " to " + target.name + " from player.");
         }
         target.GetComponent<Enemy>().TakeDamage(player.GetDamage() * damageMult, attackAttributes); // initial attack with damage multiplier
+        target.GetComponent<Enemy>().BeginCombat(player);
         StartCoroutine(ConmbatRoutine(attackSpeed, target, attackAttributes));
     }
 

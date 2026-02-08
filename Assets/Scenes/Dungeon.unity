@@ -9997,7 +9997,7 @@ MonoBehaviour:
       defenseAttributeValue: 0
     - defenseAttribute: {fileID: 11400000, guid: 9773d8771747c354e8edf5b240caf655, type: 2}
       defenseAttributeValue: 0
-  baseHealth: 100
+  baseHealth: 10000
   baseDamage: 3
   baseDefense: 0
   baseAttackSpeed: 1
@@ -11659,6 +11659,7 @@ MonoBehaviour:
   diagonalMovementAllowed: 0
   canMove: 1
   anim: {fileID: 1510375739}
+  player: {fileID: 0}
 --- !u!212 &1510375730
 SpriteRenderer:
   m_ObjectHideFlags: 0

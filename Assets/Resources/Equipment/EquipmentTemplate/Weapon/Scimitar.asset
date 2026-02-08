@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cec7dd7f51e6f8488f2f64c1e90de32, type: 3}
+  m_Name: Scimitar
+  m_EditorClassIdentifier: 
+  templateName: Scimitar
+  baseEquipment: {fileID: 11400000, guid: f3ba11ff76762a94cad1498d518a891c, type: 2}
+  stats:
+  - stat: {fileID: 11400000, guid: 3deb6a3649d4b5d4e95c23ecadd98cd7, type: 2}
+    minValue: 3
+    maxValue: 4
+    isInt: 1
+  - stat: {fileID: 11400000, guid: 6df30064bf8c29047b90fb2339a0689e, type: 2}
+    minValue: 2
+    maxValue: 5
+    isInt: 1
+  - stat: {fileID: 11400000, guid: 657b0041d5900a64589cc69c078cdf9e, type: 2}
+    minValue: 1
+    maxValue: 3
+    isInt: 1
+  - stat: {fileID: 11400000, guid: 7b5994b24789fe4428994443fe4969e0, type: 2}
+    minValue: 1
+    maxValue: 3
+    isInt: 1
+  - stat: {fileID: 11400000, guid: 5b2e70569a027eb498686706ecdf457f, type: 2}
+    minValue: 1
+    maxValue: 3
+    isInt: 1
+  potentialDebuffs: []
+  guaranteedStats:
+  - stat: {fileID: 11400000, guid: 3deb6a3649d4b5d4e95c23ecadd98cd7, type: 2}
+    minValue: 3
+    maxValue: 6
+    isInt: 1
+  minDebuffs: 0
+  maxDebuffs: 0
+  potentialBuffs: []
+  minBuffs: 0
+  maxBuffs: 0
+  minStats: 2
+  maxStats: 4
+  rarity: 1

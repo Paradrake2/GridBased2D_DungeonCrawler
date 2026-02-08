@@ -21,6 +21,9 @@ public class Enemy : MonoBehaviour
     public Player player;
     [SerializeField] private int dropItemNum = 1;
     [SerializeField] private Animator anim;
+    public float attackAnimLength = 1f;
+    public float attackAnimHitFrame = 0.6f; // time in seconds when the hit frame occurs in the attack animation
+    public float idleAnimLength = 1f;
     public void TakeDamage(float damage, List<PlayerAttackAttributes> attackAttributes)
     {
         stats.currentHealth -= Mathf.Max(1, CalculateDamageTaken(damage, attackAttributes));
@@ -36,6 +39,7 @@ public class Enemy : MonoBehaviour
     }
     public void BeginCombat(Player player)
     {
+        anim.SetTrigger("CombatInit");
         StartCoroutine(CombatRoutine(player));
     }
     public void TakeTrueDamage(float damage)
@@ -50,14 +54,18 @@ public class Enemy : MonoBehaviour
     {
         float attackSpeed = stats.esh.stats.GetStat(StatDatabase.Instance.GetStat("AttackSpeed"));
         float attackInterval = 1f / attackSpeed;
+        Debug.Log(attackInterval);
         while (stats.currentHealth > 0 && player.GetHealth() > 0)
         {
-            anim.SetTrigger("Attacking");
-            yield return new WaitForSeconds(attackInterval*0.4f); // wait for attack animation to reach hit frame
+            anim.SetTrigger("AttackStart");
+            yield return new WaitForSeconds(attackInterval*0.6f); // wait for attack animation to reach hit frame
+            //anim.ResetTrigger("AttackFinished");
             Debug.LogWarning(gameObject.name + " attacks Player");
             player.TakeDamage(stats.esh.damage, stats.esh.enemyAttributesList);
+            //anim.ResetTrigger("AttackStart");
+            anim.SetTrigger("AttackFinished");
             anim.SetTrigger("Idle");
-            yield return new WaitForSeconds(attackInterval*0.6f);
+            yield return new WaitForSeconds(attackInterval*0.4f);
         }
         yield return null;
     }

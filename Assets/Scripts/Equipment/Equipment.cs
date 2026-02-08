@@ -14,6 +14,7 @@ public enum EquipmentSlot
 }
 
 
+
 [CreateAssetMenu(fileName = "Equipment", menuName = "Scriptable Objects/Equipment")]
 public class Equipment : ScriptableObject
 {

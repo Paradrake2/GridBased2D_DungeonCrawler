@@ -41,7 +41,7 @@ MonoBehaviour:
   maxDebuffs: 1
   potentialBuffs: []
   minBuffs: 0
-  maxBuffs: 1
+  maxBuffs: 0
   minStats: 2
   maxStats: 4
-  rarity: 0
+  rarity: 1

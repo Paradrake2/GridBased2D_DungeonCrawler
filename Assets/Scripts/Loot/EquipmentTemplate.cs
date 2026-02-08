@@ -60,12 +60,12 @@ public class EquipmentTemplate : ScriptableObject
             EquipmentTemplateStat stat = stats[Random.Range(0, stats.Count)];
             if (stat.isInt)
             {
-                int value = (int)Random.Range(stat.minValue, stat.maxValue);
+                int value = (int)Random.Range(stat.minValue, stat.maxValue) * Manager.instance.currentFloor;
                 newEquipment.stats.AddStat(stat.stat, value);
             }
             else
             {
-                float value = Random.Range(stat.minValue, stat.maxValue);
+                float value = Random.Range(stat.minValue, stat.maxValue) * Manager.instance.currentFloor;
                 value = Mathf.Round(value * 100f) / 100f; // Round to 2 decimal places
                 newEquipment.stats.AddStat(stat.stat, value);
             }
@@ -81,12 +81,12 @@ public class EquipmentTemplate : ScriptableObject
         {
             if (guaranteedStat.isInt)
             {
-                int value = (int)Random.Range(guaranteedStat.minValue, guaranteedStat.maxValue);
+                int value = (int)Random.Range(guaranteedStat.minValue, guaranteedStat.maxValue) * Manager.instance.currentFloor;
                 newEquipment.stats.AddStat(guaranteedStat.stat, value);
             }
             else
             {
-                float value = Random.Range(guaranteedStat.minValue, guaranteedStat.maxValue);
+                float value = Random.Range(guaranteedStat.minValue, guaranteedStat.maxValue) * Manager.instance.currentFloor;
                 value = Mathf.Round(value * 100f) / 100f; // Round to 2 decimal places
                 newEquipment.stats.AddStat(guaranteedStat.stat, value);
             }
@@ -97,7 +97,7 @@ public class EquipmentTemplate : ScriptableObject
     public PlayerDebuffInflictorHolder GenerateDebuff()
     {
         EquipmentTemplateDebuff debuff = potentialDebuffs[Random.Range(0, potentialDebuffs.Count)];
-        float value = Random.Range(debuff.minValue, debuff.maxValue);
+        float value = Random.Range(debuff.minValue, debuff.maxValue) * Manager.instance.currentFloor;
         PlayerDebuffInflictorHolder inflictor = new PlayerDebuffInflictorHolder
         {
             debuff = debuff.debuffType,

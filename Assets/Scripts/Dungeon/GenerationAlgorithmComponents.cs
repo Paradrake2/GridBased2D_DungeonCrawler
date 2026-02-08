@@ -48,9 +48,11 @@ public static class GenerationAlgorithmComponents
     }
     public static void GenerateContents(RoomData rd, HashSet<Vector2Int> floorPositions)
     {
+        Debug.Log("Generating contents for " + rd.roomName);
         foreach(var pos in floorPositions)
         {
             TileContentType contentType = GetTileContent(rd);
+            // Debug.Log("Content type for tile at " + pos + ": " + contentType);
             switch (contentType)
             {
                 case TileContentType.Enemy:
@@ -223,6 +225,7 @@ public static class GenerationAlgorithmComponents
     **/
     public static void SpawnEnemy(RoomData rd, Vector2Int position)
     {
+        Debug.LogWarning("Spawning enemy at " + position);
         PotentialEnemiesHolder potE = rd.GetPotentialEnemies();
         List<EnemyDefinition> potentialEnemies = new List<EnemyDefinition>(potE.GetPotentialEnemies());
         EnemyRarity selectedRarity = GetEnemyRarity(rd);
@@ -273,7 +276,7 @@ public static class GenerationAlgorithmComponents
         {
             totalWeight += tcw.weight;
         }
-        int randomValue = Random.Range(0, totalWeight);
+        int randomValue = Random.Range(0, totalWeight + 1);
         int cumulativeWeight = 0;
         foreach (var tcw in rd.tileContentWeights)
         {

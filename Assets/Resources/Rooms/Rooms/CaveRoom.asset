@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomName: Cave
   ID: Cave
-  tier: 0
+  tier: 1
   isBossRoom: 0
   roomContents:
     potentialObstacles: []
     potentialTraps: []
-    potentialEnemies: {fileID: 0}
+    potentialEnemies: {fileID: 11400000, guid: b8c058a3c3539314e9820c3c362cf4cb, type: 2}
     potentialResources:
     - resourcePrefab: {fileID: 0}
       weight: 0
@@ -28,12 +28,14 @@ MonoBehaviour:
   tileContentWeights:
   - tileContentType: 0
     weight: 10
-  - tileContentType: 4
+  - tileContentType: 2
+    weight: 0
+  enemyRarityWeights:
+  - enemyRarity: 0
     weight: 1
-  enemyRarityWeights: []
   useRuleTile: 1
   minRooms: 1
   maxRooms: 3
   walkLength: 100
-  iterations: 15
+  iterations: 30
   startRandomlyEachIteration: 1

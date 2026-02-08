@@ -239,7 +239,7 @@ public class Player : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Player collided with " + other.gameObject.name);
-        if (other.gameObject.layer == LayerMask.NameToLayer("EnemyHitbox") && !isInCombat)
+        if (other.gameObject.layer == LayerMask.NameToLayer("EnemyHitbox") && !isInCombat && playerMovement.hasMoved)
         {
             Enemy enemy = other.GetComponentInParent<Enemy>();
             float damageMult = Mathf.Min(3f, playerMovement.GetDistanceTraveled()); // damage multiplier based on distance traveled, capped at 3x
@@ -251,7 +251,7 @@ public class Player : MonoBehaviour
             }
         }
         /**
-        if (other.CompareTag("EnemyHitbox") && !isInCombat)
+        if (other.CompareTag("EnemyHitbox") && !isInCombat && playerMovement.hasMoved)
         {
             Enemy enemy = other.GetComponentInParent<Enemy>();
             float damageMult = Mathf.Min(3f, playerMovement.GetDistanceTraveled()); // damage multiplier based on distance traveled, capped at 3x

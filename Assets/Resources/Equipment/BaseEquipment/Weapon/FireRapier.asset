@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671b4d7d5ef341e4cb091346d30a1aae, type: 3}
+  m_Name: FireRapier
+  m_EditorClassIdentifier: 
+  equipmentName: FireRapier
+  equipmentIcon: {fileID: 5615429972722102163, guid: e6f8b0b929f00b140949f88af241f330, type: 3}
+  equipmentSlot: 5
+  stats:
+    stats: []
+  debuffInflictors: []
+  debuffResistances: []
+  id: 
+  persistent: 0
+  alreadyCounted: 0
+  ingredientCapacity: 2
+  remainingIngredientSlots: 2
+  ingredients: []

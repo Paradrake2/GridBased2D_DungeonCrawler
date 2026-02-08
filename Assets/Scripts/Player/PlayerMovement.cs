@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     private bool idleTriggered = false;
     [SerializeField] private PlayerAnimator anim;
     [SerializeField] private Player player;
+    public bool hasMoved = false;
     void Start()
     {
         playerCollider = GetComponent<Collider2D>();
@@ -199,7 +200,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Manager.instance.playerCanMove == false)
             yield break;
-
+        
+        hasMoved = true;
         isMoving = true;
 
         Vector2 startPosition = SnapToGrid(transform.position);

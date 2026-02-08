@@ -10,20 +10,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2cec7dd7f51e6f8488f2f64c1e90de32, type: 3}
-  m_Name: Weapon1
+  m_Name: BasicLongsword
   m_EditorClassIdentifier: 
-  templateName: Weapon1
+  templateName: Basic Longsword
   baseEquipment: {fileID: 11400000, guid: 0e5da6b313921b9478b78d64380dd82d, type: 2}
   stats:
   - stat: {fileID: 11400000, guid: 3deb6a3649d4b5d4e95c23ecadd98cd7, type: 2}
-    minValue: 3
-    maxValue: 4
-  - stat: {fileID: 11400000, guid: 6df30064bf8c29047b90fb2339a0689e, type: 2}
-    minValue: 2
-    maxValue: 5
+    minValue: 1
+    maxValue: 3
+    isInt: 1
+  - stat: {fileID: 11400000, guid: 690c87441abb0704e948241ef5a367bf, type: 2}
+    minValue: 1
+    maxValue: 2
+    isInt: 1
+  - stat: {fileID: 11400000, guid: acedd47433b85d740916eb5af8dcea2a, type: 2}
+    minValue: 1
+    maxValue: 2
+    isInt: 1
   potentialDebuffs: []
+  guaranteedStats:
+  - stat: {fileID: 11400000, guid: 3deb6a3649d4b5d4e95c23ecadd98cd7, type: 2}
+    minValue: 2
+    maxValue: 4
+    isInt: 1
   minDebuffs: 0
   maxDebuffs: 0
   potentialBuffs: []
   minBuffs: 0
-  maxBuffs: 0
+  maxBuffs: 1
+  minStats: 1
+  maxStats: 3
+  rarity: 0
