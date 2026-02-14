@@ -9,6 +9,7 @@ public class InventoryUI : MonoBehaviour
     public GameObject itemSlotPrefab;
     public GameObject equipmentSlotPrefab;
     public GameObject potionSlotPrefab;
+    public GameObject spellSlotPrefab;
     public void PopulateItemInventory() // crafting potions
     {
         ClearChildren(inventoryParent);
@@ -72,7 +73,16 @@ public class InventoryUI : MonoBehaviour
             slotUI.Initialize(potion);
         }
     }
-
+    public void PopulateSpellInventory()
+    {
+        ClearChildren(inventoryParent);
+        foreach (Spell spell in inventory.storedSpells)
+        {
+            GameObject newSlot = Instantiate(spellSlotPrefab, inventoryParent);
+            InventorySpellSlotUI slotUI = newSlot.GetComponent<InventorySpellSlotUI>();
+            slotUI.Initialize(spell);
+        }
+    }
     private void ClearChildren(Transform parent)
     {
         foreach (Transform child in parent)
@@ -96,6 +106,8 @@ public class InventoryUI : MonoBehaviour
         InitializeInventory();
         //PopulateItemInventory();
         PopulateEquipmentInventory();
+        //PopulatePotionInventory();
+        //PopulateSpellInventory();
     }
 
     // Update is called once per frame

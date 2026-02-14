@@ -14,4 +14,8 @@ public class Spell : ScriptableObject
     {
         spellEffect.Cast();
     }
+    public Sprite GetIcon()
+    {
+        return icon;
+    }
 }

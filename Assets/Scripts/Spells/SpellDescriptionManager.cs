@@ -31,6 +31,11 @@ public class SpellDescriptionManager : MonoBehaviour
             spellDescriptionText.text = "Too many Cost components for the selected Core.\n";
             return;
         }
+        if (composition.CalculateSpellCost() > GameObject.FindFirstObjectByType<Player>().GetMagic())
+        {
+            spellDescriptionText.text = $"Not enough magic power to cast this spell. Required: {composition.CalculateSpellCost()}";
+            return;
+        }
         if (composition != null && meetsRequirements)
         {
             spellDescriptionText.text = "Spell is valid and ready to generate!";
@@ -39,6 +44,7 @@ public class SpellDescriptionManager : MonoBehaviour
             spellDescriptionText.text += $"Heal Amount: {spellPreview.spellEffect.GetHealAmount()}\n";
             spellDescriptionText.text += $"Duration: {spellPreview.spellEffect.GetDuration()} seconds\n";
             spellDescriptionText.text += $"Cost Amount: {spellPreview.spellEffect.GetCostAmount()}\n";
+            spellDescriptionText.text += $"Magic Cost: {composition.CalculateSpellCost()}\n";
             return;
         }
     }

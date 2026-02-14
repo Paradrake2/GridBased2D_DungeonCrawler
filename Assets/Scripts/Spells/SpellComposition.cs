@@ -14,6 +14,7 @@ public class SpellComposition
 {
     public List<SpellComponent> components;
     public List<SpellCompositionRequirements> requirements;
+    public float magicRequired;
     public bool IsComplete => MeetsRequirements();
     public bool numOfCoresValid
     {
@@ -45,6 +46,15 @@ public class SpellComposition
             Debug.Log($"Component in composition: {comp.ComponentName}");
         }
     }
+    public float CalculateSpellCost()
+    {
+        float cost = 0f;
+        foreach (var component in components)
+        {
+            cost += component.MagicCost;
+        }
+        return cost;
+    }
     public bool MeetsRequirements()
     {
         foreach (var req in requirements) // for templates
@@ -61,6 +71,8 @@ public class SpellComposition
         int numOfCostComponents = components.FindAll(c => c.ComponentType == SpellComponentType.Cost).Count;
         float coreValue = components.Find(c => c.ComponentType == SpellComponentType.Core).Tier;
         if (numOfCostComponents > coreValue)
+            return false;
+        if (GameObject.FindFirstObjectByType<Player>().GetMagic() < CalculateSpellCost())
             return false;
         return true;
     }

@@ -167,4 +167,9 @@ public class SpellCrafter : MonoBehaviour
         }
         return strengthenedValue;
     }
+    bool HasEnoughMagicPower(float cost)
+    {
+        Player player = GameObject.FindAnyObjectByType<Player>();
+        return player.GetMagic() >= cost;
+    }
 }

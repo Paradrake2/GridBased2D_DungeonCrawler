@@ -71,6 +71,7 @@ public class SpellComponent : ScriptableObject
     [SerializeField] protected SpellComponentType componentType;
     [SerializeField] private float value;
     [SerializeField] protected float cost;
+    [SerializeField] protected float magicCost;
     [SerializeField] protected List<SpellComponent> neighboringComponents; // for determining adjacent components
     [SerializeField] protected List<SpellComponentType> compatibleWith; // for compatibility checks
     [SerializeField] protected SpellComponentDirections directions;
@@ -83,6 +84,7 @@ public class SpellComponent : ScriptableObject
     public SpellComponentType ComponentType => componentType;
     public float Value => value;
     public float Cost => cost;
+    public float MagicCost => magicCost;
     public List<SpellComponent> NeighboringComponents => neighboringComponents;
     public List<SpellComponentType> CompatibleWith => compatibleWith;
     public SpellComponentDirections Directions => directions;

@@ -50,8 +50,9 @@ public class SpellBehaviour
     {
         // spell attributes mapped to respective stats in another function
         Player player = GameObject.FindAnyObjectByType<Player>();
-        
+        // check if enough mana
         // consume mana
+        // apply effects
         Debug.Log("Casting base spell");
     }
 }
