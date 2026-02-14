@@ -55,6 +55,14 @@ public class PlayerAttributeSet
             attr.defenseAttributeValue = 0f;
         }
     }
+    public void ClearAttackAttributes()
+    {
+        attackAttributes.Clear();
+    }
+    public void ClearDefenseAttributes()
+    {
+        defenseAttributes.Clear();
+    }
 }
 
 public class PlayerStats : MonoBehaviour

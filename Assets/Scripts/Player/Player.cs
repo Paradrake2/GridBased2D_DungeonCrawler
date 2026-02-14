@@ -38,6 +38,9 @@ public class Player : MonoBehaviour
     public PlayerAttributeSet attributeSet = new PlayerAttributeSet();
     public List<PlayerDebuffInflictorHolder> debuffInflictors = new List<PlayerDebuffInflictorHolder>();
     public List<PlayerDebuffResistanceHolder> debuffResistances = new List<PlayerDebuffResistanceHolder>();
+    [SerializeField] private StatCollection spellStats = new StatCollection();
+    [SerializeField] private PlayerAttributeSet tempAttributeSet = new PlayerAttributeSet();
+    [SerializeField] private SpellBehaviour currentSpellBehaviour = new SpellBehaviour();
     public bool isInCombat = false;
 
     void Initialize()
@@ -246,7 +249,7 @@ public class Player : MonoBehaviour
             if (enemy != null)
             {
                 isInCombat = true;
-                combat.StartCombat(enemy.gameObject, attackSpeed, GetAttackAttributes(), damageMult, debuffInflictors);
+                combat.StartCombat(enemy.gameObject, attackSpeed, damageMult, debuffInflictors);
                 EnemyManager.instance.InCombatWith(enemy);
             }
         }
@@ -326,5 +329,45 @@ public class Player : MonoBehaviour
     public int GetMagic()
     {
         return magic;
+    }
+    public StatCollection GetSpellStats()
+    {
+        return spellStats;
+    }
+    public void SetSpellStats(StatCollection stats)
+    {
+        spellStats = stats;
+    }
+    public void ClearSpellStats()
+    {
+        spellStats.Clear();
+    }
+    public PlayerAttributeSet GetTempPlayerAttributeSet()
+    {
+        return tempAttributeSet;
+    }
+    public void SetTempPlayerAttributeSet(PlayerAttributeSet set)
+    {
+        tempAttributeSet = set;
+    }
+    public void ClearTempAttributeSet()
+    {
+        tempAttributeSet.ClearAllAttributes();
+    }
+    public void ClearTempAttributeAttackStats()
+    {
+        tempAttributeSet.ClearAttackAttributes();
+    }
+    public void ClearTempAttributeDefenseStats()
+    {
+        tempAttributeSet.ClearDefenseAttributes();
+    }
+    public void SetSpellBehaviour(SpellBehaviour sb)
+    {
+        currentSpellBehaviour = sb;
+    }
+    public SpellBehaviour GetSpellBehaviour()
+    {
+        return currentSpellBehaviour;
     }
 }

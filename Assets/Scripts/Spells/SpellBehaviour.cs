@@ -49,6 +49,8 @@ public class SpellBehaviour
     public virtual void Cast()
     {
         // spell attributes mapped to respective stats in another function
+        Player player = GameObject.FindAnyObjectByType<Player>();
+        
         // consume mana
         Debug.Log("Casting base spell");
     }

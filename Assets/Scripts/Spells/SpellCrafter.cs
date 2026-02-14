@@ -34,6 +34,7 @@ public class SpellCrafter : MonoBehaviour
                 inventory.RemoveItem(item.item, item.amount);
             }
         }
+        inventory.AddSpellToInventory(spell);
     }
     // Create the spell, can be used for previews as well
     public Spell CreateSpell(SpellComposition composition, SpellTemplate template = null)

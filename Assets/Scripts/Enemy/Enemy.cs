@@ -24,9 +24,10 @@ public class Enemy : MonoBehaviour
     public float attackAnimLength = 1f;
     public float attackAnimHitFrame = 0.6f; // time in seconds when the hit frame occurs in the attack animation
     public float idleAnimLength = 1f;
-    public void TakeDamage(float damage, List<PlayerAttackAttributes> attackAttributes)
+    public float idleAnimTriggerFrame = 0.5f; // time in seconds when the idle animation should be triggered after combat starts
+    public void TakeDamage(float damage)
     {
-        stats.currentHealth -= Mathf.Max(1, CalculateDamageTaken(damage, attackAttributes));
+        stats.currentHealth -= Mathf.Max(1, damage);
         if (stats.currentHealth <= 0)
         {
             Die();
@@ -64,7 +65,6 @@ public class Enemy : MonoBehaviour
             player.TakeDamage(stats.esh.damage, stats.esh.enemyAttributesList);
             //anim.ResetTrigger("AttackStart");
             anim.SetTrigger("AttackFinished");
-            anim.SetTrigger("Idle");
             yield return new WaitForSeconds(attackInterval*0.4f);
         }
         yield return null;

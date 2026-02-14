@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dcb08ba535e7a44fa52c73e2b94ee49, type: 3}
+  m_Name: AlbinoSpider
+  m_EditorClassIdentifier: 
+  enemyName: Albino Spider
+  enemyIcon: {fileID: 1507976287654823737, guid: 64bf5e30bb6fa354ca8acd4a1b1eb86c, type: 3}
+  enemyPrefab: {fileID: 2484723183984605448, guid: 4a9ef87c74c468641bd7df7a7a65e1fa, type: 3}
+  rarity: 0
+  tier: 1

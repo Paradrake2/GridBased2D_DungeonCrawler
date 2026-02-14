@@ -18,7 +18,7 @@ public class PlayerCombat : MonoBehaviour
         movement = GetComponent<PlayerMovement>();
         anim = GetComponent<PlayerAnimator>();
     }
-    public void StartCombat(GameObject target, float attackSpeed, List<PlayerAttackAttributes> attackAttributes, float damageMult, List<PlayerDebuffInflictorHolder> debuffInflictors)
+    public void StartCombat(GameObject target, float attackSpeed, float damageMult, List<PlayerDebuffInflictorHolder> debuffInflictors)
     {
         startPos = transform.position;
         // move into position, remember to disable the detection hitbox so it doesnt start a second fight
@@ -29,12 +29,12 @@ public class PlayerCombat : MonoBehaviour
             StartCoroutine(inflictor.debuff.TickEffect());
             Debug.Log("Applied " + inflictor.debuff.debuffName + " to " + target.name + " from player.");
         }
-        target.GetComponent<Enemy>().TakeDamage(player.GetDamage() * damageMult, attackAttributes); // initial attack with damage multiplier
+        target.GetComponent<Enemy>().TakeDamage(CalculateDamageTaken(target.GetComponent<Enemy>(), player.GetDamage() * damageMult, player.GetAttackAttributes())); // initial attack with damage multiplier
         target.GetComponent<Enemy>().BeginCombat(player);
-        StartCoroutine(ConmbatRoutine(attackSpeed, target, attackAttributes));
+        StartCoroutine(ConmbatRoutine(attackSpeed, target));
     }
 
-    private IEnumerator ConmbatRoutine(float attackSpeed, GameObject target, List<PlayerAttackAttributes> attackAttributes)
+    private IEnumerator ConmbatRoutine(float attackSpeed, GameObject target)
     {
         Manager.instance.playerCanMove = false; // stop movement during battle
         float attackInterval = 1f / attackSpeed;
@@ -44,11 +44,75 @@ public class PlayerCombat : MonoBehaviour
             //if (target.GetComponent<Enemy>() == null) break; // break when enemy is dead
             Debug.LogWarning("Player attacks " + target.name);
             yield return new WaitForSeconds(attackInterval*0.4f); // wait for attack animation to reach hit frame
-            target.GetComponent<Enemy>().TakeDamage(player.GetDamage(), attackAttributes);
+            target.GetComponent<Enemy>().TakeDamage(CalculateDamageTaken(target.GetComponent<Enemy>(), player.GetDamage(), player.GetAttackAttributes()));
             anim.SetTrigger("Idle");
             yield return new WaitForSeconds(attackInterval*0.6f);
         }
         Manager.instance.playerCanMove = true;
+    }
+    float DamageAfterSpell(Enemy enemy)
+    {
+        float totalDamage = 0;
+        StatCollection stats = player.GetSpellStats();
+        List<PlayerAttackAttributes> tempAttackAttributes = player.GetTempPlayerAttributeSet().GetAttackAttributes();
+        if (stats != null)
+        {
+            try {
+                totalDamage = stats.GetStat("Damage");
+            } catch 
+            {
+                totalDamage = 0;
+            }
+        }
+        totalDamage = CalculateDamageTaken(enemy, totalDamage, tempAttackAttributes); // temp attributes
+        player.ClearSpellStats();
+        player.ClearTempAttributeAttackStats();
+        return totalDamage;
+    }
+    float SpellDamageMult()
+    {
+        if (player == null) return 1f;
+        var spellBehaviour = player.GetSpellBehaviour();
+        if (spellBehaviour == null) return 1f;
+
+        float damageMult = spellBehaviour.GetDamageMult();
+        return damageMult > 0f ? damageMult : 1f;
+    }
+    float CalculateDamageTaken(Enemy enemy, float damage, List<PlayerAttackAttributes> attackAttributes)
+    {
+        float totalDamage = Mathf.Max(1, damage - enemy.stats.esh.defense);
+        // Debug.Log("Base Damage: " + totalDamage);
+        if (attackAttributes == null) return totalDamage;
+        totalDamage = totalDamage + CalculateAttributeDamage(attackAttributes, enemy); // attribute damage
+        totalDamage = totalDamage + DamageAfterSpell(enemy); // spell damage
+        totalDamage *= SpellDamageMult(); // spell damage multiplier
+        Debug.Log(totalDamage);
+        return totalDamage;
+    }
+    float CalculateAttributeDamage(List<PlayerAttackAttributes> attackAttributes, Enemy enemy)
+    {
+        float totalDamage = 0;
+        foreach (var attr in attackAttributes)
+        {
+            StatType defenseAttr = AttributeManager.instance.GetCorrespondingDefenseAttribute(attr.attackAttribute);
+            // Debug.Log("Against " + defenseAttr.displayName);
+            float enemyDefenseValue = enemy.stats.GetAttributeValue(defenseAttr);
+            // Debug.Log("Enemy " + defenseAttr.displayName + ": " + enemyDefenseValue);
+            float potentialDamage = Mathf.Max(0, attr.attackAttributeValue - enemyDefenseValue);
+            
+            if (enemy.stats.esh.weakness != null)
+            {
+                if (attr.attackAttribute == enemy.stats.esh.weakness && attr.attackAttributeValue > 0)
+                {
+                    potentialDamage *= enemy.stats.esh.weaknessMultiplier;
+                    // Debug.Log("Weakness applied! New Damage: " + potentialDamage);
+                    break;
+                }
+            }
+            totalDamage += potentialDamage;
+            // Debug.Log("After " + attr.attackAttribute + ": " + totalDamage);
+        }
+        return totalDamage;
     }
     public void PositionForCombat(GameObject target)
     {

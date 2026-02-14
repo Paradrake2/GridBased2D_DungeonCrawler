@@ -25,6 +25,7 @@ public class Inventory : MonoBehaviour
     public List<InventoryItemSlot> items = new List<InventoryItemSlot>();
     public List<Equipment> storedEquipment = new List<Equipment>();
     public List<Potion> storedPotions = new List<Potion>();
+    public List<Spell> storedSpells = new List<Spell>();
 
     void Awake()
     {
@@ -133,6 +134,14 @@ public class Inventory : MonoBehaviour
             // Equipment not found in inventory
             Debug.LogWarning("Attempted to remove equipment not in inventory with ID: " + equipmentID);
         }
+    }
+    public void AddSpellToInventory(Spell newSpell)
+    {
+        storedSpells.Add(newSpell);
+    }
+    public List<Spell> GetSpellList()
+    {
+        return storedSpells;
     }
     void Start()
     {
