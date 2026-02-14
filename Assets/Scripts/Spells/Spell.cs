@@ -18,4 +18,8 @@ public class Spell : ScriptableObject
     {
         return icon;
     }
+    public void SetSpellName(string name)
+    {
+        spellName = name;
+    }
 }

@@ -9,15 +9,17 @@ public class SpellBehaviour
     private float damageMult;
     private float healAmount;
     private float costAmount;
+    private float magicCost;
     private List<SpellStat> statModifiers;
     private List<SpellAttribute> spellAttributes;
-    public SpellBehaviour SpellBehaviourConstructor(float duration, float damageMult, float healAmount, float costAmount,
+    public SpellBehaviour SpellBehaviourConstructor(float duration, float damageMult, float healAmount, float costAmount, float magicCost,
         List<SpellStat> statModifiers, List<SpellAttribute> spellAttributes)
     {
         this.duration = duration;
         this.damageMult = damageMult;
         this.healAmount = healAmount;
         this.costAmount = costAmount;
+        this.magicCost = magicCost;
         this.statModifiers = statModifiers;
         this.spellAttributes = spellAttributes;
         return this;
@@ -51,6 +53,7 @@ public class SpellBehaviour
         // spell attributes mapped to respective stats in another function
         Player player = GameObject.FindAnyObjectByType<Player>();
         // check if enough mana
+        // check if enough magic
         // consume mana
         // apply effects
         Debug.Log("Casting base spell");

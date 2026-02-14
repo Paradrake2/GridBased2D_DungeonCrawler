@@ -23,6 +23,7 @@ public class SpellCrafterUI : MonoBehaviour
     public SpellComposition spellComposition;
     [SerializeField] private SpellCrafter spellCrafter;
     [SerializeField] private SpellDescriptionManager spellDescriptionManager;
+    [SerializeField] private GameObject spellNameSelectorPrefab;
     public void ClearSpellComposition()
     {
         spellComposition = null;
@@ -249,8 +250,16 @@ public class SpellCrafterUI : MonoBehaviour
     {
         if (spellComposition.MeetsRequirements())
         {
-            Debug.Log("Spell composition meets requirements! Generating spell...");
-            spellCrafter.AddSpellToInventory(spellComposition);
+            // pop up name spell screen, add to spellComposition
+            GameObject spellNameSelectorGO = Instantiate(spellNameSelectorPrefab, transform);
+            SpellNameSelector spellNameSelector = spellNameSelectorGO.GetComponent<SpellNameSelector>();
+            spellNameSelector.Initialize((string spellName) =>
+            {
+                Debug.Log(spellName);
+                spellComposition.spellName = spellName;
+                Debug.Log(spellComposition.spellName);
+                spellCrafter.AddSpellToInventory(spellComposition);
+            });
         }
         else
         {

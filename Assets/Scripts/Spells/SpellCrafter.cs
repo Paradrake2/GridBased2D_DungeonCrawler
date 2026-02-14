@@ -12,18 +12,10 @@ public class SpellCrafter : MonoBehaviour
     public void AddSpellToInventory(SpellComposition composition, SpellTemplate template = null)
     {
         Inventory inventory = FindAnyObjectByType<Inventory>();
-        if (!composition.MeetsRequirements()) // double check just in case
+        if (!MeetsAllCriteria(composition))
         {
-            Debug.LogError("Spell composition does not meet the required component criteria.");
+            Debug.Log("Spell does not meet all criteria for crafting.");
             return;
-        }
-        foreach (var item in spellComponentCosts)
-        {
-            if (!inventory.HasItem(item.item, item.amount))
-            {
-                Debug.LogError("Not enough resources to craft the spell.");
-                return;
-            }
         }
         Spell spell = CreateSpell(composition, template);
         if (spell != null)
@@ -50,12 +42,13 @@ public class SpellCrafter : MonoBehaviour
         List<SpellComponent> costComponents = composition.components.FindAll(c => c.ComponentType == SpellComponentType.Cost);
         List<SpellComponent> strengthComponents = composition.components.FindAll(c => c.ComponentType == SpellComponentType.Strength);
         float costAmount = CalculateCost(coreComponent, costComponents, damageComponents, healComponents, durationComponents, strengthComponents);
-        
+        float magicCost = composition.CalculateSpellCost();
         List<SpellStat> statModifiers = new List<SpellStat>();
         List<SpellAttribute> spellAttributes = new List<SpellAttribute>();
-        newSpell.spellEffect = new SpellBehaviour().SpellBehaviourConstructor(duration, damageMult, healAmount, costAmount,
+        newSpell.spellEffect = new SpellBehaviour().SpellBehaviourConstructor(duration, damageMult, healAmount, costAmount, magicCost,
             statModifiers, spellAttributes);
-        newSpell.name = "Custom Spell"; // will be determined by components
+        newSpell.name = composition.spellName; // will be determined by components or set by player
+        newSpell.SetSpellName(composition.spellName);
         // place for special effects based on components
         return newSpell;
     }
@@ -167,9 +160,37 @@ public class SpellCrafter : MonoBehaviour
         }
         return strengthenedValue;
     }
+    bool HasRequiredItems(List<SpellComponentCost> costs)
+    {
+        Inventory inventory = FindAnyObjectByType<Inventory>();
+        foreach (var cost in costs)
+        {
+            if (!inventory.HasItem(cost.item, cost.amount))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    bool MeetsAllCriteria(SpellComposition composition)
+    {
+        return composition.MeetsRequirements() && HasEnoughMagicPower(composition.CalculateSpellCost()) && HasRequiredItems(spellComponentCosts);
+    }
     bool HasEnoughMagicPower(float cost)
     {
         Player player = GameObject.FindAnyObjectByType<Player>();
         return player.GetMagic() >= cost;
+    }
+    private string GenerateSpellName(SpellComposition composition) // auto generation, player will have option to custom name the spell
+    {
+        // placeholder name generation based on components, can be expanded with templates and attributes
+        // check attributes, if single attribute that is in name, if multiple say "multi-attribute"
+        // check if damage, healing, debuff, if single dominant one put that in name, if multiple say "multi-effect"
+        string name = "";
+        foreach (var comp in composition.components)
+        {
+            name += comp.ComponentName + " ";
+        }
+        return name.Trim();
     }
 }

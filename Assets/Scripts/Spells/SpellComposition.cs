@@ -14,6 +14,7 @@ public class SpellComposition
 {
     public List<SpellComponent> components;
     public List<SpellCompositionRequirements> requirements;
+    public string spellName;
     public float magicRequired;
     public bool IsComplete => MeetsRequirements();
     public bool numOfCoresValid
