@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
     public List<PlayerDebuffResistanceHolder> debuffResistances = new List<PlayerDebuffResistanceHolder>();
     [SerializeField] private StatCollection spellStats = new StatCollection();
     [SerializeField] private PlayerAttributeSet tempAttributeSet = new PlayerAttributeSet();
-    [SerializeField] private SpellBehaviour currentSpellBehaviour = new SpellBehaviour();
+    [SerializeField] private SpellBehaviour currentSpellBehaviour;
     public bool isInCombat = false;
 
     void Initialize()

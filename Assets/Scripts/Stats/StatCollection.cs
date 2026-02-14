@@ -41,10 +41,30 @@ public class StatCollection
     /// <summary>
     /// Get stat by ID string
     /// </summary>
+    public bool TryGetStat(string statName, out float value)
+    {
+        value = 0f;
+        if (string.IsNullOrWhiteSpace(statName)) return false;
+
+        // If you use a Dictionary<string, float>:
+        // return _stats != null && _stats.TryGetValue(statName, out value);
+
+        // If you use a List/array of stat objects (example):
+        if (stats == null) return false;
+        for (int i = 0; i < stats.Count; i++)
+        {
+            if (stats[i] != null && stats[i].StatType.name == statName)
+            {
+                value = stats[i].Value;
+                return true;
+            }
+        }
+
+        return false;
+    }
     public float GetStat(string statID)
     {
-        var stat = stats.FirstOrDefault(s => s.GetStatID() == statID);
-        return stat?.Value ?? 0f;
+        return TryGetStat(statID, out float v) ? v : 0f; // default to 0 when missing
     }
     
     /// <summary>

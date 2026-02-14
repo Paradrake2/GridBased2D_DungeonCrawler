@@ -60,6 +60,17 @@ public class SpellHotbarSlot : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        // show spell name
+        if (containedSpell != null)
+        {
+            // show tooltip with spell information
+            throw new System.NotImplementedException();
+        }
+        else
+        {
+            // show empty slot tooltip
+            throw new System.NotImplementedException();
+        }
         throw new System.NotImplementedException();
     }
 

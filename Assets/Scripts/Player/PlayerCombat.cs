@@ -53,16 +53,12 @@ public class PlayerCombat : MonoBehaviour
     float DamageAfterSpell(Enemy enemy)
     {
         float totalDamage = 0;
+        if (player.GetSpellBehaviour() == null) return totalDamage;
         StatCollection stats = player.GetSpellStats();
         List<PlayerAttackAttributes> tempAttackAttributes = player.GetTempPlayerAttributeSet().GetAttackAttributes();
         if (stats != null)
         {
-            try {
-                totalDamage = stats.GetStat("Damage");
-            } catch 
-            {
-                totalDamage = 0;
-            }
+            if (!stats.TryGetStat("Damage", out totalDamage)) return 0f; // if no damage stat, return 0
         }
         totalDamage = CalculateDamageTaken(enemy, totalDamage, tempAttackAttributes); // temp attributes
         player.ClearSpellStats();
@@ -92,6 +88,7 @@ public class PlayerCombat : MonoBehaviour
     float CalculateAttributeDamage(List<PlayerAttackAttributes> attackAttributes, Enemy enemy)
     {
         float totalDamage = 0;
+        if (attackAttributes == null) return totalDamage;
         foreach (var attr in attackAttributes)
         {
             StatType defenseAttr = AttributeManager.instance.GetCorrespondingDefenseAttribute(attr.attackAttribute);

@@ -61,7 +61,7 @@ public class Enemy : MonoBehaviour
             anim.SetTrigger("AttackStart");
             yield return new WaitForSeconds(attackInterval*0.6f); // wait for attack animation to reach hit frame
             //anim.ResetTrigger("AttackFinished");
-            Debug.LogWarning(gameObject.name + " attacks Player");
+//            Debug.LogWarning(gameObject.name + " attacks Player");
             player.TakeDamage(stats.esh.damage, stats.esh.enemyAttributesList);
             //anim.ResetTrigger("AttackStart");
             anim.SetTrigger("AttackFinished");
