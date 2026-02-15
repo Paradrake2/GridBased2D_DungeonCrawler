@@ -19,13 +19,11 @@ public class SpellHotbarSlot : MonoBehaviour, IPointerEnterHandler, IPointerExit
     public void SetSpell(Spell spell)
     {
         containedSpell = spell;
-        hotbar.AssignSpellToSlot(slotIndex, spell);
         UpdateUI();
     }
     public void ClearSpell()
     {
         containedSpell = null;
-        hotbar.AssignSpellToSlot(slotIndex, null);
         UpdateUI();
     }
     public void InstantiateSlot(SpellHotbar hotbar, int index)
@@ -60,22 +58,11 @@ public class SpellHotbarSlot : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        // show spell name
-        if (containedSpell != null)
-        {
-            // show tooltip with spell information
-            throw new System.NotImplementedException();
-        }
-        else
-        {
-            // show empty slot tooltip
-            throw new System.NotImplementedException();
-        }
-        throw new System.NotImplementedException();
+        // Tooltip not implemented yet; keep safe.
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        // Tooltip not implemented yet; keep safe.
     }
 }

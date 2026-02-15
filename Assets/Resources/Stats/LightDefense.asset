@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Light Defense
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 6134538422971435191, guid: c1d77743ae4f45946bdbcf45bc1cedd5, type: 3}
   category: 5
   isPercentage: 0
   capped: 0

@@ -45,12 +45,71 @@ public class SpellCrafter : MonoBehaviour
         float magicCost = composition.CalculateSpellCost();
         List<SpellStat> statModifiers = new List<SpellStat>();
         List<SpellAttribute> spellAttributes = new List<SpellAttribute>();
-        newSpell.spellEffect = new SpellBehaviour().SpellBehaviourConstructor(duration, damageMult, healAmount, costAmount, magicCost,
+
+        // IMPORTANT: The crafting UI keeps mutating its SpellComposition as the player edits the grid.
+        // If we store that same instance on the crafted Spell, previously-crafted spells will "change"
+        // whenever the player continues editing the grid. To prevent that, clone just the placed grid
+        // (x,y + component instance) for runtime evaluation.
+        SpellComposition runtimeComposition = CloneForDataflowRuntime(composition);
+
+        newSpell.spellEffect = new DataflowSpellBehaviour().Initialize(runtimeComposition, duration, damageMult, healAmount, costAmount, magicCost,
             statModifiers, spellAttributes);
         newSpell.name = composition.spellName; // will be determined by components or set by player
         newSpell.SetSpellName(composition.spellName);
+
+        // Icon: template icon wins; otherwise use the core component's icon when available.
+        if (template != null && template.Icon != null)
+            newSpell.SetIcon(template.Icon);
+        else if (coreComponent != null && coreComponent.Icon != null)
+            newSpell.SetIcon(coreComponent.Icon);
         // place for special effects based on components
         return newSpell;
+    }
+
+    private static SpellComposition CloneForDataflowRuntime(SpellComposition source)
+    {
+        if (source == null) return null;
+
+        // We only need the placed grid for DFEvaluator. This clone purposefully does not attempt to
+        // preserve NeighboringComponents links, because the dataflow runtime uses coordinates/ports.
+        SpellComposition clone = new SpellComposition
+        {
+            spellName = source.spellName,
+            magicRequired = source.magicRequired,
+            requirements = new List<SpellCompositionRequirements>()
+        };
+
+        if (source.requirements != null)
+        {
+            foreach (var req in source.requirements)
+            {
+                if (req == null) continue;
+                clone.requirements.Add(new SpellCompositionRequirements
+                {
+                    requiredType = req.requiredType,
+                    minimumCount = req.minimumCount
+                });
+            }
+        }
+
+        clone.components = new List<SpellComponent>();
+        clone.placedComponents = new List<PlacedSpellComponent>();
+
+        if (source.placedComponents != null)
+        {
+            foreach (var placed in source.placedComponents)
+            {
+                if (placed == null || placed.component == null) continue;
+                if (placed.x < 0 || placed.y < 0) continue;
+
+                // Clone the component instance so future edits in the UI can't mutate this spell.
+                SpellComponent componentClone = Instantiate(placed.component);
+                clone.components.Add(componentClone);
+                clone.placedComponents.Add(new PlacedSpellComponent(componentClone, placed.x, placed.y));
+            }
+        }
+
+        return clone;
     }
     private float CalculateDamageMult(List<SpellComponent> damageComponents = null)
     {

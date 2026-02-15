@@ -94,8 +94,12 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     private void ClearAndUnselect() // this is called on right-click
     {
         // Clear placed component + visuals
-        spellCrafterUI.ClearAdjacentCellsOfComponent(x,y, placedComponent);
-        spellCrafterUI.spellComposition.RemoveComponent(placedComponent);
+        if (spellCrafterUI != null)
+        {
+            spellCrafterUI.ClearAdjacentCellsOfComponent(x, y, placedComponent);
+            if (spellCrafterUI.spellComposition != null)
+                spellCrafterUI.spellComposition.RemoveComponent(placedComponent);
+        }
         placedComponent = null;
 
         var img = GetComponent<Image>();
@@ -108,10 +112,14 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 
         // Unselect
         isSelectedGridCell = false;
-        if (spellCrafterUI != null && spellCrafterUI.selectedGridCell == this)
-            spellCrafterUI.selectedGridCell = null;
+        if (spellCrafterUI != null)
+        {
+            if (spellCrafterUI.selectedGridCell == this)
+                spellCrafterUI.selectedGridCell = null;
+
             spellCrafterUI.RefreshOutline();
-        spellCrafterUI.UpdateSpellDescription();
+            spellCrafterUI.UpdateSpellDescription();
+        }
         Debug.Log($"Cleared & Unselected Grid Cell at ({x}, {y})");
     }
 
@@ -265,7 +273,13 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     {
         if (!isActive) return;
 
+        isHovering = false;
+
         ClearDirectionIndicators();
-        StopCoroutine(SwitchInputOutputIndicators());
+        if (coroutineSwitchIndicators != null)
+        {
+            StopCoroutine(coroutineSwitchIndicators);
+            coroutineSwitchIndicators = null;
+        }
     }
 }

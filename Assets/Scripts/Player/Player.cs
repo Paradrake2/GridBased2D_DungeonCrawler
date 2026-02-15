@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
     [SerializeField] private StatCollection spellStats = new StatCollection();
     [SerializeField] private PlayerAttributeSet tempAttributeSet = new PlayerAttributeSet();
     [SerializeField] private SpellBehaviour currentSpellBehaviour;
+    [SerializeField] private float pendingSpellFlatDamage;
     public bool isInCombat = false;
 
     void Initialize()
@@ -341,6 +342,21 @@ public class Player : MonoBehaviour
     public void ClearSpellStats()
     {
         spellStats.Clear();
+    }
+
+    public float GetPendingSpellFlatDamage()
+    {
+        return pendingSpellFlatDamage;
+    }
+
+    public void SetPendingSpellFlatDamage(float damage)
+    {
+        pendingSpellFlatDamage = damage;
+    }
+
+    public void ClearPendingSpellFlatDamage()
+    {
+        pendingSpellFlatDamage = 0f;
     }
     public PlayerAttributeSet GetTempPlayerAttributeSet()
     {

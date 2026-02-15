@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Dark Damage
   description: 
-  icon: {fileID: -2357551710105640672, guid: 10ecd0473e0c4134d92fa5061597d04a, type: 3}
+  icon: {fileID: -7319598008659948938, guid: d86ecbf6cbadd47469df73ef92187d26, type: 3}
   category: 5
   isPercentage: 0
   capped: 0

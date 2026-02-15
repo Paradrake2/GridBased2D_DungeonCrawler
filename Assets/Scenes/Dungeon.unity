@@ -3325,7 +3325,7 @@ MonoBehaviour:
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 555615077}
   m_HorizontalScrollbarVisibility: 2
-  m_VerticalScrollbarVisibility: 2
+  m_VerticalScrollbarVisibility: 0
   m_HorizontalScrollbarSpacing: -3
   m_VerticalScrollbarSpacing: -3
   m_OnValueChanged:
@@ -3977,10 +3977,10 @@ RectTransform:
   m_Children:
   - {fileID: 429022371}
   - {fileID: 266275415}
-  - {fileID: 1920537194}
   - {fileID: 1247407886}
   - {fileID: 503258982}
   - {fileID: 395049681}
+  - {fileID: 1920537194}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -6297,7 +6297,7 @@ PrefabInstance:
     - target: {fileID: 6261560963102767870, guid: 88102d08bfba65d43b6552f7b65ad947, type: 3}
       propertyPath: esh
       value: 
-      objectReference: {fileID: 11400000, guid: a33ac2add33502541acaf46dfc25ee9f, type: 2}
+      objectReference: {fileID: 11400000, guid: 04245ab5e460847479e267c0e6234852, type: 2}
     - target: {fileID: 6261560963102767870, guid: 88102d08bfba65d43b6552f7b65ad947, type: 3}
       propertyPath: stats.stats.Array.data[0].value
       value: 100
@@ -10501,7 +10501,7 @@ MonoBehaviour:
   experienceToNextLevel: 100
   currentXP: 0
   playerLevel: 1
-  magic: 0
+  magic: 1090000
 --- !u!4 &1268379073
 Transform:
   m_ObjectHideFlags: 0
@@ -12475,11 +12475,12 @@ MonoBehaviour:
   spellTemplateButtonPrefab: {fileID: 3105956719111254340, guid: 869c754f017481148a8dedb0f8ce5fde, type: 3}
   gridSizeX: 9
   gridSizeY: 9
-  usableGridSizeX: 5
-  usableGridSizeY: 5
+  usableGridSizeX: 9
+  usableGridSizeY: 9
   selectedGridCell: {fileID: 0}
   spellComposition:
     components: []
+    placedComponents: []
     requirements: []
     spellName: 
     magicRequired: 0

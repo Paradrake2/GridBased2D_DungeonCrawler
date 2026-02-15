@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Wind Damage
   description: 
-  icon: {fileID: 2943402807199250974, guid: 6c8a525fee1319b4f9e76f58a3336d38, type: 3}
+  icon: {fileID: 6679869466614694872, guid: 656b678c1104c6c4cbd2ee38cc96f96c, type: 3}
   category: 5
   isPercentage: 0
   capped: 0

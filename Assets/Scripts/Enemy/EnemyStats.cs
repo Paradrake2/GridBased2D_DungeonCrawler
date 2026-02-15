@@ -1,6 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class EnemyWeakness
+{
+    public StatType attribute;
+    public float multiplier;
+}
 
 [System.Serializable]
 public class EnemyAttributes

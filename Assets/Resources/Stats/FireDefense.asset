@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Fire Defense
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: -2355793800136030901, guid: 14a7eace855e0304492de93f63eb8515, type: 3}
   category: 5
   isPercentage: 0
   capped: 0

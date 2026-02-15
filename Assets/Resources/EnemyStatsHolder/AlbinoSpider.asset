@@ -27,8 +27,9 @@ MonoBehaviour:
     attackAttributeValue: 1
     defenseAttribute: {fileID: 11400000, guid: 81cb18d9b9fed0c46b267ce36befd46f, type: 2}
     defenseAttributeValue: 1
-  weakness: {fileID: 11400000, guid: 9e8b3d9ad2b47da4b84d7bdab851a78f, type: 2}
-  weaknessMultiplier: 1.5
+  weakness:
+    attribute: {fileID: 11400000, guid: 9e8b3d9ad2b47da4b84d7bdab851a78f, type: 2}
+    multiplier: 12
   dropTable: {fileID: 11400000, guid: 56b2c73365326074282f0326e9d340fd, type: 2}
   maxHealth: 0
   defense: 0

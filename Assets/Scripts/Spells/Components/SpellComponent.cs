@@ -7,10 +7,14 @@ public enum SpellComponentType
     Healing, // for healing components
     Cost, // for cost related components
     Strength, // how strong the spell is
-    Duration, // how long the spell lasts (typically measured in seconds)
+    Duration, // how long the spell lasts (typically measured in seconds), used for buffs and certain debuffs
     Attribute, // elemental or special attributes of the spell
     Core, // core of spell, can only be one per spell
-    Bridge // connects other components
+    Bridge, // connects other components
+    Custom, // player designed custom component with unique effects and properties
+    Logic, // for components that modify spell behavior or have special conditions, not directly contributing to damage/healing/cost
+    Debuff, // for components that apply negative effects to enemies
+    Buff, // for components that apply positive effects to the player
 }
 public enum SpellAttribute
 {
@@ -26,7 +30,9 @@ public enum SpellAttribute
     LightDamage,
     LightDefense,
     DarkDamage,
-    DarkDefense
+    DarkDefense,
+    AllAttributeDamage,
+    AllAttributeDefense
 }
 public enum Directions
 {
@@ -46,8 +52,8 @@ public class SpellComponentDirectionPart
 public class SpellStat
 {
     public StatType stat;
-    public float modifier;
-    public float value;
+    public float modifier; // multiplier
+    public float value; // flat value
 }
 [System.Serializable]
 public class SpellComponentDirections
@@ -93,14 +99,18 @@ public class SpellComponent : ScriptableObject
     public SpellAttribute SpellAttributes => spellAttributes;
     public bool IsCompatibleWith(SpellComponent other)
     {
+        if (other == null) return true;
+        if (compatibleWith == null || compatibleWith.Count == 0) return true;
         return compatibleWith.Contains(other.ComponentType);
     }
     public void AddAdjacentComponent(SpellComponent component)
     {
+        neighboringComponents ??= new List<SpellComponent>();
         neighboringComponents.Add(component);
     }
     public void RemoveAdjacentComponent(SpellComponent component)
     {
+        if (neighboringComponents == null) return;
         neighboringComponents.Remove(component);
     }
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Dark Defense
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: -4734621954765031710, guid: e95e8dabe201e664aae88701e04168f6, type: 3}
   category: 5
   isPercentage: 0
   capped: 0

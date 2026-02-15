@@ -21,6 +21,8 @@ public class SpellCrafterUI : MonoBehaviour
     public SpellGridCell selectedGridCell;
     [Header("Spell Composition Data")]
     public SpellComposition spellComposition;
+
+    private SpellTemplate selectedTemplate;
     [SerializeField] private SpellCrafter spellCrafter;
     [SerializeField] private SpellDescriptionManager spellDescriptionManager;
     [SerializeField] private GameObject spellNameSelectorPrefab;
@@ -93,10 +95,14 @@ public class SpellCrafterUI : MonoBehaviour
             if (cell != null)
             {
                 if (cell == selectedGridCell)
+                {
                     cell.ShowOutline(true);
+                }
                 else
+                {
                     cell.ShowOutline(false);
                     cell.UnselectCell();
+                }
             }
         }
     }
@@ -187,7 +193,22 @@ public class SpellCrafterUI : MonoBehaviour
     public void SetSelectedCellComponent(SpellComponent spellComponent)
     {
         if (selectedGridCell == null) return;
+
+        // If the cell already had a component, remove it from the composition and from adjacent lists.
+        // Without this, repeatedly placing on the same tile duplicates components in SpellComposition,
+        // inflating cost/requirements and leaving "ghost" nodes for dataflow compilation.
+        if (selectedGridCell.hasComponent)
+        {
+            SpellComponent oldComponent = selectedGridCell.placedComponent;
+            if (oldComponent != null)
+            {
+                ClearAdjacentCellsOfComponent(selectedGridCell.x, selectedGridCell.y, oldComponent);
+                spellComposition.RemoveComponent(oldComponent);
+            }
+        }
+
         SpellComponent newComponent = Instantiate(spellComponent);
+
         // check if compatible with adjacent components before setting
         List<SpellGridCell> adjacentCells = GetAdjacentCells(selectedGridCell.x, selectedGridCell.y);
         foreach (var adjacentCell in adjacentCells)
@@ -198,14 +219,19 @@ public class SpellCrafterUI : MonoBehaviour
             }
         }
         selectedGridCell.placedComponent = newComponent;
-        ClearAdjacentCellsOfComponent(selectedGridCell.x, selectedGridCell.y, newComponent);
+
+        // Build adjacency for the new component (only add real neighbors).
         foreach (var adjacentCell in adjacentCells)
-            newComponent.AddAdjacentComponent(adjacentCell.placedComponent);
+        {
+            if (adjacentCell.hasComponent && adjacentCell.placedComponent != null)
+                newComponent.AddAdjacentComponent(adjacentCell.placedComponent);
+        }
+
         // update visual representation
         selectedGridCell.GetComponent<Image>().sprite = newComponent.Icon ?? null; // this will be updated later to have the bridge component display differently
         // if compatible, set component
         // update tracker for spell composition
-        spellComposition.AddComponent(newComponent);
+        spellComposition.AddComponent(newComponent, selectedGridCell.x, selectedGridCell.y);
 
         // refresh all adjancent components' adjacent lists
         foreach (var adjacentCell in adjacentCells)
@@ -248,8 +274,10 @@ public class SpellCrafterUI : MonoBehaviour
     }
     public void GenerateSpell()
     {
+        Debug.Log("Attempting to generate spell from composition...");
         if (spellComposition.MeetsRequirements())
         {
+            Debug.Log("Spell composition meets requirements. Generating spell...");
             // pop up name spell screen, add to spellComposition
             GameObject spellNameSelectorGO = Instantiate(spellNameSelectorPrefab, transform);
             SpellNameSelector spellNameSelector = spellNameSelectorGO.GetComponent<SpellNameSelector>();
@@ -258,7 +286,7 @@ public class SpellCrafterUI : MonoBehaviour
                 Debug.Log(spellName);
                 spellComposition.spellName = spellName;
                 Debug.Log(spellComposition.spellName);
-                spellCrafter.AddSpellToInventory(spellComposition);
+                spellCrafter.AddSpellToInventory(spellComposition, selectedTemplate);
             });
         }
         else
@@ -273,6 +301,8 @@ public class SpellCrafterUI : MonoBehaviour
             Debug.LogError("Selected SpellTemplate is null.");
             return;
         }
+
+        selectedTemplate = template;
 
         // Clear existing composition
         ClearSpellComposition();

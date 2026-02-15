@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Fire Damage
   description: 
-  icon: {fileID: 1060540430942017655, guid: 1cd1116f11be3424580db6bb5ea78dd4, type: 3}
+  icon: {fileID: -4008880678046444283, guid: cc1f40b46f11efc488057b680b33b376, type: 3}
   category: 5
   isPercentage: 0
   capped: 0

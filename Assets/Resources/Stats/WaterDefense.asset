@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Water Defense
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: -6007696725454408027, guid: f9782e1eb81b3b64ebe1e73879804245, type: 3}
   category: 0
   isPercentage: 0
   capped: 0

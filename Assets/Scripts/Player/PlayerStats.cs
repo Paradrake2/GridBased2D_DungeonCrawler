@@ -18,16 +18,32 @@ public class PlayerAttributeSet
 {
     public List<PlayerAttackAttributes> attackAttributes;
     public List<PlayerDefenseAttributes> defenseAttributes;
+
+    public PlayerAttributeSet()
+    {
+        attackAttributes ??= new List<PlayerAttackAttributes>();
+        defenseAttributes ??= new List<PlayerDefenseAttributes>();
+    }
+
+    private void EnsureLists()
+    {
+        attackAttributes ??= new List<PlayerAttackAttributes>();
+        defenseAttributes ??= new List<PlayerDefenseAttributes>();
+    }
+
     public List<PlayerAttackAttributes> GetAttackAttributes()
     {
+        EnsureLists();
         return attackAttributes;
     }
     public List<PlayerDefenseAttributes> GetDefenseAttributes()
     {
+        EnsureLists();
         return defenseAttributes;
     }
     public void AddAttackAttribute(StatType attribute, float value)
     {
+        EnsureLists();
         PlayerAttackAttributes newAttr = new PlayerAttackAttributes
         {
             attackAttribute = attribute,
@@ -35,8 +51,23 @@ public class PlayerAttributeSet
         };
         attackAttributes.Add(newAttr);
     }
+
+    public void AddOrSetAttackAttribute(StatType attribute, float value)
+    {
+        EnsureLists();
+        for (int i = 0; i < attackAttributes.Count; i++)
+        {
+            if (attackAttributes[i] != null && attackAttributes[i].attackAttribute == attribute)
+            {
+                attackAttributes[i].attackAttributeValue = value;
+                return;
+            }
+        }
+        AddAttackAttribute(attribute, value);
+    }
     public void AddDefenseAttribute(StatType attribute, float value)
     {
+        EnsureLists();
         PlayerDefenseAttributes newAttr = new PlayerDefenseAttributes
         {
             defenseAttribute = attribute,
@@ -46,6 +77,7 @@ public class PlayerAttributeSet
     }
     public void ClearAllAttributes()
     {
+        EnsureLists();
         foreach (var attr in attackAttributes)
         {
             attr.attackAttributeValue = 0f;
@@ -57,10 +89,12 @@ public class PlayerAttributeSet
     }
     public void ClearAttackAttributes()
     {
+        EnsureLists();
         attackAttributes.Clear();
     }
     public void ClearDefenseAttributes()
     {
+        EnsureLists();
         defenseAttributes.Clear();
     }
 }

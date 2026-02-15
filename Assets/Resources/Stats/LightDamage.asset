@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Light Damage
   description: 
-  icon: {fileID: -2257577265324492059, guid: a5e4fd1df0569434aa69c0b338877290, type: 3}
+  icon: {fileID: 4645040518410436953, guid: e10910119f894cb419e9888e2ea6ab6e, type: 3}
   category: 5
   isPercentage: 0
   capped: 0

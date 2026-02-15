@@ -18,6 +18,7 @@ MonoBehaviour:
   componentType: 2
   value: 0.8
   cost: 5
+  magicCost: 19
   neighboringComponents: []
   compatibleWith: 0600000007000000
   directions:

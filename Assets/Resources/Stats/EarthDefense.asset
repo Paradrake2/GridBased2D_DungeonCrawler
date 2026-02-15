@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Earth Defense
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: -4065895397334454197, guid: ad07209258e07af47993a846ca4e4b56, type: 3}
   category: 5
   isPercentage: 0
   capped: 0

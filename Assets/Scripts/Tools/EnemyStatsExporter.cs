@@ -120,12 +120,12 @@ public static class EnemyStatsExporter
             {
                 entry.weakness = new ExportedStat
                 {
-                    statId = enemyStatsHolder.weakness.StatID,
-                    displayName = !string.IsNullOrWhiteSpace(enemyStatsHolder.weakness.displayName)
-                        ? enemyStatsHolder.weakness.displayName
-                        : enemyStatsHolder.weakness.name,
-                    category = enemyStatsHolder.weakness.category,
-                    value = enemyStatsHolder.weaknessMultiplier
+                    statId = enemyStatsHolder.weakness.attribute.StatID,
+                    displayName = !string.IsNullOrWhiteSpace(enemyStatsHolder.weakness.attribute.displayName)
+                        ? enemyStatsHolder.weakness.attribute.displayName
+                        : enemyStatsHolder.weakness.attribute.name,
+                    category = enemyStatsHolder.weakness.attribute.category,
+                    value = enemyStatsHolder.weakness.multiplier
                 };
             }
 

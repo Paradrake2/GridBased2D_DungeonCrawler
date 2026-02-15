@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4db3216f444f8f4f8ff5e77da1bf2c3, type: 3}
+  m_Name: DF_ConstNumber
+  m_EditorClassIdentifier: 
+  componentName: ConstNum5
+  icon: {fileID: 4944338509494530921, guid: e6f8b0b929f00b140949f88af241f330, type: 3}
+  tier: 0
+  componentType: 8
+  value: 5
+  cost: 0
+  magicCost: 0
+  neighboringComponents: []
+  compatibleWith: 070000000600000005000000080000000900000003000000000000000100000002000000
+  directions:
+    inputDirections: []
+    outputDirections:
+    - direction: {x: 1, y: 0}
+      directions: 3
+      isActive: 1
+    - direction: {x: 0, y: 1}
+      directions: 0
+      isActive: 1
+    - direction: {x: 0, y: -1}
+      directions: 1
+      isActive: 1
+    - direction: {x: -1, y: 0}
+      directions: 2
+      isActive: 1
+  costs: []
+  stats:
+  - stat: {fileID: 11400000, guid: 3deb6a3649d4b5d4e95c23ecadd98cd7, type: 2}
+    modifier: 1
+    value: 111
+  spellAttributes: 0
+  valuee: 6

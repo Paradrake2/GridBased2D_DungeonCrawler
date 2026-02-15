@@ -13,14 +13,27 @@ MonoBehaviour:
   m_Name: SpellComponentDatabase
   m_EditorClassIdentifier: 
   allSpellComponents:
+  - {fileID: 11400000, guid: 4906e0fd26d8b124482393b5a418616a, type: 2}
   - {fileID: 11400000, guid: 033fb18adce24dd41bb46377adb3ab4d, type: 2}
   - {fileID: 11400000, guid: c22949f1d5fee93459d55a3919869725, type: 2}
+  - {fileID: 11400000, guid: 1a4072ae0ffc1e14aaf62abc91b03d58, type: 2}
+  - {fileID: 11400000, guid: d019cf3fcbacefc4db4c57821d47180c, type: 2}
+  - {fileID: 11400000, guid: 0b66f5b28817c5440a5b4c02e9ec9783, type: 2}
+  - {fileID: 11400000, guid: 181316f4c63ec7d46ae7c28bac96c369, type: 2}
+  - {fileID: 11400000, guid: 46791a0f516749c49b40c328c7d7fb0e, type: 2}
+  - {fileID: 11400000, guid: eb9d9641bdd31a34ab630d8fe3b6fdff, type: 2}
   - {fileID: 11400000, guid: ec366849e20d3124bbcfbb1af0243fbf, type: 2}
+  - {fileID: 11400000, guid: bbd48a7a89beb034da77c3eacdf7d7ae, type: 2}
   - {fileID: 11400000, guid: aee89078a9911604b880b8a4abd7101e, type: 2}
-  - {fileID: 11400000, guid: 4906e0fd26d8b124482393b5a418616a, type: 2}
   unlockedSpellComponents:
   - {fileID: 11400000, guid: 033fb18adce24dd41bb46377adb3ab4d, type: 2}
   - {fileID: 11400000, guid: ec366849e20d3124bbcfbb1af0243fbf, type: 2}
   - {fileID: 11400000, guid: c22949f1d5fee93459d55a3919869725, type: 2}
   - {fileID: 11400000, guid: aee89078a9911604b880b8a4abd7101e, type: 2}
   - {fileID: 11400000, guid: 4906e0fd26d8b124482393b5a418616a, type: 2}
+  - {fileID: 11400000, guid: bbd48a7a89beb034da77c3eacdf7d7ae, type: 2}
+  - {fileID: 11400000, guid: 46791a0f516749c49b40c328c7d7fb0e, type: 2}
+  - {fileID: 11400000, guid: eb9d9641bdd31a34ab630d8fe3b6fdff, type: 2}
+  - {fileID: 11400000, guid: 181316f4c63ec7d46ae7c28bac96c369, type: 2}
+  - {fileID: 11400000, guid: 1a4072ae0ffc1e14aaf62abc91b03d58, type: 2}
+  - {fileID: 11400000, guid: 0b66f5b28817c5440a5b4c02e9ec9783, type: 2}

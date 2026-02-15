@@ -11,6 +11,7 @@ public class PlayerCombat : MonoBehaviour
     public PlayerAnimator anim;
     public Manager manager;
     private Vector2 startPos;
+    public Enemy targeted;
     void Start()
     {
         player = GetComponent<Player>();
@@ -30,6 +31,9 @@ public class PlayerCombat : MonoBehaviour
             Debug.Log("Applied " + inflictor.debuff.debuffName + " to " + target.name + " from player.");
         }
         target.GetComponent<Enemy>().TakeDamage(CalculateDamageTaken(target.GetComponent<Enemy>(), player.GetDamage() * damageMult, player.GetAttackAttributes())); // initial attack with damage multiplier
+        targeted = target.GetComponent<Enemy>();
+        // get data values for spells
+        // begin combat routine
         target.GetComponent<Enemy>().BeginCombat(player);
         StartCoroutine(ConmbatRoutine(attackSpeed, target));
     }
@@ -42,7 +46,7 @@ public class PlayerCombat : MonoBehaviour
         {
             anim.SetTrigger("Attacking");
             //if (target.GetComponent<Enemy>() == null) break; // break when enemy is dead
-            Debug.LogWarning("Player attacks " + target.name);
+           // Debug.LogWarning("Player attacks " + target.name);
             yield return new WaitForSeconds(attackInterval*0.4f); // wait for attack animation to reach hit frame
             target.GetComponent<Enemy>().TakeDamage(CalculateDamageTaken(target.GetComponent<Enemy>(), player.GetDamage(), player.GetAttackAttributes()));
             anim.SetTrigger("Idle");
@@ -56,14 +60,23 @@ public class PlayerCombat : MonoBehaviour
         if (player.GetSpellBehaviour() == null) return totalDamage;
         StatCollection stats = player.GetSpellStats();
         List<PlayerAttackAttributes> tempAttackAttributes = player.GetTempPlayerAttributeSet().GetAttackAttributes();
+        bool gotDamageFromStats = false;
         if (stats != null)
-        {
-            if (!stats.TryGetStat("Damage", out totalDamage)) return 0f; // if no damage stat, return 0
-        }
-        totalDamage = CalculateDamageTaken(enemy, totalDamage, tempAttackAttributes); // temp attributes
+            gotDamageFromStats = stats.TryGetStat("Damage", out totalDamage);
+
+        if (!gotDamageFromStats)
+            totalDamage = player.GetPendingSpellFlatDamage();
+
+        // Apply enemy defense + attribute interactions, but DO NOT call CalculateDamageTaken()
+        // (it calls DamageAfterSpell again, causing infinite recursion).
+        float afterDefense = Mathf.Max(0f, totalDamage - enemy.stats.esh.defense);
+        float attributeDamage = CalculateAttributeDamage(tempAttackAttributes, enemy);
+        float finalSpellDamage = afterDefense + attributeDamage;
+
         player.ClearSpellStats();
         player.ClearTempAttributeAttackStats();
-        return totalDamage;
+        player.ClearPendingSpellFlatDamage();
+        return finalSpellDamage;
     }
     float SpellDamageMult()
     {
@@ -76,12 +89,23 @@ public class PlayerCombat : MonoBehaviour
     }
     float CalculateDamageTaken(Enemy enemy, float damage, List<PlayerAttackAttributes> attackAttributes)
     {
+        var activeSpell = player != null ? player.GetSpellBehaviour() : null;
+
         float totalDamage = Mathf.Max(1, damage - enemy.stats.esh.defense);
-        // Debug.Log("Base Damage: " + totalDamage);
+        //Debug.Log("Base Damage: " + totalDamage);
         if (attackAttributes == null) return totalDamage;
         totalDamage = totalDamage + CalculateAttributeDamage(attackAttributes, enemy); // attribute damage
+        //Debug.Log("Damage after attributes: " + totalDamage);
         totalDamage = totalDamage + DamageAfterSpell(enemy); // spell damage
-        totalDamage *= SpellDamageMult(); // spell damage multiplier
+        Debug.Log("Damage after spell and attributes: " + totalDamage);
+        if (activeSpell != null)
+        {
+            float mult = activeSpell.GetDamageMult();
+            Debug.Log("Damage multiplier from active spell: " + mult);
+            totalDamage *= mult > 0f ? mult : 1f;
+            //Debug.Log("Damage after applying multiplier: " + totalDamage);
+            player.SetSpellBehaviour(null); // one-shot spell behaviour
+        }
         Debug.Log(totalDamage);
         return totalDamage;
     }
@@ -96,18 +120,18 @@ public class PlayerCombat : MonoBehaviour
             float enemyDefenseValue = enemy.stats.GetAttributeValue(defenseAttr);
             // Debug.Log("Enemy " + defenseAttr.displayName + ": " + enemyDefenseValue);
             float potentialDamage = Mathf.Max(0, attr.attackAttributeValue - enemyDefenseValue);
-            
+            //Debug.Log("Potential Damage: " + potentialDamage);
             if (enemy.stats.esh.weakness != null)
             {
-                if (attr.attackAttribute == enemy.stats.esh.weakness && attr.attackAttributeValue > 0)
+                if (attr.attackAttribute == enemy.stats.esh.weakness.attribute && attr.attackAttributeValue > 0)
                 {
-                    potentialDamage *= enemy.stats.esh.weaknessMultiplier;
-                    // Debug.Log("Weakness applied! New Damage: " + potentialDamage);
+                    potentialDamage *= enemy.stats.esh.weakness.multiplier;
+                    Debug.Log("Weakness applied! New Damage: " + potentialDamage);
                     break;
                 }
             }
             totalDamage += potentialDamage;
-            // Debug.Log("After " + attr.attackAttribute + ": " + totalDamage);
+            //Debug.Log("After " + attr.attackAttribute + ": " + totalDamage);
         }
         return totalDamage;
     }

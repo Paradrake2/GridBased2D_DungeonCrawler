@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae821149f3d01ff44a5b2a4c91d77e0e, type: 3}
+  m_Name: DF_EqualsAttribute
+  m_EditorClassIdentifier: 
+  componentName: EqualsAttribute
+  icon: {fileID: -7191330318216285734, guid: 3b015ee9226d9414894bc7ecbf4406d4, type: 3}
+  tier: 0
+  componentType: 8
+  value: 0
+  cost: 1
+  magicCost: 1
+  neighboringComponents: []
+  compatibleWith: 09000000080000000600000007000000
+  directions:
+    inputDirections:
+    - direction: {x: -1, y: 0}
+      directions: 2
+      isActive: 1
+    outputDirections:
+    - direction: {x: 1, y: 0}
+      directions: 3
+      isActive: 1
+  costs: []
+  stats: []
+  spellAttributes: 0
+  inputAttribute: 2
+  compareTo: {fileID: 11400000, guid: 9e8b3d9ad2b47da4b84d7bdab851a78f, type: 2}

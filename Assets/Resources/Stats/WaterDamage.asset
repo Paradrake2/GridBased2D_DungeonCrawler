@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Water Damage
   description: 
-  icon: {fileID: 2071631565448354067, guid: 2221da54efb43cf49b6300e8db330db6, type: 3}
+  icon: {fileID: 5475658624269708980, guid: a03d8abc880332245ad775c6049fc88c, type: 3}
   category: 5
   isPercentage: 0
   capped: 0

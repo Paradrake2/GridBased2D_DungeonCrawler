@@ -138,6 +138,14 @@ public class Inventory : MonoBehaviour
     public void AddSpellToInventory(Spell newSpell)
     {
         storedSpells.Add(newSpell);
+
+        // Auto-equip into first available hotbar slot if UI is present.
+        SpellHotbar hotbar = FindAnyObjectByType<SpellHotbar>();
+        if (hotbar != null)
+            hotbar.TryAssignSpellToFirstEmptySlot(newSpell);
+
+        if (uIManager != null)
+            uIManager.isDirty = true;
     }
     public List<Spell> GetSpellList()
     {

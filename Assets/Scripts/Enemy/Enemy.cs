@@ -90,6 +90,7 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
         player.combat.EndCombat();
     }
+    /** // Deprecated, now handled in PlayerCombat
     float CalculateDamageTaken(float damage, List<PlayerAttackAttributes> attackAttributes)
     {
         float totalDamage = Mathf.Max(1, damage - stats.esh.defense);
@@ -118,6 +119,7 @@ public class Enemy : MonoBehaviour
         // Debug.Log(totalDamage);
         return totalDamage;
     }
+    **/
     public bool HasResistance(string resistanceName)
     {
         foreach (var res in resistances)
