@@ -17,11 +17,12 @@ public struct DFSignal
     public float number;
     public bool boolean;
     public StatType attribute;
-
+    public StatType[] statTypes;
     public static DFSignal None => new DFSignal { type = DFSignalType.None };
     public static DFSignal FromNumber(float value) => new DFSignal { type = DFSignalType.Number, number = value };
     public static DFSignal FromBool(bool value) => new DFSignal { type = DFSignalType.Bool, boolean = value };
     public static DFSignal FromAttribute(StatType value) => new DFSignal { type = DFSignalType.Attribute, attribute = value };
+    public static DFSignal FromAttributes(StatType[] values) => new DFSignal { type = DFSignalType.Attribute, statTypes = values };
 
     public bool TryGetNumber(out float value)
     {
@@ -44,6 +45,14 @@ public struct DFSignal
         value = null;
         if (type != DFSignalType.Attribute) return false;
         value = attribute;
+        return true;
+    }
+
+    public bool TryGetAttributes(out StatType[] values)
+    {
+        values = null;
+        if (type != DFSignalType.Attribute) return false;
+        values = statTypes;
         return true;
     }
 

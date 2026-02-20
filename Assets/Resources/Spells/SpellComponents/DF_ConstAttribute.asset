@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DF_ConstAttribute
   m_EditorClassIdentifier: 
   componentName: fire damage
-  icon: {fileID: -4008880678046444283, guid: cc1f40b46f11efc488057b680b33b376, type: 3}
+  icon: {fileID: 3537608758661091586, guid: f3895cc2f332e6d4385b859d0938e66c, type: 3}
   tier: 0
   componentCategory: 1
   componentType: 0

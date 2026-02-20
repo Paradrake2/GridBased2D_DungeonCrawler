@@ -34,6 +34,8 @@ public class SpellCrafterUI : MonoBehaviour
     [SerializeField] private RotateComponentButton rotateComponentButton;
     [SerializeField] private DFComponentGroup selectedDFComponentGroup;
     [SerializeField] private GameObject componentPreviewObject;
+    [Header("Attribute Picker")]
+    [SerializeField] private AttributePickerUI attributePickerUI;
     public void ClearSpellComposition()
     {
         spellComposition = null;
@@ -75,6 +77,7 @@ public class SpellCrafterUI : MonoBehaviour
         UpdateComponentPreview(selectedDFComponentGroup.currentComponent);
         // Update the visual representation after rotation
         selectedGridCell.GetComponent<Image>().sprite = selectedGridCell.placedComponent.Icon ?? null;
+        UpdateAttributePickerForSelection();
     }
     void PopulateRegComponentList()
     {
@@ -115,6 +118,7 @@ public class SpellCrafterUI : MonoBehaviour
         isDFMode = mode;
         PopulateComponentList();
         rotateComponentButton.SetActive(isDFMode);
+        UpdateAttributePickerForSelection();
     }
     public void RefreshOutline()
     {
@@ -226,6 +230,7 @@ public class SpellCrafterUI : MonoBehaviour
         }
 
         UpdateSpellDescription();
+        UpdateAttributePickerForSelection();
     }
     public void ClearAdjacentCellsOfComponent(int x, int y, SpellComponent component)
     {
@@ -286,6 +291,7 @@ public class SpellCrafterUI : MonoBehaviour
     {
         selectedGridCell = cell;
         PopulateComponentList();
+        UpdateAttributePickerForSelection();
     }
 
     private void HandleCellCleared(SpellGridCell cell, SpellComponent oldComponent)
@@ -296,6 +302,37 @@ public class SpellCrafterUI : MonoBehaviour
         if (spellComposition != null)
             spellComposition.RemoveComponent(oldComponent);
         UpdateSpellDescription();
+        UpdateAttributePickerForSelection();
+    }
+
+    private void UpdateAttributePickerForSelection()
+    {
+        if (attributePickerUI == null) return;
+
+        if (selectedGridCell == null || !selectedGridCell.hasComponent)
+        {
+            attributePickerUI.Hide();
+            return;
+        }
+
+        if (selectedGridCell.placedComponent is not DF_ConstantAttributeComponent constAttr)
+        {
+            attributePickerUI.Hide();
+            return;
+        }
+
+        attributePickerUI.Show(constAttr.attribute, (StatType selected) =>
+        {
+            if (selected == null) return;
+            constAttr.SetAttribute(selected);
+
+            var img = selectedGridCell.GetComponent<Image>();
+            if (img != null)
+                img.sprite = constAttr.Icon;
+
+            UpdateComponentPreview(constAttr);
+            UpdateSpellDescription();
+        });
     }
     public void GenerateSpell()
     {

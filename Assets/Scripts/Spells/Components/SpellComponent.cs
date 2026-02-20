@@ -120,4 +120,8 @@ public class SpellComponent : ScriptableObject
         if (neighboringComponents == null) return;
         neighboringComponents.Remove(component);
     }
+    public virtual void ChangeIcon(Sprite newIcon, StatType stat = null, float val = 0)
+    {
+        icon = newIcon;
+    }
 }

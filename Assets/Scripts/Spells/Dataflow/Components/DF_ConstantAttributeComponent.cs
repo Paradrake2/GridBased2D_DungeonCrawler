@@ -4,4 +4,9 @@ using UnityEngine;
 public class DF_ConstantAttributeComponent : SpellComponent
 {
     public StatType attribute;
+    public void SetAttribute(StatType newAttribute)
+    {
+        attribute = newAttribute;
+        ChangeIcon(newAttribute.icon, newAttribute);
+    }
 }
