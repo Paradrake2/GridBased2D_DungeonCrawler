@@ -15,6 +15,7 @@ MonoBehaviour:
   componentName: EqualsAttribute
   icon: {fileID: 7894403436286526874, guid: 419e5b8893fb58144860fd230d217cac, type: 3}
   tier: 0
+  componentCategory: 1
   componentType: 8
   value: 0
   cost: 1

@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f44206d162dd245b971000dcbf7388, type: 3}
   m_Name: EqualsAttribute
   m_EditorClassIdentifier: 
+  icon: {fileID: -8084158964766159787, guid: b041e1d9603dea747838b624c641df3e, type: 3}
+  groupName: EqualsAttribute
+  index: 0
   components:
   - direction: 3
     component: {fileID: 11400000, guid: 46791a0f516749c49b40c328c7d7fb0e, type: 2}

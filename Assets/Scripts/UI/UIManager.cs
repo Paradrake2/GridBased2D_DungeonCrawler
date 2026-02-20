@@ -26,6 +26,7 @@ public class UIManager : MonoBehaviour
     public bool isDirty = false; // set when inventory changes
     private bool invType = true; // false = item, true = equipment
     [SerializeField] private InventoryScreen currentScreen = InventoryScreen.EquipmentStats;
+    [SerializeField] private SpellCrafterUI spellCrafterUI;
     public void ToggleUI()
     {
         isUIOpen = !isUIOpen;
@@ -46,6 +47,9 @@ public class UIManager : MonoBehaviour
                     break;
                 case InventoryScreen.Crafting:
                     OpenCrafting();
+                    break;
+                case InventoryScreen.SpellCrafting:
+                    OpenSpellCrafting();
                     break;
             }
             isDirty = false;
@@ -116,6 +120,7 @@ public class UIManager : MonoBehaviour
         SkillTreeTransform.gameObject.SetActive(false);
         CraftingTransform.gameObject.SetActive(false);
         InventoryTransform.gameObject.SetActive(false);
+        spellCrafterUI.PopulateComponentList();
         currentScreen = InventoryScreen.SpellCrafting;
     }
     void Start()

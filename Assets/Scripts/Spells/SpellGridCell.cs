@@ -16,7 +16,7 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 
     [SerializeField] private GameObject overlayObject;
     [SerializeField] private GameObject outlineObject;
-    [SerializeField] private SpellCrafterUI spellCrafterUI;
+    [SerializeField] private SpellGridUI spellGridUI;
     [SerializeField] private bool isSelectedGridCell = false;
     [SerializeField] private GameObject directionPrefab;
 
@@ -29,9 +29,9 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     private Coroutine coroutineSwitchIndicators;
     private bool isHovering;
 
-    public void Initialize(int xPos, int yPos, bool active, SpellCrafterUI ui)
+    public void Initialize(int xPos, int yPos, bool active, SpellGridUI ui)
     {
-        spellCrafterUI = ui;
+        spellGridUI = ui;
 
         x = xPos;
         y = yPos;
@@ -59,68 +59,43 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
         }
         else if (eventData.button == PointerEventData.InputButton.Right)
         {
-            ClearAndUnselect();
+            HandleRightClick();
         }
     }
 
     private void HandleLeftClick()
     {
-        if (isSelectedGridCell)
-        {
-            isSelectedGridCell = false;
-            if (spellCrafterUI != null && spellCrafterUI.selectedGridCell == this)
-                spellCrafterUI.selectedGridCell = null;
-
-            ShowOutline(false);
-
-            Debug.Log($"Deselected Grid Cell at ({x}, {y})");
-            return;
-        }
-        isSelectedGridCell = true;
-        ShowOutline(true);
-        if (spellCrafterUI != null)
-        {
-            spellCrafterUI.selectedGridCell = this;
-            spellCrafterUI.RefreshOutline();
-            spellCrafterUI.PopulateComponentList();
-        }
-
-        Debug.Log($"Selected Grid Cell at ({x}, {y})");
+        if (spellGridUI == null) return;
+        spellGridUI.ToggleSelection(this);
     }
+
+    private void HandleRightClick()
+    {
+        if (spellGridUI == null) return;
+        spellGridUI.RequestClearCell(this);
+    }
+
     public void UnselectCell()
     {
         isSelectedGridCell = false;
     }
-    private void ClearAndUnselect() // this is called on right-click
+
+    public void SetSelected(bool selected)
     {
-        // Clear placed component + visuals
-        if (spellCrafterUI != null)
-        {
-            spellCrafterUI.ClearAdjacentCellsOfComponent(x, y, placedComponent);
-            if (spellCrafterUI.spellComposition != null)
-                spellCrafterUI.spellComposition.RemoveComponent(placedComponent);
-        }
+        isSelectedGridCell = selected;
+        ShowOutline(selected);
+    }
+
+    public void ClearPlacedComponentAndVisuals()
+    {
         placedComponent = null;
 
         var img = GetComponent<Image>();
         if (img != null)
             img.sprite = null;
 
-        // Also clear direction indicators (if any)
         ClearDirectionIndicators();
-        ShowOutline(false);
-
-        // Unselect
-        isSelectedGridCell = false;
-        if (spellCrafterUI != null)
-        {
-            if (spellCrafterUI.selectedGridCell == this)
-                spellCrafterUI.selectedGridCell = null;
-
-            spellCrafterUI.RefreshOutline();
-            spellCrafterUI.UpdateSpellDescription();
-        }
-        Debug.Log($"Cleared & Unselected Grid Cell at ({x}, {y})");
+        SetSelected(false);
     }
 
     public void OnPointerEnter(PointerEventData eventData)

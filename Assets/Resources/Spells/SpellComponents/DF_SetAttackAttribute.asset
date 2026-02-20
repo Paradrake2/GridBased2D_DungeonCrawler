@@ -15,6 +15,7 @@ MonoBehaviour:
   componentName: setattackattribute
   icon: {fileID: -1015913854813779228, guid: e6f8b0b929f00b140949f88af241f330, type: 3}
   tier: 0
+  componentCategory: 1
   componentType: 0
   value: 0
   cost: 1

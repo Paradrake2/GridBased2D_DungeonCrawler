@@ -15,6 +15,7 @@ MonoBehaviour:
   componentName: fire damage
   icon: {fileID: -4008880678046444283, guid: cc1f40b46f11efc488057b680b33b376, type: 3}
   tier: 0
+  componentCategory: 1
   componentType: 0
   value: 0
   cost: 0

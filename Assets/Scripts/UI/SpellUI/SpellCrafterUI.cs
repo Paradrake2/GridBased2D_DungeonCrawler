@@ -8,7 +8,8 @@ public class SpellCrafterUI : MonoBehaviour
     public Transform spellGridPanel;
     public GameObject gridCellPrefab;
     public Transform componentListPanel;
-    public GameObject componentButtonPrefab;
+    public GameObject componentButtonPrefab; // for regular components
+    public GameObject DFComponentButtonPrefab; // for advanced (DF) components
     public Transform spellTemplateListPanel;
     public GameObject spellTemplateButtonPrefab;
     public int gridSizeX = 9;
@@ -17,7 +18,9 @@ public class SpellCrafterUI : MonoBehaviour
     public int usableGridSizeX = 3;
     public int usableGridSizeY = 3;
 
-    private GameObject[,] gridCells;
+    [Header("Grid UI")]
+    [SerializeField] private SpellGridUI spellGridUI;
+
     public SpellGridCell selectedGridCell;
     [Header("Spell Composition Data")]
     public SpellComposition spellComposition;
@@ -27,6 +30,10 @@ public class SpellCrafterUI : MonoBehaviour
     [SerializeField] private SpellDescriptionManager spellDescriptionManager;
     [SerializeField] private GameObject spellNameSelectorPrefab;
     [SerializeField] private bool isDFMode = false;
+    [SerializeField] private ToggleDFModeButton toggleDFModeButton;
+    [SerializeField] private RotateComponentButton rotateComponentButton;
+    [SerializeField] private DFComponentGroup selectedDFComponentGroup;
+    [SerializeField] private GameObject componentPreviewObject;
     public void ClearSpellComposition()
     {
         spellComposition = null;
@@ -36,33 +43,12 @@ public class SpellCrafterUI : MonoBehaviour
     public void GenerateGrid(int newUsableGridSizeX, int newUsableGridSizeY)
     {
         SetUsableGridSize(newUsableGridSizeX, newUsableGridSizeY);
+        EnsureSpellGridUI();
 
-        if (gridCells == null || gridCells.GetLength(0) != gridSizeX || gridCells.GetLength(1) != gridSizeY)
-            gridCells = new GameObject[gridSizeX, gridSizeY];
+        if (spellGridUI == null) return;
 
-        ClearGridPanelChildren();
-
-        ClearGridCellReferences();
-
-        Vector2Int core = new Vector2Int(gridSizeX / 2, gridSizeY / 2);
-        int halfX = usableGridSizeX / 2;
-        int halfY = usableGridSizeY / 2;
-
-        for (int y = 0; y < gridSizeY; y++)
-        {
-            for (int x = 0; x < gridSizeX; x++)
-            {
-                GameObject cellGO = Instantiate(gridCellPrefab, spellGridPanel);
-                SpellGridCell cell = cellGO.GetComponent<SpellGridCell>();
-
-                bool isActive =
-                    Mathf.Abs(x - core.x) <= halfX &&
-                    Mathf.Abs(y - core.y) <= halfY;
-
-                cell.Initialize(x, y, isActive, this);
-                gridCells[x, y] = cellGO;
-            }
-        }
+        spellGridUI.Configure(spellGridPanel, gridCellPrefab, gridSizeX, gridSizeY);
+        spellGridUI.GenerateGrid(usableGridSizeX, usableGridSizeY);
     }
     public void PopulateComponentList()
     {
@@ -73,7 +59,7 @@ public class SpellCrafterUI : MonoBehaviour
         }
         if (isDFMode)
         {
-            
+            PopulateDFComponentList();
         } else
         {
             PopulateRegComponentList();
@@ -83,8 +69,10 @@ public class SpellCrafterUI : MonoBehaviour
     {
         if (selectedGridCell == null || !selectedGridCell.hasComponent) return;
 
-        selectedGridCell.RotateComponent();
-
+        if (selectedDFComponentGroup == null) return;
+        selectedDFComponentGroup.GoToNextComponent();
+        selectedGridCell.placedComponent = selectedDFComponentGroup.currentComponent;
+        UpdateComponentPreview(selectedDFComponentGroup.currentComponent);
         // Update the visual representation after rotation
         selectedGridCell.GetComponent<Image>().sprite = selectedGridCell.placedComponent.Icon ?? null;
     }
@@ -96,7 +84,7 @@ public class SpellCrafterUI : MonoBehaviour
             Debug.LogError("SpellComponentDatabase not found in Resources.");
             return;
         }
-        List<SpellComponent> components = database.GetUnlockedComponents();
+        List<SpellComponent> components = database.GetUnlockedComponentsByCategory(ComponentCategory.Regular);
 
         // Create new buttons
         foreach (SpellComponent component in components)
@@ -106,46 +94,32 @@ public class SpellCrafterUI : MonoBehaviour
             listObject.Initialize(component, this);
         }
     }
+    void PopulateDFComponentList()
+    {
+        SpellComponentDatabase database = Resources.Load<SpellComponentDatabase>("SpellComponentDatabase");
+        if (database == null)
+        {
+            Debug.LogError("SpellComponentDatabase not found in Resources.");
+            return;
+        }
+        List<DFComponentGroup> dfGroups = database.DFComponentGroups;
+        foreach (DFComponentGroup group in dfGroups)
+        {
+            GameObject buttonGO = Instantiate(DFComponentButtonPrefab, componentListPanel);
+            SpellDFComponentListObject listObject = buttonGO.GetComponent<SpellDFComponentListObject>();
+            listObject.Initialize(group);
+        }
+    }
     public void ToggleDFMode(bool mode)
     {
         isDFMode = mode;
         PopulateComponentList();
+        rotateComponentButton.SetActive(isDFMode);
     }
     public void RefreshOutline()
     {
-        Debug.Log("Called refresh outline");
-        foreach (var cellGO in gridCells)
-        {
-            SpellGridCell cell = cellGO.GetComponent<SpellGridCell>();
-            if (cell != null)
-            {
-                if (cell == selectedGridCell)
-                {
-                    cell.ShowOutline(true);
-                }
-                else
-                {
-                    cell.ShowOutline(false);
-                    cell.UnselectCell();
-                }
-            }
-        }
-    }
-    private void ClearGridPanelChildren()
-    {
-        if (spellGridPanel == null) return;
-
-        for (int i = spellGridPanel.childCount - 1; i >= 0; i--)
-            Destroy(spellGridPanel.GetChild(i).gameObject);
-    }
-
-    private void ClearGridCellReferences()
-    {
-        if (gridCells == null) return;
-
-        for (int y = 0; y < gridSizeY; y++)
-        for (int x = 0; x < gridSizeX; x++)
-            gridCells[x, y] = null;
+        if (spellGridUI == null) return;
+        spellGridUI.RefreshOutline();
     }
 
     public void PopulateSpellTemplateList()
@@ -190,30 +164,14 @@ public class SpellCrafterUI : MonoBehaviour
     public bool TryGetCell(int x, int y, out SpellGridCell cell)
     {
         cell = null;
-        if (gridCells == null) return false;
-
-        if (x < 0 || x >= gridSizeX || y < 0 || y >= gridSizeY)
-            return false;
-
-        GameObject cellGO = gridCells[x, y];
-        if (cellGO == null)
-            return false;
-
-        cell = cellGO.GetComponent<SpellGridCell>();
-        return cell != null;
+        if (spellGridUI == null) return false;
+        return spellGridUI.TryGetCell(x, y, out cell);
     }
 
     public List<SpellGridCell> GetAdjacentCells(int x, int y)
     {
-        List<SpellGridCell> adjacentCells = new List<SpellGridCell>(4);
-
-        // Avoid Vector2 allocations + casts; use int offsets
-        TryAddAdjacent(x, y + 1, adjacentCells);
-        TryAddAdjacent(x + 1, y, adjacentCells);
-        TryAddAdjacent(x, y - 1, adjacentCells);
-        TryAddAdjacent(x - 1, y, adjacentCells);
-
-        return adjacentCells;
+        if (spellGridUI == null) return new List<SpellGridCell>(0);
+        return spellGridUI.GetAdjacentCells(x, y);
     }
     public void SetSelectedCellComponent(SpellComponent spellComponent)
     {
@@ -292,10 +250,52 @@ public class SpellCrafterUI : MonoBehaviour
             spellDescriptionManager.SetSpellDescription(false, spellComposition);
         }
     }
-    private void TryAddAdjacent(int x, int y, List<SpellGridCell> results)
+
+    private void EnsureSpellGridUI()
     {
-        if (TryGetCell(x, y, out SpellGridCell c) && c.isActive)
-            results.Add(c);
+        if (spellGridUI != null) return;
+
+        if (spellGridPanel != null)
+            spellGridUI = spellGridPanel.GetComponent<SpellGridUI>();
+
+        if (spellGridUI == null && spellGridPanel != null)
+            spellGridUI = spellGridPanel.gameObject.AddComponent<SpellGridUI>();
+
+        if (spellGridUI == null)
+            spellGridUI = GetComponentInChildren<SpellGridUI>(true);
+    }
+
+    private void OnEnable()
+    {
+        EnsureSpellGridUI();
+        if (spellGridUI == null) return;
+
+        spellGridUI.SelectionChanged += HandleSelectionChanged;
+        spellGridUI.CellCleared += HandleCellCleared;
+    }
+
+    private void OnDisable()
+    {
+        if (spellGridUI == null) return;
+
+        spellGridUI.SelectionChanged -= HandleSelectionChanged;
+        spellGridUI.CellCleared -= HandleCellCleared;
+    }
+
+    private void HandleSelectionChanged(SpellGridCell cell)
+    {
+        selectedGridCell = cell;
+        PopulateComponentList();
+    }
+
+    private void HandleCellCleared(SpellGridCell cell, SpellComponent oldComponent)
+    {
+        if (cell == null || oldComponent == null) return;
+
+        ClearAdjacentCellsOfComponent(cell.x, cell.y, oldComponent);
+        if (spellComposition != null)
+            spellComposition.RemoveComponent(oldComponent);
+        UpdateSpellDescription();
     }
     public void GenerateSpell()
     {
@@ -341,13 +341,32 @@ public class SpellCrafterUI : MonoBehaviour
         spellDescriptionManager.SetSpellDescription(false, spellComposition);
         Debug.Log($"Selected Spell Template: {template.TemplateName}");
     }
+    public void SetDFComponentGroup(DFComponentGroup group)
+    {
+        selectedDFComponentGroup = group;
+        if (group != null)
+        {
+            Debug.Log($"Selected DF Component Group: {group.GetGroupName()}");
+            UpdateComponentPreview(group.currentComponent);
+        }
+    }
     public SpellCrafter GetSpellCrafter()
     {
         return spellCrafter;
     }
+    public void UpdateComponentPreview(SpellComponent component)
+    {
+        if (componentPreviewObject == null) return;
+
+        ComponentPreview preview = componentPreviewObject.GetComponent<ComponentPreview>();
+        if (preview != null)
+        {
+            preview.SetComponent(component);
+        }
+    }
     void Start()
     {
-        gridCells = new GameObject[gridSizeX, gridSizeY];
+        EnsureSpellGridUI();
         GenerateGrid(usableGridSizeX, usableGridSizeY);
         PopulateSpellTemplateList();
         ClearSpellComposition();

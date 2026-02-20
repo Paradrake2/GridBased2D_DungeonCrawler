@@ -68,12 +68,18 @@ public class SpellComponentCost
     public Item item;
     public int amount;
 }
+public enum ComponentCategory
+{
+    Regular,
+    Advanced
+}
 [CreateAssetMenu(fileName = "SpellComponent", menuName = "Spells/SpellComponent")]
 public class SpellComponent : ScriptableObject
 {
     [SerializeField] private string componentName;
     [SerializeField] protected Sprite icon;
     [SerializeField] protected int tier;
+    [SerializeField] protected ComponentCategory componentCategory;
     [SerializeField] protected SpellComponentType componentType;
     [SerializeField] private float value;
     [SerializeField] protected float cost;
@@ -88,6 +94,7 @@ public class SpellComponent : ScriptableObject
     public Sprite Icon => icon;
     public int Tier => tier;
     public SpellComponentType ComponentType => componentType;
+    public ComponentCategory ComponentCategory => componentCategory;
     public float Value => value;
     public float Cost => cost;
     public float MagicCost => magicCost;

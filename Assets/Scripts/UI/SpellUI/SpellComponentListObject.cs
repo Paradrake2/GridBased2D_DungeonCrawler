@@ -21,6 +21,7 @@ public class SpellComponentListObject : MonoBehaviour
         Debug.Log("Clicked on component: " + spellComponent.ComponentName);
         // add neccessary ingredients to storage
         spellCrafterUI.SetSelectedCellComponent(spellComponent);
+        spellCrafterUI.UpdateComponentPreview(spellComponent);
         
     }
 }

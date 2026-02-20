@@ -15,6 +15,7 @@ MonoBehaviour:
   componentName: Enemy Weakness
   icon: {fileID: 6271073163738325058, guid: 9a2874a84db9c174f8282df8a350c513, type: 3}
   tier: 0
+  componentCategory: 1
   componentType: 8
   value: 0
   cost: 1
