@@ -242,11 +242,21 @@ public static class DFEvaluator
 
     private static void EvaluateEqualsAttribute(DFGridRuntime runtime, DFNodeInstance node, DF_EqualsAttributeComponent component)
     {
-        bool match = false;
-        if (TryReadInput(runtime, node, component.inputAttribute, out var sig) && sig.TryGetAttribute(out var attr))
-        {
-            match = attr == component.compareTo;
-        }
+        StatType inputAttr = null;
+        StatType compareAttr = null;
+
+        bool hasInput =
+            TryReadInput(runtime, node, component.inputAttribute, out var sigInput) &&
+            sigInput.TryGetAttribute(out inputAttr);
+
+        bool hasCompareInput =
+            TryReadInput(runtime, node, component.compareAttribute, out var sigCompare) &&
+            sigCompare.TryGetAttribute(out compareAttr);
+
+        if (!hasCompareInput)
+            compareAttr = component.compareTo;
+
+        bool match = hasInput && inputAttr != null && compareAttr != null && inputAttr == compareAttr;
 
         WriteOutputsToAllActiveDirections(node, DFSignal.FromBool(match));
     }

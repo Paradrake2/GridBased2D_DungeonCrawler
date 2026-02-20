@@ -26,6 +26,7 @@ public class SpellCrafterUI : MonoBehaviour
     [SerializeField] private SpellCrafter spellCrafter;
     [SerializeField] private SpellDescriptionManager spellDescriptionManager;
     [SerializeField] private GameObject spellNameSelectorPrefab;
+    [SerializeField] private bool isDFMode = false;
     public void ClearSpellComposition()
     {
         spellComposition = null;
@@ -65,6 +66,30 @@ public class SpellCrafterUI : MonoBehaviour
     }
     public void PopulateComponentList()
     {
+        // Clear existing buttons
+        foreach (Transform child in componentListPanel)
+        {
+            Destroy(child.gameObject);
+        }
+        if (isDFMode)
+        {
+            
+        } else
+        {
+            PopulateRegComponentList();
+        }
+    }
+    public void RotateSelectedComponent()
+    {
+        if (selectedGridCell == null || !selectedGridCell.hasComponent) return;
+
+        selectedGridCell.RotateComponent();
+
+        // Update the visual representation after rotation
+        selectedGridCell.GetComponent<Image>().sprite = selectedGridCell.placedComponent.Icon ?? null;
+    }
+    void PopulateRegComponentList()
+    {
         SpellComponentDatabase database = Resources.Load<SpellComponentDatabase>("SpellComponentDatabase");
         if (database == null)
         {
@@ -72,11 +97,6 @@ public class SpellCrafterUI : MonoBehaviour
             return;
         }
         List<SpellComponent> components = database.GetUnlockedComponents();
-        // Clear existing buttons
-        foreach (Transform child in componentListPanel)
-        {
-            Destroy(child.gameObject);
-        }
 
         // Create new buttons
         foreach (SpellComponent component in components)
@@ -85,6 +105,11 @@ public class SpellCrafterUI : MonoBehaviour
             SpellComponentListObject listObject = buttonGO.GetComponent<SpellComponentListObject>();
             listObject.Initialize(component, this);
         }
+    }
+    public void ToggleDFMode(bool mode)
+    {
+        isDFMode = mode;
+        PopulateComponentList();
     }
     public void RefreshOutline()
     {

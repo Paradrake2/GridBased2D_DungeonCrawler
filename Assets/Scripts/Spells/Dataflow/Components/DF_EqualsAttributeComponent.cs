@@ -5,7 +5,7 @@ public class DF_EqualsAttributeComponent : SpellComponent
 {
     [Header("Input")]
     public global::Directions inputAttribute = global::Directions.Left;
-
-    [Header("Compare")]
+    public global::Directions compareAttribute = global::Directions.Right;
+    [Header("Compare Fallback")]
     public StatType compareTo;
 }

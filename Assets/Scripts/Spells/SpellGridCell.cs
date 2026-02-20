@@ -282,4 +282,8 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
             coroutineSwitchIndicators = null;
         }
     }
+    public void RotateComponent()
+    {
+        
+    }
 }
