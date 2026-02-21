@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: DF_ConstAttribute
   m_EditorClassIdentifier: 
   componentName: fire damage
-  icon: {fileID: 3537608758661091586, guid: f3895cc2f332e6d4385b859d0938e66c, type: 3}
-  tier: 0
+  icon: {fileID: -7040330083901364511, guid: 68469a85478ec204a938eea077d24931, type: 3}
+  tier: 3
   componentCategory: 1
-  componentType: 0
+  componentType: 8
   value: 0
-  cost: 0
-  magicCost: 0
+  cost: 1
+  magicCost: 2
   neighboringComponents: []
   compatibleWith: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b000000
   directions:

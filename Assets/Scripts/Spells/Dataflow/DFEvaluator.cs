@@ -215,7 +215,7 @@ public static class DFEvaluator
 
     private static void EvaluateConstantNumber(DFNodeInstance node, DF_ConstantNumberComponent component)
     {
-        WriteOutputsToAllActiveDirections(node, DFSignal.FromNumber(component.valuee));
+        WriteOutputsToAllActiveDirections(node, DFSignal.FromNumber(component._value));
     }
 
     private static void EvaluateConstantAttribute(DFNodeInstance node, DF_ConstantAttributeComponent component)

@@ -36,6 +36,7 @@ public class SpellCrafterUI : MonoBehaviour
     [SerializeField] private GameObject componentPreviewObject;
     [Header("Attribute Picker")]
     [SerializeField] private AttributePickerUI attributePickerUI;
+    [SerializeField] private DFNumberSetter dfNumberSetter;
     public void ClearSpellComposition()
     {
         spellComposition = null;
@@ -231,6 +232,7 @@ public class SpellCrafterUI : MonoBehaviour
 
         UpdateSpellDescription();
         UpdateAttributePickerForSelection();
+        UpdateNumberSetterForSelection();
     }
     public void ClearAdjacentCellsOfComponent(int x, int y, SpellComponent component)
     {
@@ -333,6 +335,23 @@ public class SpellCrafterUI : MonoBehaviour
             UpdateComponentPreview(constAttr);
             UpdateSpellDescription();
         });
+    }
+
+    private void UpdateNumberSetterForSelection()
+    {
+        if (selectedGridCell == null || !selectedGridCell.hasComponent)
+        {
+            dfNumberSetter.Hide();
+            return;
+        }
+
+        if (selectedGridCell.placedComponent is not DF_ConstantNumberComponent constNum)
+        {
+            dfNumberSetter.Hide();
+            return;
+        }
+
+        dfNumberSetter.Show(constNum);
     }
     public void GenerateSpell()
     {

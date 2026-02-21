@@ -17,9 +17,9 @@ MonoBehaviour:
   tier: 0
   componentCategory: 1
   componentType: 8
-  value: 5
-  cost: 0
-  magicCost: 0
+  value: 0
+  cost: 1
+  magicCost: 1
   neighboringComponents: []
   compatibleWith: 070000000600000005000000080000000900000003000000000000000100000002000000
   directions:
@@ -37,10 +37,9 @@ MonoBehaviour:
     - direction: {x: -1, y: 0}
       directions: 2
       isActive: 1
-  costs: []
-  stats:
-  - stat: {fileID: 11400000, guid: 3deb6a3649d4b5d4e95c23ecadd98cd7, type: 2}
-    modifier: 1
-    value: 111
+  costs:
+  - item: {fileID: 11400000, guid: 07ad35e457c796a45bfc5fcfe0176fce, type: 2}
+    amount: 1
+  stats: []
   spellAttributes: 0
-  valuee: 6
+  _value: 1
