@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4db3216f444f8f4f8ff5e77da1bf2c3, type: 3}
   m_Name: DF_ConstNumber
   m_EditorClassIdentifier: 
-  componentName: ConstNum5
+  componentName: Constant Number
   icon: {fileID: 4944338509494530921, guid: e6f8b0b929f00b140949f88af241f330, type: 3}
   tier: 0
   componentCategory: 1

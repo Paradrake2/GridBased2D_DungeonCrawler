@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bd6bec10ebdbee4da2df222b9e9353f, type: 3}
   m_Name: DF_ConstAttribute
   m_EditorClassIdentifier: 
-  componentName: fire damage
+  componentName: Constant Attribute
   icon: {fileID: -7040330083901364511, guid: 68469a85478ec204a938eea077d24931, type: 3}
   tier: 3
   componentCategory: 1

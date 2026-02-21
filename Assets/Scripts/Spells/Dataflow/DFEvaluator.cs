@@ -64,6 +64,7 @@ public static class DFEvaluator
         // never hang even if the grid forms cycles.
         for (int pass = 0; pass < maxPasses; pass++)
         {
+            bool isFinalPass = pass == maxPasses - 1;
             foreach (var node in runtime.Nodes.OrderBy(n => n.Position.y).ThenBy(n => n.Position.x))
             {
                 if (node.Component == null) continue;
@@ -72,6 +73,11 @@ public static class DFEvaluator
                 if (node.Component is DF_EnemyWeaknessSensorComponent)
                 {
                     EvaluateEnemyWeaknessSensor(runtime, node, context);
+                    continue;
+                }
+                if (node.Component is DF_BridgeComponent bridge)
+                {
+                    EvaluateBridge(runtime, node, bridge);
                     continue;
                 }
                 if (node.Component is DF_ConstantNumberComponent constNumber)
@@ -103,15 +109,18 @@ public static class DFEvaluator
                 }
 
                 // Effectors
-                if (node.Component is DF_AddDamageComponent addDmg)
+                if (isFinalPass)
                 {
-                    EvaluateAddDamage(runtime, node, addDmg, result, context);
-                    continue;
-                }
-                if (node.Component is DF_SetAttackAttributeComponent setAttr)
-                {
-                    EvaluateSetAttackAttribute(runtime, node, setAttr, result, context);
-                    continue;
+                    if (node.Component is DF_AddDamageComponent addDmg)
+                    {
+                        EvaluateAddDamage(runtime, node, addDmg, result, context);
+                        continue;
+                    }
+                    if (node.Component is DF_SetAttackAttributeComponent setAttr)
+                    {
+                        EvaluateSetAttackAttribute(runtime, node, setAttr, result, context);
+                        continue;
+                    }
                 }
             }
         }
@@ -221,6 +230,37 @@ public static class DFEvaluator
     private static void EvaluateConstantAttribute(DFNodeInstance node, DF_ConstantAttributeComponent component)
     {
         WriteOutputsToAllActiveDirections(node, DFSignal.FromAttribute(component.attribute));
+    }
+
+    private static void EvaluateBridge(DFGridRuntime runtime, DFNodeInstance node, DF_BridgeComponent component)
+    {
+        // Pass-through: read a single incoming signal and replicate it to all active outputs.
+        // Input/output directions are fully defined by the component's active ports.
+        if (runtime == null || node == null || component == null)
+            return;
+
+        DFSignal signal = DFSignal.None;
+
+        bool hasSignal = TryReadAnyActiveInput(runtime, node, out signal);
+
+        WriteOutputsToAllActiveDirections(node, hasSignal ? signal : DFSignal.None);
+    }
+
+    private static bool TryReadAnyActiveInput(DFGridRuntime runtime, DFNodeInstance node, out DFSignal signal)
+    {
+        signal = DFSignal.None;
+        if (runtime == null || node == null || node.Component == null) return false;
+        if (node.Component.Directions == null || node.Component.Directions.inputDirections == null) return false;
+
+        foreach (var inDir in node.Component.Directions.inputDirections)
+        {
+            if (inDir == null || !inDir.isActive) continue;
+            var dir = GetPortDirection(inDir);
+            if (TryReadInput(runtime, node, dir, out signal))
+                return true;
+        }
+
+        return false;
     }
 
     private static void EvaluateMultiply(DFGridRuntime runtime, DFNodeInstance node, DF_MultiplyNumbersComponent component)

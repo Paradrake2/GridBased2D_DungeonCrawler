@@ -18,8 +18,8 @@ MonoBehaviour:
   componentCategory: 1
   componentType: 8
   value: 0
-  cost: 1
-  magicCost: 1
+  cost: 7
+  magicCost: 5
   neighboringComponents: []
   compatibleWith: 0000000001000000020000000300000005000000080000000a0000000b000000
   directions:
