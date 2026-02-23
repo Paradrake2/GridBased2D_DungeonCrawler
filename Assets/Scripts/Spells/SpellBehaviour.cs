@@ -5,13 +5,13 @@ using UnityEngine;
 public class SpellBehaviour
 {
     
-    private float duration; // number of seconds the spell lasts
-    private float damageMult;
-    private float healAmount;
-    private float costAmount;
-    private float magicCost;
-    private List<SpellStat> statModifiers;
-    private List<SpellAttribute> spellAttributes;
+    [SerializeField] private float duration; // number of seconds the spell lasts
+    [SerializeField] private float damageMult;
+    [SerializeField] private float healAmount;
+    [SerializeField] private float costAmount;
+    [SerializeField] private float magicCost;
+    [SerializeField] private List<SpellStat> statModifiers;
+    [SerializeField] private List<SpellAttribute> spellAttributes;
     public SpellBehaviour SpellBehaviourConstructor(float duration, float damageMult, float healAmount, float costAmount, float magicCost,
         List<SpellStat> statModifiers, List<SpellAttribute> spellAttributes)
     {

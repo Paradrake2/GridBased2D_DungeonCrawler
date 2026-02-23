@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f44206d162dd245b971000dcbf7388, type: 3}
   m_Name: AddDamage
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  groupName: 
+  icon: {fileID: 6271073163738325058, guid: 9a2874a84db9c174f8282df8a350c513, type: 3}
+  groupName: AddDamage
   index: 0
-  components: []
+  components:
+  - direction: 0
+    component: {fileID: 11400000, guid: 1a4072ae0ffc1e14aaf62abc91b03d58, type: 2}

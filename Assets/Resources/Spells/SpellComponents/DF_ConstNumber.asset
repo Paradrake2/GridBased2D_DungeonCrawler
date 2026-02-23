@@ -16,7 +16,7 @@ MonoBehaviour:
   icon: {fileID: 4944338509494530921, guid: e6f8b0b929f00b140949f88af241f330, type: 3}
   tier: 0
   componentCategory: 1
-  componentType: 8
+  componentType: 9
   value: 0
   cost: 1
   magicCost: 1

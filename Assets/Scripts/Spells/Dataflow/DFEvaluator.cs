@@ -11,6 +11,7 @@ public sealed class DFEvaluationResult
     // Convenience output so effectors can be tested without needing StatDatabase/StatType wiring.
     // DataflowSpellBehaviour will still map this into the game's StatType-based stats when possible.
     public float flatDamage;
+    public float cost;
 
     // Output 2: temporary attack attributes (element type + magnitude) used by weakness/defense logic.
     public PlayerAttributeSet tempAttributeSet = new PlayerAttributeSet();
@@ -20,7 +21,7 @@ public static class DFEvaluator
 {
     public const int DefaultMaxPasses = 8;
 
-    private static bool Verbose(DFContext context) => context != null && context.verbose;
+    public static bool Verbose(DFContext context) => context != null && context.verbose;
 
     // Used only for optional verbose diagnostics during a single Evaluate() call.
     // Unity runs this on the main thread, so this is safe for our use.
@@ -160,7 +161,7 @@ public static class DFEvaluator
         return component.Directions.outputDirections.Any(p => p != null && p.isActive && GetPortDirection(p) == outputDir);
     }
 
-    private static bool TryReadInput(DFGridRuntime runtime, DFNodeInstance node, Directions inputDir, out DFSignal signal)
+    public static bool TryReadInput(DFGridRuntime runtime, DFNodeInstance node, Directions inputDir, out DFSignal signal)
     {
         signal = DFSignal.None;
 
@@ -197,7 +198,7 @@ public static class DFEvaluator
         return ok;
     }
 
-    private static void WriteOutputsToAllActiveDirections(DFNodeInstance node, DFSignal signal)
+    public static void WriteOutputsToAllActiveDirections(DFNodeInstance node, DFSignal signal)
     {
         if (node.Component == null || node.Component.Directions == null || node.Component.Directions.outputDirections == null) return;
 
@@ -210,16 +211,7 @@ public static class DFEvaluator
 
     private static void EvaluateEnemyWeaknessSensor(DFGridRuntime runtime, DFNodeInstance node, DFContext context)
     {
-        StatType weakness = null;
-        if (context != null && context.target != null && context.target.stats != null && context.target.stats.esh != null)
-        {
-            weakness = context.target.stats.esh.weakness != null ? context.target.stats.esh.weakness.attribute : null;
-        }
-
-        // Emits the enemy's weakness attribute (e.g., Fire) as an Attribute signal.
-        //Debug.Log("Enemy weakness detected: " + (weakness != null ? weakness.displayName : "None"));
-        //Debug.Log(context.target.name);
-        WriteOutputsToAllActiveDirections(node, DFSignal.FromAttribute(weakness));
+        DF_EnemyWeaknessSensorComponent.Evaluate(runtime, node, context);
     }
 
     private static void EvaluateConstantNumber(DFNodeInstance node, DF_ConstantNumberComponent component)
@@ -234,19 +226,10 @@ public static class DFEvaluator
 
     private static void EvaluateBridge(DFGridRuntime runtime, DFNodeInstance node, DF_BridgeComponent component)
     {
-        // Pass-through: read a single incoming signal and replicate it to all active outputs.
-        // Input/output directions are fully defined by the component's active ports.
-        if (runtime == null || node == null || component == null)
-            return;
-
-        DFSignal signal = DFSignal.None;
-
-        bool hasSignal = TryReadAnyActiveInput(runtime, node, out signal);
-
-        WriteOutputsToAllActiveDirections(node, hasSignal ? signal : DFSignal.None);
+        DF_BridgeComponent.Evaluate(runtime, node, component);
     }
 
-    private static bool TryReadAnyActiveInput(DFGridRuntime runtime, DFNodeInstance node, out DFSignal signal)
+    public static bool TryReadAnyActiveInput(DFGridRuntime runtime, DFNodeInstance node, out DFSignal signal)
     {
         signal = DFSignal.None;
         if (runtime == null || node == null || node.Component == null) return false;
@@ -265,71 +248,34 @@ public static class DFEvaluator
 
     private static void EvaluateMultiply(DFGridRuntime runtime, DFNodeInstance node, DF_MultiplyNumbersComponent component)
     {
-        // Reads two number inputs (configurable directions) and outputs a*b.
-        float a = 0f;
-        float b = 0f;
-        bool hasA = TryReadInput(runtime, node, component.inputA, out var sigA) && sigA.TryGetNumber(out a);
-        bool hasB = TryReadInput(runtime, node, component.inputB, out var sigB) && sigB.TryGetNumber(out b);
-
-        if (!hasA || !hasB)
-        {
-            WriteOutputsToAllActiveDirections(node, DFSignal.None);
-            return;
-        }
-
-        WriteOutputsToAllActiveDirections(node, DFSignal.FromNumber(a * b));
+        DF_MultiplyNumbersComponent.Evaluate(runtime, node, component);
     }
 
     private static void EvaluateEqualsAttribute(DFGridRuntime runtime, DFNodeInstance node, DF_EqualsAttributeComponent component)
     {
-        StatType inputAttr = null;
-        StatType compareAttr = null;
-
-        bool hasInput =
-            TryReadInput(runtime, node, component.inputAttribute, out var sigInput) &&
-            sigInput.TryGetAttribute(out inputAttr);
-
-        bool hasCompareInput =
-            TryReadInput(runtime, node, component.compareAttribute, out var sigCompare) &&
-            sigCompare.TryGetAttribute(out compareAttr);
-
-        if (!hasCompareInput)
-            compareAttr = component.compareTo;
-
-        bool match = hasInput && inputAttr != null && compareAttr != null && inputAttr == compareAttr;
-
-        WriteOutputsToAllActiveDirections(node, DFSignal.FromBool(match));
+        DF_EqualsAttributeComponent.Evaluate(runtime, node, component);
     }
 
     private static void EvaluateGateNumber(DFGridRuntime runtime, DFNodeInstance node, DF_GateNumberComponent component)
     {
-        // If condition is true, forward the number. Otherwise output 0.
-        bool cond = false;
-        float value = 0f;
-
-        bool hasCond = TryReadInput(runtime, node, component.inputCondition, out var sigCond) && sigCond.TryGetBool(out cond);
-        bool hasVal = TryReadInput(runtime, node, component.inputValue, out var sigVal) && sigVal.TryGetNumber(out value);
-
-        if (!hasCond || !hasVal)
-        {
-            WriteOutputsToAllActiveDirections(node, DFSignal.None);
-            return;
-        }
-
-        WriteOutputsToAllActiveDirections(node, DFSignal.FromNumber(cond ? value : 0f));
+        DF_GateNumberComponent.Evaluate(runtime, node, component);
     }
 
     private static void EvaluateAddDamage(DFGridRuntime runtime, DFNodeInstance node, DF_AddDamageComponent component, DFEvaluationResult result, DFContext context)
     {
+
+        DF_AddDamageComponent.Evaluate(runtime, node, component, result, context);
+        /**
         if (result == null) return;
         // Effector: consumes a Number signal and accumulates it into the "Damage" stat.
         if (TryReadInput(runtime, node, component.inputDamage, out var sig) && sig.TryGetNumber(out float dmg))
         {
-            result.flatDamage += dmg;
-
+            //result.flatDamage += dmg;
+            result.spellStats.SetStat(StatDatabase.Instance.GetStat("Damage"), result.spellStats.GetStat(StatDatabase.Instance.GetStat("Damage")) + dmg);
             StatType damageStat = context != null ? context.damageStatType : null;
             if (damageStat == null)
             {
+                Debug.LogWarning("Damage stat type not found in context; AddDamageComponent will write to flatDamage but not into spellStats.");
                 var db = StatDatabase.Instance;
                 damageStat = db != null ? db.GetStat("Damage") : null;
             }
@@ -342,29 +288,17 @@ public static class DFEvaluator
 
             if (Verbose(context))
                 Debug.Log("AddDamage at " + node.Position + " read " + dmg + " (flatDamage now " + result.flatDamage + ")");
+            
+            result.cost += component.GetCost(dmg, multiplier: 1f);
         }
-
+        **/
         // Effect nodes don't forward signals unless you want them to.
         node.ClearOutputs();
     }
 
     private static void EvaluateSetAttackAttribute(DFGridRuntime runtime, DFNodeInstance node, DF_SetAttackAttributeComponent component, DFEvaluationResult result, DFContext context)
     {
-        if (result == null) return;
-
-        // Effector: consumes an Attribute + a Number and writes it into the temp attack attributes.
-        StatType attr = null;
-        float v = 0f;
-        bool hasAttr = TryReadInput(runtime, node, component.inputAttribute, out var sigAttr) && sigAttr.TryGetAttribute(out attr);
-        bool hasVal = TryReadInput(runtime, node, component.inputValue, out var sigVal) && sigVal.TryGetNumber(out v);
-
-        if (hasAttr && attr != null && hasVal)
-        {
-            result.tempAttributeSet.AddOrSetAttackAttribute(attr, v);
-            if (Verbose(context))
-                Debug.Log("Set attack attribute: " + attr.displayName + " to " + v);
-        }
-
+        DF_SetAttackAttributeComponent.Evaluate(runtime, node, component, result, context);
         node.ClearOutputs();
     }
 }

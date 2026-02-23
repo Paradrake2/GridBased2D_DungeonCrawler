@@ -16,15 +16,21 @@ MonoBehaviour:
   icon: {fileID: -7969604912666603509, guid: 409cd24506a14ae489dc708f2e00952a, type: 3}
   tier: 0
   componentCategory: 1
-  componentType: 8
+  componentType: 9
   value: 0
   cost: 0
   magicCost: 0
   neighboringComponents: []
-  compatibleWith: 
+  compatibleWith: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
   directions:
-    inputDirections: []
-    outputDirections: []
+    inputDirections:
+    - direction: {x: 0, y: 2}
+      directions: 0
+      isActive: 1
+    outputDirections:
+    - direction: {x: 0, y: -1}
+      directions: 1
+      isActive: 1
   costs: []
   stats: []
   spellAttributes: 0

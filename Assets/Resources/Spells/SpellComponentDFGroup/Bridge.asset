@@ -15,4 +15,6 @@ MonoBehaviour:
   icon: {fileID: -7969604912666603509, guid: 409cd24506a14ae489dc708f2e00952a, type: 3}
   groupName: Bridge
   index: 0
-  components: []
+  components:
+  - direction: 0
+    component: {fileID: 11400000, guid: 8120fb823069dec4da49c311211edfaa, type: 2}
