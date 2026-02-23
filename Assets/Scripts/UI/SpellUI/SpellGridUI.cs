@@ -199,4 +199,6 @@ public class SpellGridUI : MonoBehaviour
         for (int x = 0; x < gridSizeX; x++)
             gridCells[x, y] = null;
     }
+    public int UsableGridSizeX => usableGridSizeX;
+    public int UsableGridSizeY => usableGridSizeY;
 }
