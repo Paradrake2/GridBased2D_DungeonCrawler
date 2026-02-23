@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfd2446c14a827f45b6ec72bcaed218d, type: 3}
-  m_Name: Damage1
+  m_Name: Damage3
   m_EditorClassIdentifier: 
-  componentName: Damage1
-  icon: {fileID: 6271073163738325058, guid: 9a2874a84db9c174f8282df8a350c513, type: 3}
-  tier: 1
+  componentName: Damage3
+  icon: {fileID: 189616317872013034, guid: c18b6ee75f46985438a496ddb7a2e699, type: 3}
+  tier: 3
   componentCategory: 0
   componentType: 0
-  value: 1.5
-  cost: 10
-  magicCost: 5
+  value: 4
+  cost: 22
+  magicCost: 17
   neighboringComponents: []
   compatibleWith: 06000000020000000300000005000000070000000400000000000000
   directions:
@@ -51,6 +51,9 @@ MonoBehaviour:
       isActive: 1
   costs:
   - item: {fileID: 11400000, guid: 07ad35e457c796a45bfc5fcfe0176fce, type: 2}
-    amount: 1
-  stats: []
+    amount: 10
+  stats:
+  - stat: {fileID: 11400000, guid: 3deb6a3649d4b5d4e95c23ecadd98cd7, type: 2}
+    modifier: 1
+    value: 7
   spellAttributes: 0

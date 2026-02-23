@@ -45,6 +45,11 @@ public class SpellDescriptionManager : MonoBehaviour
             spellDescriptionText.text += $"Duration: {spellPreview.spellEffect.GetDuration()} seconds\n";
             spellDescriptionText.text += $"Cost Amount: {spellPreview.spellEffect.GetCostAmount()}\n";
             spellDescriptionText.text += $"Magic Cost: {composition.CalculateSpellCost()}\n";
+            spellDescriptionText.text += "Stat Modifiers:\n";
+            foreach (var statMod in spellPreview.spellEffect.GetStatModifiers())
+            {
+                spellDescriptionText.text += $"- {statMod.stat.name}: {statMod.value}\n";
+            }
             return;
         }
     }

@@ -12900,7 +12900,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -18491,6 +18491,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1745962008}
     m_Modifications:
+    - target: {fileID: 2414298583833787250, guid: 234f9e60a2562e244a1abc70f36dfbc3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3164345679993299485, guid: 234f9e60a2562e244a1abc70f36dfbc3, type: 3}
       propertyPath: hotbar
       value: 
