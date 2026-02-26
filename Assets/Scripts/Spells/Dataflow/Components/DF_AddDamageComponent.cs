@@ -5,6 +5,7 @@ public class DF_AddDamageComponent : SpellComponent
 {
     [Header("Input")]
     public global::Directions inputDamage = global::Directions.Left;
+    public global::Directions inputBool = global::Directions.Down; // Optional boolean input to conditionally apply damage
     [SerializeField] private float costMult = 2.5f;
     public float GetCost(float inputDamage, float multiplier)
     {
@@ -17,6 +18,14 @@ public class DF_AddDamageComponent : SpellComponent
         // Effector: consumes a Number signal and accumulates it into the "Damage" stat.
         if (DFEvaluator.TryReadInput(runtime, node, component.inputDamage, out var sig) && sig.TryGetNumber(out float dmg))
         {
+            bool applyDamage = true;
+            if (DFEvaluator.TryReadInput(runtime, node, component.inputBool, out var boolSig) && boolSig.TryGetBool(out bool boolValue))
+            {
+                applyDamage = boolValue;
+            }
+
+            if (!applyDamage) return;
+
             //result.flatDamage += dmg;
             //result.spellStats.SetStat(StatDatabase.Instance.GetStat("Damage"), result.spellStats.GetStat(StatDatabase.Instance.GetStat("Damage")) + dmg);
             StatType damageStat = context != null ? context.damageStatType : null;
