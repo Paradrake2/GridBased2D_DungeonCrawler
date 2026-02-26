@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      EarthWeakness_0: 4851022752776792377
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

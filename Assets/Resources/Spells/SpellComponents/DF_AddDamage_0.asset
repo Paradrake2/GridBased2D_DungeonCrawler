@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4765fc8acc791714fabb9639a8df5642, type: 3}
+  m_Name: DF_AddDamage_0
+  m_EditorClassIdentifier: 
+  componentName: Add Damage
+  icon: {fileID: 6621608750972943716, guid: 90269c0c625918c42b54aa4663d9f614, type: 3}
+  tier: 0
+  componentCategory: 1
+  componentType: 9
+  value: 1
+  cost: 0
+  magicCost: 0
+  neighboringComponents: []
+  compatibleWith: 0900000008000000060000000700000005000000
+  directions:
+    inputDirections:
+    - direction: {x: 0, y: 1}
+      directions: 0
+      isActive: 1
+    - direction: {x: -1, y: 0}
+      directions: 2
+      isActive: 1
+    outputDirections: []
+  costs: []
+  stats: []
+  spellAttributes: 0
+  inputDamage: 2
+  costMult: 2.5

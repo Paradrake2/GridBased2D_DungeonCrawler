@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a0fb553d28f5ccf478dd3ed2653dfbff
+guid: 13a68a9f40a81d34d8393c0fae297709
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2922396678313450302
-    second: EarthAttack_0
+      213: -445900429133655651
+    second: DFConstNumber_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EarthAttack_0
+      name: DFConstNumber_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 7
-        width: 242
-        height: 242
+        x: 0
+        y: 0
+        width: 310
+        height: 310
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e3b97af9b407e8820800000000000000
-      internalID: 2922396678313450302
+      spriteID: d915b441ce7dfc9f0800000000000000
+      internalID: -445900429133655651
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      EarthAttack_0: 2922396678313450302
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

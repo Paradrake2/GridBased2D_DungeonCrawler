@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4765fc8acc791714fabb9639a8df5642, type: 3}
-  m_Name: DF_AddDamage
+  m_Name: DF_AddDamage_1
   m_EditorClassIdentifier: 
   componentName: Add Damage
-  icon: {fileID: 5534571060974526450, guid: e6f8b0b929f00b140949f88af241f330, type: 3}
+  icon: {fileID: 6698090018016003548, guid: 56b90edbbe92dbc49b55867da6b67544, type: 3}
   tier: 0
   componentCategory: 1
   componentType: 9
@@ -35,3 +35,4 @@ MonoBehaviour:
   stats: []
   spellAttributes: 0
   inputDamage: 0
+  costMult: 2.5
