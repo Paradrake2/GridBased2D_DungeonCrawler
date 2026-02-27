@@ -4,33 +4,27 @@ using UnityEngine;
 
 public sealed class DFEvaluationResult
 {
-    // Output 1: numeric spell stats that plug into the existing combat pipeline.
-    // (Right now we only write "Damage", but this is meant to scale.)
     public StatCollection spellStats = new StatCollection();
 
-    // Convenience output so effectors can be tested without needing StatDatabase/StatType wiring.
-    // DataflowSpellBehaviour will still map this into the game's StatType-based stats when possible.
+    // Convenience output so effectors can be tested without needing StatDatabase/StatType wiring. <-- IOC violation
+    // dataflowSpellBehaviour will still map this into the game's StatType-based stats when possible. <-- IOC violation but keeps things simpler for now, remember to fix
     public float flatDamage;
     public float cost;
 
-    // Output 2: temporary attack attributes (element type + magnitude) used by weakness/defense logic.
+    // temporary attack attributes (element type + magnitude) used by weakness/defense logic.
     public PlayerAttributeSet tempAttributeSet = new PlayerAttributeSet();
 }
 
 public static class DFEvaluator
 {
-    public const int DefaultMaxPasses = 8;
+    public const int DefaultMaxPasses = 8; // DO NOT CHANGE: WILL CAUSE INFINITE LOOPS
 
-    public static bool Verbose(DFContext context) => context != null && context.verbose;
 
     // Used only for optional verbose diagnostics during a single Evaluate() call.
-    // Unity runs this on the main thread, so this is safe for our use.
+    public static bool Verbose(DFContext context) => context != null && context.verbose;
+    // Unity runs this on the main thread
     private static DFContext currentContext;
 
-    // Some of your component assets use SpellComponentDirectionPart.direction (Vector2) to define ports,
-    // while the dataflow runtime historically used SpellComponentDirectionPart.directions (enum).
-    // That mismatch makes the UI show "correct" arrows, but evaluation can't find connections.
-    // This helper makes evaluation treat both representations consistently.
     private static Directions GetPortDirection(SpellComponentDirectionPart part)
     {
         if (part == null) return Directions.Up;
@@ -55,76 +49,74 @@ public static class DFEvaluator
         currentContext = context;
         try
         {
+            // Compile the placed grid (x,y -> node) into a runtime structure for fast neighbor lookups.
+            DFGridRuntime runtime = Compile(composition);
+            if (!runtime.Nodes.Any())
+                return result;
 
-        // Compile the placed grid (x,y -> node) into a runtime structure for fast neighbor lookups.
-        DFGridRuntime runtime = Compile(composition);
-        if (!runtime.Nodes.Any())
-            return result;
-
-        // Outputs may depend on previous passes (simple feedback/propagation). Keep bounded so we
-        // never hang even if the grid forms cycles.
-        for (int pass = 0; pass < maxPasses; pass++)
-        {
-            bool isFinalPass = pass == maxPasses - 1;
-            foreach (var node in runtime.Nodes.OrderBy(n => n.Position.y).ThenBy(n => n.Position.x))
+            // Outputs may depend on previous passes (simple feedback/propagation). Keep bounded so it
+            // never hangs even if the grid forms cycles.
+            for (int pass = 0; pass < maxPasses; pass++)
             {
-                if (node.Component == null) continue;
-
-                // Sensors
-                if (node.Component is DF_EnemyWeaknessSensorComponent)
+                bool isFinalPass = pass == maxPasses - 1;
+                foreach (var node in runtime.Nodes.OrderBy(n => n.Position.y).ThenBy(n => n.Position.x))
                 {
-                    EvaluateEnemyWeaknessSensor(runtime, node, context);
-                    continue;
-                }
-                if (node.Component is DF_BridgeComponent bridge)
-                {
-                    EvaluateBridge(runtime, node, bridge);
-                    continue;
-                }
-                if (node.Component is DF_ConstantNumberComponent constNumber)
-                {
-                    EvaluateConstantNumber(node, constNumber);
-                    continue;
-                }
-                if (node.Component is DF_ConstantAttributeComponent constAttr)
-                {
-                    EvaluateConstantAttribute(node, constAttr);
-                    continue;
-                }
-
-                // Operators
-                if (node.Component is DF_MultiplyNumbersComponent multiply)
-                {
-                    EvaluateMultiply(runtime, node, multiply);
-                    continue;
-                }
-                if (node.Component is DF_EqualsAttributeComponent eqAttr)
-                {
-                    EvaluateEqualsAttribute(runtime, node, eqAttr);
-                    continue;
-                }
-                if (node.Component is DF_GateNumberComponent gateNum)
-                {
-                    EvaluateGateNumber(runtime, node, gateNum);
-                    continue;
-                }
-
-                // Effectors
-                if (isFinalPass)
-                {
-                    if (node.Component is DF_AddDamageComponent addDmg)
+                    if (node.Component == null) continue;
+                    // Sensors
+                    if (node.Component is DF_EnemyWeaknessSensorComponent)
                     {
-                        EvaluateAddDamage(runtime, node, addDmg, result, context);
+                        EvaluateEnemyWeaknessSensor(runtime, node, context);
                         continue;
                     }
-                    if (node.Component is DF_SetAttackAttributeComponent setAttr)
+                    if (node.Component is DF_BridgeComponent bridge)
                     {
-                        EvaluateSetAttackAttribute(runtime, node, setAttr, result, context);
+                        EvaluateBridge(runtime, node, bridge);
                         continue;
+                    }
+                    if (node.Component is DF_ConstantNumberComponent constNumber)
+                    {
+                        EvaluateConstantNumber(node, constNumber);
+                        continue;
+                    }
+                    if (node.Component is DF_ConstantAttributeComponent constAttr)
+                    {
+                        EvaluateConstantAttribute(node, constAttr);
+                        continue;
+                    }
+
+                    // Operators
+                    if (node.Component is DF_MultiplyNumbersComponent multiply)
+                    {
+                        EvaluateMultiply(runtime, node, multiply);
+                        continue;
+                    }
+                    if (node.Component is DF_EqualsAttributeComponent eqAttr)
+                    {
+                        EvaluateEqualsAttribute(runtime, node, eqAttr);
+                        continue;
+                    }
+                    if (node.Component is DF_GateNumberComponent gateNum)
+                    {
+                        EvaluateGateNumber(runtime, node, gateNum);
+                        continue;
+                    }
+
+                    // Effectors
+                    if (isFinalPass)
+                    {
+                        if (node.Component is DF_AddDamageComponent addDmg)
+                        {
+                            EvaluateAddDamage(runtime, node, addDmg, result, context);
+                            continue;
+                        }
+                        if (node.Component is DF_SetAttackAttributeComponent setAttr)
+                        {
+                            EvaluateSetAttackAttribute(runtime, node, setAttr, result, context);
+                            continue;
+                        }
                     }
                 }
             }
-        }
 
             return result;
         }
@@ -174,7 +166,7 @@ public static class DFEvaluator
         }
 
         // "inputDir" is the direction *the signal comes from* relative to this node.
-        // Example: if we want input from Left, the neighbor is at (x-1,y) and must output Right.
+        // Example: if I want input from Left, the neighbor is at (x-1,y) and must output Right.
         Vector2Int fromPos = node.Position + DFPortMap.ToOffset(inputDir);
         if (!runtime.TryGetNodeAt(fromPos, out var fromNode))
         {

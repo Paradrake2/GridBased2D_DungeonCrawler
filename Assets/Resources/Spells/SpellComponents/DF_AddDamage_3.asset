@@ -13,26 +13,29 @@ MonoBehaviour:
   m_Name: DF_AddDamage_3
   m_EditorClassIdentifier: 
   componentName: Add Damage
-  icon: {fileID: -7676934974269262248, guid: cc9c78c4da61e8b4fb771eca4dcf1a9f, type: 3}
+  icon: {fileID: -8170225660121076548, guid: a85b372d238dac540bc8d5509b739325, type: 3}
   tier: 0
   componentCategory: 1
   componentType: 9
   value: 1
   cost: 0
   magicCost: 0
-  neighboringComponents: []
+  neighboringComponents:
+  - {fileID: 0}
+  - {fileID: 0}
   compatibleWith: 0900000008000000060000000700000005000000
   directions:
     inputDirections:
-    - direction: {x: 0, y: 1}
-      directions: 0
-      isActive: 1
     - direction: {x: -1, y: 0}
       directions: 2
+      isActive: 1
+    - direction: {x: 0, y: -1}
+      directions: 1
       isActive: 1
     outputDirections: []
   costs: []
   stats: []
   spellAttributes: 0
-  inputDamage: 3
+  inputDamage: 2
+  inputBool: 1
   costMult: 2.5

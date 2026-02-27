@@ -14,7 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 6271073163738325058, guid: 9a2874a84db9c174f8282df8a350c513, type: 3}
   groupName: AddDamage
-  index: 0
+  index: 1
   components:
   - direction: 0
     component: {fileID: 11400000, guid: 1a4072ae0ffc1e14aaf62abc91b03d58, type: 2}
+  - direction: 3
+    component: {fileID: 11400000, guid: a25ed893f5a362947b8cd26696966668, type: 2}
+  - direction: 1
+    component: {fileID: 11400000, guid: d819dd71584ca5f4eaccc58f90e94137, type: 2}
+  - direction: 2
+    component: {fileID: 11400000, guid: a24e8abb0ba8ed24cbf4818fd878e250, type: 2}

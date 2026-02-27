@@ -23,11 +23,18 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     [Header("Direction Indicator")]
     [SerializeField] private float directionOffset = 20f;
     [SerializeField] private int directionSortingOrder = 5000; // high so it draws above grid
-    private readonly List<GameObject> spawnedDirectionIndicators = new();
+    private List<GameObject> spawnedDirectionIndicators = new();
     private List<GameObject> inputDirectionIndicators = new();
     private List<GameObject> outputDirectionIndicators = new();
     private Coroutine coroutineSwitchIndicators;
     private bool isHovering;
+
+    public void RefreshDirectionIndicatorsIfHovering()
+    {
+        if (!isHovering) return;
+
+        RebuildDirectionIndicators();
+    }
 
     public void Initialize(int xPos, int yPos, bool active, SpellGridUI ui)
     {
@@ -105,12 +112,22 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
         if (directionPrefab == null) return;
 
         isHovering = true;
+        RebuildDirectionIndicators();
+    }
+
+    private void RebuildDirectionIndicators()
+    {
+        if (!isActive) return;
+        if (!hasComponent) return;
+        if (directionPrefab == null) return;
+
         ClearDirectionIndicators();
 
-        SpellComponentDirections directions = placedComponent.Directions;
+        SpellComponentDirections directions = placedComponent != null ? placedComponent.Directions : null;
         if (directions == null) return;
 
         List<SpellComponentDirectionPart> inputDirs = directions.inputDirections;
+        Debug.Log(inputDirs[0].directions);
         List<SpellComponentDirectionPart> outputDirs = directions.outputDirections;
 
         if (inputDirs != null)
@@ -128,9 +145,9 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
             {
                 if (dirPart == null || !dirPart.isActive) continue;
                 SpawnDirectionIndicator(dirPart, isInput: false);
-                
             }
         }
+
         if (coroutineSwitchIndicators != null)
             StopCoroutine(coroutineSwitchIndicators);
         coroutineSwitchIndicators = StartCoroutine(SwitchInputOutputIndicators());
@@ -255,6 +272,19 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
         {
             StopCoroutine(coroutineSwitchIndicators);
             coroutineSwitchIndicators = null;
+        }
+    }
+    public void ShowIO(bool show)
+    {
+        foreach (var indicator in inputDirectionIndicators)
+        {
+            if (indicator != null)
+                indicator.SetActive(show);
+        }
+        foreach (var indicator in outputDirectionIndicators)
+        {
+            if (indicator != null)
+                indicator.SetActive(show);
         }
     }
     public void RotateComponent()

@@ -73,12 +73,49 @@ public class SpellCrafterUI : MonoBehaviour
         if (selectedGridCell == null || !selectedGridCell.hasComponent) return;
 
         if (selectedDFComponentGroup == null) return;
+        if (spellComposition == null) return;
+
+        SpellComponent oldComponent = selectedGridCell.placedComponent;
+
         selectedDFComponentGroup.GoToNextComponent();
-        selectedGridCell.placedComponent = selectedDFComponentGroup.currentComponent;
-        UpdateComponentPreview(selectedDFComponentGroup.currentComponent);
+        SpellComponent rotatedPrefab = selectedDFComponentGroup.currentComponent;
+        if (rotatedPrefab == null) return;
+
+        SpellComponent newComponent = Instantiate(rotatedPrefab);
+
+        // Rebuild adjacency links for neighbors.
+        List<SpellGridCell> adjacentCells = GetAdjacentCells(selectedGridCell.x, selectedGridCell.y);
+        foreach (var adjacentCell in adjacentCells)
+        {
+            if (!adjacentCell.hasComponent || adjacentCell.placedComponent == null) continue;
+
+            newComponent.AddAdjacentComponent(adjacentCell.placedComponent);
+
+            if (oldComponent != null)
+                adjacentCell.placedComponent.RemoveAdjacentComponent(oldComponent);
+            adjacentCell.placedComponent.AddAdjacentComponent(newComponent);
+        }
+
+        // Replace in spell composition while preserving the same grid position.
+        if (oldComponent != null)
+            spellComposition.RemoveComponent(oldComponent);
+        spellComposition.AddComponent(newComponent, selectedGridCell.x, selectedGridCell.y);
+
+        selectedGridCell.placedComponent = newComponent;
+        UpdateComponentPreview(newComponent);
+
         // Update the visual representation after rotation
-        selectedGridCell.GetComponent<Image>().sprite = selectedGridCell.placedComponent.Icon ?? null;
+        var img = selectedGridCell.GetComponent<Image>();
+        if (img != null)
+            img.sprite = newComponent.Icon ?? null;
+
+        // If the mouse is already over this cell, the pointer-enter event won't re-fire.
+        // Force indicators to update to the rotated component immediately.
+        selectedGridCell.RefreshDirectionIndicatorsIfHovering();
+
+        UpdateSpellDescription();
         UpdateAttributePickerForSelection();
+        UpdateNumberSetterForSelection();
     }
     void PopulateRegComponentList()
     {
