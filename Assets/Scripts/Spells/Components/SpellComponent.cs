@@ -41,12 +41,20 @@ public enum Directions
     Left,
     Right
 }
+public enum IOType
+{
+    None,
+    Float,
+    Bool,
+    Attribute
+
+}
 [System.Serializable]
 public class SpellComponentDirectionPart
 {
-    public Vector2 direction;
-    public Directions directions;
-    public bool isActive = true;
+    public Directions direction;
+    public IOType IOType;
+    public bool isActive = true; // mostly for debugging purposes
 }
 [System.Serializable]
 public class SpellStat

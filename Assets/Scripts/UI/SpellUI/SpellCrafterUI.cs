@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -116,6 +117,15 @@ public class SpellCrafterUI : MonoBehaviour
         UpdateSpellDescription();
         UpdateAttributePickerForSelection();
         UpdateNumberSetterForSelection();
+        ShowDirectionIndicatorsTemporarily(selectedGridCell);
+    }
+    private IEnumerator ShowDirectionIndicatorsTemporarily(SpellGridCell cell)
+    {
+        if (cell == null) yield break;
+
+        cell.CallRebuildDirectionIndicators();
+        yield return new WaitForSeconds(1f); // Adjust the duration as needed
+        cell.HideDirectionIndicators();
     }
     void PopulateRegComponentList()
     {

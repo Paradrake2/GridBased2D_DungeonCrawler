@@ -1,30 +1,21 @@
 using UnityEngine;
 
-public class ShowAllSpellCOmponentIO : MonoBehaviour
+public class ShowAllSpellComponentIO : MonoBehaviour
 {
     public Transform gridParent;
-
-    public void ShowAllIO() // will be changed to be on hover
+    bool isIOVisible = false;
+    public void ToggleAllIO() // will be changed to be on hover
     {
+        Debug.Log("Toggling IO visibility for all spell components.");
+        isIOVisible = !isIOVisible;
         foreach (Transform cell in gridParent)
         {
-            SpellGridCell spellGridCell = cell.GetComponent<SpellGridCell>();
+            SpellGridCell spellGridCell = cell.gameObject.GetComponent<SpellGridCell>();
             if (spellGridCell != null && spellGridCell.hasComponent)
             {
-                spellGridCell.ShowIO(true);
+                Debug.Log($"Toggling IO for {cell.gameObject.name} to {(isIOVisible ? "visible" : "hidden")}.");
+                spellGridCell.ShowIO(isIOVisible);
             }
         }
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

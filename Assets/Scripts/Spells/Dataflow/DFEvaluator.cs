@@ -27,17 +27,12 @@ public static class DFEvaluator
 
     private static Directions GetPortDirection(SpellComponentDirectionPart part)
     {
-        if (part == null) return Directions.Up;
-
-        if (part.direction != Vector2.zero)
+        if (part == null)
         {
-            Vector2 d = part.direction;
-            if (Mathf.Abs(d.x) >= Mathf.Abs(d.y))
-                return d.x >= 0f ? Directions.Right : Directions.Left;
-            return d.y >= 0f ? Directions.Up : Directions.Down;
+            Debug.LogError("GetPortDirection called with null part");
+            return Directions.Up; // default to Up if null, but it shouldn't be null if used correctly
         }
-
-        return part.directions;
+        return part.direction;
     }
 
     public static DFEvaluationResult Evaluate(SpellComposition composition, DFContext context, int maxPasses = DefaultMaxPasses)

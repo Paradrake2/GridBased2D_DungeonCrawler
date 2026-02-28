@@ -28,6 +28,7 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     private List<GameObject> outputDirectionIndicators = new();
     private Coroutine coroutineSwitchIndicators;
     private bool isHovering;
+    private bool isShowingIO = false;
 
     public void RefreshDirectionIndicatorsIfHovering()
     {
@@ -107,11 +108,18 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        // When IO is being displayed explicitly, ignore real pointer hover events.
+        // (ShowIO uses a null eventData to simulate hover and should still work.)
+        if (isShowingIO && eventData != null) return;
         if (!isActive) return;
         if (!hasComponent) return;
         if (directionPrefab == null) return;
 
         isHovering = true;
+        RebuildDirectionIndicators();
+    }
+    public void CallRebuildDirectionIndicators()
+    {
         RebuildDirectionIndicators();
     }
 
@@ -127,7 +135,7 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
         if (directions == null) return;
 
         List<SpellComponentDirectionPart> inputDirs = directions.inputDirections;
-        Debug.Log(inputDirs[0].directions);
+        //Debug.Log(inputDirs[0].directions);
         List<SpellComponentDirectionPart> outputDirs = directions.outputDirections;
 
         if (inputDirs != null)
@@ -205,11 +213,7 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     }
     private Vector2 GetDirectionVector(SpellComponentDirectionPart dirPart)
     {
-        if (dirPart.direction != Vector2.zero)
-            return dirPart.direction;
-
-        // Fallback to enum if Vector2 wasn't filled in
-        return dirPart.directions switch
+        return dirPart.direction switch
         {
             Directions.Up => Vector2.up,
             Directions.Down => Vector2.down,
@@ -249,6 +253,15 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
             yield return new WaitForSeconds(0.5f);
         }
     }
+    public void HideDirectionIndicators()
+    {
+        ClearDirectionIndicators();
+        if (coroutineSwitchIndicators != null)
+        {
+            StopCoroutine(coroutineSwitchIndicators);
+            coroutineSwitchIndicators = null;
+        }
+    }
     private void ClearDirectionIndicators()
     {
         for (int i = 0; i < spawnedDirectionIndicators.Count; i++)
@@ -263,6 +276,9 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        // When IO is being displayed explicitly, ignore real pointer exit events.
+        // (ShowIO uses a null eventData to simulate exit and should still work.)
+        if (isShowingIO && eventData != null) return;
         if (!isActive) return;
 
         isHovering = false;
@@ -276,19 +292,10 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     }
     public void ShowIO(bool show)
     {
-        foreach (var indicator in inputDirectionIndicators)
-        {
-            if (indicator != null)
-                indicator.SetActive(show);
-        }
-        foreach (var indicator in outputDirectionIndicators)
-        {
-            if (indicator != null)
-                indicator.SetActive(show);
-        }
-    }
-    public void RotateComponent()
-    {
-        
+        isShowingIO = show;
+        if (show)
+            OnPointerEnter(null); // simulate hover to show indicators
+        else
+            OnPointerExit(null); // simulate exit to hide indicators
     }
 }
