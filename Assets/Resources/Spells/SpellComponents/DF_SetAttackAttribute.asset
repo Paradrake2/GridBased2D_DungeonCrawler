@@ -24,11 +24,11 @@ MonoBehaviour:
   compatibleWith: 080000000900000005000000
   directions:
     inputDirections:
-    - direction: {x: -1, y: 0}
-      directions: 2
+    - direction: 0
+      IOType: 1
       isActive: 1
-    - direction: {x: 1, y: 0}
-      directions: 3
+    - direction: 1
+      IOType: 3
       isActive: 1
     outputDirections: []
   costs: []

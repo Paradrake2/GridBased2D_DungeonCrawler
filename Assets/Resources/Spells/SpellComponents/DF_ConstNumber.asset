@@ -25,17 +25,17 @@ MonoBehaviour:
   directions:
     inputDirections: []
     outputDirections:
-    - direction: {x: 1, y: 0}
-      directions: 3
+    - direction: 0
+      IOType: 1
       isActive: 1
-    - direction: {x: 0, y: 1}
-      directions: 0
+    - direction: 1
+      IOType: 1
       isActive: 1
-    - direction: {x: 0, y: -1}
-      directions: 1
+    - direction: 2
+      IOType: 1
       isActive: 1
-    - direction: {x: -1, y: 0}
-      directions: 2
+    - direction: 3
+      IOType: 1
       isActive: 1
   costs:
   - item: {fileID: 11400000, guid: 07ad35e457c796a45bfc5fcfe0176fce, type: 2}

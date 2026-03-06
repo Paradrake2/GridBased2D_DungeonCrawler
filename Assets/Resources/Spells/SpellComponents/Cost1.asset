@@ -15,6 +15,7 @@ MonoBehaviour:
   componentName: Cost1
   icon: {fileID: 7084139092434876548, guid: 0731f167681898f498667d05fc3ee8aa, type: 3}
   tier: 1
+  componentCategory: 0
   componentType: 2
   value: 0.8
   cost: 5
@@ -24,17 +25,17 @@ MonoBehaviour:
   directions:
     inputDirections: []
     outputDirections:
-    - direction: {x: 0, y: 1}
-      directions: 0
+    - direction: 0
+      IOType: 0
       isActive: 1
-    - direction: {x: 0, y: -1}
-      directions: 1
+    - direction: 1
+      IOType: 0
       isActive: 1
-    - direction: {x: 1, y: 0}
-      directions: 3
+    - direction: 2
+      IOType: 0
       isActive: 1
-    - direction: {x: -1, y: 0}
-      directions: 2
+    - direction: 3
+      IOType: 0
       isActive: 1
   costs:
   - item: {fileID: 11400000, guid: 07ad35e457c796a45bfc5fcfe0176fce, type: 2}

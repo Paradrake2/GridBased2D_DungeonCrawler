@@ -15,6 +15,7 @@ MonoBehaviour:
   componentName: Strength1
   icon: {fileID: 4093270486881150542, guid: af6114432bb065546af3a9ea02b96184, type: 3}
   tier: 1
+  componentCategory: 0
   componentType: 3
   value: 1.5
   cost: 50
@@ -22,31 +23,19 @@ MonoBehaviour:
   neighboringComponents: []
   compatibleWith: 01000000040000000300000005000000000000000600000007000000
   directions:
-    inputDirections:
-    - direction: {x: 0, y: 1}
-      directions: 0
-      isActive: 1
-    - direction: {x: 0, y: -1}
-      directions: 1
-      isActive: 1
-    - direction: {x: 1, y: 0}
-      directions: 3
-      isActive: 1
-    - direction: {x: -1, y: 0}
-      directions: 2
-      isActive: 1
+    inputDirections: []
     outputDirections:
-    - direction: {x: 0, y: 1}
-      directions: 0
+    - direction: 0
+      IOType: 0
       isActive: 1
-    - direction: {x: 0, y: -1}
-      directions: 1
+    - direction: 1
+      IOType: 0
       isActive: 1
-    - direction: {x: 1, y: 0}
-      directions: 3
+    - direction: 2
+      IOType: 0
       isActive: 1
-    - direction: {x: -1, y: 0}
-      directions: 2
+    - direction: 3
+      IOType: 0
       isActive: 1
   costs:
   - item: {fileID: 11400000, guid: 07ad35e457c796a45bfc5fcfe0176fce, type: 2}
