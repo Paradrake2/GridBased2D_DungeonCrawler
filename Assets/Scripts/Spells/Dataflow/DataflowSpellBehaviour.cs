@@ -27,7 +27,7 @@ public class DataflowSpellBehaviour : SpellBehaviour
 
     public override void Cast()
     {
-        // We keep integration minimal: evaluate the grid, then write results into the same
+        // Keep integration minimal: evaluate the grid, then write results into the same
         // Player fields the existing combat code already reads.
         Player player = GameObject.FindAnyObjectByType<Player>();
         if (player == null)
@@ -35,6 +35,10 @@ public class DataflowSpellBehaviour : SpellBehaviour
             Debug.LogWarning("No Player found to apply spell effects.");
             return;
         }
+
+        // get cost of spell and check if player can afford it
+
+        // check if player is currently in combat
 
         // Target selection is intentionally simple for MVP.
         Enemy target = GetActiveEnemyTarget();
@@ -49,8 +53,8 @@ public class DataflowSpellBehaviour : SpellBehaviour
         if (eval != null)
         {
             // If evaluator couldn't resolve StatType wiring, still try to map flatDamage into the game's Damage stat.
-            if (context.damageStatType != null && eval.GetFlatDamage() != 0f && !eval.spellStats.HasStat(context.damageStatType))
-                eval.spellStats.SetStat(context.damageStatType, eval.GetFlatDamage());
+            //if (context.damageStatType != null && eval.GetFlatDamage() != 0f && !eval.spellStats.HasStat(context.damageStatType))
+              //  eval.spellStats.SetStat(context.damageStatType, eval.GetFlatDamage());
 
             player.SetSpellStats(eval.spellStats);
             player.SetTempPlayerAttributeSet(eval.tempAttributeSet);
@@ -61,7 +65,10 @@ public class DataflowSpellBehaviour : SpellBehaviour
         player.SetSpellBehaviour(this);
         Debug.Log("Casting dataflow spell");
     }
-
+    private void InCombatCast()
+    {
+        
+    }
     private Enemy GetActiveEnemyTarget()
     {
         PlayerCombat combat = GameObject.FindAnyObjectByType<PlayerCombat>();
