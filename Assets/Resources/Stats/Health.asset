@@ -15,11 +15,11 @@ MonoBehaviour:
   displayName: Health
   description: 
   icon: {fileID: 0}
-  category: 0
+  category: 1
   isPercentage: 0
   capped: 0
   minValue: 0
-  maxValue: 1000
+  maxValue: 10000000
   defaultValue: 0
   value: 0
   suffix: 

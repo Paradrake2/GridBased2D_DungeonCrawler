@@ -3357,14 +3357,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 1536908962127458507, guid: 715884c9aad42724aab36ca3c0c552fc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11663,6 +11663,8 @@ MonoBehaviour:
       value: 1
     - statType: {fileID: 11400000, guid: 623b000dca0d2574da2c5df29ba146af, type: 2}
       value: 1
+    - statType: {fileID: 11400000, guid: e44a9bf9637021e44be35d89e67900e9, type: 2}
+      value: 1
   attributeSet:
     attackAttributes:
     - attackAttribute: {fileID: 11400000, guid: 5b2e70569a027eb498686706ecdf457f, type: 2}
@@ -11702,6 +11704,7 @@ MonoBehaviour:
   currentXP: 0
   playerLevel: 1
   magic: 1090000
+  mana: 100
 --- !u!4 &1268379073
 Transform:
   m_ObjectHideFlags: 0
