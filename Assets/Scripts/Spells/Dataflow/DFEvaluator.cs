@@ -5,16 +5,17 @@ using UnityEngine;
 public sealed class DFEvaluationResult
 {
     public StatCollection spellStats = new StatCollection();
-
-    // Convenience output so effectors can be tested without needing StatDatabase/StatType wiring. <-- IOC violation
-    // dataflowSpellBehaviour will still map this into the game's StatType-based stats when possible. <-- IOC violation but keeps things simpler for now, remember to fix
-
+    public float flatDamage = 0f; // fallback if no damage stat is defined in context
     // temporary attack attributes (element type + magnitude) used by weakness/defense logic.
     public PlayerAttributeSet tempAttributeSet = new PlayerAttributeSet();
     public float cost;
     public float GetFlatDamage()
     {
-        return spellStats.GetStat(StatDatabase.Instance.GetStat("Damage"));
+        if (spellStats == null) return flatDamage;
+        if (spellStats.GetStat(StatDatabase.Instance.GetStat("Damage")) != 0f)
+            return spellStats.GetStat(StatDatabase.Instance.GetStat("Damage"));
+        else
+        return flatDamage;
     }
 }
 
