@@ -43,7 +43,7 @@ public class DF_AddDamageComponent : SpellComponent
             }
 
             if (DFEvaluator.Verbose(context))
-                Debug.Log("AddDamage at " + node.Position + " read " + dmg + " (flatDamage now " + result.flatDamage + ")");
+                Debug.Log("AddDamage at " + node.Position + " read " + dmg + " (flatDamage now " + result.GetFlatDamage() + ")");
             
             result.cost += component.GetCost(dmg, multiplier: 1f);
         }

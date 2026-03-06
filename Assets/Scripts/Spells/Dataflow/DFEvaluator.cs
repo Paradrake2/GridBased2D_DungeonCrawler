@@ -8,11 +8,14 @@ public sealed class DFEvaluationResult
 
     // Convenience output so effectors can be tested without needing StatDatabase/StatType wiring. <-- IOC violation
     // dataflowSpellBehaviour will still map this into the game's StatType-based stats when possible. <-- IOC violation but keeps things simpler for now, remember to fix
-    public float flatDamage;
-    public float cost;
 
     // temporary attack attributes (element type + magnitude) used by weakness/defense logic.
     public PlayerAttributeSet tempAttributeSet = new PlayerAttributeSet();
+    public float cost;
+    public float GetFlatDamage()
+    {
+        return spellStats.GetStat(StatDatabase.Instance.GetStat("Damage"));
+    }
 }
 
 public static class DFEvaluator

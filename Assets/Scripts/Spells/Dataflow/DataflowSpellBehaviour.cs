@@ -49,12 +49,12 @@ public class DataflowSpellBehaviour : SpellBehaviour
         if (eval != null)
         {
             // If evaluator couldn't resolve StatType wiring, still try to map flatDamage into the game's Damage stat.
-            if (context.damageStatType != null && eval.flatDamage != 0f && !eval.spellStats.HasStat(context.damageStatType))
-                eval.spellStats.SetStat(context.damageStatType, eval.flatDamage);
+            if (context.damageStatType != null && eval.GetFlatDamage() != 0f && !eval.spellStats.HasStat(context.damageStatType))
+                eval.spellStats.SetStat(context.damageStatType, eval.GetFlatDamage());
 
             player.SetSpellStats(eval.spellStats);
             player.SetTempPlayerAttributeSet(eval.tempAttributeSet);
-            player.SetPendingSpellFlatDamage(eval.flatDamage);
+            player.SetPendingSpellFlatDamage(eval.GetFlatDamage());
         }
 
         // Let combat know what spell behaviour is currently active (used for damage multiplier etc.).

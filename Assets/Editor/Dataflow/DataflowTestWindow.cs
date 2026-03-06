@@ -64,7 +64,7 @@ public sealed class DataflowTestWindow : EditorWindow
         lastResult = DFEvaluator.Evaluate(runtime, context);
 
         if (lastResult != null)
-            Debug.Log("[DataflowTest] flatDamage=" + lastResult.flatDamage + ", stats=" + (lastResult.spellStats?.Stats?.Count ?? 0));
+            Debug.Log("[DataflowTest] flatDamage=" + lastResult.GetFlatDamage() + ", stats=" + (lastResult.spellStats?.Stats?.Count ?? 0));
     }
 
     private void DrawResults()
@@ -76,7 +76,7 @@ public sealed class DataflowTestWindow : EditorWindow
         }
 
         EditorGUILayout.LabelField("Result", EditorStyles.boldLabel);
-        EditorGUILayout.LabelField("flatDamage", lastResult.flatDamage.ToString());
+        EditorGUILayout.LabelField("flatDamage", lastResult.GetFlatDamage().ToString());
 
         var sb = new StringBuilder();
         if (lastResult.spellStats != null && lastResult.spellStats.Stats != null)
