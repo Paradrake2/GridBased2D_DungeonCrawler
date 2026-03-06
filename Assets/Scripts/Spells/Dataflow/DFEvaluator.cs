@@ -82,6 +82,12 @@ public static class DFEvaluator
                         EvaluateConstantAttribute(node, constAttr);
                         continue;
                     }
+                    // player health sensor goes here
+                    if (node.Component is DF_PlayerHealthSensorComponent)
+                    {
+                        DF_PlayerHealthSensorComponent.Evaluate(node, context);
+                        continue;
+                    }
 
                     // Operators
                     if (node.Component is DF_MultiplyNumbersComponent multiply)
