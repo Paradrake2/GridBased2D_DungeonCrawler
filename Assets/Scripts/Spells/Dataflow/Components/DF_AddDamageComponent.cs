@@ -46,6 +46,7 @@ public class DF_AddDamageComponent : SpellComponent
                 Debug.Log("AddDamage at " + node.Position + " read " + dmg + " (flatDamage now " + result.GetFlatDamage() + ")");
             
             result.cost += component.GetCost(dmg, multiplier: 1f);
+            Debug.Log("cost: " + result.cost);
         }
     }
 }

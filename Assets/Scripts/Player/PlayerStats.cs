@@ -116,6 +116,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private float currentXP = 0f;
     [SerializeField] private int playerLevel = 1;
     [SerializeField] private int magic = 0;
+    [SerializeField] private int mana = 100;
     public static PlayerStats instance;
     
 
@@ -146,6 +147,8 @@ public class PlayerStats : MonoBehaviour
         stats.SetStat(Defense, baseDefense);
         stats.SetStat(AttackSpeed, baseAttackSpeed);
         stats.SetStat(CraftingEfficiency, baseCraftingEfficiency);
+        stats.SetStat(db.GetStat("Magic"), magic);
+        stats.SetStat(db.GetStat("Mana"), mana);
     }
     public float GetStatValue(string statID)
     {
@@ -282,5 +285,13 @@ public class PlayerStats : MonoBehaviour
     public void SetMagic(int newMagic)
     {
         magic = newMagic;
+    }
+    public void SetMana(int newMana)
+    {
+        mana = newMana;
+    }
+    public int GetMana()
+    {
+        return mana;
     }
 }

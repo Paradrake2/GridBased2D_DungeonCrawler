@@ -36,8 +36,6 @@ public class DataflowSpellBehaviour : SpellBehaviour
             return;
         }
 
-        // get cost of spell and check if player can afford it
-
         // check if player is currently in combat
 
         // Target selection is intentionally simple for MVP.
@@ -49,7 +47,12 @@ public class DataflowSpellBehaviour : SpellBehaviour
             verbose = false
         };
         var eval = DFEvaluator.Evaluate(composition, context);
-
+        float cost = eval != null ? eval.cost : 0f;
+        if (player.GetMagic() < cost)
+        {
+            Debug.Log("Not enough magic to cast spell. Required: " + cost + ", Available: " + player.GetMagic());
+            return;
+        }
         if (eval != null)
         {
             // If evaluator couldn't resolve StatType wiring, still try to map flatDamage into the game's Damage stat.

@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float craftingEfficiency;
     [SerializeField] private float currentHealth;
     [SerializeField] private int magic;
+    [SerializeField] private int mana;
     public Rigidbody2D rb;
     public Collider2D coll;
     public StatCollection statCol = new StatCollection();
@@ -60,7 +61,7 @@ public class Player : MonoBehaviour
         attackSpeed = stats.GetBaseAttackSpeed();
         craftingEfficiency = stats.GetBaseCraftingEfficiency();
         magic = stats.GetMagic();
-        
+        mana = stats.GetMana();
         StatDatabase db = StatDatabase.Instance;
         StatType Health = db.GetStat("Health");
         StatType Damage = db.GetStat("Damage");
@@ -75,6 +76,7 @@ public class Player : MonoBehaviour
         statCol.SetStat(AttackSpeed, stats.GetBaseAttackSpeed());
         statCol.SetStat(CraftingEfficiency, stats.GetBaseCraftingEfficiency());
         statCol.SetStat(Magic, stats.GetMagic());
+        statCol.SetStat(db.GetStat("Mana"), mana);
         SetUpAttributeValues();
         UpdateFromEquipment();
     }
@@ -98,6 +100,7 @@ public class Player : MonoBehaviour
         attackSpeed = statCol.GetStat("AttackSpeed");
         craftingEfficiency = statCol.GetStat("CraftingEfficiency");
         magic = (int)statCol.GetStat("Magic");
+        mana = (int)statCol.GetStat("Mana");
     }
     public void UpdateFromEquipment()
     {
@@ -160,18 +163,20 @@ public class Player : MonoBehaviour
         damage = stats.GetBaseDamage();
         defense = stats.GetBaseDefense();
         attackSpeed = stats.GetBaseAttackSpeed();
-        
+        mana = stats.GetMana();
         StatDatabase db = StatDatabase.Instance;
         StatType Health = db.GetStat("Health");
         StatType Damage = db.GetStat("Damage");
         StatType Defense = db.GetStat("Defense");
         StatType AttackSpeed = db.GetStat("AttackSpeed");
+        StatType Mana = db.GetStat("Mana");
         StatType CraftingEfficiency = db.GetStat("CraftingEfficiency");
 
         statCol.SetStat(Health, stats.GetBaseHealth());
         statCol.SetStat(Damage, stats.GetBaseDamage());
         statCol.SetStat(Defense, stats.GetBaseDefense());
         statCol.SetStat(AttackSpeed, stats.GetBaseAttackSpeed());
+        statCol.SetStat(Mana, stats.GetMana());
         statCol.SetStat(CraftingEfficiency, stats.GetBaseCraftingEfficiency());
         ClearAllAttributes();
         SetUpAttributeValues();
@@ -385,5 +390,9 @@ public class Player : MonoBehaviour
     public SpellBehaviour GetSpellBehaviour()
     {
         return currentSpellBehaviour;
+    }
+    public int GetMana()
+    {
+        return mana;
     }
 }
