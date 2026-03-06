@@ -114,7 +114,10 @@ public class Player : MonoBehaviour
             } else
             {
                 float baseValue = stats.stats.GetStat(stat.GetStatID());
-                statCol.SetStat(StatDatabase.Instance.GetStat(stat.GetStatID()), baseValue + stat.Value);
+                if (baseValue != 0) Debug.Log("Updating stat " + stat.StatType.displayName + " from equipment. Base value: " + baseValue + ", Equipment modifier: " + stat.Value);
+                float newValue = baseValue + stat.Value;
+                statCol.SetStat(StatDatabase.Instance.GetStat(stat.GetStatID()), newValue);
+                Debug.Log("Updated stat " + stat.StatType.displayName + " to " + statCol.GetStat(stat.GetStatID()));
             }
         }
         UpdateBasicStatValues();
