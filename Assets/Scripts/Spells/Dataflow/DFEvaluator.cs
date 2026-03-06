@@ -113,6 +113,7 @@ public static class DFEvaluator
                             EvaluateSetAttackAttribute(runtime, node, setAttr, result, context);
                             continue;
                         }
+                        // healing component goes here
                     }
                 }
             }
