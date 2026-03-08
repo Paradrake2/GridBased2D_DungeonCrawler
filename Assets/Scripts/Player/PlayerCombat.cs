@@ -35,10 +35,10 @@ public class PlayerCombat : MonoBehaviour
         // get data values for spells
         // begin combat routine
         target.GetComponent<Enemy>().BeginCombat(player);
-        StartCoroutine(ConmbatRoutine(attackSpeed, target));
+        StartCoroutine(CombatRoutine(attackSpeed, target));
     }
 
-    private IEnumerator ConmbatRoutine(float attackSpeed, GameObject target)
+    private IEnumerator CombatRoutine(float attackSpeed, GameObject target)
     {
         Manager.instance.playerCanMove = false; // stop movement during battle
         float attackInterval = 1f / attackSpeed;
@@ -57,15 +57,15 @@ public class PlayerCombat : MonoBehaviour
     float DamageAfterSpell(Enemy enemy)
     {
         float totalDamage = 0;
-        if (player.GetSpellBehaviour() == null) return totalDamage;
-        StatCollection stats = player.GetSpellStats();
-        List<PlayerAttackAttributes> tempAttackAttributes = player.GetTempPlayerAttributeSet().GetAttackAttributes();
+        if (player.spellManager.GetSpellBehaviour() == null) return totalDamage;
+        StatCollection stats = player.spellManager.GetSpellStats();
+        List<PlayerAttackAttributes> tempAttackAttributes = player.spellManager.GetTempPlayerAttributeSet().GetAttackAttributes();
         bool gotDamageFromStats = false;
         if (stats != null)
             gotDamageFromStats = stats.TryGetStat("Damage", out totalDamage);
 
         if (!gotDamageFromStats)
-            totalDamage = player.GetPendingSpellFlatDamage();
+            totalDamage = player.spellManager.GetPendingSpellFlatDamage();
 
         // Apply enemy defense + attribute interactions, but DO NOT call CalculateDamageTaken()
         // (it calls DamageAfterSpell again, causing infinite recursion).
@@ -73,15 +73,15 @@ public class PlayerCombat : MonoBehaviour
         float attributeDamage = CalculateAttributeDamage(tempAttackAttributes, enemy);
         float finalSpellDamage = afterDefense + attributeDamage;
 
-        player.ClearSpellStats();
-        player.ClearTempAttributeAttackStats();
-        player.ClearPendingSpellFlatDamage();
+        player.spellManager.ClearSpellStats();
+        player.spellManager.ClearTempAttributeAttackStats();
+        player.spellManager.ClearPendingSpellFlatDamage();
         return finalSpellDamage;
     }
     float SpellDamageMult()
     {
         if (player == null) return 1f;
-        var spellBehaviour = player.GetSpellBehaviour();
+        var spellBehaviour = player.spellManager.GetSpellBehaviour();
         if (spellBehaviour == null) return 1f;
 
         float damageMult = spellBehaviour.GetDamageMult();
@@ -89,7 +89,7 @@ public class PlayerCombat : MonoBehaviour
     }
     float CalculateDamageTaken(Enemy enemy, float damage, List<PlayerAttackAttributes> attackAttributes)
     {
-        var activeSpell = player != null ? player.GetSpellBehaviour() : null;
+        var activeSpell = player != null ? player.spellManager.GetSpellBehaviour() : null;
 
         float totalDamage = Mathf.Max(1, damage - enemy.stats.esh.defense);
         //Debug.Log("Base Damage: " + totalDamage);
@@ -104,7 +104,7 @@ public class PlayerCombat : MonoBehaviour
             Debug.Log("Damage multiplier from active spell: " + mult);
             totalDamage *= mult > 0f ? mult : 1f;
             //Debug.Log("Damage after applying multiplier: " + totalDamage);
-            player.SetSpellBehaviour(null); // one-shot spell behaviour
+            player.spellManager.SetSpellBehaviour(null); // one-shot spell behaviour
         }
         Debug.Log(totalDamage);
         return totalDamage;

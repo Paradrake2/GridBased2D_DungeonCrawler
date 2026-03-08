@@ -59,13 +59,13 @@ public class DataflowSpellBehaviour : SpellBehaviour
             //if (context.damageStatType != null && eval.GetFlatDamage() != 0f && !eval.spellStats.HasStat(context.damageStatType))
               //  eval.spellStats.SetStat(context.damageStatType, eval.GetFlatDamage());
 
-            player.SetSpellStats(eval.spellStats);
-            player.SetTempPlayerAttributeSet(eval.tempAttributeSet);
-            player.SetPendingSpellFlatDamage(eval.GetFlatDamage());
+            player.spellManager.SetSpellStats(eval.spellStats);
+            player.spellManager.SetTempPlayerAttributeSet(eval.tempAttributeSet);
+            player.spellManager.SetPendingSpellFlatDamage(eval.GetFlatDamage());
         }
 
         // Let combat know what spell behaviour is currently active (used for damage multiplier etc.).
-        player.SetSpellBehaviour(this);
+        player.spellManager.SetSpellBehaviour(this);
         Debug.Log("Casting dataflow spell");
     }
     private void InCombatCast()

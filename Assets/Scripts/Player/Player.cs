@@ -39,16 +39,16 @@ public class Player : MonoBehaviour
     public PlayerAttributeSet attributeSet = new PlayerAttributeSet();
     public List<PlayerDebuffInflictorHolder> debuffInflictors = new List<PlayerDebuffInflictorHolder>();
     public List<PlayerDebuffResistanceHolder> debuffResistances = new List<PlayerDebuffResistanceHolder>();
-    [SerializeField] private StatCollection spellStats = new StatCollection();
-    [SerializeField] private PlayerAttributeSet tempAttributeSet = new PlayerAttributeSet();
-    [SerializeField] private SpellBehaviour currentSpellBehaviour;
-    [SerializeField] private float pendingSpellFlatDamage;
+    public PlayerSpellManager spellManager;
+    
     public bool isInCombat = false;
 
     void Initialize()
     {
         stats = FindFirstObjectByType<PlayerStats>();
         combat = GetComponent<PlayerCombat>();
+        spellManager = GetComponent<PlayerSpellManager>();
+        spellManager.Initialize(this);
         equipmentManager = FindAnyObjectByType<EquipmentManager>();
         playerMovement = GetComponent<PlayerMovement>();
         debuffManager = GetComponent<PlayerDebuffManager>();
@@ -233,6 +233,10 @@ public class Player : MonoBehaviour
         }
         return totalDamage;
     }
+    public void Heal(float amount)
+    {
+        currentHealth = Mathf.Min(maxHealth, currentHealth + amount);
+    }
     void Die()
     {
         // Handle player death (e.g., respawn, game over)
@@ -301,16 +305,7 @@ public class Player : MonoBehaviour
     {
         return attributeSet;
     }
-    void Start()
-    {
-        Initialize();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
     public float GetHealth()
     {
         return currentHealth;
@@ -339,63 +334,12 @@ public class Player : MonoBehaviour
     {
         return magic;
     }
-    public StatCollection GetSpellStats()
-    {
-        return spellStats;
-    }
-    public void SetSpellStats(StatCollection stats)
-    {
-        spellStats = stats;
-    }
-    public void ClearSpellStats()
-    {
-        spellStats.Clear();
-    }
-
-    public float GetPendingSpellFlatDamage()
-    {
-        return pendingSpellFlatDamage;
-    }
-
-    public void SetPendingSpellFlatDamage(float damage)
-    {
-        pendingSpellFlatDamage = damage;
-    }
-
-    public void ClearPendingSpellFlatDamage()
-    {
-        pendingSpellFlatDamage = 0f;
-    }
-    public PlayerAttributeSet GetTempPlayerAttributeSet()
-    {
-        return tempAttributeSet;
-    }
-    public void SetTempPlayerAttributeSet(PlayerAttributeSet set)
-    {
-        tempAttributeSet = set;
-    }
-    public void ClearTempAttributeSet()
-    {
-        tempAttributeSet.ClearAllAttributes();
-    }
-    public void ClearTempAttributeAttackStats()
-    {
-        tempAttributeSet.ClearAttackAttributes();
-    }
-    public void ClearTempAttributeDefenseStats()
-    {
-        tempAttributeSet.ClearDefenseAttributes();
-    }
-    public void SetSpellBehaviour(SpellBehaviour sb)
-    {
-        currentSpellBehaviour = sb;
-    }
-    public SpellBehaviour GetSpellBehaviour()
-    {
-        return currentSpellBehaviour;
-    }
     public int GetMana()
     {
         return mana;
+    }
+    void Start()
+    {
+        Initialize();
     }
 }
