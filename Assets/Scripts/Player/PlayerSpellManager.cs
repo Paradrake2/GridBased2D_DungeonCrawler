@@ -12,11 +12,6 @@ public class PlayerSpellManager : MonoBehaviour
     
 
 
-
-
-    
-
-
     // called by Player at Start() to set reference to Player (circular dependency)
     public void Initialize(Player player)
     {

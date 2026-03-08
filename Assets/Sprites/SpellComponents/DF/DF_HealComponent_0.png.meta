@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4e6580d07a081c14cbfb153ab6672235
+guid: 09e0e54ba579cb64fa9abbf59ee21ba2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7676934974269262248
-    second: DF_AddDamage_2_0
+      213: 5800458845545815234
+    second: DF_HealComponent_0_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DF_AddDamage_2_0
+      name: DF_HealComponent_0_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 85678e6a05c067590800000000000000
-      internalID: -7676934974269262248
+      spriteID: 2ccd70f769e5f7050800000000000000
+      internalID: 5800458845545815234
       vertices: []
       indices: 
       edges: []

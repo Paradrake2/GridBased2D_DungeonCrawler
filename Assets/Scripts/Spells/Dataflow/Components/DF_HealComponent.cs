@@ -1,5 +1,7 @@
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "DF_Heal", menuName = "Spells/Dataflow/Effector/Heal")]
+
 public class DF_HealComponent : SpellComponent, IDFComponentEvaluator
 {
     public global::Directions inputHealAmount = global::Directions.Left; // The amount to heal, expected as flat value.
@@ -8,6 +10,7 @@ public class DF_HealComponent : SpellComponent, IDFComponentEvaluator
     public static void Evaluate(DFGridRuntime runtime, DFNodeInstance node, DF_HealComponent component)
     {
         // This component would read the amount to heal and apply it to the target. For now, we'll just throw a NotImplementedException.
+        
         throw new System.NotImplementedException();
     }
     public void Evaluate(DFGridRuntime runtime, DFNodeInstance node, DFContext context, DFEvaluationResult result, int pass, bool isFinalPass)

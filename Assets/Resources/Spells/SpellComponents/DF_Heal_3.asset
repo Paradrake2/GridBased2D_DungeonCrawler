@@ -9,24 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4765fc8acc791714fabb9639a8df5642, type: 3}
-  m_Name: DF_AddDamage_1
+  m_Script: {fileID: 11500000, guid: 580e66fa56b7a194baffccddaaf324ce, type: 3}
+  m_Name: DF_Heal_3
   m_EditorClassIdentifier: 
-  componentName: Add Damage
-  icon: {fileID: 6698090018016003548, guid: 346c9d33ae1d1b24bb7f8f49992e9ca0, type: 3}
+  componentName: DF_Heal
+  icon: {fileID: 7331153962537545874, guid: d35edf694e0289147ada62133945b648, type: 3}
   tier: 3
   componentCategory: 1
   componentType: 9
-  value: 1
+  value: 2
   cost: 0
-  magicCost: 5
+  magicCost: 0
   neighboringComponents: []
-  compatibleWith: 0900000008000000060000000700000005000000
+  compatibleWith: 080000000900000006000000
   directions:
     inputDirections:
-    - direction: 0
-      IOType: 2
-      isActive: 1
     - direction: 1
       IOType: 1
       isActive: 1
@@ -34,6 +31,4 @@ MonoBehaviour:
   costs: []
   stats: []
   spellAttributes: 0
-  inputDamage: 1
-  inputBool: 0
-  costMult: 2.5
+  inputHealAmount: 1

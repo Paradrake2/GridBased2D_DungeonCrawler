@@ -58,4 +58,12 @@ public class SpellComponentDatabase : ScriptableObject
         AssetDatabase.SaveAssets();
 #endif
     }
+    [ContextMenu("Unlock All Components")]
+    public void UnlockAllComponents()
+    {
+        foreach (var component in allSpellComponents)
+        {
+            if (component != null) UnlockComponent(component);
+        }
+    }
 }

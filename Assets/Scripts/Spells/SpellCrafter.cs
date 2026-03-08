@@ -217,7 +217,7 @@ public class SpellCrafter : MonoBehaviour
             }
             
         }
-        return strengthenedValue;
+        return strengthenedValue * CalculateMagicBonus();
     }
     bool HasRequiredItems(List<SpellComponentCost> costs)
     {
@@ -251,5 +251,15 @@ public class SpellCrafter : MonoBehaviour
             name += comp.ComponentName + " ";
         }
         return name.Trim();
+    }
+    public float CalculateMagicBonus()
+    {
+        Player player = GameObject.FindAnyObjectByType<Player>();
+        return 1 + player.GetMagic() * player.magicBonus; // each point of magic gives a percentage bonus to spell effects
+    }
+    public float GetPlayerStatBonus(StatType statType)
+    {
+        Player player = GameObject.FindAnyObjectByType<Player>();
+        return player.statCol.GetStat(statType);
     }
 }

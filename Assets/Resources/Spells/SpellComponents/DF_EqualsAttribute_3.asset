@@ -10,33 +10,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae821149f3d01ff44a5b2a4c91d77e0e, type: 3}
-  m_Name: DF_EqualsAttribute_180
+  m_Name: DF_EqualsAttribute_3
   m_EditorClassIdentifier: 
   componentName: EqualsAttribute
-  icon: {fileID: -9008058490968968107, guid: 0adacdef5f716f3498da3dbfc037ccdb, type: 3}
-  tier: 0
+  icon: {fileID: 7894403436286526874, guid: 419e5b8893fb58144860fd230d217cac, type: 3}
+  tier: 3
   componentCategory: 1
   componentType: 9
   value: 0
-  cost: 1
-  magicCost: 1
+  cost: 5
+  magicCost: 10
   neighboringComponents: []
   compatibleWith: 090000000800000006000000070000000000000005000000020000000300000001000000
   directions:
     inputDirections:
-    - direction: 3
-      IOType: 3
-      isActive: 1
     - direction: 1
       IOType: 3
       isActive: 1
-    outputDirections:
     - direction: 2
+      IOType: 3
+      isActive: 1
+    outputDirections:
+    - direction: 0
       IOType: 2
       isActive: 1
   costs: []
   stats: []
   spellAttributes: 0
-  inputAttribute: 3
-  compareAttribute: 1
+  inputAttribute: 1
+  compareAttribute: 2
   compareTo: {fileID: 11400000, guid: 9e8b3d9ad2b47da4b84d7bdab851a78f, type: 2}

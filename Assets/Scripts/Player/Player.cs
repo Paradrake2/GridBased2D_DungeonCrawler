@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
     
     public bool isInCombat = false;
 
+    public float magicBonus = 0.025f; // for each point of magic, increase spell effects by this value
     void Initialize()
     {
         stats = FindFirstObjectByType<PlayerStats>();
