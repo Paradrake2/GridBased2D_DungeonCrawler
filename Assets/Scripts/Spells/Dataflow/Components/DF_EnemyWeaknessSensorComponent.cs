@@ -1,9 +1,10 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "DF_EnemyWeakness", menuName = "Spells/Dataflow/Sensor/Enemy Weakness")]
-public class DF_EnemyWeaknessSensorComponent : SpellComponent
+public class DF_EnemyWeaknessSensorComponent : SpellComponent, IDFComponentEvaluator
 {
     // Evaluated by DFEvaluator.
+    public DFEvalTiming Timing => DFEvalTiming.EveryPass;
     public static void Evaluate(DFGridRuntime runtime, DFNodeInstance node, DFContext context)
     {
         StatType weakness = null;
@@ -16,5 +17,10 @@ public class DF_EnemyWeaknessSensorComponent : SpellComponent
         //Debug.Log("Enemy weakness detected: " + (weakness != null ? weakness.displayName : "None"));
         //Debug.Log(context.target.name);
         DFEvaluator.WriteOutputsToAllActiveDirections(node, DFSignal.FromAttribute(weakness));
+    }
+
+    public void Evaluate(DFGridRuntime runtime, DFNodeInstance node, DFContext context, DFEvaluationResult result, int pass, bool isFinalPass)
+    {
+        Evaluate(runtime, node, context);
     }
 }

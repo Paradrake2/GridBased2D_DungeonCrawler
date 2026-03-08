@@ -1,11 +1,12 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "DF_Multiply", menuName = "Spells/Dataflow/Operator/Multiply Numbers")]
-public class DF_MultiplyNumbersComponent : SpellComponent
+public class DF_MultiplyNumbersComponent : SpellComponent, IDFComponentEvaluator
 {
     [Header("Inputs")]
     public global::Directions inputA = global::Directions.Left;
     public global::Directions inputB = global::Directions.Right;
+    public DFEvalTiming Timing => DFEvalTiming.EveryPass;
     public static void Evaluate(DFGridRuntime runtime, DFNodeInstance node, DF_MultiplyNumbersComponent component)
     {
         // Reads two number inputs (configurable directions) and outputs a*b.
@@ -21,5 +22,10 @@ public class DF_MultiplyNumbersComponent : SpellComponent
         }
 
         DFEvaluator.WriteOutputsToAllActiveDirections(node, DFSignal.FromNumber(a * b));
+    }
+
+    public void Evaluate(DFGridRuntime runtime, DFNodeInstance node, DFContext context, DFEvaluationResult result, int pass, bool isFinalPass)
+    {
+        Evaluate(runtime, node, this);
     }
 }

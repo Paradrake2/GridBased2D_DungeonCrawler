@@ -1,13 +1,14 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "DF_EqualsAttribute", menuName = "Spells/Dataflow/Operator/Equals Attribute")]
-public class DF_EqualsAttributeComponent : SpellComponent
+public class DF_EqualsAttributeComponent : SpellComponent, IDFComponentEvaluator
 {
     [Header("Input")]
     public global::Directions inputAttribute = global::Directions.Left;
     public global::Directions compareAttribute = global::Directions.Right;
     [Header("Compare Fallback")]
     public StatType compareTo;
+    public DFEvalTiming Timing => DFEvalTiming.EveryPass;
     public static void Evaluate(DFGridRuntime runtime, DFNodeInstance node, DF_EqualsAttributeComponent component)
     {
         StatType inputAttr = null;
@@ -27,5 +28,10 @@ public class DF_EqualsAttributeComponent : SpellComponent
         bool match = hasInput && inputAttr != null && compareAttr != null && inputAttr == compareAttr;
 
         DFEvaluator.WriteOutputsToAllActiveDirections(node, DFSignal.FromBool(match));
+    }
+
+    public void Evaluate(DFGridRuntime runtime, DFNodeInstance node, DFContext context, DFEvaluationResult result, int pass, bool isFinalPass)
+    {
+        Evaluate(runtime, node, this);
     }
 }

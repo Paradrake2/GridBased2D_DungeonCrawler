@@ -2,6 +2,17 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+public enum DFEvalTiming
+{
+    EveryPass,
+    FinalPassOnly
+}
+public interface IDFComponentEvaluator
+{
+    DFEvalTiming Timing {get;}
+    void Evaluate(DFGridRuntime runtime, DFNodeInstance node, DFContext context, DFEvaluationResult result, int pass, bool isFinalPass);
+}
+
 public sealed class DFEvaluationResult
 {
     public StatCollection spellStats = new StatCollection();
@@ -60,6 +71,16 @@ public static class DFEvaluator
                 bool isFinalPass = pass == maxPasses - 1;
                 foreach (var node in runtime.Nodes.OrderBy(n => n.Position.y).ThenBy(n => n.Position.x))
                 {
+                    if (node.Component is IDFComponentEvaluator evaluator)
+                    {
+                        if (evaluator.Timing == DFEvalTiming.EveryPass || (evaluator.Timing == DFEvalTiming.FinalPassOnly && isFinalPass))
+                        {
+                            evaluator.Evaluate(runtime, node, context, result, pass, isFinalPass);
+                        }
+                        continue;
+                    }
+                    // legacy code for reference
+                    /**
                     if (node.Component == null) continue;
                     // Sensors
                     if (node.Component is DF_EnemyWeaknessSensorComponent)
@@ -121,6 +142,7 @@ public static class DFEvaluator
                         }
                         // healing component goes here
                     }
+                    **/
                 }
             }
 

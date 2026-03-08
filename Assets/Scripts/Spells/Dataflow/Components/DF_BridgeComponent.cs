@@ -2,12 +2,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Bridge", menuName = "Spells/Dataflow/Bridge Component")]
-public class DF_BridgeComponent : SpellComponent
+public class DF_BridgeComponent : SpellComponent, IDFComponentEvaluator
 {
     // these fields are legacy, not actually used by DFEvaluator. They just get set by the UI and can be read by custom evaluators if needed.
     public StatType attribute;
     public float _value;
     public bool boolValue;
+    public DFEvalTiming Timing => DFEvalTiming.EveryPass;
     public static void Evaluate(DFGridRuntime runtime, DFNodeInstance node, DF_BridgeComponent component)
     {
         // Pass-through: read a single incoming signal and replicate it to all active outputs.
@@ -20,5 +21,10 @@ public class DF_BridgeComponent : SpellComponent
         bool hasSignal = DFEvaluator.TryReadAnyActiveInput(runtime, node, out signal);
 
         DFEvaluator.WriteOutputsToAllActiveDirections(node, hasSignal ? signal : DFSignal.None);
+    }
+
+    public void Evaluate(DFGridRuntime runtime, DFNodeInstance node, DFContext context, DFEvaluationResult result, int pass, bool isFinalPass)
+    {
+        Evaluate(runtime, node, this);
     }
 }

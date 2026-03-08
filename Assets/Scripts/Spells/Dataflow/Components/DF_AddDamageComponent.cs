@@ -1,12 +1,13 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "DF_AddDamage", menuName = "Spells/Dataflow/Effector/Add Damage")]
-public class DF_AddDamageComponent : SpellComponent
+public class DF_AddDamageComponent : SpellComponent, IDFComponentEvaluator
 {
     [Header("Input")]
     public global::Directions inputDamage = global::Directions.Left;
     public global::Directions inputBool = global::Directions.Down; // Optional boolean input to conditionally apply damage
     [SerializeField] private float costMult = 2.5f;
+    public DFEvalTiming Timing => DFEvalTiming.FinalPassOnly;
     public float GetCost(float inputDamage, float multiplier)
     {
         return inputDamage * costMult * multiplier;
@@ -48,5 +49,10 @@ public class DF_AddDamageComponent : SpellComponent
             result.cost += component.GetCost(dmg, multiplier: 1f);
             Debug.Log("cost: " + result.cost);
         }
+    }
+
+    public void Evaluate(DFGridRuntime runtime, DFNodeInstance node, DFContext context, DFEvaluationResult result, int pass, bool isFinalPass)
+    {
+        Evaluate(runtime, node, this, result, context);
     }
 }

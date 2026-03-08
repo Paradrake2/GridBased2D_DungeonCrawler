@@ -1,11 +1,12 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "DF_GateNumber", menuName = "Spells/Dataflow/Router/Gate Number")]
-public class DF_GateNumberComponent : SpellComponent
+public class DF_GateNumberComponent : SpellComponent, IDFComponentEvaluator
 {
     [Header("Inputs")]
     public global::Directions inputCondition = global::Directions.Up;
     public global::Directions inputValue = global::Directions.Left;
+    public DFEvalTiming Timing => DFEvalTiming.EveryPass;
     public static void Evaluate(DFGridRuntime runtime, DFNodeInstance node, DF_GateNumberComponent component)
     {
         // Reads a boolean condition and a number. If condition is true, outputs the number; if false, outputs nothing.
@@ -21,5 +22,10 @@ public class DF_GateNumberComponent : SpellComponent
         }
 
         DFEvaluator.WriteOutputsToAllActiveDirections(node, condition ? DFSignal.FromNumber(value) : DFSignal.None);
+    }
+
+    public void Evaluate(DFGridRuntime runtime, DFNodeInstance node, DFContext context, DFEvaluationResult result, int pass, bool isFinalPass)
+    {
+        Evaluate(runtime, node, this);
     }
 }
