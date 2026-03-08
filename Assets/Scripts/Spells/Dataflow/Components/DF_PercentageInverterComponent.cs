@@ -1,8 +1,11 @@
 using UnityEngine;
 
-public class DF_PercentageInverterComponent : SpellComponent
+public class DF_PercentageInverterComponent : SpellComponent, IDFComponentEvaluator
 {
     public global::Directions inputPercentage = global::Directions.Left;
+
+    public DFEvalTiming Timing => DFEvalTiming.EveryPass;
+
     public static void Evaluate(DFGridRuntime runtime, DFNodeInstance node, DF_PercentageInverterComponent component)
     {
         // Reads a percentage value and outputs its inverse (e.g., if input is 30%, output is 70%).
@@ -17,5 +20,10 @@ public class DF_PercentageInverterComponent : SpellComponent
 
         float inverted = 100f - percentage;
         DFEvaluator.WriteOutputsToAllActiveDirections(node, DFSignal.FromNumber(inverted));
+    }
+
+    public void Evaluate(DFGridRuntime runtime, DFNodeInstance node, DFContext context, DFEvaluationResult result, int pass, bool isFinalPass)
+    {
+        Evaluate(runtime, node, this);
     }
 }

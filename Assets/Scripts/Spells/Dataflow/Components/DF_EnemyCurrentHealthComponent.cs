@@ -1,6 +1,11 @@
 using UnityEngine;
 
-public class DF_EnemyCurrentHealthComponent : SpellComponent
+public class DF_EnemyCurrentHealthComponent : SpellComponent, IDFComponentEvaluator
 {
-    
+    public DFEvalTiming Timing => DFEvalTiming.EveryPass;
+
+    public void Evaluate(DFGridRuntime runtime, DFNodeInstance node, DFContext context, DFEvaluationResult result, int pass, bool isFinalPass)
+    {
+        throw new System.NotImplementedException();
+    }
 }

@@ -2,12 +2,15 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "DF_PercentageChecker", menuName = "Spells/Dataflow/Value/Percentage Checker")]
 
-public class DF_PercentageCheckerComponent : SpellComponent
+public class DF_PercentageCheckerComponent : SpellComponent, IDFComponentEvaluator
 {
     [Header("Inputs")]
     public global::Directions inputValue = global::Directions.Left;
     public global::Directions inputMaxValue = global::Directions.Right; // Optional max value input; if not provided, defaults to 100.
     public global::Directions inputPercentage = global::Directions.Up;
+
+    public DFEvalTiming Timing => DFEvalTiming.EveryPass;
+
     public static void Evaluate(DFGridRuntime runtime, DFNodeInstance node, DF_PercentageCheckerComponent component)
     {
         // Reads a number and a percentage. Outputs true if the number is less than or equal to the percentage of some max value (e.g., player's max health), false otherwise.
@@ -28,5 +31,10 @@ public class DF_PercentageCheckerComponent : SpellComponent
         bool result = percentage <= value/ maxValue;
 
         DFEvaluator.WriteOutputsToAllActiveDirections(node, DFSignal.FromBool(result));
+    }
+
+    public void Evaluate(DFGridRuntime runtime, DFNodeInstance node, DFContext context, DFEvaluationResult result, int pass, bool isFinalPass)
+    {
+        Evaluate(runtime, node, this);
     }
 }

@@ -79,7 +79,8 @@ public static class DFEvaluator
                         }
                         continue;
                     }
-                    // legacy code for reference
+                    // legacy code. This is here to remind myself of the mistakes I made before implementing IDFComponentEvaluator, where the evaluation logic was hardcoded here and caused a mess of dependencies and ordering issues. 
+                    // With the new interface-based approach, this big switch/case block is no longer needed, and new components can just implement the interface without modifying this evaluator.
                     /**
                     if (node.Component == null) continue;
                     // Sensors
