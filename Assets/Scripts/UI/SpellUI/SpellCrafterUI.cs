@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SpellCrafterUI : MonoBehaviour
 {
@@ -38,13 +39,15 @@ public class SpellCrafterUI : MonoBehaviour
     [Header("Attribute Picker")]
     [SerializeField] private AttributePickerUI attributePickerUI;
     [SerializeField] private DFNumberSetter dfNumberSetter;
+    [SerializeField] private TMP_Text componentDescription;
+    private float timeToShowDirectionIndicatorsTemp = 1f;
     public void ClearSpellComposition()
     {
         spellComposition = null;
         spellComposition = new SpellComposition();
         // Additional logic to clear the UI representation can be added here
     }
-    public void GenerateGrid(int newUsableGridSizeX, int newUsableGridSizeY)
+    public void GenerateGrid(int newUsableGridSizeX, int newUsableGridSizeY) // generate the initial grid the player can place components on
     {
         SetUsableGridSize(newUsableGridSizeX, newUsableGridSizeY);
         EnsureSpellGridUI();
@@ -54,7 +57,7 @@ public class SpellCrafterUI : MonoBehaviour
         spellGridUI.Configure(spellGridPanel, gridCellPrefab, gridSizeX, gridSizeY);
         spellGridUI.GenerateGrid(usableGridSizeX, usableGridSizeY);
     }
-    public void PopulateComponentList()
+    public void PopulateComponentList() // populate the list of components the player can choose from, based on whether they are in DF mode or not
     {
         // Clear existing buttons
         foreach (Transform child in componentListPanel)
@@ -69,7 +72,7 @@ public class SpellCrafterUI : MonoBehaviour
             PopulateRegComponentList();
         }
     }
-    public void RotateSelectedComponent()
+    public void RotateSelectedComponent() // rotate the currently selected component if in DF mode and the component is rotatable
     {
         if (selectedGridCell == null || !selectedGridCell.hasComponent) return;
 
@@ -117,17 +120,18 @@ public class SpellCrafterUI : MonoBehaviour
         UpdateSpellDescription();
         UpdateAttributePickerForSelection();
         UpdateNumberSetterForSelection();
-        ShowDirectionIndicatorsTemporarily(selectedGridCell);
+        StartCoroutine(ShowDirectionIndicatorsTemporarily(selectedGridCell));
     }
     private IEnumerator ShowDirectionIndicatorsTemporarily(SpellGridCell cell)
     {
         if (cell == null) yield break;
 
         cell.CallRebuildDirectionIndicators();
-        yield return new WaitForSeconds(1f); // Adjust the duration as needed
+        yield return new WaitForSeconds(timeToShowDirectionIndicatorsTemp); 
         cell.HideDirectionIndicators();
+        StopCoroutine(ShowDirectionIndicatorsTemporarily(cell));
     }
-    void PopulateRegComponentList()
+    void PopulateRegComponentList() // populate the list of regular components the player can choose from
     {
         SpellComponentDatabase database = Resources.Load<SpellComponentDatabase>("SpellComponentDatabase");
         if (database == null)
@@ -145,7 +149,7 @@ public class SpellCrafterUI : MonoBehaviour
             listObject.Initialize(component, this);
         }
     }
-    void PopulateDFComponentList()
+    void PopulateDFComponentList() // populate list of advanced DF components
     {
         SpellComponentDatabase database = Resources.Load<SpellComponentDatabase>("SpellComponentDatabase");
         if (database == null)
@@ -466,6 +470,10 @@ public class SpellCrafterUI : MonoBehaviour
         {
             preview.SetComponent(component);
         }
+    }
+    public void UpdateComponentDescription(string desc)
+    {
+        componentDescription.text = desc;
     }
     void Start()
     {
