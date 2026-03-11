@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CustomComponent", menuName = "Spells/CustomSpellComponent")]
-
+//[CreateAssetMenu(fileName = "CustomComponent", menuName = "Spells/CustomSpellComponent")]
+// CURRENTLY NOT USED
 public class CustomSpellComponent : SpellComponent
 {
     public bool isTrue; // for logic

@@ -85,13 +85,14 @@ public enum ComponentCategory
 public class SpellComponent : ScriptableObject
 {
     [SerializeField] private string componentName;
+    [SerializeField] private ComponentDescription description;
     [SerializeField] protected Sprite icon;
     [SerializeField] protected int tier;
     [SerializeField] protected ComponentCategory componentCategory;
     [SerializeField] protected SpellComponentType componentType;
     [SerializeField] private float value;
-    [SerializeField] protected float cost;
-    [SerializeField] protected float magicCost;
+    [SerializeField] protected float cost; // how much mana
+    [SerializeField] protected float magicCost; // magic requirement to have this component
     [SerializeField] protected List<SpellComponent> neighboringComponents; // for determining adjacent components
     [SerializeField] protected List<SpellComponentType> compatibleWith; // for compatibility checks
     [SerializeField] protected SpellComponentDirections directions;
@@ -99,6 +100,7 @@ public class SpellComponent : ScriptableObject
     [SerializeField] protected List<SpellStat> stats;
     [SerializeField] protected SpellAttribute spellAttributes;
     public string ComponentName => componentName;
+    public ComponentDescription Description => description;
     public Sprite Icon => icon;
     public int Tier => tier;
     public SpellComponentType ComponentType => componentType;
@@ -131,5 +133,9 @@ public class SpellComponent : ScriptableObject
     public virtual void ChangeIcon(Sprite newIcon, StatType stat = null, float val = 0)
     {
         icon = newIcon;
+    }
+    public string GetDescription()
+    {
+        return description.GetDescription(this);
     }
 }

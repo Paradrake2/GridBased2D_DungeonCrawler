@@ -117,6 +117,7 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 
         isHovering = true;
         RebuildDirectionIndicators();
+        // spellCrafterUI.UpdateComponentDescription(placedComponent.GetDescription()); 
     }
     public void CallRebuildDirectionIndicators()
     {
