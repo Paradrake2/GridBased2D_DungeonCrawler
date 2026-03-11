@@ -17,7 +17,12 @@ public class DF_PercentageInverterComponent : SpellComponent, IDFComponentEvalua
             DFEvaluator.WriteOutputsToAllActiveDirections(node, DFSignal.None);
             return;
         }
-
+        if (percentage < 1f && percentage > 0f) percentage *= 100f; // If the input is a decimal (e.g., 0.3), convert it to percentage form (30).
+        if (percentage < 0f || percentage > 100f)
+        {
+            Debug.LogWarning($"Percentage input out of range (0-100): {percentage}. Clamping to valid range.");
+            percentage = Mathf.Clamp(percentage, 0f, 100f);
+        }
         float inverted = 100f - percentage;
         DFEvaluator.WriteOutputsToAllActiveDirections(node, DFSignal.FromNumber(inverted));
     }

@@ -16,7 +16,7 @@ public class DF_AddDamageComponent : SpellComponent, IDFComponentEvaluator
     {
         Debug.Log("Evaluating AddDamageComponent at " + node.Position);
         if (result == null) return;
-        // Effector: consumes a Number signal and accumulates it into the "Damage" stat.
+        // Effector: consumes a Number signal and accumulates it into the Damage stat.
         if (DFEvaluator.TryReadInput(runtime, node, component.inputDamage, out var sig) && sig.TryGetNumber(out float dmg))
         {
             bool applyDamage = true;
