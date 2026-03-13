@@ -32,7 +32,7 @@ public sealed class DFEvaluationResult
 
 public static class DFEvaluator
 {
-    public const int DefaultMaxPasses = 8; // DO NOT CHANGE: WILL CAUSE INFINITE LOOPS
+    public const int DefaultMaxPasses = 8;
 
 
     // Used only for optional verbose diagnostics during a single Evaluate() call.

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
 
 public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -29,6 +30,8 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     private Coroutine coroutineSwitchIndicators;
     private bool isHovering;
     private bool isShowingIO = false;
+    [SerializeField] private TextMeshProUGUI componentText; // optional text to show on the cell like numbers
+    public TextMeshProUGUI ComponentText => componentText;
 
     public void RefreshDirectionIndicatorsIfHovering()
     {
@@ -117,6 +120,10 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 
         isHovering = true;
         RebuildDirectionIndicators();
+        if (placedComponent is IComponentHover hoverComponent)
+        {
+            hoverComponent.OnHoverEnter(this);
+        }
         // spellCrafterUI.UpdateComponentDescription(placedComponent.GetDescription()); 
     }
     public void CallRebuildDirectionIndicators()
@@ -290,6 +297,10 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
             StopCoroutine(coroutineSwitchIndicators);
             coroutineSwitchIndicators = null;
         }
+        if (placedComponent is IComponentHover hoverComponent)
+        {
+            hoverComponent.OnHoverExit(this);
+        }
     }
     public void ShowIO(bool show)
     {
@@ -298,5 +309,18 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
             OnPointerEnter(null); // simulate hover to show indicators
         else
             OnPointerExit(null); // simulate exit to hide indicators
+    }
+    public void SetComponent(SpellComponent component)
+    {
+        placedComponent = component;
+        var img = GetComponent<Image>();
+        if (img != null)
+            img.sprite = component != null ? component.Icon : null;
+        RefreshDirectionIndicatorsIfHovering();
+    }
+    public void SetComponentText(string text)
+    {
+        if (componentText != null)
+            componentText.text = text;
     }
 }

@@ -10,8 +10,20 @@ public class DF_ConstantNumberComponent : SpellComponent, IDFComponentEvaluator
         DFEvaluator.WriteOutputsToAllActiveDirections(node, DFSignal.FromNumber(_value));
     }
 
+
     public void SetValue(float value)
     {
         _value = value;
     }
+    /**
+    public void OnHoverEnter(SpellGridCell cell)
+    {
+        cell.ComponentText.text = _value.ToString();
+    }
+
+    public void OnHoverExit(SpellGridCell cell)
+    {
+        cell.ComponentText.text = "";
+    }
+    **/
 }

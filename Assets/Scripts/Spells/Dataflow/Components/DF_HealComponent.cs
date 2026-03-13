@@ -9,7 +9,6 @@ public class DF_HealComponent : SpellComponent, IDFComponentEvaluator
 
     public static void Evaluate(DFGridRuntime runtime, DFNodeInstance node, DF_HealComponent component)
     {
-        // This component would read the amount to heal and apply it to the target. For now, we'll just throw a NotImplementedException.
         
         throw new System.NotImplementedException();
     }

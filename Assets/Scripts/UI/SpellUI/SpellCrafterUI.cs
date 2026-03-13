@@ -40,6 +40,8 @@ public class SpellCrafterUI : MonoBehaviour
     [SerializeField] private AttributePickerUI attributePickerUI;
     [SerializeField] private DFNumberSetter dfNumberSetter;
     [SerializeField] private TMP_Text componentDescription;
+    // below has a SpellComponentTextUI script attached to it
+    public Transform spellComponentText; // in case the component needs to display some text other than the description (like current value of a constant number component)
     private float timeToShowDirectionIndicatorsTemp = 1f;
     public void ClearSpellComposition()
     {
@@ -105,7 +107,7 @@ public class SpellCrafterUI : MonoBehaviour
             spellComposition.RemoveComponent(oldComponent);
         spellComposition.AddComponent(newComponent, selectedGridCell.x, selectedGridCell.y);
 
-        selectedGridCell.placedComponent = newComponent;
+        selectedGridCell.placedComponent = newComponent;// ***
         UpdateComponentPreview(newComponent);
 
         // Update the visual representation after rotation
@@ -257,7 +259,7 @@ public class SpellCrafterUI : MonoBehaviour
                 if (!newComponent.IsCompatibleWith(adjacentCell.placedComponent)) return; // not compatible
             }
         }
-        selectedGridCell.placedComponent = newComponent;
+        selectedGridCell.SetComponent(newComponent);
 
         // Build adjacency for the new component (only add real neighbors).
         foreach (var adjacentCell in adjacentCells)
@@ -482,6 +484,9 @@ public class SpellCrafterUI : MonoBehaviour
         PopulateSpellTemplateList();
         ClearSpellComposition();
     }
+    public SpellGridCell GetSelectedGridCell()
+    {
+        return selectedGridCell;
+    }
 
-    void Update() { }
 }

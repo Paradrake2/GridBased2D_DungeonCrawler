@@ -6,11 +6,14 @@ public class DFNumberSetter : MonoBehaviour
     public DF_ConstantNumberComponent numberComponent;
     public TMP_InputField inputField;
     public Button submitButton;
+    public SpellCrafterUI spellCrafterUI;
 
     void Start()
     {
         inputField.onValueChanged.AddListener(OnInputValueChanged);
         submitButton.onClick.AddListener(OnSubmitButtonClicked);
+        if (spellCrafterUI == null)
+            spellCrafterUI = GetComponentInParent<SpellCrafterUI>();
     }
     void Awake()
     {
@@ -27,6 +30,14 @@ public class DFNumberSetter : MonoBehaviour
         if (float.TryParse(inputField.text, out float result))
         {
             numberComponent.SetValue(result);
+            if (spellCrafterUI != null)
+            {
+                var selectedCell = spellCrafterUI.GetSelectedGridCell();
+                if (selectedCell != null)
+                {
+                    selectedCell.SetComponentText(numberComponent._value.ToString());
+                }
+            }
             Hide();
         }
         else
@@ -42,6 +53,7 @@ public class DFNumberSetter : MonoBehaviour
         this.numberComponent = numberComponent;
         gameObject.SetActive(true);
         inputField.text = numberComponent._value.ToString();
+        
     }
 
     private void OnInputValueChanged(string value)
