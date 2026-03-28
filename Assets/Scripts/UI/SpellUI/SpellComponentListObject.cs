@@ -8,6 +8,8 @@ public class SpellComponentListObject : MonoBehaviour
     public Image icon;
     public TextMeshProUGUI componentText;
     public SpellComponent spellComponent;
+    [SerializeField] private int index;
+    [SerializeField] private BasicComponentGroup basicComponentGroup;
     [SerializeField] private SpellCrafterUI spellCrafterUI;
     public void Initialize(SpellComponent component, SpellCrafterUI ui)
     {

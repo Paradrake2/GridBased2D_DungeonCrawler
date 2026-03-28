@@ -10,11 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67f44206d162dd245b971000dcbf7388, type: 3}
-  m_Name: ConstAttribute
+  m_Name: DF_ConstNum
   m_EditorClassIdentifier: 
   icon: {fileID: 3537608758661091586, guid: f3895cc2f332e6d4385b859d0938e66c, type: 3}
-  groupName: 
+  groupName: ConstNum
   index: 0
   components:
   - direction: 0
-    component: {fileID: 11400000, guid: d019cf3fcbacefc4db4c57821d47180c, type: 2}
+    component: {fileID: 11400000, guid: 0b66f5b28817c5440a5b4c02e9ec9783, type: 2}
+  - direction: 3
+    component: {fileID: 11400000, guid: 0b66f5b28817c5440a5b4c02e9ec9783, type: 2}
+  - direction: 2
+    component: {fileID: 11400000, guid: 0b66f5b28817c5440a5b4c02e9ec9783, type: 2}
+  - direction: 1
+    component: {fileID: 11400000, guid: 0b66f5b28817c5440a5b4c02e9ec9783, type: 2}

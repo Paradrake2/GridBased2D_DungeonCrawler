@@ -18,6 +18,8 @@ public class SpellComponentDatabase : ScriptableObject
     //public List<SpellComponent> UnlockedDFSpellComponents => unlockedDFSpellComponents;
     [SerializeField] private List<DFComponentGroup> dFComponentGroups = new List<DFComponentGroup>();
     public List<DFComponentGroup> DFComponentGroups => dFComponentGroups;
+    [SerializeField] private List<BasicComponentGroup> basicComponentGroups = new List<BasicComponentGroup>();
+    public List<BasicComponentGroup> BasicComponentGroups => basicComponentGroups;
     public List<SpellComponent> GetAllComponents() => allSpellComponents;
     public List<SpellComponent> GetUnlockedComponents() => unlockedSpellComponents;
     //public List<SpellComponent> GetUnlockedDFComponents() => unlockedDFSpellComponents;

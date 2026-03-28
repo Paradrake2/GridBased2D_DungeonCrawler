@@ -34,6 +34,7 @@ public class SpellCrafterUI : MonoBehaviour
     [SerializeField] private bool isDFMode = false;
     [SerializeField] private ToggleDFModeButton toggleDFModeButton;
     [SerializeField] private RotateComponentButton rotateComponentButton;
+    [SerializeField] private ShowWeakerComponentsUI showWeakerComponentsUI;
     [SerializeField] private DFComponentGroup selectedDFComponentGroup;
     [SerializeField] private GameObject componentPreviewObject;
     [Header("Attribute Picker")]
@@ -133,23 +134,47 @@ public class SpellCrafterUI : MonoBehaviour
         cell.HideDirectionIndicators();
         StopCoroutine(ShowDirectionIndicatorsTemporarily(cell));
     }
-    void PopulateRegComponentList() // populate the list of regular components the player can choose from
+    void PopulateRegComponentList(bool includeWeaker = false) // populate the list of regular components the player can choose from
     {
+        foreach (Transform child in componentListPanel)
+        {
+            Destroy(child.gameObject);
+        }
+
         SpellComponentDatabase database = Resources.Load<SpellComponentDatabase>("SpellComponentDatabase");
         if (database == null)
         {
             Debug.LogError("SpellComponentDatabase not found in Resources.");
             return;
         }
-        List<SpellComponent> components = database.GetUnlockedComponentsByCategory(ComponentCategory.Regular);
 
+        List<SpellComponent> components = database.GetUnlockedComponentsByCategory(ComponentCategory.Regular);
+        List<BasicComponentGroup> basicGroups = database.BasicComponentGroups;
         // Create new buttons
-        foreach (SpellComponent component in components)
+        if (includeWeaker)
         {
-            GameObject buttonGO = Instantiate(componentButtonPrefab, componentListPanel);
-            SpellComponentListObject listObject = buttonGO.GetComponent<SpellComponentListObject>();
-            listObject.Initialize(component, this);
+            foreach (SpellComponent component in components)
+            {
+                GameObject buttonGO = Instantiate(componentButtonPrefab, componentListPanel);
+                SpellComponentListObject listObject = buttonGO.GetComponent<SpellComponentListObject>();
+                listObject.Initialize(component, this);
+            }
+        } else
+        {
+            foreach (BasicComponentGroup group in basicGroups)
+            {
+                SpellComponent component = group.StrongestUnlockedComponent;
+                if (component == null) continue;
+
+                GameObject buttonGO = Instantiate(componentButtonPrefab, componentListPanel);
+                SpellComponentListObject listObject = buttonGO.GetComponent<SpellComponentListObject>();
+                listObject.Initialize(component, this);
+            }
         }
+    }
+    public void PopulateRegComponentListWeaker()
+    {
+        PopulateRegComponentList(true);
     }
     void PopulateDFComponentList() // populate list of advanced DF components
     {
