@@ -497,6 +497,7 @@ public class SpellCrafterUI : MonoBehaviour
         {
             preview.SetComponent(component);
         }
+        UpdateComponentDescription(component.Description.GetDescription(component));
     }
     public void UpdateComponentDescription(string desc)
     {

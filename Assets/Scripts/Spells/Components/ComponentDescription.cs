@@ -47,6 +47,7 @@ public class ComponentDescription : ScriptableObject
     public string GetDescription(SpellComponent sc)
     {
         // getters
+        Debug.Log("Getting description for " + sc.name);
         SpellComponentDirections directionData = sc.Directions;
         string desc = $"{ComponentName}\n{DescriptionText}\n";
         if (useValue) desc += $"Value: {sc.Value}\n";

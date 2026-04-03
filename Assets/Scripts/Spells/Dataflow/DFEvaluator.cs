@@ -28,6 +28,8 @@ public sealed class DFEvaluationResult
         else
         return flatDamage;
     }
+    public float healAmount;
+    
 }
 
 public static class DFEvaluator

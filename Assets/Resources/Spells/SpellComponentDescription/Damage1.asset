@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Damage1
   m_EditorClassIdentifier: 
   componentName: Damage1
-  descriptionText: Minor Damage Boost Component
+  descriptionText: Slight Damage Boost Component
   useValue: 1

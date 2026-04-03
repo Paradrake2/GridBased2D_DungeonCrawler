@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: DF_EnemyWeakness
   m_EditorClassIdentifier: 
   componentName: Enemy Weakness
+  description: {fileID: 11400000, guid: 16c3e5861ccf9de49a5706824078c5a2, type: 2}
   icon: {fileID: 6271073163738325058, guid: 9a2874a84db9c174f8282df8a350c513, type: 3}
-  tier: 0
+  tier: 3
   componentCategory: 1
   componentType: 9
   value: 0

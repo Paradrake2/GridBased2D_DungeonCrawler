@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: DF_ConstNumber
   m_EditorClassIdentifier: 
   componentName: Constant Number
-  description: {fileID: 0}
+  description: {fileID: 11400000, guid: f4a66cc8af766e54a80d42e14242318f, type: 2}
   icon: {fileID: -8649534124953461556, guid: efa8437ca6126a6448b045d8db7ec56a, type: 3}
-  tier: 0
+  tier: 3
   componentCategory: 1
   componentType: 9
   value: 0

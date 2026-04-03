@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Damage1
   m_EditorClassIdentifier: 
   componentName: Damage1
+  description: {fileID: 11400000, guid: c664cc708a8c99c4ab545894f5292781, type: 2}
   icon: {fileID: 6271073163738325058, guid: 9a2874a84db9c174f8282df8a350c513, type: 3}
   tier: 1
   componentCategory: 0

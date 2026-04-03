@@ -4,6 +4,7 @@ using UnityEngine;
 public class SpellCrafter : MonoBehaviour
 {
     public List<SpellComponentCost> spellComponentCosts;
+    public float maxMagicBonus = 3f;
     public void AddSpellComponentCost(SpellComponentCost cost)
     {
         spellComponentCosts.Add(cost);
@@ -255,7 +256,8 @@ public class SpellCrafter : MonoBehaviour
     public float CalculateMagicBonus()
     {
         Player player = GameObject.FindAnyObjectByType<Player>();
-        return 1 + player.GetMagic() * player.magicBonus; // each point of magic gives a percentage bonus to spell effects
+        float bonus = 1 + player.GetMagic() * player.magicBonus; // each point of magic gives a percentage bonus to spell effects
+        return Mathf.Min(bonus, maxMagicBonus);
     }
     public float GetPlayerStatBonus(StatType statType)
     {

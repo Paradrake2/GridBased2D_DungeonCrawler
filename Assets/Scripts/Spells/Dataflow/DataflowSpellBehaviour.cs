@@ -62,6 +62,12 @@ public class DataflowSpellBehaviour : SpellBehaviour
             player.spellManager.SetSpellStats(eval.spellStats);
             player.spellManager.SetTempPlayerAttributeSet(eval.tempAttributeSet);
             player.spellManager.SetPendingSpellFlatDamage(eval.GetFlatDamage());
+
+            if (eval.healAmount > 0f)
+            {
+                player.Heal(eval.healAmount);
+                Debug.Log($"Spell healed player for {eval.healAmount} HP");
+            }
         }
 
         // Let combat know what spell behaviour is currently active (used for damage multiplier etc.).

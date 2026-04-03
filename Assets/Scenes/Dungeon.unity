@@ -4891,6 +4891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fd306284d6f32f428acf88a01446294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  descriptionText: {fileID: 1375468795}
 --- !u!1 &371938918
 GameObject:
   m_ObjectHideFlags: 0
@@ -12096,7 +12097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellCrafterUI: {fileID: 1582805615}
   showingWeaker: 0
-  isEnabled: 0
+  isEnabled: 1
 --- !u!114 &1269609745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14544,7 +14545,7 @@ MonoBehaviour:
   componentPreviewObject: {fileID: 1351339746}
   attributePickerUI: {fileID: 1975019237}
   dfNumberSetter: {fileID: 1185104923}
-  componentDescription: {fileID: 0}
+  componentDescription: {fileID: 1375468795}
   spellComponentText: {fileID: 2147048056}
 --- !u!114 &1582805616
 MonoBehaviour:
@@ -14559,6 +14560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellComponentCosts: []
+  maxMagicBonus: 3
 --- !u!1 &1589463152
 GameObject:
   m_ObjectHideFlags: 0

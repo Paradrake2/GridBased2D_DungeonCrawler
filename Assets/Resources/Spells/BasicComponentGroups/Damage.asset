@@ -31,5 +31,5 @@ MonoBehaviour:
     isUnlocked: 0
     index: 4
   - component: {fileID: 11400000, guid: 8bfeca7981610ce4da84c44b9268957a, type: 2}
-    isUnlocked: 0
+    isUnlocked: 1
     index: 5

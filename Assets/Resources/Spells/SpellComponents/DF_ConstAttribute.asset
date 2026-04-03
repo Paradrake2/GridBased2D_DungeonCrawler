@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DF_ConstAttribute
   m_EditorClassIdentifier: 
   componentName: Constant Attribute
+  description: {fileID: 11400000, guid: 418d4460c8470f044a671106bee20b41, type: 2}
   icon: {fileID: -7040330083901364511, guid: 68469a85478ec204a938eea077d24931, type: 3}
   tier: 3
   componentCategory: 1

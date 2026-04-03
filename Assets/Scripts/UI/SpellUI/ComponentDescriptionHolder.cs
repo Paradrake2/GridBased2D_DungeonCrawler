@@ -1,16 +1,14 @@
 using UnityEngine;
-
+using TMPro;
 public class ComponentDescriptionHolder : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private TextMeshProUGUI descriptionText;
+    public void SetDescription(SpellComponent sc)
+    {
+        descriptionText.text = sc.Description.GetDescription(sc);
+    }
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        descriptionText.text = "";
     }
 }
