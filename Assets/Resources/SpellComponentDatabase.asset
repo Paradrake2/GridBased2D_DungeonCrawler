@@ -82,3 +82,7 @@ MonoBehaviour:
   basicComponentGroups:
   - {fileID: 11400000, guid: 79d76e0f75b3d3349a3ca4cffa71f268, type: 2}
   - {fileID: 11400000, guid: b7927d07f3203994bb00d88cfe229871, type: 2}
+  - {fileID: 11400000, guid: c305ababf423288498a3f15b9879c791, type: 2}
+  - {fileID: 11400000, guid: 6c9da2349da1a6f408df1ac11a40f3f5, type: 2}
+  - {fileID: 11400000, guid: c3dc062c6fad03547a413a2638169827, type: 2}
+  - {fileID: 11400000, guid: 8b888f29221a7854cbe3736dad75f519, type: 2}

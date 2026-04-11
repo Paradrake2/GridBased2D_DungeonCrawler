@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: DF_EqualsAttribute_2
   m_EditorClassIdentifier: 
   componentName: EqualsAttribute
+  description: {fileID: 11400000, guid: 0310936cf8bd09544a6891d85f27f863, type: 2}
   icon: {fileID: -9008058490968968107, guid: 0adacdef5f716f3498da3dbfc037ccdb, type: 3}
-  tier: 0
+  tier: 3
   componentCategory: 1
   componentType: 9
   value: 0
-  cost: 1
-  magicCost: 1
+  cost: 5
+  magicCost: 10
   neighboringComponents: []
   compatibleWith: 090000000800000006000000070000000000000005000000020000000300000001000000
   directions:

@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 1060540430942017655, guid: 1cd1116f11be3424580db6bb5ea78dd4, type: 3}
   groupName: FireDamage
-  components: []
+  components:
+  - component: {fileID: 11400000, guid: bbd48a7a89beb034da77c3eacdf7d7ae, type: 2}
+    isUnlocked: 1
+    index: 0

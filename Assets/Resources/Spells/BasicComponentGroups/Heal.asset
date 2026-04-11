@@ -12,6 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b820fb5c414553e47a3ae37165d5ea1b, type: 3}
   m_Name: Heal
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: -6763284720625396414, guid: 1d72085834eea904e9fe2f667448e9f0, type: 3}
   groupName: Heal
-  components: []
+  components:
+  - component: {fileID: 11400000, guid: 3258a017c25a5514297447743fea4bbd, type: 2}
+    isUnlocked: 1
+    index: 0
+  - component: {fileID: 11400000, guid: d917b5d4bda6e374b89c194c6da33978, type: 2}
+    isUnlocked: 1
+    index: 0
+  - component: {fileID: 11400000, guid: f4d01c88c1533a140a9269ccd36089cb, type: 2}
+    isUnlocked: 1
+    index: 0
+  - component: {fileID: 11400000, guid: 4d1306b2beae2574ca3e55663110583d, type: 2}
+    isUnlocked: 1
+    index: 0
+  - component: {fileID: 11400000, guid: 225515e774548f94695d8fe4977871ce, type: 2}
+    isUnlocked: 1
+    index: 0
+  - component: {fileID: 11400000, guid: e9756887886c52d45a4b18df06f698fd, type: 2}
+    isUnlocked: 1
+    index: 0

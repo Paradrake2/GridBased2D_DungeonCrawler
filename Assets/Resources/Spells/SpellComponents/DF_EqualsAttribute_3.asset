@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DF_EqualsAttribute_3
   m_EditorClassIdentifier: 
   componentName: EqualsAttribute
+  description: {fileID: 11400000, guid: 0310936cf8bd09544a6891d85f27f863, type: 2}
   icon: {fileID: 7894403436286526874, guid: 419e5b8893fb58144860fd230d217cac, type: 3}
   tier: 3
   componentCategory: 1

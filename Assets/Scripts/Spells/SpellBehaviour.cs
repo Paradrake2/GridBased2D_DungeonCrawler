@@ -50,12 +50,44 @@ public class SpellBehaviour
     }
     public virtual void Cast()
     {
-        // spell attributes mapped to respective stats in another function
         Player player = GameObject.FindAnyObjectByType<Player>();
-        // check if enough mana
-        // check if enough magic
-        // consume mana
-        // apply effects
-        Debug.Log("Casting base spell");
+        if (player == null)
+        {
+            Debug.LogWarning("No Player found to apply spell effects.");
+            return;
+        }
+
+        if (player.GetMagic() < magicCost)
+        {
+            Debug.Log($"Not enough magic to cast spell. Required: {magicCost}, Available: {player.GetMagic()}");
+            return;
+        }
+
+        // Build a StatCollection from statModifiers
+        StatCollection spellStatCollection = new StatCollection();
+        if (statModifiers != null)
+        {
+            foreach (SpellStat spellStat in statModifiers)
+            {
+                if (spellStat.stat == null) continue;
+
+                float effectiveValue = spellStat.value;
+                if (spellStat.modifier != 0f)
+                    effectiveValue += player.statCol.GetStat(spellStat.stat) * spellStat.modifier;
+
+                spellStatCollection.SetStat(spellStat.stat, effectiveValue);
+            }
+        }
+
+        player.spellManager.SetSpellStats(spellStatCollection);
+        player.spellManager.SetSpellBehaviour(this);
+
+        if (healAmount > 0f)
+        {
+            player.Heal(healAmount);
+            Debug.Log($"Spell healed player for {healAmount} HP");
+        }
+
+        Debug.Log("Casting regular spell");
     }
 }

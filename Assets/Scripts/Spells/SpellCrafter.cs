@@ -44,8 +44,8 @@ public class SpellCrafter : MonoBehaviour
         List<SpellComponent> strengthComponents = composition.components.FindAll(c => c.ComponentType == SpellComponentType.Strength);
         float costAmount = CalculateCost(coreComponent, costComponents, damageComponents, healComponents, durationComponents, strengthComponents);
         float magicCost = composition.CalculateSpellCost();
-        List<SpellStat> statModifiers = new List<SpellStat>();
-        List<SpellAttribute> spellAttributes = new List<SpellAttribute>();
+        List<SpellStat> statModifiers = CalculateSpellStats(composition);
+        List<SpellAttribute> spellAttributes = CalculateSpellAttributes(composition);
 
         // IMPORTANT: The crafting UI keeps mutating its SpellComposition as the player edits the grid.
         // If we store that same instance on the crafted Spell, previously-crafted spells will "change"
@@ -66,7 +66,32 @@ public class SpellCrafter : MonoBehaviour
         // place for special effects based on components
         return newSpell;
     }
+    private List<SpellStat> CalculateSpellStats(SpellComposition composition)
+    {
+        List<SpellStat> stats = new List<SpellStat>();
+        foreach (var c in composition.components)
+        {
+            foreach (var stat in c.Stats)
+            {
+                stats.Add(stat);
+            }
+        }
+        return stats;
+    }
 
+    private List<SpellAttribute> CalculateSpellAttributes(SpellComposition composition)
+    {
+        List<SpellAttribute> attributes = new List<SpellAttribute>();
+        foreach (var c in composition.components)
+        {
+            if (c.ComponentType == SpellComponentType.Attribute)
+            {
+                attributes.Add(c.SpellAttributes);
+            }
+
+        }
+        return attributes;
+    }
     private static SpellComposition CloneForDataflowRuntime(SpellComposition source)
     {
         if (source == null) return null;

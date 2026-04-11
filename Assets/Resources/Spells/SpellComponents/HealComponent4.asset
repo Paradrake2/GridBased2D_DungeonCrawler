@@ -10,37 +10,36 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfd2446c14a827f45b6ec72bcaed218d, type: 3}
-  m_Name: FireDamage1
+  m_Name: HealComponent4
   m_EditorClassIdentifier: 
-  componentName: FireDamage1
+  componentName: HealComponent4
   description: {fileID: 0}
-  icon: {fileID: 1060540430942017655, guid: 1cd1116f11be3424580db6bb5ea78dd4, type: 3}
-  tier: 0
+  icon: {fileID: -4883884220508323716, guid: 3bb965cd415709a409b54727dd5eb146, type: 3}
+  tier: 4
   componentCategory: 0
-  componentType: 5
-  value: 20
-  cost: 0
-  magicCost: 6
+  componentType: 1
+  value: 150
+  cost: 18
+  magicCost: 10
   neighboringComponents: []
-  compatibleWith: 0000000006000000080000000900000007000000
+  compatibleWith: 0000000001000000020000000300000004000000050000000600000007000000
   directions:
-    inputDirections:
+    inputDirections: []
+    outputDirections:
     - direction: 0
       IOType: 0
       isActive: 1
-    - direction: 0
+    - direction: 1
       IOType: 0
       isActive: 1
-    - direction: 0
+    - direction: 2
       IOType: 0
       isActive: 1
-    - direction: 0
+    - direction: 3
       IOType: 0
       isActive: 1
-    outputDirections: []
-  costs: []
-  stats:
-  - stat: {fileID: 11400000, guid: 9e8b3d9ad2b47da4b84d7bdab851a78f, type: 2}
-    modifier: 1.2
-    value: 5
-  spellAttributes: 1
+  costs:
+  - item: {fileID: 11400000, guid: 07ad35e457c796a45bfc5fcfe0176fce, type: 2}
+    amount: 2
+  stats: []
+  spellAttributes: 0
