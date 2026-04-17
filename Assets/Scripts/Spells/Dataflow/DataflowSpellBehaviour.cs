@@ -16,12 +16,16 @@ public class DataflowSpellBehaviour : SpellBehaviour
         float costAmount,
         float magicCost,
         List<SpellStat> statModifiers,
-        List<SpellAttribute> spellAttributes)
+        List<SpellAttributeWithValue> spellAttributes)
     {
         // Defensive copy: the crafting UI keeps mutating its SpellComposition as the player edits the grid.
         // Even though SpellCrafter clones at craft time, keeping this here prevents accidental regressions.
         this.composition = DFCompositionUtils.ClonePlacedGrid(composition);
         SpellBehaviourConstructor(duration, damageMult, healAmount, costAmount, magicCost, statModifiers, spellAttributes);
+
+        // Cooldown scales with number of placed components
+        int componentCount = composition.placedComponents?.Count ?? 0;
+        SetCooldown(BaseCooldown + CooldownPerComponent * componentCount);
         return this;
     }
 
@@ -36,8 +40,11 @@ public class DataflowSpellBehaviour : SpellBehaviour
             return;
         }
 
-        // check if player is currently in combat
-
+        if (IsOnCooldown())
+        {
+            Debug.Log($"Spell is on cooldown. {GetCooldownRemaining():F1}s remaining.");
+            return;
+        }
         // Target selection is intentionally simple for MVP.
         Enemy target = GetActiveEnemyTarget();
 
@@ -47,17 +54,8 @@ public class DataflowSpellBehaviour : SpellBehaviour
             verbose = false
         };
         var eval = DFEvaluator.Evaluate(composition, context);
-        float cost = eval != null ? eval.cost : 0f;
-        if (player.GetMagic() < cost)
-        {
-            Debug.Log("Not enough magic to cast spell. Required: " + cost + ", Available: " + player.GetMagic());
-            return;
-        }
         if (eval != null)
         {
-            // If evaluator couldn't resolve StatType wiring, still try to map flatDamage into the game's Damage stat.
-            //if (context.damageStatType != null && eval.GetFlatDamage() != 0f && !eval.spellStats.HasStat(context.damageStatType))
-              //  eval.spellStats.SetStat(context.damageStatType, eval.GetFlatDamage());
 
             player.spellManager.SetSpellStats(eval.spellStats);
             player.spellManager.SetTempPlayerAttributeSet(eval.tempAttributeSet);
@@ -72,7 +70,8 @@ public class DataflowSpellBehaviour : SpellBehaviour
 
         // Let combat know what spell behaviour is currently active (used for damage multiplier etc.).
         player.spellManager.SetSpellBehaviour(this);
-        Debug.Log("Casting dataflow spell");
+        TriggerCooldown();
+        Debug.Log($"Casting dataflow spell (cooldown: {GetCooldownDuration():F1}s)");
     }
     private void InCombatCast()
     {

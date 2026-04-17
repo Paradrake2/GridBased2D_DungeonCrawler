@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HealComponent5
   m_EditorClassIdentifier: 
   componentName: HealComponent5
-  description: {fileID: 0}
+  description: {fileID: 11400000, guid: 1f6d893447b4cb846bce6b2aec337529, type: 2}
   icon: {fileID: -4195433438792153806, guid: e2601cba16429f642946e660c0f8618d, type: 3}
   tier: 5
   componentCategory: 0

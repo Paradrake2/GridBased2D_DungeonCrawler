@@ -9,6 +9,7 @@ public class PlayerSpellManager : MonoBehaviour
     [SerializeField] private float pendingSpellFlatDamage;
     [SerializeField] private bool inCombat = false;
     [SerializeField] private float pendingHealAmount = 0f;
+    [SerializeField] private float pendingDefenseBoost = 0f;
     
 
 
@@ -16,6 +17,11 @@ public class PlayerSpellManager : MonoBehaviour
     public void Initialize(Player player)
     {
         this.player = player;
+        // Clear any stale serialized state from a previous editor session
+        currentSpellBehaviour = null;
+        pendingSpellFlatDamage = 0f;
+        spellStats.Clear();
+        tempAttributeSet.ClearAllAttributes();
     }
 
     public StatCollection GetSpellStats()
@@ -88,5 +94,17 @@ public class PlayerSpellManager : MonoBehaviour
     public void SetPendingHealAmount(float amount)
     {
         pendingHealAmount = amount;
+    }
+    public float GetPendingDefenseBoost()
+    {
+        return pendingDefenseBoost;
+    }
+    public void SetPendingDefenseBoost(float amount)
+    {
+        pendingDefenseBoost = amount;
+    }
+    public void ClearPendingDefenseBoost()
+    {
+        pendingDefenseBoost = 0f;
     }
 }

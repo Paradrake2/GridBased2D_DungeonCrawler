@@ -19,7 +19,7 @@ public abstract class GenerationAlgorithm : ScriptableObject
     }
     public void ClearMaps()
     {
-        floorMap.ClearAllTiles();
-        wallMap.ClearAllTiles();
+        if (floorMap != null) floorMap.ClearAllTiles();
+        if (wallMap != null) wallMap.ClearAllTiles();
     }
 }

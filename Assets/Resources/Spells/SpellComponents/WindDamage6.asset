@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd2446c14a827f45b6ec72bcaed218d, type: 3}
+  m_Name: WindDamage6
+  m_EditorClassIdentifier: 
+  componentName: WindDamage6
+  description: {fileID: 11400000, guid: b1fce1a1d28fb0f4693fd46fa430962e, type: 2}
+  icon: {fileID: -5418776135720492932, guid: 921087cc13537644caf246a7a9a19348, type: 3}
+  tier: 0
+  componentCategory: 0
+  componentType: 5
+  value: 1
+  cost: 60
+  magicCost: 80
+  neighboringComponents: []
+  compatibleWith: 0000000006000000080000000900000007000000030000000200000005000000
+  directions:
+    inputDirections:
+    - direction: 0
+      IOType: 0
+      isActive: 1
+    - direction: 0
+      IOType: 0
+      isActive: 1
+    - direction: 0
+      IOType: 0
+      isActive: 1
+    - direction: 0
+      IOType: 0
+      isActive: 1
+    outputDirections: []
+  costs: []
+  stats:
+  - stat: {fileID: 11400000, guid: 5b2e70569a027eb498686706ecdf457f, type: 2}
+    modifier: 5
+    value: 100
+  spellAttributes: 7

@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd2446c14a827f45b6ec72bcaed218d, type: 3}
   m_Name: FireDamage5
   m_EditorClassIdentifier: 
-  componentName: FireDamage1
-  description: {fileID: 0}
+  componentName: FireDamage5
+  description: {fileID: 11400000, guid: ce344d52c82b1634c8145944a69fad96, type: 2}
   icon: {fileID: 3815656455530307099, guid: 803c8a234a2ce0d4c8e2532a7d563e26, type: 3}
   tier: 0
   componentCategory: 0
   componentType: 5
-  value: 20
-  cost: 0
-  magicCost: 6
+  value: 0.8
+  cost: 40
+  magicCost: 55
   neighboringComponents: []
-  compatibleWith: 0000000006000000080000000900000007000000
+  compatibleWith: 0000000006000000080000000900000007000000030000000200000005000000
   directions:
     inputDirections:
     - direction: 0

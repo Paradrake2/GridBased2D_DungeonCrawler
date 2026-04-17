@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -42,6 +43,9 @@ public class Player : MonoBehaviour
     public PlayerSpellManager spellManager;
     
     public bool isInCombat = false;
+
+    public event Action OnHealthChanged;
+    public event Action OnManaChanged;
 
     public float magicBonus = 0.025f; // for each point of magic, increase spell effects by this value
     void Initialize()
@@ -216,6 +220,7 @@ public class Player : MonoBehaviour
             attributeValues.Add(new StatValue(attr.attackAttribute, attr.attackAttributeValue));
         }
         currentHealth -= Mathf.Max(0, CalculateDamageTaken(amount, attributeDamages));
+        OnHealthChanged?.Invoke();
         if (currentHealth <= 0)
         {
             Die();
@@ -223,7 +228,9 @@ public class Player : MonoBehaviour
     }
     public float CalculateDamageTaken(float damage, List<EnemyAttributes> attributeDamages)
     {
-        float totalDamage = Mathf.Max(1, damage - defense);
+        float defenseBoost = spellManager != null ? spellManager.GetPendingDefenseBoost() : 0f;
+        spellManager?.ClearPendingDefenseBoost();
+        float totalDamage = Mathf.Max(1, damage - defense - defenseBoost);
         if (attributeDamages == null) return totalDamage;
         foreach (var attr in attributeDamages)
         {
@@ -237,6 +244,7 @@ public class Player : MonoBehaviour
     public void Heal(float amount)
     {
         currentHealth = Mathf.Min(maxHealth, currentHealth + amount);
+        OnHealthChanged?.Invoke();
     }
     void Die()
     {
@@ -253,20 +261,19 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
     }
+    // Called by PlayerMovement when the player bumps into an enemy's cell
+    public void EngageCombat(Enemy enemy)
+    {
+        if (isInCombat || enemy == null || !playerMovement.hasMoved) return;
+        float damageMult = Mathf.Min(3f, playerMovement.GetDistanceTraveled());
+        isInCombat = true;
+        combat.StartCombat(enemy.gameObject, attackSpeed, damageMult, debuffInflictors);
+        EnemyManager.instance.InCombatWith(enemy);
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Player collided with " + other.gameObject.name);
-        if (other.gameObject.layer == LayerMask.NameToLayer("EnemyHitbox") && !isInCombat && playerMovement.hasMoved)
-        {
-            Enemy enemy = other.GetComponentInParent<Enemy>();
-            float damageMult = Mathf.Min(3f, playerMovement.GetDistanceTraveled()); // damage multiplier based on distance traveled, capped at 3x
-            if (enemy != null)
-            {
-                isInCombat = true;
-                combat.StartCombat(enemy.gameObject, attackSpeed, damageMult, debuffInflictors);
-                EnemyManager.instance.InCombatWith(enemy);
-            }
-        }
+        // Combat is now initiated via bump-to-attack in PlayerMovement, not on proximity trigger
         /**
         if (other.CompareTag("EnemyHitbox") && !isInCombat && playerMovement.hasMoved)
         {

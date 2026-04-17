@@ -38,6 +38,8 @@ public class SpellCrafter : MonoBehaviour
         float damageMult = CalculateDamageMult(damageComponents) * coreComponent.Value;
         List<SpellComponent> healComponents = composition.components.FindAll(c => c.ComponentType == SpellComponentType.Healing);
         float healAmount = CalculateHealAmount(healComponents) * coreComponent.Value;
+        List<SpellComponent> defenseComponents = composition.components.FindAll(c => c.ComponentType == SpellComponentType.Defense);
+        float defenseBoost = CalculateDefenseBoost(defenseComponents) * coreComponent.Value;
         List<SpellComponent> durationComponents = composition.components.FindAll(c => c.ComponentType == SpellComponentType.Duration);
         float duration = CalculateDuration(durationComponents);
         List<SpellComponent> costComponents = composition.components.FindAll(c => c.ComponentType == SpellComponentType.Cost);
@@ -45,7 +47,7 @@ public class SpellCrafter : MonoBehaviour
         float costAmount = CalculateCost(coreComponent, costComponents, damageComponents, healComponents, durationComponents, strengthComponents);
         float magicCost = composition.CalculateSpellCost();
         List<SpellStat> statModifiers = CalculateSpellStats(composition);
-        List<SpellAttribute> spellAttributes = CalculateSpellAttributes(composition);
+        List<SpellAttributeWithValue> spellAttributes = CalculateSpellAttributes(composition);
 
         // IMPORTANT: The crafting UI keeps mutating its SpellComposition as the player edits the grid.
         // If we store that same instance on the crafted Spell, previously-crafted spells will "change"
@@ -55,6 +57,7 @@ public class SpellCrafter : MonoBehaviour
 
         newSpell.spellEffect = new DataflowSpellBehaviour().Initialize(runtimeComposition, duration, damageMult, healAmount, costAmount, magicCost,
             statModifiers, spellAttributes);
+        newSpell.spellEffect.SetDefenseBoost(defenseBoost);
         newSpell.name = composition.spellName; // will be determined by components or set by player
         newSpell.SetSpellName(composition.spellName);
 
@@ -79,16 +82,16 @@ public class SpellCrafter : MonoBehaviour
         return stats;
     }
 
-    private List<SpellAttribute> CalculateSpellAttributes(SpellComposition composition)
+    private List<SpellAttributeWithValue> CalculateSpellAttributes(SpellComposition composition)
     {
-        List<SpellAttribute> attributes = new List<SpellAttribute>();
+        List<SpellAttributeWithValue> attributes = new List<SpellAttributeWithValue>();
         foreach (var c in composition.components)
         {
             if (c.ComponentType == SpellComponentType.Attribute)
             {
-                attributes.Add(c.SpellAttributes);
+                float val = CalculateStrengthenedValue(c, c.NeighboringComponents ?? new List<SpellComponent>());
+                attributes.Add(new SpellAttributeWithValue(c.SpellAttributes, val));
             }
-
         }
         return attributes;
     }
@@ -162,6 +165,19 @@ public class SpellCrafter : MonoBehaviour
             }
         }
         return totalHeal;
+    }
+    private float CalculateDefenseBoost(List<SpellComponent> defenseComponents = null)
+    {
+        float totalDefense = 0f;
+        if (defenseComponents != null)
+        {
+            if (defenseComponents.Count == 0 || defenseComponents[0].NeighboringComponents == null) return totalDefense;
+            foreach (var comp in defenseComponents)
+            {
+                totalDefense += CalculateStrengthenedValue(comp, comp.NeighboringComponents);
+            }
+        }
+        return totalDefense;
     }
     private float CalculateDuration(List<SpellComponent> durationComponents = null)
     {
@@ -264,6 +280,7 @@ public class SpellCrafter : MonoBehaviour
     bool HasEnoughMagicPower(float cost)
     {
         Player player = GameObject.FindAnyObjectByType<Player>();
+        if (player == null) return true; // can't validate without player; allow
         return player.GetMagic() >= cost;
     }
     private string GenerateSpellName(SpellComposition composition) // auto generation, player will have option to custom name the spell
@@ -281,12 +298,14 @@ public class SpellCrafter : MonoBehaviour
     public float CalculateMagicBonus()
     {
         Player player = GameObject.FindAnyObjectByType<Player>();
+        if (player == null) return 1f;
         float bonus = 1 + player.GetMagic() * player.magicBonus; // each point of magic gives a percentage bonus to spell effects
         return Mathf.Min(bonus, maxMagicBonus);
     }
     public float GetPlayerStatBonus(StatType statType)
     {
         Player player = GameObject.FindAnyObjectByType<Player>();
+        if (player == null) return 0f;
         return player.statCol.GetStat(statType);
     }
 }

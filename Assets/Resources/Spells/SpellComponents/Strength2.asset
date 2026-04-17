@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfd2446c14a827f45b6ec72bcaed218d, type: 3}
-  m_Name: Cost1
+  m_Name: Strength2
   m_EditorClassIdentifier: 
-  componentName: Cost1
-  icon: {fileID: 7084139092434876548, guid: 0731f167681898f498667d05fc3ee8aa, type: 3}
-  tier: 1
+  componentName: Strength2
+  description: {fileID: 11400000, guid: 80de6589835d88a4fac9c329429f61b2, type: 2}
+  icon: {fileID: -5763608352865263257, guid: e01344711da86ba48bc15580e51be428, type: 3}
+  tier: 5
   componentCategory: 0
-  componentType: 2
-  value: 0.8
-  cost: 5
-  magicCost: 19
+  componentType: 3
+  value: 2
+  cost: 100
+  magicCost: 30
   neighboringComponents: []
-  compatibleWith: 0600000007000000
+  compatibleWith: 01000000040000000300000005000000000000000600000007000000
   directions:
     inputDirections: []
     outputDirections:

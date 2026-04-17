@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd2446c14a827f45b6ec72bcaed218d, type: 3}
+  m_Name: WaterDamage5
+  m_EditorClassIdentifier: 
+  componentName: WaterDamage5
+  description: {fileID: 11400000, guid: ce344d52c82b1634c8145944a69fad96, type: 2}
+  icon: {fileID: -2976405735318107983, guid: bed77457a136a644db5c18034fb50df9, type: 3}
+  tier: 0
+  componentCategory: 0
+  componentType: 5
+  value: 0.8
+  cost: 40
+  magicCost: 55
+  neighboringComponents: []
+  compatibleWith: 0000000006000000080000000900000007000000030000000200000005000000
+  directions:
+    inputDirections:
+    - direction: 0
+      IOType: 0
+      isActive: 1
+    - direction: 0
+      IOType: 0
+      isActive: 1
+    - direction: 0
+      IOType: 0
+      isActive: 1
+    - direction: 0
+      IOType: 0
+      isActive: 1
+    outputDirections: []
+  costs: []
+  stats:
+  - stat: {fileID: 11400000, guid: 02c2940f5ee912044af76cfc517ef418, type: 2}
+    modifier: 3.25
+    value: 70
+  spellAttributes: 3

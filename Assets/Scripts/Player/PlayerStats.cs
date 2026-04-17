@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -249,10 +250,15 @@ public class PlayerStats : MonoBehaviour
     public void SetGoldAmount(int newAmount)
     {
         goldAmount = newAmount;
+        OnGoldChanged?.Invoke();
     }
+    public event Action OnGoldChanged;
+    public event Action OnXPChanged;
+
     public void AddGold(int amount)
     {
         goldAmount += amount;
+        OnGoldChanged?.Invoke();
     }
     public float GetExperience()
     {
@@ -269,10 +275,12 @@ public class PlayerStats : MonoBehaviour
     public void SetExperience(float newXP)
     {
         xp = newXP;
+        OnXPChanged?.Invoke();
     }
     public void AddExperience(float amount)
     {
         xp += amount;
+        OnXPChanged?.Invoke();
     }
     public int GetPlayerLevel()
     {

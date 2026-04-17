@@ -25,6 +25,7 @@ public class LootTable : ScriptableObject
                 droppedItems.Add(dropItem.item);
             }
         }
+        if (droppedItems.Count == 0) return null;
         int randomIndex = Random.Range(0, droppedItems.Count);
         return droppedItems[randomIndex];
     }

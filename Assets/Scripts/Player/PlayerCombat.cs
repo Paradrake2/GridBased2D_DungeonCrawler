@@ -12,6 +12,7 @@ public class PlayerCombat : MonoBehaviour
     public Manager manager;
     private Vector2 startPos;
     public Enemy targeted;
+    private readonly List<Coroutine> activeDebuffCoroutines = new List<Coroutine>();
     void Start()
     {
         player = GetComponent<Player>();
@@ -27,11 +28,15 @@ public class PlayerCombat : MonoBehaviour
         foreach (var inflictor in debuffInflictors)
         {
             inflictor.debuff.ApplyDebuff(target, gameObject, inflictor.value);
-            StartCoroutine(inflictor.debuff.TickEffect());
+            activeDebuffCoroutines.Add(StartCoroutine(inflictor.debuff.TickEffect()));
             Debug.Log("Applied " + inflictor.debuff.debuffName + " to " + target.name + " from player.");
         }
-        target.GetComponent<Enemy>().TakeDamage(CalculateDamageTaken(target.GetComponent<Enemy>(), player.GetDamage() * damageMult, player.GetAttackAttributes())); // initial attack with damage multiplier
-        targeted = target.GetComponent<Enemy>();
+        var firstEnemy = target.GetComponent<Enemy>();
+        var firstDmgType = GetDamageType(firstEnemy, player.GetAttackAttributes());
+        float firstDmg = CalculateDamageTaken(firstEnemy, player.GetDamage() * damageMult, player.GetAttackAttributes());
+        firstEnemy.TakeDamage(firstDmg);
+        SpawnDamageIndicators(target.transform.position, firstDmg, firstDmgType);
+        targeted = firstEnemy;
         // get data values for spells
         // begin combat routine
         target.GetComponent<Enemy>().BeginCombat(player);
@@ -41,19 +46,80 @@ public class PlayerCombat : MonoBehaviour
     private IEnumerator CombatRoutine(float attackSpeed, GameObject target)
     {
         Manager.instance.playerCanMove = false; // stop movement during battle
-        float attackInterval = 1f / attackSpeed;
+        float attackInterval = attackSpeed > 0f ? 1f / attackSpeed : 1f;
         while (target != null)
         {
             anim.SetTrigger("Attacking");
-            //if (target.GetComponent<Enemy>() == null) break; // break when enemy is dead
-           // Debug.LogWarning("Player attacks " + target.name);
-            yield return new WaitForSeconds(attackInterval*0.4f); // wait for attack animation to reach hit frame
-            target.GetComponent<Enemy>().TakeDamage(CalculateDamageTaken(target.GetComponent<Enemy>(), player.GetDamage(), player.GetAttackAttributes()));
+            yield return new WaitForSeconds(attackInterval * 0.4f); // wait for attack animation to reach hit frame
+
+            // Enemy may have died during the wait (e.g. from a DoT/debuff tick)
+            if (target == null)
+            {
+                anim.SetTrigger("Idle");
+                break;
+            }
+
+            var combatEnemy = target.GetComponent<Enemy>();
+            var dmgType = GetDamageType(combatEnemy, player.GetAttackAttributes());
+            float dmg = CalculateDamageTaken(combatEnemy, player.GetDamage(), player.GetAttackAttributes());
+            combatEnemy.TakeDamage(dmg);
+            SpawnDamageIndicators(target.transform.position, dmg, dmgType);
             anim.SetTrigger("Idle");
-            yield return new WaitForSeconds(attackInterval*0.6f);
+
+            yield return new WaitForSeconds(attackInterval * 0.6f);
         }
         Manager.instance.playerCanMove = true;
     }
+    private DamageNumberType GetDamageType(Enemy enemy, System.Collections.Generic.List<PlayerAttackAttributes> attackAttributes)
+    {
+        bool isSpell = player.spellManager.GetSpellBehaviour() != null;
+        bool isWeakness = false;
+
+        if (enemy.stats.esh.weakness != null)
+        {
+            if (attackAttributes != null)
+            {
+                foreach (var attr in attackAttributes)
+                {
+                    if (attr.attackAttribute == enemy.stats.esh.weakness.attribute && attr.attackAttributeValue > 0)
+                    {
+                        isWeakness = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!isWeakness && isSpell)
+            {
+                var spellAttrs = player.spellManager.GetTempPlayerAttributeSet().GetAttackAttributes();
+                if (spellAttrs != null)
+                {
+                    foreach (var attr in spellAttrs)
+                    {
+                        if (attr.attackAttribute == enemy.stats.esh.weakness.attribute && attr.attackAttributeValue > 0)
+                        {
+                            isWeakness = true;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        if (isSpell && isWeakness) return DamageNumberType.SpellWeakness;
+        if (isSpell) return DamageNumberType.Spell;
+        if (isWeakness) return DamageNumberType.Weakness;
+        return DamageNumberType.Normal;
+    }
+
+    private void SpawnDamageIndicators(Vector3 position, float damage, DamageNumberType type)
+    {
+        if (DamageNumberSpawner.Instance == null) return;
+        DamageNumberSpawner.Instance.SpawnDamageNumber(position, damage, type);
+        if (type == DamageNumberType.Spell || type == DamageNumberType.SpellWeakness)
+            DamageNumberSpawner.Instance.SpawnSpellIndicator(position, "* MAGIC", new Color(0.75f, 0.25f, 1f));
+    }
+
     float DamageAfterSpell(Enemy enemy)
     {
         float totalDamage = 0;
@@ -146,6 +212,10 @@ public class PlayerCombat : MonoBehaviour
     }
     public void EndCombat()
     {
+        foreach (var c in activeDebuffCoroutines)
+            if (c != null) StopCoroutine(c);
+        activeDebuffCoroutines.Clear();
+
         transform.position = startPos;
         player.isInCombat = false;
         Debug.Log("Combat ended, returning to position " + startPos);

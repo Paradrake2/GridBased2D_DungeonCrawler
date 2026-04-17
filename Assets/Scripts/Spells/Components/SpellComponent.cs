@@ -15,6 +15,7 @@ public enum SpellComponentType
     Logic, // for components that modify spell behavior or have special conditions, not directly contributing to damage/healing/cost
     Debuff, // for components that apply negative effects to enemies
     Buff, // for components that apply positive effects to the player
+    Defense, // for components that boost player defense for the next hit taken
 }
 public enum SpellAttribute
 {
@@ -75,6 +76,17 @@ public class SpellComponentCost
 {
     public Item item;
     public int amount;
+}
+[System.Serializable]
+public class SpellAttributeWithValue
+{
+    public SpellAttribute attribute;
+    public float value;
+    public SpellAttributeWithValue(SpellAttribute attribute, float value)
+    {
+        this.attribute = attribute;
+        this.value = value;
+    }
 }
 public enum ComponentCategory
 {

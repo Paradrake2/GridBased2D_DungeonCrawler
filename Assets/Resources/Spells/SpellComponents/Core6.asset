@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Core6
   m_EditorClassIdentifier: 
   componentName: Core6
-  description: {fileID: 0}
+  description: {fileID: 11400000, guid: 8e9b1c840528e94488cf39ef3b46cc79, type: 2}
   icon: {fileID: 6173834877355951189, guid: 7d1955ae00180bc408b700ad981cde59, type: 3}
   tier: 6
   componentCategory: 0

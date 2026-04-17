@@ -54,7 +54,7 @@ public class Enemy : MonoBehaviour
     private IEnumerator CombatRoutine(Player player)
     {
         float attackSpeed = stats.esh.stats.GetStat(StatDatabase.Instance.GetStat("AttackSpeed"));
-        float attackInterval = 1f / attackSpeed;
+        float attackInterval = attackSpeed > 0f ? 1f / attackSpeed : 1f;
         Debug.Log(attackInterval);
         while (stats.currentHealth > 0 && player.GetHealth() > 0)
         {
@@ -150,7 +150,8 @@ public class Enemy : MonoBehaviour
     {
         stats = GetComponent<EnemyStats>();
         player = FindAnyObjectByType<Player>();
-        EnemyManager.instance.AddEnemy(this);
+        if (EnemyManager.instance != null)
+            EnemyManager.instance.AddEnemy(this);
         positionBeforeCombat = transform.position;
     }
 

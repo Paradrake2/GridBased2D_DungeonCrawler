@@ -14,4 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 4093270486881150542, guid: af6114432bb065546af3a9ea02b96184, type: 3}
   groupName: Strength
-  components: []
+  components:
+  - component: {fileID: 11400000, guid: aee89078a9911604b880b8a4abd7101e, type: 2}
+    isUnlocked: 1
+    index: 0
+  - component: {fileID: 11400000, guid: 5feb8b5b6cda11d42b4620f0485d3188, type: 2}
+    isUnlocked: 1
+    index: 1
+  - component: {fileID: 11400000, guid: e0291aae687c82f41a7d617e6a70149e, type: 2}
+    isUnlocked: 1
+    index: 2

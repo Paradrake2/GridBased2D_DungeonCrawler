@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd2446c14a827f45b6ec72bcaed218d, type: 3}
+  m_Name: Strength3
+  m_EditorClassIdentifier: 
+  componentName: Strength3
+  description: {fileID: 11400000, guid: 98fe78b5064f3d145a6b3ac40028070a, type: 2}
+  icon: {fileID: -5763608352865263257, guid: e01344711da86ba48bc15580e51be428, type: 3}
+  tier: 6
+  componentCategory: 0
+  componentType: 3
+  value: 3
+  cost: 150
+  magicCost: 50
+  neighboringComponents: []
+  compatibleWith: 01000000040000000300000005000000000000000600000007000000
+  directions:
+    inputDirections: []
+    outputDirections:
+    - direction: 0
+      IOType: 0
+      isActive: 1
+    - direction: 1
+      IOType: 0
+      isActive: 1
+    - direction: 2
+      IOType: 0
+      isActive: 1
+    - direction: 3
+      IOType: 0
+      isActive: 1
+  costs:
+  - item: {fileID: 11400000, guid: 07ad35e457c796a45bfc5fcfe0176fce, type: 2}
+    amount: 1
+  stats: []
+  spellAttributes: 0

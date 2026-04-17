@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd2446c14a827f45b6ec72bcaed218d, type: 3}
+  m_Name: LightDamage6
+  m_EditorClassIdentifier: 
+  componentName: LightDamage6
+  description: {fileID: 11400000, guid: 66c82af1494a2914894d69e82b3e4aef, type: 2}
+  icon: {fileID: -6810347698567677470, guid: 14631790bdbdcfd4d9d57c8f32c96066, type: 3}
+  tier: 0
+  componentCategory: 0
+  componentType: 5
+  value: 1
+  cost: 60
+  magicCost: 80
+  neighboringComponents: []
+  compatibleWith: 0000000006000000080000000900000007000000030000000200000005000000
+  directions:
+    inputDirections:
+    - direction: 0
+      IOType: 0
+      isActive: 1
+    - direction: 0
+      IOType: 0
+      isActive: 1
+    - direction: 0
+      IOType: 0
+      isActive: 1
+    - direction: 0
+      IOType: 0
+      isActive: 1
+    outputDirections: []
+  costs: []
+  stats:
+  - stat: {fileID: 11400000, guid: 7b5994b24789fe4428994443fe4969e0, type: 2}
+    modifier: 5
+    value: 100
+  spellAttributes: 9

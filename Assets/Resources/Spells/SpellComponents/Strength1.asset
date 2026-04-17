@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Strength1
   m_EditorClassIdentifier: 
   componentName: Strength1
-  icon: {fileID: 4093270486881150542, guid: af6114432bb065546af3a9ea02b96184, type: 3}
-  tier: 1
+  description: {fileID: 11400000, guid: 2fe6636dae7f11a49b18f4e1e3ab0d8d, type: 2}
+  icon: {fileID: -8803379278348904850, guid: 5a79d506217422c46a88fb754a500519, type: 3}
+  tier: 4
   componentCategory: 0
   componentType: 3
   value: 1.5

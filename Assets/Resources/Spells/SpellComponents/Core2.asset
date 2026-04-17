@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Core2
   m_EditorClassIdentifier: 
   componentName: Core2
-  description: {fileID: 0}
+  description: {fileID: 11400000, guid: 34c288346cf7bfd4c8604482d2535edb, type: 2}
   icon: {fileID: 8007094619296694818, guid: f2e411b6fd39613429aaacf4def32b20, type: 3}
   tier: 2
   componentCategory: 0

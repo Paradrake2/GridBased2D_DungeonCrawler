@@ -102,9 +102,11 @@ public class SpellComposition
             Debug.Log("Too many Cost components for the selected Core. Cost components: " + numOfCostComponents + ", Core value: " + coreValue);
             return false;
         }
-        if (GameObject.FindFirstObjectByType<Player>().GetMagic() < CalculateSpellCost())
+        if (GameObject.FindFirstObjectByType<Player>() == null) return true; // can't validate without player; allow
+        Player player = GameObject.FindFirstObjectByType<Player>();
+        if (player.GetMagic() < CalculateSpellCost())
         {
-            Debug.Log("Not enough magic power to cast this spell. Required: " + CalculateSpellCost() + ", Player Magic: " + GameObject.FindFirstObjectByType<Player>().GetMagic());
+            Debug.Log("Not enough magic power to cast this spell. Required: " + CalculateSpellCost() + ", Player Magic: " + player.GetMagic());
             return false;
         }
         return true;

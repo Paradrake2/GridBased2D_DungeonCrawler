@@ -20,16 +20,16 @@ MonoBehaviour:
     index: 0
   - component: {fileID: 11400000, guid: d917b5d4bda6e374b89c194c6da33978, type: 2}
     isUnlocked: 1
-    index: 0
+    index: 1
   - component: {fileID: 11400000, guid: f4d01c88c1533a140a9269ccd36089cb, type: 2}
     isUnlocked: 1
-    index: 0
+    index: 2
   - component: {fileID: 11400000, guid: 4d1306b2beae2574ca3e55663110583d, type: 2}
     isUnlocked: 1
-    index: 0
+    index: 3
   - component: {fileID: 11400000, guid: 225515e774548f94695d8fe4977871ce, type: 2}
     isUnlocked: 1
-    index: 0
+    index: 4
   - component: {fileID: 11400000, guid: e9756887886c52d45a4b18df06f698fd, type: 2}
     isUnlocked: 1
-    index: 0
+    index: 5

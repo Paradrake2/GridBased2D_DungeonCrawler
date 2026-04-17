@@ -12,9 +12,10 @@ public class PlayerMovement : MonoBehaviour
     [Header("Collision")]
     public LayerMask obstacleLayer;
     public LayerMask environementalLootLayer;
+    public LayerMask enemyHitboxLayer;
 
     private bool isMoving = false;
-    [SerializeField] private float moveDuration = 0.05f;
+    [SerializeField] private float moveDuration = 0.12f;
 
     [Header("Movement Tracking")]
     private Vector2 currentDirection = Vector2.zero;
@@ -36,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private PlayerAnimator anim;
     [SerializeField] private Player player;
     public bool hasMoved = false;
+    private Coroutine moveCoroutine;
     void Start()
     {
         playerCollider = GetComponent<Collider2D>();
@@ -71,11 +73,15 @@ public class PlayerMovement : MonoBehaviour
                     distanceTraveled = 0f;
                 }
 
-                if (!IsTargetBlocked(direction))
-                    StartCoroutine(Move(direction));
-
-                if (!IsObstacleOrLootAtPosition((Vector2)transform.position + direction * cellSize))
-                    GetLootAtPosition((Vector2)transform.position + direction * cellSize);
+                Enemy enemyAtTarget = GetEnemyAtTarget(direction);
+                if (enemyAtTarget != null)
+                {
+                    player.EngageCombat(enemyAtTarget);
+                }
+                else if (!IsTargetBlocked(direction))
+                {
+                    moveCoroutine = StartCoroutine(Move(direction));
+                }
             }
             else
             {
@@ -187,7 +193,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void ForceStopMovement()
     {
-        StopCoroutine(Move(currentDirection));
+        if (moveCoroutine != null)
+        {
+            StopCoroutine(moveCoroutine);
+            moveCoroutine = null;
+        }
         anim.SetTrigger("Attacking");
         isMoving = false;
 
@@ -204,32 +214,62 @@ public class PlayerMovement : MonoBehaviour
         hasMoved = true;
         isMoving = true;
 
-        Vector2 startPosition = SnapToGrid(transform.position);
-        Vector2 targetPosition = SnapToGrid(startPosition + direction.normalized * cellSize);
-
-        float elapsedTime = 0f;
-        while (elapsedTime < moveDuration)
+        while (true)
         {
-            if (Manager.instance.playerCanMove == false)
+            Vector2 startPosition = SnapToGrid(transform.position);
+            Vector2 targetPosition = SnapToGrid(startPosition + direction.normalized * cellSize);
+
+            float elapsedTime = 0f;
+            while (elapsedTime < moveDuration)
             {
-                isMoving = false;
-                yield break;
+                if (Manager.instance.playerCanMove == false)
+                {
+                    isMoving = false;
+                    yield break;
+                }
+
+                elapsedTime += Time.deltaTime;
+                float percent = Mathf.Clamp01(elapsedTime / moveDuration);
+                transform.position = Vector2.Lerp(startPosition, targetPosition, percent);
+                yield return null;
             }
 
-            elapsedTime += Time.deltaTime;
-            float percent = Mathf.Clamp01(elapsedTime / moveDuration);
-            transform.position = Vector2.Lerp(startPosition, targetPosition, percent);
-            yield return null;
+            transform.position = targetPosition;
+            distanceTraveled += cellSize;
+            lastPosition = transform.position;
+
+            if (!IsObstacleOrLootAtPosition(targetPosition + direction * cellSize))
+                GetLootAtPosition(targetPosition + direction * cellSize);
+
+            // Check what the next step would hit
+            Vector2 nextDir = diagonalMovementAllowed ? GetDiagonalDirection() : GetCardinalDirection();
+
+            // Stop looping if: movement disabled, no key held, direction changed, blocked, or enemy in next cell
+            if (!Manager.instance.playerCanMove || nextDir == Vector2.zero || !canMove)
+                break;
+
+            if (nextDir != direction)
+            {
+                // Direction changed mid-step — hand back to Update so it re-evaluates cleanly
+                break;
+            }
+
+            Enemy enemyAtTarget = GetEnemyAtTarget(direction);
+            if (enemyAtTarget != null)
+            {
+                player.EngageCombat(enemyAtTarget);
+                break;
+            }
+
+            if (IsTargetBlocked(direction))
+                break;
+
+            // Update animation if still moving the same way
+            PlayWalkIfChanged(direction);
         }
-
-        transform.position = targetPosition;
-
-        distanceTraveled += cellSize;
-        lastPosition = transform.position;
 
         isMoving = false;
 
-        // If player isn't holding a direction after the step, idle once.
         if (!AnyMoveKeyHeld())
         {
             wasAnimatingWalk = false;
@@ -317,4 +357,18 @@ public class PlayerMovement : MonoBehaviour
     public float GetDistanceTraveled() => distanceTraveled;
     public bool GetCanMove() => canMove;
     public void SetCanMove(bool value) => canMove = value;
+
+    private Enemy GetEnemyAtTarget(Vector2 direction)
+    {
+        Vector2 snappedPos = SnapToGrid(transform.position);
+        Vector2 centerTarget = snappedPos + playerCollider.offset + direction.normalized * cellSize;
+
+        Vector2 size = playerCollider.bounds.size;
+        size.x = Mathf.Max(0.001f, size.x - collisionInset);
+        size.y = Mathf.Max(0.001f, size.y - collisionInset);
+
+        Collider2D hit = Physics2D.OverlapBox(centerTarget, size, 0f, enemyHitboxLayer);
+        if (hit == null) return null;
+        return hit.GetComponentInParent<Enemy>();
+    }
 }
