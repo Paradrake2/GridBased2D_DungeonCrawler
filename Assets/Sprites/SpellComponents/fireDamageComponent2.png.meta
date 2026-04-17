@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 83fb75483a886744bba88b7af7f5f816
+guid: 1c138fa0e458c094faf73b6fe56c89dc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 281020449729117571
-    second: Core5_0
+      213: -5660123585563422341
+    second: fireDamageComponent2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Core5_0
+      name: fireDamageComponent2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 38d79b03c9266e300800000000000000
-      internalID: 281020449729117571
+      spriteID: b719ea966933371b0800000000000000
+      internalID: -5660123585563422341
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Core5_0: 281020449729117571
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

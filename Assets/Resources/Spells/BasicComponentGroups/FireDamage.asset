@@ -18,3 +18,18 @@ MonoBehaviour:
   - component: {fileID: 11400000, guid: bbd48a7a89beb034da77c3eacdf7d7ae, type: 2}
     isUnlocked: 1
     index: 0
+  - component: {fileID: 11400000, guid: b815741f8a633194a8730878f710a6dc, type: 2}
+    isUnlocked: 1
+    index: 1
+  - component: {fileID: 11400000, guid: cafb1cc45cd46374ca44871e53a859cf, type: 2}
+    isUnlocked: 1
+    index: 2
+  - component: {fileID: 11400000, guid: 0b5c2ec9c464d824f87b31e3ded967e1, type: 2}
+    isUnlocked: 1
+    index: 3
+  - component: {fileID: 11400000, guid: 18d03739448565d4da21cd883c1682ff, type: 2}
+    isUnlocked: 1
+    index: 4
+  - component: {fileID: 11400000, guid: cdb50580a0b86e14d9516ff88a08f40a, type: 2}
+    isUnlocked: 1
+    index: 5
