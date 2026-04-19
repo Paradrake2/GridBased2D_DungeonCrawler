@@ -264,7 +264,7 @@ public class Player : MonoBehaviour
     // Called by PlayerMovement when the player bumps into an enemy's cell
     public void EngageCombat(Enemy enemy)
     {
-        if (isInCombat || enemy == null || !playerMovement.hasMoved) return;
+        if (isInCombat || enemy == null) return;
         if (Time.time < combat.fleeCooldownUntil) return;
         // float damageMult = Mathf.Min(3f, playerMovement.GetDistanceTraveled());
         float damageMult = 1f;

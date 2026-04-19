@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DF_Bridge
   m_EditorClassIdentifier: 
   componentName: Bridge
+  description: {fileID: 11400000, guid: eb9a91d5b0ebb3a459c04565c35e95a7, type: 2}
   icon: {fileID: -7969604912666603509, guid: 409cd24506a14ae489dc708f2e00952a, type: 3}
   tier: 0
   componentCategory: 1
@@ -24,12 +25,30 @@ MonoBehaviour:
   compatibleWith: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
   directions:
     inputDirections:
-    - direction: {x: 0, y: 2}
-      directions: 0
+    - direction: 0
+      IOType: 0
+      isActive: 1
+    - direction: 1
+      IOType: 0
+      isActive: 1
+    - direction: 2
+      IOType: 0
+      isActive: 1
+    - direction: 3
+      IOType: 0
       isActive: 1
     outputDirections:
-    - direction: {x: 0, y: -1}
-      directions: 1
+    - direction: 0
+      IOType: 0
+      isActive: 1
+    - direction: 1
+      IOType: 0
+      isActive: 1
+    - direction: 2
+      IOType: 0
+      isActive: 1
+    - direction: 3
+      IOType: 0
       isActive: 1
   costs: []
   stats: []

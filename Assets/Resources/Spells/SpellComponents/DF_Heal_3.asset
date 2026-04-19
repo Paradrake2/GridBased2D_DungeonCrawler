@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DF_Heal_3
   m_EditorClassIdentifier: 
   componentName: DF_Heal
+  description: {fileID: 11400000, guid: 5b6f452de72f01b4e9b6db434c2e4fe2, type: 2}
   icon: {fileID: 7331153962537545874, guid: d35edf694e0289147ada62133945b648, type: 3}
   tier: 3
   componentCategory: 1

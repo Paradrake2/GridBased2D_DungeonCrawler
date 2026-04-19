@@ -372,6 +372,9 @@ public class SpellCrafterUI : MonoBehaviour
         selectedGridCell = cell;
         PopulateComponentList();
         UpdateAttributePickerForSelection();
+
+        if (cell != null && cell.hasComponent && cell.placedComponent != null)
+            UpdateComponentDescription(cell.placedComponent.Description.GetDescription(cell.placedComponent));
     }
 
     private void HandleCellCleared(SpellGridCell cell, SpellComponent oldComponent)

@@ -237,10 +237,9 @@ public class PlayerCombat : MonoBehaviour
                 {
                     potentialDamage *= enemy.stats.esh.weakness.multiplier;
                     Debug.Log("Weakness applied! New Damage: " + potentialDamage);
-                    totalDamage += potentialDamage;
-                    break;
                 }
             }
+            totalDamage += potentialDamage;
             Debug.Log("After " + attr.attackAttribute + ": " + totalDamage);
         }
         return totalDamage;

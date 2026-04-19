@@ -59,6 +59,10 @@ public class DataflowSpellBehaviour : SpellBehaviour
 
         if (hasDataflowResults)
         {
+            // Merge regular (non-DF) statModifiers and spellAttributes so that mixed spells
+            // (regular + DF components together) contribute both sets of effects.
+            MergeRegularStats(eval, player);
+
             player.spellManager.SetSpellStats(eval.spellStats);
             player.spellManager.SetTempPlayerAttributeSet(eval.tempAttributeSet);
             player.spellManager.SetPendingSpellFlatDamage(eval.GetFlatDamage());
@@ -93,6 +97,62 @@ public class DataflowSpellBehaviour : SpellBehaviour
         var defenses = eval.tempAttributeSet?.GetDefenseAttributes();
         if (defenses != null && defenses.Count > 0) return true;
         return false;
+    }
+
+    private void MergeRegularStats(DFEvaluationResult eval, Player player)
+    {
+        // Merge flat/scaling stat modifiers from regular components into the DF stat collection.
+        var regularStats = GetStatModifiers();
+        if (regularStats != null)
+        {
+            foreach (var spellStat in regularStats)
+            {
+                if (spellStat.stat == null) continue;
+                float effectiveValue = spellStat.value;
+                if (spellStat.modifier != 0f)
+                    effectiveValue += player.statCol.GetStat(spellStat.stat) * spellStat.modifier;
+                float current = eval.spellStats.GetStat(spellStat.stat);
+                eval.spellStats.SetStat(spellStat.stat, current + effectiveValue);
+            }
+        }
+
+        // Merge attribute effects from regular components into the DF attribute set.
+        var regularAttrs = GetSpellAttributes();
+        if (regularAttrs == null || regularAttrs.Count == 0) return;
+
+        PlayerAttributeSet regularAttrSet = BuildAttributeSet(regularAttrs);
+
+        foreach (var atk in regularAttrSet.GetAttackAttributes())
+        {
+            bool found = false;
+            foreach (var existing in eval.tempAttributeSet.GetAttackAttributes())
+            {
+                if (existing.attackAttribute == atk.attackAttribute)
+                {
+                    existing.attackAttributeValue += atk.attackAttributeValue;
+                    found = true;
+                    break;
+                }
+            }
+            if (!found)
+                eval.tempAttributeSet.AddAttackAttribute(atk.attackAttribute, atk.attackAttributeValue);
+        }
+
+        foreach (var def in regularAttrSet.GetDefenseAttributes())
+        {
+            bool found = false;
+            foreach (var existing in eval.tempAttributeSet.GetDefenseAttributes())
+            {
+                if (existing.defenseAttribute == def.defenseAttribute)
+                {
+                    existing.defenseAttributeValue += def.defenseAttributeValue;
+                    found = true;
+                    break;
+                }
+            }
+            if (!found)
+                eval.tempAttributeSet.AddDefenseAttribute(def.defenseAttribute, def.defenseAttributeValue);
+        }
     }
     private void InCombatCast()
     {
