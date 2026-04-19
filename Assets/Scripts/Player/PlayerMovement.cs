@@ -335,7 +335,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void TriggerIdleFromFacing()
+    public void TriggerIdleFromFacing()
     {
         ResetIdleTriggers();
         ResetMovementTriggers();
@@ -344,6 +344,24 @@ public class PlayerMovement : MonoBehaviour
         else if (facingDirection == Vector2.down) anim.SetTrigger("IdleDown");
         else if (facingDirection == Vector2.left) anim.SetTrigger("IdleLeft");
         else if (facingDirection == Vector2.right) anim.SetTrigger("IdleRight");
+
+        wasAnimatingWalk = false;
+        lastAnimDirection = facingDirection;
+    }
+
+    public void ForceIdleFromFacing()
+    {
+        ResetIdleTriggers();
+        ResetMovementTriggers();
+        anim.ResetTrigger("Attacking");
+
+        string stateName;
+        if (facingDirection == Vector2.up) stateName = "IdleUp";
+        else if (facingDirection == Vector2.left) stateName = "IdleLeft";
+        else if (facingDirection == Vector2.right) stateName = "IdleRight";
+        else stateName = "IdleDown";
+
+        anim.anim.Play(stateName, 0, 0f);
 
         wasAnimatingWalk = false;
         lastAnimDirection = facingDirection;

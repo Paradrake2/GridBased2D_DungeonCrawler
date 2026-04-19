@@ -19,7 +19,8 @@ public static class PlayerStatExporter
         public StatCategory category;
         public float value;
     }
-    [MenuItem("Tools/Export Player Stats to JSON")]
+    //[MenuItem("Tools/Export Player Stats to JSON")]
+    /**
     public static void ExportPlayerStatsToJson()
     {
         Player player = GameObject.FindFirstObjectByType<Player>();
@@ -111,6 +112,6 @@ public static class PlayerStatExporter
 
         File.WriteAllText(path, json);
         Debug.Log($"Exported {export.playerStats.Count} PlayerStatsHolder assets to {path}");
-        EditorUtility.RevealInFinder(path);
     }
+    **/
 }

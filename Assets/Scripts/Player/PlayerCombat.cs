@@ -14,6 +14,7 @@ public class PlayerCombat : MonoBehaviour
     private Vector2 startPos;
     public Enemy targeted;
     private Coroutine combatCoroutine;
+    [HideInInspector] public float fleeCooldownUntil;
     private readonly List<Coroutine> activeDebuffCoroutines = new List<Coroutine>();
     void Start()
     {
@@ -43,6 +44,10 @@ public class PlayerCombat : MonoBehaviour
         float firstDmg = CalculateDamageTaken(firstEnemy, player.GetDamage() * damageMult, player.GetAttackAttributes());
         firstEnemy.TakeDamage(firstDmg);
         SpawnDamageIndicators(target.transform.position, firstDmg, firstDmgType);
+
+        // Enemy may have died from the first hit
+        if (firstEnemy == null || firstEnemy.stats.currentHealth <= 0) return;
+
         targeted = firstEnemy;
         combatUI?.Show(targeted);
         // get data values for spells
@@ -265,6 +270,7 @@ public class PlayerCombat : MonoBehaviour
             targeted = null;
         }
 
+        fleeCooldownUntil = Time.time + 0.5f;
         EndCombat();
     }
 
@@ -282,8 +288,7 @@ public class PlayerCombat : MonoBehaviour
         Manager.instance.playerCanMove = true;
         GetComponent<BoxCollider2D>().enabled = true; // re-enable detection hitbox
         anim.ResetTrigger("Attacking");
-        anim.SetTrigger("Idle");
-        anim.ResetTrigger("Idle");
+        movement.ForceIdleFromFacing();
     }
 
 

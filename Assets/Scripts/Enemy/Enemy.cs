@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
     }
     public void PositionForCombat()
     {
-        //positionBeforeCombat = new Vector2(transform.position.x, transform.position.y);
+        positionBeforeCombat = transform.position;
         transform.position = new Vector2(transform.position.x + 0.5f, transform.position.y); // position enemy to the right of the player
     }
     public void BeginCombat(Player player)
@@ -51,6 +51,10 @@ public class Enemy : MonoBehaviour
             StopCoroutine(combatCoroutine);
             combatCoroutine = null;
         }
+        anim.ResetTrigger("AttackStart");
+        anim.ResetTrigger("CombatInit");
+        anim.SetTrigger("AttackFinished");
+        transform.position = positionBeforeCombat;
     }
     public void TakeTrueDamage(float damage)
     {

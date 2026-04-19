@@ -16,7 +16,7 @@ MonoBehaviour:
   description: {fileID: 11400000, guid: ddaad2ee7c091674297231f9a438d853, type: 2}
   icon: {fileID: -8619293307546169352, guid: 608f813c761721440acc9687098fe374, type: 3}
   tier: 0
-  componentCategory: 0
+  componentCategory: 1
   componentType: 9
   value: 0
   cost: 2
