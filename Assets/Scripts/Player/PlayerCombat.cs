@@ -10,15 +10,22 @@ public class PlayerCombat : MonoBehaviour
     public PlayerMovement movement;
     public PlayerAnimator anim;
     public Manager manager;
+    public CombatUI combatUI;
     private Vector2 startPos;
     public Enemy targeted;
+    private Coroutine combatCoroutine;
     private readonly List<Coroutine> activeDebuffCoroutines = new List<Coroutine>();
     void Start()
+    {
+        Initialize();
+    }
+    public void Initialize()
     {
         player = GetComponent<Player>();
         manager = FindAnyObjectByType<Manager>();
         movement = GetComponent<PlayerMovement>();
         anim = GetComponent<PlayerAnimator>();
+        if (combatUI == null) combatUI = FindAnyObjectByType<CombatUI>();
     }
     public void StartCombat(GameObject target, float attackSpeed, float damageMult, List<PlayerDebuffInflictorHolder> debuffInflictors)
     {
@@ -37,10 +44,11 @@ public class PlayerCombat : MonoBehaviour
         firstEnemy.TakeDamage(firstDmg);
         SpawnDamageIndicators(target.transform.position, firstDmg, firstDmgType);
         targeted = firstEnemy;
+        combatUI?.Show(targeted);
         // get data values for spells
         // begin combat routine
         target.GetComponent<Enemy>().BeginCombat(player);
-        StartCoroutine(CombatRoutine(attackSpeed, target));
+        combatCoroutine = StartCoroutine(CombatRoutine(attackSpeed, target));
     }
 
     private IEnumerator CombatRoutine(float attackSpeed, GameObject target)
@@ -133,6 +141,37 @@ public class PlayerCombat : MonoBehaviour
         if (!gotDamageFromStats)
             totalDamage = player.spellManager.GetPendingSpellFlatDamage();
 
+        // Merge any attribute-type stats from spellStats into tempAttackAttributes
+        // so they get processed by CalculateAttributeDamage.
+        if (stats != null && AttributeManager.instance != null)
+        {
+            foreach (var statValue in stats.Stats)
+            {
+                if (statValue == null || statValue.StatType == null) continue;
+                if (!AttributeManager.instance.IsAttackAttribute(statValue.StatType)) continue;
+                if (statValue.Value == 0f) continue;
+
+                bool alreadyPresent = false;
+                foreach (var existing in tempAttackAttributes)
+                {
+                    if (existing.attackAttribute == statValue.StatType)
+                    {
+                        existing.attackAttributeValue += statValue.Value;
+                        alreadyPresent = true;
+                        break;
+                    }
+                }
+                if (!alreadyPresent)
+                {
+                    tempAttackAttributes.Add(new PlayerAttackAttributes
+                    {
+                        attackAttribute = statValue.StatType,
+                        attackAttributeValue = statValue.Value
+                    });
+                }
+            }
+        }
+
         // Apply enemy defense + attribute interactions, but DO NOT call CalculateDamageTaken()
         // (it calls DamageAfterSpell again, causing infinite recursion).
         float afterDefense = Mathf.Max(0f, totalDamage - enemy.stats.esh.defense);
@@ -193,11 +232,11 @@ public class PlayerCombat : MonoBehaviour
                 {
                     potentialDamage *= enemy.stats.esh.weakness.multiplier;
                     Debug.Log("Weakness applied! New Damage: " + potentialDamage);
+                    totalDamage += potentialDamage;
                     break;
                 }
             }
-            totalDamage += potentialDamage;
-            //Debug.Log("After " + attr.attackAttribute + ": " + totalDamage);
+            Debug.Log("After " + attr.attackAttribute + ": " + totalDamage);
         }
         return totalDamage;
     }
@@ -210,8 +249,29 @@ public class PlayerCombat : MonoBehaviour
         transform.position = new Vector2(targetPos.x - 0.5f, targetPos.y); // position player to the left of the enemy
         target.GetComponent<Enemy>().PositionForCombat();
     }
+    public void FleeCombat()
+    {
+        if (!player.isInCombat) return;
+
+        if (combatCoroutine != null)
+        {
+            StopCoroutine(combatCoroutine);
+            combatCoroutine = null;
+        }
+
+        if (targeted != null)
+        {
+            targeted.StopCombat();
+            targeted = null;
+        }
+
+        EndCombat();
+    }
+
     public void EndCombat()
     {
+        combatCoroutine = null;
+        combatUI?.Hide();
         foreach (var c in activeDebuffCoroutines)
             if (c != null) StopCoroutine(c);
         activeDebuffCoroutines.Clear();

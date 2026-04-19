@@ -193,6 +193,7 @@ MonoBehaviour:
   attackAnimLength: 0.2
   attackAnimHitFrame: 0.2
   idleAnimLength: 1
+  idleAnimTriggerFrame: 0.5
 --- !u!114 &6261560963102767870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   esh: {fileID: 11400000, guid: a33ac2add33502541acaf46dfc25ee9f, type: 2}
   currentHealth: 0
+  enemyName: Green Goblin
 --- !u!50 &8515317939074768445
 Rigidbody2D:
   serializedVersion: 5

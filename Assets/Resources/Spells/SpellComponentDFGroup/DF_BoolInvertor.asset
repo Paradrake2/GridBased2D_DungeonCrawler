@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f44206d162dd245b971000dcbf7388, type: 3}
+  m_Name: DF_BoolInvertor
+  m_EditorClassIdentifier: 
+  icon: {fileID: 186149969352295931, guid: d68e2e3c8327c9a4481e09d3e33718a2, type: 3}
+  groupName: BoolInverter
+  index: 3
+  components:
+  - direction: 0
+    component: {fileID: 11400000, guid: 882b5b7efd00a9d4598d287b555986cd, type: 2}
+  - direction: 1
+    component: {fileID: 11400000, guid: 1aefa62a7a925f44da4ce40b18886605, type: 2}
+  - direction: 3
+    component: {fileID: 11400000, guid: 45367f4f33ab40d4ea3f749d112ad61c, type: 2}
+  - direction: 2
+    component: {fileID: 11400000, guid: 1566696ca58f3ca4da1269a35a66d197, type: 2}

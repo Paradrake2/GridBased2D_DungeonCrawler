@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a02c12dcb74ac489d1377de139f58e, type: 3}
+  m_Name: DF_SetAttackAttribute2
+  m_EditorClassIdentifier: 
+  componentName: setattackattribute
+  description: {fileID: 11400000, guid: dcdf157d661e7f644892b28953604a87, type: 2}
+  icon: {fileID: 9046819080648816312, guid: 9f756d1f3678de540bfb01962902617b, type: 3}
+  tier: 0
+  componentCategory: 1
+  componentType: 9
+  value: 0
+  cost: 1
+  magicCost: 1
+  neighboringComponents: []
+  compatibleWith: 08000000090000000500000006000000
+  directions:
+    inputDirections:
+    - direction: 0
+      IOType: 1
+      isActive: 1
+    - direction: 1
+      IOType: 3
+      isActive: 1
+    outputDirections: []
+  costs: []
+  stats: []
+  spellAttributes: 0
+  inputAttribute: 1
+  inputValue: 0

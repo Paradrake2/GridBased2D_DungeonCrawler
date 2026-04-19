@@ -35,7 +35,7 @@ public class SpellCrafter : MonoBehaviour
         Spell newSpell = ScriptableObject.CreateInstance<Spell>();
         SpellComponent coreComponent = composition.components.Find(c => c.ComponentType == SpellComponentType.Core);
         List<SpellComponent> damageComponents = composition.components.FindAll(c => c.ComponentType == SpellComponentType.Damage);
-        float damageMult = CalculateDamageMult(damageComponents) * coreComponent.Value;
+        float damageMult = CalculateDamageMult(damageComponents, coreComponent);
         List<SpellComponent> healComponents = composition.components.FindAll(c => c.ComponentType == SpellComponentType.Healing);
         float healAmount = CalculateHealAmount(healComponents) * coreComponent.Value;
         List<SpellComponent> defenseComponents = composition.components.FindAll(c => c.ComponentType == SpellComponentType.Defense);
@@ -89,6 +89,23 @@ public class SpellCrafter : MonoBehaviour
         {
             if (c.ComponentType == SpellComponentType.Attribute)
             {
+                // Skip if this component already contributes the same attribute via SpellStat entries,
+                // to avoid double-counting.
+                if (c.Stats != null && c.SpellAttributes != SpellAttribute.None)
+                {
+                    string attrName = c.SpellAttributes.ToString();
+                    bool coveredByStat = false;
+                    foreach (var stat in c.Stats)
+                    {
+                        if (stat.stat != null && stat.stat.name == attrName)
+                        {
+                            coveredByStat = true;
+                            break;
+                        }
+                    }
+                    if (coveredByStat) continue;
+                }
+
                 float val = CalculateStrengthenedValue(c, c.NeighboringComponents ?? new List<SpellComponent>());
                 attributes.Add(new SpellAttributeWithValue(c.SpellAttributes, val));
             }
@@ -140,7 +157,7 @@ public class SpellCrafter : MonoBehaviour
 
         return clone;
     }
-    private float CalculateDamageMult(List<SpellComponent> damageComponents = null)
+    private float CalculateDamageMult(List<SpellComponent> damageComponents = null, SpellComponent coreComponent = null)
     {
         float totalMult = 1f;
         if (damageComponents != null)
@@ -150,6 +167,8 @@ public class SpellCrafter : MonoBehaviour
             {
                 totalMult += CalculateStrengthenedValue(comp, comp.NeighboringComponents); // mult by adjacent strength components
             }
+
+            totalMult = totalMult * coreComponent.Value; // core component multiplies the final damage multiplier
         }
         return totalMult;
     }

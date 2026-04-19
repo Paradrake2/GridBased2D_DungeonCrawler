@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2467ab9134ae081429b3e5a7dbb0206c, type: 3}
+  m_Name: HealComponentNode
+  m_EditorClassIdentifier: 
+  skillName: HealComponentNode
+  icon: {fileID: -6763284720625396414, guid: 1d72085834eea904e9fe2f667448e9f0, type: 3}
+  prerequisites:
+  - {fileID: 11400000, guid: 9ffd908def5e50945b4f5bb40d78f8e4, type: 2}
+  skillPointCost: 1
+  acquired: 0
+  component: {fileID: 11400000, guid: 3258a017c25a5514297447743fea4bbd, type: 2}

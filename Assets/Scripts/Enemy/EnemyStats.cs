@@ -22,7 +22,7 @@ public class EnemyStats : MonoBehaviour
     
     public EnemyStatsHolder esh;
     public float currentHealth;
-
+    public string enemyName;
     public float GetAttributeValue(StatType attribute)
     {
         foreach (var attr in esh.enemyAttributesList)

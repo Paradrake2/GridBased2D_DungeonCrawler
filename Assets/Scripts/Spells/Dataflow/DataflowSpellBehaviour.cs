@@ -54,9 +54,11 @@ public class DataflowSpellBehaviour : SpellBehaviour
             verbose = false
         };
         var eval = DFEvaluator.Evaluate(composition, context);
-        if (eval != null)
-        {
 
+        bool hasDataflowResults = eval != null && HasMeaningfulResults(eval);
+
+        if (hasDataflowResults)
+        {
             player.spellManager.SetSpellStats(eval.spellStats);
             player.spellManager.SetTempPlayerAttributeSet(eval.tempAttributeSet);
             player.spellManager.SetPendingSpellFlatDamage(eval.GetFlatDamage());
@@ -67,11 +69,30 @@ public class DataflowSpellBehaviour : SpellBehaviour
                 Debug.Log($"Spell healed player for {eval.healAmount} HP");
             }
         }
+        else
+        {
+            // No dataflow grid results — fall back to pre-calculated regular spell values.
+            base.Cast();
+            // base.Cast() already sets spell behaviour, triggers cooldown, etc.
+            return;
+        }
 
         // Let combat know what spell behaviour is currently active (used for damage multiplier etc.).
         player.spellManager.SetSpellBehaviour(this);
         TriggerCooldown();
         Debug.Log($"Casting dataflow spell (cooldown: {GetCooldownDuration():F1}s)");
+    }
+
+    private static bool HasMeaningfulResults(DFEvaluationResult eval)
+    {
+        if (eval.GetFlatDamage() != 0f) return true;
+        if (eval.healAmount != 0f) return true;
+        if (eval.cost != 0f) return true;
+        var attacks = eval.tempAttributeSet?.GetAttackAttributes();
+        if (attacks != null && attacks.Count > 0) return true;
+        var defenses = eval.tempAttributeSet?.GetDefenseAttributes();
+        if (defenses != null && defenses.Count > 0) return true;
+        return false;
     }
     private void InCombatCast()
     {

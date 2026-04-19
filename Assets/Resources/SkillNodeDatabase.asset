@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a342f057c789034bb01e43e8a480c5f, type: 3}
   m_Name: SkillNodeDatabase
   m_EditorClassIdentifier: 
-  skillNodes: []
+  skillNodes:
+  - {fileID: 11400000, guid: e857aeb4901562b44b557bc7f05a0e85, type: 2}
+  - {fileID: 11400000, guid: 9ffd908def5e50945b4f5bb40d78f8e4, type: 2}
+  - {fileID: 11400000, guid: 81878e0c4ebba9a4e90e19e440ab5a63, type: 2}
+  - {fileID: 11400000, guid: 58688f5c741728f44be2b4a8a0b90029, type: 2}
+  - {fileID: 11400000, guid: 9e1472f99578a5c4592ac6f757ca1809, type: 2}
+  - {fileID: 11400000, guid: 01045936b30f13f40a77c637090954f3, type: 2}

@@ -16,7 +16,7 @@ MonoBehaviour:
   icon: {fileID: 5477200406350886162, guid: e6f8b0b929f00b140949f88af241f330, type: 3}
   prerequisites:
   - {fileID: 11400000, guid: 9ffd908def5e50945b4f5bb40d78f8e4, type: 2}
-  skillPointCost: 10
+  skillPointCost: 1
   acquired: 0
   givenStat: {fileID: 11400000, guid: 3deb6a3649d4b5d4e95c23ecadd98cd7, type: 2}
   statIncreaseAmount: 1

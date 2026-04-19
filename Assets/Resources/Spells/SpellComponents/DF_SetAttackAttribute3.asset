@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53a02c12dcb74ac489d1377de139f58e, type: 3}
-  m_Name: DF_SetAttackAttribute
+  m_Name: DF_SetAttackAttribute3
   m_EditorClassIdentifier: 
   componentName: setattackattribute
-  icon: {fileID: -1015913854813779228, guid: e6f8b0b929f00b140949f88af241f330, type: 3}
+  description: {fileID: 11400000, guid: dcdf157d661e7f644892b28953604a87, type: 2}
+  icon: {fileID: -4032237152897304995, guid: 718f3657a5ec0e34d99a1425e716d82e, type: 3}
   tier: 0
   componentCategory: 1
   componentType: 9
@@ -21,21 +22,18 @@ MonoBehaviour:
   cost: 1
   magicCost: 1
   neighboringComponents: []
-  compatibleWith: 080000000900000005000000
+  compatibleWith: 08000000090000000500000006000000
   directions:
     inputDirections:
-    - direction: 0
+    - direction: 2
       IOType: 1
       isActive: 1
-    - direction: 1
+    - direction: 3
       IOType: 3
       isActive: 1
     outputDirections: []
   costs: []
-  stats:
-  - stat: {fileID: 11400000, guid: 9e8b3d9ad2b47da4b84d7bdab851a78f, type: 2}
-    modifier: 1
-    value: 10
+  stats: []
   spellAttributes: 0
-  inputAttribute: 1
-  inputValue: 0
+  inputAttribute: 3
+  inputValue: 2

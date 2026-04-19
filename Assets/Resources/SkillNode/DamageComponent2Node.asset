@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2467ab9134ae081429b3e5a7dbb0206c, type: 3}
+  m_Name: DamageComponent2Node
+  m_EditorClassIdentifier: 
+  skillName: Unlock Damage Component 2
+  icon: {fileID: 916273947921822248, guid: c4c181b131f795d4a91db04706de8a30, type: 3}
+  prerequisites:
+  - {fileID: 11400000, guid: 58688f5c741728f44be2b4a8a0b90029, type: 2}
+  skillPointCost: 1
+  acquired: 0
+  component: {fileID: 11400000, guid: 177f17147ea74db4397136dc49d17c05, type: 2}

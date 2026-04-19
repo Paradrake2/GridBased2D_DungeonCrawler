@@ -15,7 +15,7 @@ public class DF_EnemyWeaknessSensorComponent : SpellComponent, IDFComponentEvalu
 
         // Emits the enemy's weakness attribute (e.g., Fire) as an Attribute signal.
         //Debug.Log("Enemy weakness detected: " + (weakness != null ? weakness.displayName : "None"));
-        //Debug.Log(context.target.name);
+        Debug.Log(context.target.name + " weakness detected: " + (weakness != null ? weakness.displayName : "None"));
         DFEvaluator.WriteOutputsToAllActiveDirections(node, DFSignal.FromAttribute(weakness));
     }
 

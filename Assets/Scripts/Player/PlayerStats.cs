@@ -280,6 +280,12 @@ public class PlayerStats : MonoBehaviour
     public void AddExperience(float amount)
     {
         xp += amount;
+        currentXP += amount;
+        while (currentXP >= experienceToNextLevel)
+        {
+            currentXP -= experienceToNextLevel;
+            LevelUp();
+        }
         OnXPChanged?.Invoke();
     }
     public int GetPlayerLevel()

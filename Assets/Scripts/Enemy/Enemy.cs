@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
     public float attackAnimHitFrame = 0.6f; // time in seconds when the hit frame occurs in the attack animation
     public float idleAnimLength = 1f;
     public float idleAnimTriggerFrame = 0.5f; // time in seconds when the idle animation should be triggered after combat starts
+    private Coroutine combatCoroutine;
     public void TakeDamage(float damage)
     {
         stats.currentHealth -= Mathf.Max(1, damage);
@@ -41,7 +42,15 @@ public class Enemy : MonoBehaviour
     public void BeginCombat(Player player)
     {
         anim.SetTrigger("CombatInit");
-        StartCoroutine(CombatRoutine(player));
+        combatCoroutine = StartCoroutine(CombatRoutine(player));
+    }
+    public void StopCombat()
+    {
+        if (combatCoroutine != null)
+        {
+            StopCoroutine(combatCoroutine);
+            combatCoroutine = null;
+        }
     }
     public void TakeTrueDamage(float damage)
     {
@@ -87,6 +96,7 @@ public class Enemy : MonoBehaviour
                 }
             }
         }
+        player.stats.AddExperience(stats.esh.experienceDropped);
         Destroy(gameObject);
         player.combat.EndCombat();
     }

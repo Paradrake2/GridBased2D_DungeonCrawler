@@ -265,7 +265,8 @@ public class Player : MonoBehaviour
     public void EngageCombat(Enemy enemy)
     {
         if (isInCombat || enemy == null || !playerMovement.hasMoved) return;
-        float damageMult = Mathf.Min(3f, playerMovement.GetDistanceTraveled());
+        // float damageMult = Mathf.Min(3f, playerMovement.GetDistanceTraveled());
+        float damageMult = 1f;
         isInCombat = true;
         combat.StartCombat(enemy.gameObject, attackSpeed, damageMult, debuffInflictors);
         EnemyManager.instance.InCombatWith(enemy);

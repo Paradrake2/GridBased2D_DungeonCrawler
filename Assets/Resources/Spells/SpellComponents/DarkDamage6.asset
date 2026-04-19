@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DarkDamage6
   m_EditorClassIdentifier: 
   componentName: DarkDamage6
-  description: {fileID: 11400000, guid: bdfa707e134364f49a18fc8e7f790f91, type: 2}
+  description: {fileID: 11400000, guid: efa68b45eef78d04bbfe474b1b0e704a, type: 2}
   icon: {fileID: 8639881535394970038, guid: ea781fac8114197428b038bb0d78d851, type: 3}
   tier: 0
   componentCategory: 0

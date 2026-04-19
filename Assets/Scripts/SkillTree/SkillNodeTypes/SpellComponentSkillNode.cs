@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "SpellComponentSkillNode", menuName = "SkillTree/SpellComponentSkillNode")]
 public class SpellComponentSkillNode : SkillNode
 {
     [SerializeField] private SpellComponent component;

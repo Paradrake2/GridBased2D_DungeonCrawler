@@ -6,7 +6,7 @@ public class SkillNode : ScriptableObject
     [SerializeField] protected string skillName;
     [SerializeField] protected Sprite icon;
     [SerializeField] protected List<SkillNode> prerequisites;
-    [SerializeField] protected int skillPointCost;
+    [SerializeField] protected int skillPointCost = 1;
     [SerializeField] protected bool acquired = false;
     public virtual void AcquireSkill()
     {

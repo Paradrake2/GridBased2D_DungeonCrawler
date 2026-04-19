@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WaterDamage5
   m_EditorClassIdentifier: 
   componentName: WaterDamage5
-  description: {fileID: 11400000, guid: ce344d52c82b1634c8145944a69fad96, type: 2}
+  description: {fileID: 11400000, guid: e9db6bc5d2e41774782cd44dfc996a2b, type: 2}
   icon: {fileID: -2976405735318107983, guid: bed77457a136a644db5c18034fb50df9, type: 3}
   tier: 0
   componentCategory: 0

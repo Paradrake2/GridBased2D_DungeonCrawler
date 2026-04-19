@@ -114,7 +114,7 @@ MonoBehaviour:
   immunities: []
   player: {fileID: 0}
   dropItemNum: 1
-  anim: {fileID: 0}
+  anim: {fileID: 2134582835299856907}
   attackAnimLength: 1
   attackAnimHitFrame: 0.6
   idleAnimLength: 1
@@ -133,6 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   esh: {fileID: 11400000, guid: 28923bc9a0952d24aa605070370c17d1, type: 2}
   currentHealth: 0
+  enemyName: 
 --- !u!61 &2861411873250225163
 BoxCollider2D:
   m_ObjectHideFlags: 0

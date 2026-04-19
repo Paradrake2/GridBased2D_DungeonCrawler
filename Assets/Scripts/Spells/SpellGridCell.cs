@@ -103,7 +103,10 @@ public class SpellGridCell : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 
         var img = GetComponent<Image>();
         if (img != null)
-            img.sprite = null;
+            img.sprite = sprite;
+
+        if (componentText != null)
+            componentText.text = "";
 
         ClearDirectionIndicators();
         SetSelected(false);

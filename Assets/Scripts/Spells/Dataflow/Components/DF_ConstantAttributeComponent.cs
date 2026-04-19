@@ -13,6 +13,10 @@ public class DF_ConstantAttributeComponent : SpellComponent, IDFComponentEvaluat
 
     public void Evaluate(DFGridRuntime runtime, DFNodeInstance node, DFContext context, DFEvaluationResult result, int pass, bool isFinalPass)
     {
-        DFEvaluator.WriteOutputsToAllActiveDirections(node, DFSignal.FromAttribute(attribute));
+        StatType attr = attribute;
+        if (attr == null && AttributeManager.instance != null && AttributeManager.instance.allAttributePairs.Count > 0)
+            attr = AttributeManager.instance.allAttributePairs[0].GetDamageAttribute();
+
+        DFEvaluator.WriteOutputsToAllActiveDirections(node, DFSignal.FromAttribute(attr));
     }
 }

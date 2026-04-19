@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c1d4d6ae521ca4a8f3beb79b664922, type: 3}
   m_Name: WaterDamage5
   m_EditorClassIdentifier: 
-  componentName: WindDamage5
-  descriptionText: Ultimate Wind Damage Boost
+  componentName: WaterDamage5
+  descriptionText: Ultimate Water Damage Boost
   useValue: 1
