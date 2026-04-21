@@ -74,12 +74,31 @@ public class SpellCrafter : MonoBehaviour
         List<SpellStat> stats = new List<SpellStat>();
         foreach (var c in composition.components)
         {
+            List<SpellComponent> neighbors = c.NeighboringComponents ?? new List<SpellComponent>();
+            float strengthMult = GetStrengthMultiplier(neighbors);
             foreach (var stat in c.Stats)
             {
-                stats.Add(stat);
+                SpellStat strengthened = new SpellStat
+                {
+                    stat = stat.stat,
+                    modifier = stat.modifier,
+                    value = stat.value * strengthMult
+                };
+                stats.Add(strengthened);
             }
         }
         return stats;
+    }
+    private float GetStrengthMultiplier(List<SpellComponent> adjacentComponents)
+    {
+        float mult = 1f;
+        if (adjacentComponents == null) return mult;
+        foreach (var adjacent in adjacentComponents)
+        {
+            if (adjacent == null || adjacent.ComponentType != SpellComponentType.Strength) continue;
+            mult *= adjacent.Value;
+        }
+        return mult;
     }
 
     private List<SpellAttributeWithValue> CalculateSpellAttributes(SpellComposition composition)

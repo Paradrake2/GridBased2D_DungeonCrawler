@@ -53,8 +53,33 @@ public class ComponentDescription : ScriptableObject
         if (useValue) desc += $"Value: {sc.Value}\n";
         desc += UnpackMagicCost(sc);
         desc += UnpackManaCost(sc);
+        desc += UnpackStats(sc);
         desc += UnpackDirectionData(directionData);
         return desc;
+    }
+    private string UnpackStats(SpellComponent sc)
+    {
+        if (sc.Stats == null || sc.Stats.Count == 0) return "";
+        float strengthMult = 1f;
+        if (sc.NeighboringComponents != null)
+        {
+            foreach (var neighbor in sc.NeighboringComponents)
+            {
+                if (neighbor == null || neighbor.ComponentType != SpellComponentType.Strength) continue;
+                strengthMult *= neighbor.Value;
+            }
+        }
+        string result = "";
+        foreach (var stat in sc.Stats)
+        {
+            if (stat.stat == null) continue;
+            float effectiveValue = stat.value * strengthMult;
+            result += $"{stat.stat.name}: {effectiveValue}";
+            if (strengthMult != 1f)
+                result += $" (x{strengthMult} from Strengthen)";
+            result += "\n";
+        }
+        return result;
     }
     private string UnpackMagicCost(SpellComponent sc)
     {

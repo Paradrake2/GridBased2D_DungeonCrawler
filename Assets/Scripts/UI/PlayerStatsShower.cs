@@ -54,14 +54,16 @@ public class PlayerStatsShower : MonoBehaviour
     }
     void UpdateBaseStats()
     {
-        healthPrefab.GetComponent<StatsShower>().SetCustomText($"Health: {player.GetHealth()}/{player.GetMaxHealth()}", Color.red); // currently gives error
-        manaPrefab.GetComponent<StatsShower>().Initialize(StatDatabase.Instance.GetStat("Mana"), player.GetMana().ToString());
+        //healthPrefab.GetComponent<StatsShower>().SetCustomText($"Health: {player.GetHealth()}/{player.GetMaxHealth()}", Color.red); // currently gives error
+        healthPrefab.GetComponent<StatsShower>().Initialize(StatDatabase.Instance.GetStat("Health"), $"{player.GetHealth()}/{player.GetMaxHealth()}"); // if the above line is commented out, this gives error instead, so maybe the problem is with the StatDatabase or StatsShower script
+        //manaPrefab.GetComponent<StatsShower>().Initialize(StatDatabase.Instance.GetStat("Mana"), player.GetMana().ToString());
         damagePrefab.GetComponent<StatsShower>().Initialize(StatDatabase.Instance.GetStat("Damage"), player.GetDamage().ToString()); // if health is commented out, this gives error instead, so maybe the problem is with the StatDatabase or StatsShower script
         defensePrefab.GetComponent<StatsShower>().Initialize(StatDatabase.Instance.GetStat("Defense"), player.GetDefense().ToString());
         attackSpeedPrefab.GetComponent<StatsShower>().Initialize(StatDatabase.Instance.GetStat("AttackSpeed"), player.GetAttackSpeed().ToString());
-        experiencePrefab.GetComponent<StatsShower>().SetCustomText($"XP: {playerStats.GetCurrentExperience()}/{playerStats.GetExperienceToNextLevel()}", Color.yellow);
+        //experiencePrefab.GetComponent<StatsShower>().SetCustomText($"XP: {playerStats.GetCurrentExperience()}/{playerStats.GetExperienceToNextLevel()}", Color.yellow);
+        //experiencePrefab.GetComponent<StatsShower>().Initialize(StatDatabase.Instance.GetStat("XPGain"), $"{playerStats.GetCurrentExperience()}/{playerStats.GetExperienceToNextLevel()}");
         magicPrefab.GetComponent<StatsShower>().Initialize(StatDatabase.Instance.GetStat("Magic"), player.GetMagic().ToString());
-        goldPrefab.GetComponent<StatsShower>().SetCustomText($"Gold: {playerStats.GetGoldAmount()}", Color.yellow);
+//        goldPrefab.GetComponent<StatsShower>().SetCustomText($"Gold: {playerStats.GetGoldAmount()}", Color.yellow);
     }
     void UpdateDefenseAttributeStats()
     {

@@ -31,8 +31,8 @@ public class EquipmentStatsShower : MonoBehaviour
     [SerializeField] private StatObjectPair windDamagePrefab;
     [SerializeField] private StatObjectPair lightDamagePrefab;
     [SerializeField] private StatObjectPair darkDamagePrefab;
-    [Header("Miscellaneous Fields")]
-    [SerializeField] private StatObjectPair craftingEfficiencyPrefab;
+    //[Header("Miscellaneous Fields")]
+    //[SerializeField] private StatObjectPair craftingEfficiencyPrefab;
     
     public void ShowEquipmentStats(Equipment equipment)
     {
@@ -53,7 +53,7 @@ public class EquipmentStatsShower : MonoBehaviour
         windDefensePrefab.prefab.GetComponent<StatsShower>().Initialize(windDefensePrefab.statType, equipment.stats.GetStat("WindDefense").ToString());
         lightDefensePrefab.prefab.GetComponent<StatsShower>().Initialize(lightDefensePrefab.statType, equipment.stats.GetStat("LightDefense").ToString());
         darkDefensePrefab.prefab.GetComponent<StatsShower>().Initialize(darkDefensePrefab.statType, equipment.stats.GetStat("DarkDefense").ToString());
-        craftingEfficiencyPrefab.prefab.GetComponent<StatsShower>().Initialize(craftingEfficiencyPrefab.statType, equipment.stats.GetStat("CraftingEfficiency").ToString());
+        //craftingEfficiencyPrefab.prefab.GetComponent<StatsShower>().Initialize(craftingEfficiencyPrefab.statType, equipment.stats.GetStat("CraftingEfficiency").ToString());
         
     }
     void Start()

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: da65a6b8f7405ee419c783e7f4889fe6
+guid: db6def769fc852847939c4809c33bc41
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -982006457301729726
-    second: DarkWeakness_0
+      213: -5584109564867349967
+    second: BaseDefenseIcon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DarkWeakness_0
+      name: BaseDefenseIcon_0
       rect:
         serializedVersion: 2
         x: 7
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 24ef36974563f52f0800000000000000
-      internalID: -982006457301729726
+      spriteID: 1327837cfe14182b0800000000000000
+      internalID: -5584109564867349967
       vertices: []
       indices: 
       edges: []

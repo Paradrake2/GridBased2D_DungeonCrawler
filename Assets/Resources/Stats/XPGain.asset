@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: XPGain
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 1841207660696761364, guid: 4821dca8c8335304897b81a47f100044, type: 3}
   category: 4
   isPercentage: 0
   capped: 0

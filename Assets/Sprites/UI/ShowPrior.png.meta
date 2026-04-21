@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: da65a6b8f7405ee419c783e7f4889fe6
+guid: d31e6cf270675ef41836491fb8b80660
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -982006457301729726
-    second: DarkWeakness_0
+      213: 297772988453316381
+    second: ShowPrior_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DarkWeakness_0
+      name: ShowPrior_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 7
-        width: 242
-        height: 242
+        x: 0
+        y: 0
+        width: 280
+        height: 280
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 24ef36974563f52f0800000000000000
-      internalID: -982006457301729726
+      spriteID: d17677094f6e12400800000000000000
+      internalID: 297772988453316381
       vertices: []
       indices: 
       edges: []

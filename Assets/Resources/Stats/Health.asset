@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Health
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: -5682809686868360691, guid: 8a1025686ea21744db6484f6a1edcdca, type: 3}
   category: 1
   isPercentage: 0
   capped: 0

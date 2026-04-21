@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: da65a6b8f7405ee419c783e7f4889fe6
+guid: c0a4dfa67b166c4499a748b58d30354d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -982006457301729726
-    second: DarkWeakness_0
+      213: -4313549342657341893
+    second: SubmitButton_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DarkWeakness_0
+      name: SubmitButton_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 7
-        width: 242
-        height: 242
+        x: 0
+        y: 0
+        width: 520
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 24ef36974563f52f0800000000000000
-      internalID: -982006457301729726
+      spriteID: b361acd1ab13324c0800000000000000
+      internalID: -4313549342657341893
       vertices: []
       indices: 
       edges: []

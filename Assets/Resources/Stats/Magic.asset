@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Magic
   description: How strong of a spell you can cast/create
-  icon: {fileID: 0}
+  icon: {fileID: -9177771903963904705, guid: cd9a907ac98ce51499c086a0cac7e67d, type: 3}
   category: 0
   isPercentage: 0
   capped: 0

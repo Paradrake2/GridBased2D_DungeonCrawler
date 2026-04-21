@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Defense
   description: 
-  icon: {fileID: -2654771049246567400, guid: e6f8b0b929f00b140949f88af241f330, type: 3}
+  icon: {fileID: -5584109564867349967, guid: db6def769fc852847939c4809c33bc41, type: 3}
   category: 0
   isPercentage: 0
   capped: 0

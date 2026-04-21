@@ -21,6 +21,7 @@ public class RotateComponentButton : MonoBehaviour
         {
             spellCrafterUI = FindAnyObjectByType<SpellCrafterUI>();
         }
+        SetActive(false);
     }
 
     // Update is called once per frame
