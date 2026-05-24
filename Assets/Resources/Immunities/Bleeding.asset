@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e88ddd3826d13f43805fbb7a3a74a50, type: 3}
-  m_Name: InstantKill
+  m_Name: Bleeding
   m_EditorClassIdentifier: 
-  immunityName: InstantKill
+  immunityName: Bleeding

@@ -23,8 +23,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Animator anim;
     public float attackAnimLength = 1f;
     public float attackAnimHitFrame = 0.6f; // time in seconds when the hit frame occurs in the attack animation
-    public float idleAnimLength = 1f;
-    public float idleAnimTriggerFrame = 0.5f; // time in seconds when the idle animation should be triggered after combat starts
+
     private Coroutine combatCoroutine;
     public void TakeDamage(float damage)
     {
@@ -71,16 +70,21 @@ public class Enemy : MonoBehaviour
         Debug.Log(attackInterval);
         while (stats.currentHealth > 0 && player.GetHealth() > 0)
         {
-            anim.SetTrigger("AttackStart");
-            yield return new WaitForSeconds(attackInterval*0.6f); // wait for attack animation to reach hit frame
+            HandleAttackAnimation();
+            yield return new WaitForSeconds(attackAnimHitFrame); // wait for attack animation to reach hit frame
             //anim.ResetTrigger("AttackFinished");
 //            Debug.LogWarning(gameObject.name + " attacks Player");
             player.TakeDamage(stats.esh.damage, stats.esh.enemyAttributesList);
             //anim.ResetTrigger("AttackStart");
-            anim.SetTrigger("AttackFinished");
-            yield return new WaitForSeconds(attackInterval*0.4f);
+            yield return new WaitForSeconds(attackInterval - attackAnimHitFrame); // wait for the rest of the attack interval after the hit frame
         }
         yield return null;
+    }
+    private void HandleAttackAnimation()
+    {
+        anim.SetTrigger("AttackStart");
+        new WaitForSeconds(attackAnimLength);
+        anim.SetTrigger("AttackFinished");
     }
     public void Die()
     {
